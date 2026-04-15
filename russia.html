@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 俄罗斯全景轻奢 贝加尔湖+圣彼得堡+莫斯科 12日深度游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f6fa;
+  --bg2: #e4e8f0;
+  --ink: #0c1020;
+  --gold: #c8a840;
+  --gold-lt: #f8ecc8;
+  --gold-deep: #7a6010;
+  --blue: #1a3a7a;
+  --blue-lt: #d0d8f0;
+  --blue-deep: #0c2050;
+  --blue-mid: #2a5aa8;
+  --silver: #a8b0c0;
+  --muted: #6070a0;
+  --border: #c8d0e0;
+  --white: #fafcff;
+  --self-bg: #f8f4e8;
+  --self-border: #d8c888;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--blue-deep);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--gold);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:rgba(255,255,255,.3);letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:rgba(255,255,255,.4);text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--gold);background:rgba(200,168,64,.12);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#040810 0%,#0c1a40 45%,#100808 100%);}
+.hero-bg::before{content:'🏰';position:absolute;right:40px;bottom:-10px;font-size:22rem;opacity:.04;line-height:1;filter:blur(2px);}
+.hero-bg::after{content:'❄️';position:absolute;left:20px;top:20px;font-size:14rem;opacity:.04;line-height:1;filter:blur(3px);}
+/* onion dome silhouette */
+.hero-dome{position:absolute;bottom:0;right:180px;width:60px;height:100px;background:rgba(200,168,64,.025);border-radius:50% 50% 0 0;z-index:1;}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(160deg,transparent,transparent 80px,rgba(200,168,64,.007) 80px,rgba(200,168,64,.007) 81px);z-index:1;}
+
+/* zero badge */
+.zero-badge{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;}
+.zbadge{background:rgba(200,168,64,.12);border:1px solid rgba(200,168,64,.4);padding:5px 14px;font-size:0.68rem;letter-spacing:0.18em;color:#d8b870;white-space:nowrap;}
+
+.hero-content{position:relative;z-index:2;padding:80px 40px 64px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.8rem);font-style:italic;color:#f0ecd8;line-height:1.08;margin-bottom:12px;}
+.hero-title em{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:0.85rem;color:#3a5070;letter-spacing:0.06em;max-width:600px;margin-bottom:26px;line-height:1.9;}
+
+/* city pills */
+.city-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.cpill{font-size:0.68rem;letter-spacing:0.12em;color:rgba(255,255,255,.4);border:1px solid rgba(200,168,64,.25);padding:3px 14px;}
+
+/* USP row */
+.usp-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.usp{font-size:0.72rem;letter-spacing:0.06em;padding:5px 14px;border:1px solid;}
+.ub{color:#90b0e0;border-color:rgba(26,58,122,.4);background:rgba(26,58,122,.1);}
+.ug{color:#e0c870;border-color:rgba(200,168,64,.4);background:rgba(200,168,64,.08);}
+.uw{color:#b0b8c8;border-color:rgba(160,176,192,.3);background:rgba(160,176,192,.06);}
+
+/* price row */
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:28px;}
+.price-block{background:rgba(0,0,0,.35);border:1px solid rgba(200,168,64,.35);padding:12px 22px;}
+.price-lbl{font-size:0.62rem;color:#3a5068;letter-spacing:0.1em;margin-bottom:2px;}
+.price-main{font-size:0.84rem;color:#c0d8f0;letter-spacing:0.06em;}
+.price-main strong{color:#e0eef8;}
+.three-fly{background:rgba(26,58,122,.15);border:1px solid rgba(26,58,122,.4);padding:12px 18px;display:flex;flex-direction:column;gap:5px;}
+.fly-row{display:flex;align-items:center;gap:8px;font-size:0.74rem;color:#90b0d8;}
+.fly-row strong{color:#b0c8e8;}
+.fly-arrow{color:var(--gold);font-size:0.6rem;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--blue-deep);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;font-weight:500;}
+.btn-gold:hover{background:var(--gold-deep);color:#f0e0a0;}
+.btn-blue{display:inline-block;border:1px solid rgba(26,58,122,.5);color:#90b0d8;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 26px;transition:all .2s;}
+.btn-blue:hover{background:rgba(26,58,122,.15);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 22px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.65);}
+
+/* ── DIVIDER ── */
+.divider{height:4px;background:linear-gradient(90deg,var(--blue),var(--gold),#fff,var(--gold),var(--blue));}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--blue-deep);border-bottom:1px solid rgba(200,168,64,.1);}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid rgba(200,168,64,.08);justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;font-weight:400;letter-spacing:0.06em;}
+.cg{color:#d8b870;}
+.cb{color:#90b0d8;}
+.trust-text span{font-size:0.68rem;color:#1a2840;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:8px;}
+.eg{color:var(--gold);}
+.eb{color:var(--blue-mid);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS ── */
+.hl-grid{max-width:1200px;margin:0 auto;padding:0 40px 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 22px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;flex:1;}
+.hl-tag{font-size:0.62rem;padding:2px 8px;align-self:flex-start;margin-top:auto;}
+.ht-g{background:var(--gold-lt);color:var(--gold-deep);}
+.ht-b{background:var(--blue-lt);color:var(--blue-deep);}
+.ht-s{background:#f0f0f4;color:#5060a0;}
+
+/* ── CITY SECTIONS ── */
+.city-block{margin-bottom:0;}
+.city-label-bar{max-width:1200px;margin:0 auto;padding:32px 40px 16px;}
+.city-badge{display:inline-flex;align-items:center;gap:10px;background:var(--blue-deep);padding:8px 20px;}
+.city-badge-icon{font-size:1rem;}
+.city-badge-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--gold);}
+.city-badge-sub{font-size:0.62rem;letter-spacing:0.16em;color:rgba(255,255,255,.4);}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;line-height:1;}
+.dng{color:var(--gold);}
+.dnb{color:var(--blue-mid);}
+.dns{color:var(--silver);}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#1a2838;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e0eaf8;color:var(--blue-deep);}
+.dtag-gold{background:var(--gold-lt);color:var(--gold-deep);}
+.dtag-green{background:#e8f5e9;color:#2e7d32;}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-note{background:#fdf8e8;color:#7a5808;}
+.dtag-shop{background:var(--self-bg);color:#7a6008;border:1px dashed var(--self-border);}
+.dtag-free{background:var(--bg2);color:var(--muted);}
+
+/* ── SHOPPING TABLE ── */
+.shopping{padding:0 40px 56px;}
+.shop-inner{max-width:1200px;margin:0 auto;}
+.shop-banner{background:var(--blue-deep);padding:14px 22px;display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--gold);}
+.shop-banner-text{font-size:0.8rem;color:#3a5070;letter-spacing:0.05em;}
+.shop-banner-text strong{color:var(--gold);}
+.shop-table-wrap{overflow-x:auto;}
+.shop-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);border-top:none;}
+.shop-table th{padding:10px 16px;background:var(--bg2);color:var(--muted);font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;border-bottom:1px solid var(--border);}
+.shop-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top;}
+.shop-table tr:last-child td{border-bottom:none;}
+.shop-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);font-style:italic;line-height:1;width:36px;}
+.shop-name{font-weight:500;font-size:0.85rem;color:var(--ink);}
+.shop-desc{font-size:0.74rem;color:var(--muted);margin-top:3px;}
+.shop-time{font-size:0.72rem;color:var(--muted);white-space:nowrap;}
+.shop-note{font-size:0.72rem;color:var(--muted);margin-top:10px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── ZERO SELF-PAY BLOCK ── */
+.zero-block{padding:0 40px 56px;}
+.zero-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.zero-head{background:linear-gradient(90deg,var(--blue-deep),var(--blue));padding:14px 22px;display:flex;align-items:center;gap:12px;}
+.zero-head-text{font-size:0.78rem;color:var(--gold);letter-spacing:0.1em;}
+.zero-head-sub{font-size:0.64rem;color:rgba(255,255,255,.4);margin-top:1px;}
+.zero-body{display:grid;grid-template-columns:1fr 1fr;}
+.zero-col{padding:22px 24px;border-right:1px solid var(--border);}
+.zero-col:last-child{border-right:none;}
+.zero-col h4{font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.zero-col ul{list-style:none;}
+.zero-col li{font-size:0.76rem;color:#1a2838;line-height:1.85;padding-left:16px;position:relative;}
+.zero-col li::before{position:absolute;left:0;}
+.inc-list li::before{content:'✓';color:#2e7d32;}
+.exc-list li::before{content:'·';color:var(--muted);}
+.tea-note{background:var(--self-bg);border:1px solid var(--self-border);padding:10px 14px;margin-top:12px;font-size:0.73rem;color:var(--gold-deep);}
+.tea-note strong{color:var(--gold-deep);}
+
+/* ── COSTS ── */
+.costs{padding:0 40px 40px;}
+.costs-inner{max-width:1200px;margin:0 auto;}
+.must-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+.must-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.must-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#8a2010;margin-bottom:10px;}
+.must-box ul{list-style:none;}
+.must-box li{font-size:0.76rem;color:#1a2838;line-height:1.85;padding-left:14px;position:relative;}
+.must-box li::before{content:'·';position:absolute;left:0;color:var(--gold);}
+.must-box li strong{color:var(--ink);}
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--blue-deep);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.ch-g{color:var(--gold);}
+.ch-b{color:#90b0d8;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── CONSULTANT ── */
+.consult{padding:0 40px 56px;}
+.consult-inner{max-width:1200px;margin:0 auto;}
+.consult-card{background:linear-gradient(135deg,#eef0f8,#f8f4e8);border:1px solid var(--border);padding:32px 36px;display:flex;align-items:center;gap:40px;}
+.consult-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--blue),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.consult-info h3{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.consult-info p{font-size:0.8rem;color:var(--muted);margin-bottom:12px;}
+.consult-contact{display:flex;flex-wrap:wrap;gap:10px;}
+.contact-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;transition:all .2s;}
+.cb-g{background:var(--gold);color:var(--blue-deep);font-weight:500;}
+.cb-g:hover{background:var(--gold-deep);color:#f0e0a0;}
+.cb-b{border:1px solid var(--blue);color:var(--blue-mid);}
+.cb-b:hover{background:var(--blue-lt);}
+.cb-ghost{border:1px solid var(--border);color:var(--muted);}
+.cb-ghost:hover{background:var(--bg2);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#1a2838;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;transition:all .2s;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.float-btn:hover{transform:translateX(-3px);}
+.fb-g{background:var(--gold);color:var(--blue-deep);font-weight:500;box-shadow:0 4px 16px rgba(200,168,64,.3);}
+.fb-g:hover{background:var(--gold-deep);color:#f0e0a0;}
+.fb-b{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(26,58,122,.25);}
+.fb-b:hover{background:var(--blue-deep);}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--blue-deep);border-top:2px solid var(--gold);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#1a3050;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--gold);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .must-grid{grid-template-columns:1fr 1fr;}
+  .costs-cols{grid-template-columns:1fr;}
+  .zero-body{grid-template-columns:1fr;}
+  .zero-col{border-right:none;border-bottom:1px solid var(--border);}
+  .zero-col:last-child{border-bottom:none;}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+  .consult-card{flex-direction:column;gap:20px;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(200,168,64,.08);min-width:50%;}
+  .hl-grid,.itinerary,.shopping,.zero-block,.costs,.consult,.notices{padding-left:16px;padding-right:16px;}
+  .hl-grid{grid-template-columns:1fr;}
+  .must-grid{grid-template-columns:1fr;padding:0;}
+  .sec-head,.city-label-bar{padding-left:16px;padding-right:16px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn fb-g">🏰 立即咨询</a>
+  <a href="#consult" class="float-btn fb-b">💬 咨询顾问高盼</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#shopping">购物协议</a>
+      <a href="#zerofee">费用说明</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dome"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="zero-badge">
+      <span class="zbadge">⭐ 真纯玩</span>
+      <span class="zbadge">0 自费</span>
+      <span class="zbadge">0 小费</span>
+      <span class="zbadge">一价全含</span>
+    </div>
+    <div class="hero-eyebrow">Russia · 12 Days · Three Cities · Pure Luxury</div>
+    <div class="hero-title">
+      俄罗斯全景轻奢<br>
+      <em>贝加尔湖</em> · 圣彼得堡 · 莫斯科
+    </div>
+    <div class="city-pills">
+      <span class="cpill">🌊 伊尔库茨克 · 贝加尔湖</span>
+      <span class="cpill">🏛 圣彼得堡</span>
+      <span class="cpill">🏰 莫斯科</span>
+    </div>
+    <div class="hero-sub">
+      国航北京直飞 · 三城三飞省时高效 · 全程四星酒店 · 特别升级利斯特维扬卡小镇<br>
+      双博物馆 · 双庄园 · 双小镇 · 双湖 · 琥珀宫 · 克里姆林宫 · 地铁地下宫殿
+    </div>
+    <div class="usp-row">
+      <span class="usp ub">✈ 国航北京直飞</span>
+      <span class="usp ug">🔺 三城三飞行程</span>
+      <span class="usp uw">🏨 全程四星+特色升级</span>
+      <span class="usp ug">0️⃣ 真0自费0小费</span>
+    </div>
+    <div class="hero-meta">
+      <div class="price-block">
+        <div class="price-lbl">参考价格</div>
+        <div class="price-main"><strong>成人一价全含</strong>（含签证）</div>
+        <div style="font-size:0.68rem;color:#2a4060;margin-top:3px;">仅限中国大陆因私护照</div>
+      </div>
+      <div class="three-fly">
+        <div style="font-size:0.62rem;color:#5080a8;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">三城三飞 · 高效行程</div>
+        <div class="fly-row"><strong>北京</strong><span class="fly-arrow">→</span><strong>伊尔库茨克</strong></div>
+        <div class="fly-row"><strong>伊市</strong><span class="fly-arrow">→</span><strong>圣彼得堡</strong></div>
+        <div class="fly-row"><strong>莫斯科</strong><span class="fly-arrow">→</span><strong>北京</strong></div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-gold">立即咨询团期</a>
+      <a href="#itinerary" class="btn-blue">查看完整行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── DIVIDER ── -->
+<div class="divider"></div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">0️⃣</span>
+      <div class="trust-text"><strong class="cg">真0自费0小费</strong><span>一价全含承诺</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🌊</span>
+      <div class="trust-text"><strong class="cb">贝加尔湖游船</strong><span>世界最深淡水湖</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏰</span>
+      <div class="trust-text"><strong class="cg">琥珀宫·冬宫</strong><span>俄罗斯艺术最高峰</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🔺</span>
+      <div class="trust-text"><strong class="cb">克里姆林宫</strong><span>入内参观</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚇</span>
+      <div class="trust-text"><strong class="cg">地铁地下宫殿</strong><span>莫斯科独有奇观</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow eg">Highlights · 深度亮点</div>
+    <div class="sec-title">"双"字配置 · 六大独家体验</div>
+    <div class="sec-sub">双博物馆 · 双庄园 · 双小镇 · 双湖——12天全景俄罗斯，不留遗憾</div>
+  </div>
+  <div class="hl-grid">
+    <div class="hl-item up">
+      <div class="hl-icon">🌊</div>
+      <div class="hl-title">贝加尔湖 · 地球蓝眼睛</div>
+      <div class="hl-desc">世界最深、最古老的淡水湖，蓄水量占全球淡水总量20%。乘坐游船在澄澈湖面上缓缓航行，看环斑海豹在岸边悠然嬉戏，感受西伯利亚大地最纯净的自然馈赠。</div>
+      <div class="hl-tag ht-b">🌊 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">💎</div>
+      <div class="hl-title">琥珀宫 · 世界第八大奇迹</div>
+      <div class="hl-desc">叶卡捷琳娜宫内的琥珀宫是用6吨波罗的海琥珀砌成的宫殿，被誉为"世界第八大奇迹"。在金色琥珀光芒的笼罩下，每一寸墙面都凝固着200年沙俄帝国最辉煌的岁月。</div>
+      <div class="hl-tag ht-g">💎 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🏛️</div>
+      <div class="hl-title">冬宫博物馆 · 三百万件珍藏</div>
+      <div class="hl-desc">世界四大博物馆之一——圣彼得堡冬宫博物馆，馆内藏有逾300万件艺术品，从古埃及文物到伦勃朗、梵高的真迹，在金碧辉煌的宫殿中漫步，感受沙俄帝国的极致奢华。</div>
+      <div class="hl-tag ht-b">🏛 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🔺</div>
+      <div class="hl-title">克里姆林宫 · 入内参观</div>
+      <div class="hl-desc">俄罗斯最神秘的政治与历史心脏，这片红砖城墙内矗立着十四世纪以来的宫殿、大教堂与军械库。入内参观克里姆林宫，近距离感受一千年俄罗斯权力中心的历史重量。</div>
+      <div class="hl-tag ht-g">🔺 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🚇</div>
+      <div class="hl-title">莫斯科地铁 · 地下宫殿</div>
+      <div class="hl-desc">斯大林时期建造的莫斯科地铁站，每一座都是独一无二的地下艺术馆——大理石柱、水晶灯、马赛克壁画、雕塑……每天乘坐数百万人次，却是全世界最华美的公共交通。</div>
+      <div class="hl-tag ht-s">🚇 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">⛪</div>
+      <div class="hl-title">滴血教堂 · 夏宫 · 要塞</div>
+      <div class="hl-desc">圣彼得堡的艺术铁三角：用4500平方米马赛克铺就的滴血教堂；号称"俄罗斯凡尔赛"的夏宫花园（喷泉王国）；俄国历史最悠久的彼得保罗要塞，每一处都令人屏息。</div>
+      <div class="hl-tag ht-b">⛪ 含于团费</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow eg">Itinerary · 12日行程</div>
+    <div class="sec-title">贝加尔湖 · 圣彼得堡 · 莫斯科 12天</div>
+    <div class="sec-sub">金色=贝加尔湖 · 蓝色=圣彼得堡 · 银色=莫斯科</div>
+  </div>
+
+  <!-- BAIKAL SECTION -->
+  <div class="city-label-bar">
+    <div class="city-badge">
+      <span class="city-badge-icon">🌊</span>
+      <span class="city-badge-name">伊尔库茨克 · 贝加尔湖</span>
+      <span class="city-badge-sub">D1–D3</span>
+    </div>
+  </div>
+  <div class="itinerary" style="padding-top:4px;">
+    <div class="it-inner">
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dng">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">北京 → 伊尔库茨克 · 出发</div>
+          <div class="day-route">国际航空 CA · 北京直飞伊尔库茨克</div>
+          <div class="day-text">搭乘国航从北京直飞伊尔库茨克，开启这段横跨西伯利亚的俄罗斯全景之旅。抵达后导游接机，入住四星酒店，感受西伯利亚的清新空气与贝加尔湖的召唤。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 国航北京直飞</span>
+            <span class="dtag dtag-green">✓ 全国联运接驳</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dng">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">伊尔库茨克老城 · 贝加尔湖博物馆</div>
+          <div class="day-route">Irkutsk · 西伯利亚明珠</div>
+          <div class="day-text">游览"西伯利亚巴黎"伊尔库茨克老城，欣赏沙俄时代的木刻花窗建筑；参观<strong>塔利茨木制建筑博物馆</strong>，这是一片完整还原17-20世纪西伯利亚民居的露天历史博物馆；抵达贝加尔湖畔，参观<strong>贝加尔湖博物馆</strong>，近距离看贝加尔特有的环斑海豹悠游水中。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 伊尔库茨克老城</span>
+            <span class="dtag dtag-gold">🏛 塔利茨木制建筑博物馆</span>
+            <span class="dtag dtag-gold">🦭 贝加尔湖博物馆（环斑海豹）</span>
+            <span class="dtag dtag-note">🏡 利斯特维扬卡小镇特色住宿（升级）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dng">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">贝加尔湖游船 · 内陆飞圣彼得堡</div>
+          <div class="day-route">Lake Baikal → St. Petersburg · 内陆直飞</div>
+          <div class="day-text">清晨乘坐<strong>贝加尔湖游船</strong>，在世界最深淡水湖上缓缓航行，感受那无与伦比的清澈蓝色与辽阔湖面的壮丽风光；品尝湖畔特色<strong>拉多加湖熏鱼餐</strong>。下午搭乘内陆航班飞往圣彼得堡，开启帝俄艺术之旅。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 贝加尔湖游船</span>
+            <span class="dtag dtag-meal">🐟 拉多加湖熏鱼餐</span>
+            <span class="dtag dtag-fly">✈ 内陆飞圣彼得堡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPB SECTION -->
+  <div class="city-label-bar">
+    <div class="city-badge">
+      <span class="city-badge-icon">🏛</span>
+      <span class="city-badge-name">圣彼得堡</span>
+      <span class="city-badge-sub">D4–D7</span>
+    </div>
+  </div>
+  <div class="itinerary" style="padding-top:4px;">
+    <div class="it-inner">
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnb">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">圣彼得堡 · 水城初见</div>
+          <div class="day-route">Saint Petersburg · 北方威尼斯</div>
+          <div class="day-text">游览<strong>滴血教堂</strong>——用4500平方米马赛克铺就的艺术奇迹，外立面华美绚丽，内部更是令人叹为观止；漫步<strong>涅瓦大街</strong>，感受圣彼得堡最繁华的林荫大道；傍晚在<strong>拉多加湖畔</strong>欣赏北方白夜的神奇光影。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 滴血教堂</span>
+            <span class="dtag dtag-inc">✓ 涅瓦大街</span>
+            <span class="dtag dtag-inc">✓ 拉多加湖</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnb">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">夏宫花园 · 叶卡捷琳娜宫 · 琥珀宫</div>
+          <div class="day-route">Peterhof → Pushkin · 皇家园林日</div>
+          <div class="day-text">游览号称"俄罗斯凡尔赛"的<strong>夏宫花园</strong>，约150座喷泉在绿茵花园中同时喷涌，气势恢宏令人窒息；前往<strong>叶卡捷琳娜宫</strong>，参观"世界第八大奇迹"<strong>琥珀宫</strong>——6吨波罗的海琥珀砌成的金色奇境，每平方厘米都蕴含着沙俄帝国最后的极致奢华。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 夏宫花园（喷泉王国）</span>
+            <span class="dtag dtag-gold">💎 叶卡捷琳娜宫</span>
+            <span class="dtag dtag-gold">💎 琥珀宫（世界第八大奇迹）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnb">06</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">冬宫博物馆 · 彼得保罗要塞</div>
+          <div class="day-route">Hermitage → Peter &amp; Paul Fortress</div>
+          <div class="day-text">深度参观世界四大博物馆之一的<strong>冬宫（艾尔米塔什博物馆）</strong>，馆藏逾300万件艺术珍品，从古埃及文物到达芬奇画作，在金碧辉煌的宫殿走廊中漫步；随后参观<strong>彼得保罗要塞</strong>，这座俄国最古老的教堂要塞是圣彼得堡的诞生地，众多沙皇长眠于此。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 冬宫博物馆（入内）</span>
+            <span class="dtag dtag-inc">✓ 彼得保罗要塞</span>
+            <span class="dtag dtag-shop">🛍 琥珀店 约1小时</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnb">07</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">圣彼得堡 → 内陆飞莫斯科</div>
+          <div class="day-route">Saint Petersburg → Moscow · 内陆直飞</div>
+          <div class="day-text">上午在圣彼得堡自由活动，可逛逛当地特色集市；午后搭乘内陆航班飞抵莫斯科——俄罗斯的红色心脏，开启第三城的文化探索。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-free">🗺 上午自由活动</span>
+            <span class="dtag dtag-fly">✈ 内陆飞莫斯科</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOSCOW SECTION -->
+  <div class="city-label-bar">
+    <div class="city-badge">
+      <span class="city-badge-icon">🔺</span>
+      <span class="city-badge-name">莫斯科</span>
+      <span class="city-badge-sub">D8–D12</span>
+    </div>
+  </div>
+  <div class="itinerary" style="padding-top:4px;">
+    <div class="it-inner">
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">08</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">莫斯科地铁 · 克里姆林宫 · 红场</div>
+          <div class="day-route">Moscow · 红色心脏</div>
+          <div class="day-text">乘坐<strong>莫斯科地铁</strong>，每一站都是一座地下艺术宫殿，用大理石、水晶灯与马赛克壁画构成全球最华美的公共交通系统；入内参观<strong>克里姆林宫</strong>，感受14世纪以来俄罗斯权力中心的历史厚重；在<strong>红场</strong>全景前凝视列宁陵墓与圣瓦西里大教堂的七彩洋葱头，感受苏联历史的独特氛围。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 莫斯科地铁（地下宫殿）</span>
+            <span class="dtag dtag-gold">🔺 克里姆林宫（入内）</span>
+            <span class="dtag dtag-inc">✓ 红场全景</span>
+            <span class="dtag dtag-inc">✓ 圣瓦西里大教堂</span>
+            <span class="dtag dtag-shop">🛍 紫金店 约1小时</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">09</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">谢镇 · 圣三一修道院</div>
+          <div class="day-route">Sergiyev Posad · 俄国梵蒂冈</div>
+          <div class="day-text">驱车前往被誉为"俄国梵蒂冈"的<strong>谢尔盖耶夫镇（黄金之环）</strong>，参观已列入世界遗产的<strong>圣三一谢尔盖修道院</strong>，这座金顶修道院是东正教世界最神圣的朝圣地之一，院内珍藏无数宗教艺术珍品；品尝谢镇特色俄餐，感受最质朴的俄国传统滋味。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 圣三一谢尔盖修道院（世界遗产）</span>
+            <span class="dtag dtag-inc">✓ 谢尔盖耶夫镇</span>
+            <span class="dtag dtag-meal">🥟 谢镇品尝式俄餐</span>
+            <span class="dtag dtag-shop">🛍 旅游纪念品商店 约1小时</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">10</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">卡洛明斯克庄园 · 察里津诺庄园</div>
+          <div class="day-route">Kolomenskoye → Tsaritsyno · 双庄园</div>
+          <div class="day-text">游览古俄国沙皇行宫<strong>卡洛明斯克庄园</strong>，矗立于莫斯科河湾上的木制宫殿遗址已有700年历史，被誉为人类最高木制建筑之一；随后前往叶卡捷琳娜二世的<strong>察里津诺庄园</strong>，红砖新哥特式宫殿在绿茵园林中尤为壮观，是莫斯科最美的城市公园之一。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-gold">🏡 卡洛明斯克庄园</span>
+            <span class="dtag dtag-gold">🏡 察里津诺庄园</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">11</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">阿尔巴特街 · 自由活动</div>
+          <div class="day-route">Moscow · Arbat Street</div>
+          <div class="day-text">漫步莫斯科最古老、最有文艺气息的<strong>阿尔巴特街</strong>，这条数百年历史的步行街云集了画廊、咖啡馆、街头艺人与手工艺品摊位；自由购物或探索莫斯科城市的各个角落；晚间整理行装，准备明日返程。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 阿尔巴特街</span>
+            <span class="dtag dtag-free">🛍 自由活动</span>
+            <span class="dtag dtag-shop">🛍 旅游纪念品商店</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">12</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">莫斯科 → 北京 · 圆满返程</div>
+          <div class="day-route">国际航空 CA · 直飞北京</div>
+          <div class="day-text">专车送往谢列梅捷沃机场，搭乘国航直飞北京，带着贝加尔湖的蓝、琥珀宫的金与红场的红，满载俄罗斯帝国的回忆踏上归途。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 国航直飞北京返程</span>
+            <span class="dtag dtag-note">📋 时差：莫斯科比北京时间晚5小时</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOPPING ── -->
+<div class="shopping" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow eg">Shopping Protocol · 购物协议</div>
+    <div class="sec-title">购物安排透明公示</div>
+    <div class="sec-sub">依合同约定列出，所有消费完全自愿，不强制购物</div>
+  </div>
+  <div class="shop-inner">
+    <div class="shop-banner up">
+      <span style="font-size:1.2rem;">📋</span>
+      <div class="shop-banner-text">
+        本行程依合同约定进入以下 <strong>3个协议购物场所</strong>。<strong>所有消费均为完全自愿，绝无任何强制购物</strong>。
+      </div>
+    </div>
+    <div class="shop-table-wrap up">
+      <table class="shop-table">
+        <thead>
+          <tr>
+            <th style="width:40px;">#</th>
+            <th>购物场所</th>
+            <th>经营商品与特色</th>
+            <th>停留时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="shop-num">①</td>
+            <td><div class="shop-name">紫金店</div></td>
+            <td><div class="shop-desc">俄罗斯独特的紫金首饰，工艺精湛，富有民族特色，仅在俄罗斯独有</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">②</td>
+            <td><div class="shop-name">琥珀店</div></td>
+            <td><div class="shop-desc">天然琥珀、蜜蜡制品，领略"俄罗斯软黄金"的魅力与波罗的海地质奇迹</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">③</td>
+            <td><div class="shop-name">旅游纪念品商店</div></td>
+            <td><div class="shop-desc">俄罗斯套娃（马特廖什卡）、巧克力、望远镜、军刀等特色礼品</div></td>
+            <td class="shop-time">约 60 分钟/店</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shop-note up">* 以上购物场所均为合同约定，停留时间仅供参考。所有消费完全<strong>自愿</strong>，导游不得施压或强制任何消费行为。</div>
+  </div>
+</div>
+
+<!-- ── ZERO SELF-PAY ── -->
+<div class="zero-block" id="zerofee">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow eg">0 Self-Pay · 真0自费说明</div>
+    <div class="sec-title">一价全含 · 真0自费承诺</div>
+    <div class="sec-sub">本行程是同类产品中极少数真正做到0自费的俄罗斯线路</div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px 28px;">
+    <div class="zero-inner up">
+      <div class="zero-head">
+        <span style="font-size:1.2rem;">⭐</span>
+        <div>
+          <div class="zero-head-text">0自费承诺 · 已包含所有主要景点门票及司导服务费</div>
+          <div class="zero-head-sub">本行程主打真正的一价全含</div>
+        </div>
+      </div>
+      <div class="zero-body">
+        <div class="zero-col">
+          <h4>✓ 已全含于团费</h4>
+          <ul class="inc-list">
+            <li>所有行程内景点门票及参观费用</li>
+            <li>全程司机及中文导游服务费</li>
+            <li>俄罗斯段三段内陆飞行费用</li>
+            <li>俄罗斯团队旅游签证费（大陆因私护照）</li>
+            <li>全程四星酒店住宿（含特色升级）</li>
+            <li>行程内全部正餐（含特色熏鱼餐·俄餐等）</li>
+          </ul>
+        </div>
+        <div class="zero-col">
+          <h4>○ 个人消费（不含）</h4>
+          <ul class="exc-list">
+            <li>酒店内的酒水消费</li>
+            <li>洗衣费及个人通讯费</li>
+            <li>洗手间使用费（通常收费）</li>
+            <li>自由活动期间的个人购物消费</li>
+            <li>小费完全自愿，无强制要求</li>
+          </ul>
+          <div class="tea-note">
+            <strong>🫖 火车茶水费提示：</strong>
+            俄罗斯火车列车员有收取茶水服务费的习惯，建议自备约 <strong>50卢布/人</strong> 零钱以备不时之需。此属当地文化习惯，非强制消费。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── COSTS ── -->
+<div class="costs" id="booking">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow eb">Fees · 费用明细</div>
+    <div class="sec-title">团费包含与不含说明</div>
+    <div class="sec-sub">一价全含设计，极简费用结构</div>
+  </div>
+  <div class="costs-inner">
+    <div class="costs-cols up">
+      <div class="cost-box">
+        <div class="cost-head ch-g">团费包含（一价全含）</div>
+        <table class="cost-table">
+          <tr><td>国际航班</td><td>国航北京往返莫斯科直飞机票</td></tr>
+          <tr><td>内陆航班</td><td>三段内陆飞行（伊市→圣彼得堡·莫斯科→北京）</td></tr>
+          <tr><td>住宿</td><td>全程四星酒店+利斯特维扬卡特色小镇升级</td></tr>
+          <tr><td>餐食</td><td>中式正餐八菜一汤·熏鱼餐·谢镇俄餐·伊市中俄混餐</td></tr>
+          <tr><td>景点</td><td>行程内所有景点门票（冬宫·克里姆林宫·要塞等）</td></tr>
+          <tr><td>游船</td><td>贝加尔湖游船</td></tr>
+          <tr><td>签证</td><td>俄罗斯团队旅游签证费（仅限大陆因私护照）</td></tr>
+          <tr><td>导服</td><td>全程中文领队及境外中文导游服务费</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head ch-b">个人自理（极少）</div>
+        <table class="cost-table">
+          <tr><td>个人消费</td><td>酒店内酒水、洗衣、通讯等</td></tr>
+          <tr><td>洗手间</td><td>公共厕所通常收费，建议备零钱</td></tr>
+          <tr><td>火车茶水</td><td>约50卢布/人（列车员惯例，自愿）</td></tr>
+          <tr><td>购物</td><td>3个协议购物场所内的自愿消费</td></tr>
+          <tr><td>保险</td><td>建议另行购买个人境外意外险</td></tr>
+          <tr><td>签证说明</td><td>仅限中国大陆因私护照，港澳台另计</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSULTANT ── -->
+<div class="consult" id="consult">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow eg">Consultant · 专属顾问</div>
+    <div class="sec-title">联系专属旅行顾问</div>
+    <div class="sec-sub">有任何疑问或想了解最新成团日期，请直接联系我们的资深顾问</div>
+  </div>
+  <div class="consult-inner">
+    <div class="consult-card up">
+      <div class="consult-avatar">🏰</div>
+      <div class="consult-info">
+        <h3>高盼 · 俄罗斯及欧亚线路专属顾问</h3>
+        <p>专注俄罗斯、东欧及欧亚精品线路，对贝加尔湖、冬宫、克里姆林宫每一处了如指掌</p>
+        <div class="consult-contact">
+          <a href="tel:15907190570" class="contact-btn cb-g">📞 15907190570</a>
+          <a href="#" class="contact-btn cb-b">💬 微信咨询</a>
+          <a href="#" class="contact-btn cb-ghost">📄 俄签证资料清单</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow eb">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读，保障顺畅的俄罗斯全景之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>🪪 签证政策</h4>
+        <ul>
+          <li>含俄罗斯<strong>团队旅游签证</strong>费用</li>
+          <li>仅适用于中国大陆<strong>因私护照</strong></li>
+          <li>港澳台护照需另行咨询签证安排</li>
+          <li>出发前须按要求提交护照及照片等资料</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🕐 时差与气候</h4>
+        <ul>
+          <li>莫斯科/圣彼得堡比北京时间<strong>晚5小时</strong></li>
+          <li>北京15:00对应当地10:00</li>
+          <li>俄罗斯气候四季分明，夏季凉爽；冬季极寒，请备足保暖衣物</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🏨 酒店特别提示</h4>
+        <ul>
+          <li>俄罗斯酒店多为前苏联时期建造</li>
+          <li>房间较小，<strong>通常无空调、无开水壶</strong></li>
+          <li>请游客理解历史建筑的客观条件</li>
+          <li>建议自备便携热水壶及适配插头</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>⚠️ 行李与脱团规定</h4>
+        <ul>
+          <li>国际段通常限带<strong>1件托运行李</strong>（不超23kg）</li>
+          <li>贵重物品切勿托运</li>
+          <li>严禁擅自脱团，脱团将<strong>终止后续服务且费用不退</strong></li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>一价全含·真0自费·0小费承诺</span>
+    <span>含俄罗斯团队旅游签证（仅限大陆因私护照）</span>
+    <span>三城三飞行程安排，省时高效</span>
+    <span>莫斯科比北京时间晚5小时</span>
+    <span>脱团将终止后续所有服务且费用不退</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html" class="current">🇷🇺 俄罗斯 · 本页</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','shopping','zerofee','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

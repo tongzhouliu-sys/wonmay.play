@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 马上趣草原 肯尼亚10天探索之旅</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf6ee;
+  --bg2: #f0e8d8;
+  --ink: #1a1008;
+  --savanna: #c87820;  /* savannah gold */
+  --savanna-lt: #fde8c0;
+  --savanna-deep: #7a4000;
+  --earth: #8a5820;   /* african earth brown */
+  --earth-lt: #f0e0c8;
+  --sunset: #d04010;  /* sunset orange */
+  --sunset-lt: #fde0d0;
+  --green: #3a7020;   /* life green */
+  --green-lt: #d8f0c8;
+  --muted: #8a7050;
+  --border: #d8c8a8;
+  --white: #fdfaf4;
+  --self-bg: #fdf8ee;
+  --self-border: #e8c870;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--savanna);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamath',serif;font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--savanna);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#5a4020;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#8a6840;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--savanna);background:rgba(200,120,32,.12);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#080400 0%,#1a0c00 40%,#100808 100%);}
+.hero-bg::before{content:'🦁';position:absolute;right:30px;bottom:-10px;font-size:24rem;opacity:.05;line-height:1;filter:blur(2px);}
+.hero-bg::after{content:'🌅';position:absolute;right:15%;top:10px;font-size:12rem;opacity:.06;line-height:1;filter:blur(3px);}
+/* acacia tree silhouette via css */
+.hero-acacia{position:absolute;bottom:0;left:80px;z-index:1;opacity:.06;}
+.hero-acacia::before{content:'';display:block;width:8px;height:120px;background:var(--savanna);margin:0 auto;}
+.hero-acacia::after{content:'🌳';position:absolute;top:-60px;left:-30px;font-size:5rem;opacity:1;}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(165deg,transparent,transparent 80px,rgba(200,120,32,.007) 80px,rgba(200,120,32,.007) 81px);z-index:1;}
+/* horizon glow */
+.hero-horizon{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(200,80,16,.08),transparent);z-index:1;}
+
+.hero-content{position:relative;z-index:2;padding:80px 40px 64px;max-width:1200px;margin:0 auto;width:100%;}
+
+/* migration badge */
+.migration-badge{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;}
+.mbadge{background:rgba(200,120,32,.1);border:1px solid rgba(200,120,32,.35);padding:5px 14px;font-size:0.68rem;letter-spacing:0.18em;color:#d89850;white-space:nowrap;}
+
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--savanna);text-transform:uppercase;margin-bottom:14px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.9rem);font-style:italic;color:#f8f0e0;line-height:1.08;margin-bottom:12px;}
+.hero-title em{color:var(--savanna);font-style:normal;}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:#6a5030;letter-spacing:0.12em;margin-bottom:16px;}
+.hero-sub{font-size:0.85rem;color:#5a4020;letter-spacing:0.06em;max-width:600px;margin-bottom:26px;line-height:1.9;}
+
+/* parks pills */
+.parks-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.ppill{font-size:0.68rem;letter-spacing:0.1em;color:rgba(255,255,255,.4);border:1px solid rgba(200,120,32,.25);padding:3px 14px;}
+
+/* USP row */
+.usp-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.usp{font-size:0.72rem;letter-spacing:0.06em;padding:5px 14px;border:1px solid;}
+.us{color:#e8c070;border-color:rgba(200,120,32,.35);background:rgba(200,120,32,.08);}
+.uo{color:#f0a080;border-color:rgba(208,64,16,.35);background:rgba(208,64,16,.08);}
+.ug{color:#90d070;border-color:rgba(58,112,32,.35);background:rgba(58,112,32,.08);}
+
+/* price meta */
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:28px;}
+.price-block{background:rgba(0,0,0,.35);border:1px solid rgba(200,120,32,.35);padding:12px 22px;}
+.price-lbl{font-size:0.62rem;color:#5a4020;letter-spacing:0.1em;margin-bottom:2px;}
+.price-sub{font-size:0.82rem;color:#d8b070;letter-spacing:0.04em;}
+.price-sub strong{color:#f0d090;}
+.vaccine-note{background:rgba(208,64,16,.1);border:1px solid rgba(208,64,16,.35);padding:12px 18px;display:flex;align-items:flex-start;gap:10px;font-size:0.76rem;color:#e09070;}
+.vaccine-note strong{color:#f0b090;display:block;}
+.yellow-card{background:rgba(200,160,32,.1);border:1px solid rgba(200,160,32,.35);padding:10px 16px;display:flex;align-items:center;gap:8px;font-size:0.76rem;color:#d8c070;}
+.yellow-card strong{color:#e8d080;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-savanna{display:inline-block;background:var(--savanna);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;font-weight:500;}
+.btn-savanna:hover{background:var(--savanna-deep);}
+.btn-earth{display:inline-block;border:1px solid rgba(200,120,32,.5);color:var(--savanna);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 26px;transition:all .2s;}
+.btn-earth:hover{background:rgba(200,120,32,.1);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 22px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.65);}
+
+/* ── GRASS DIVIDER ── */
+.grass-div{height:5px;background:linear-gradient(90deg,var(--savanna),var(--sunset),var(--green));}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--ink);border-bottom:1px solid rgba(200,120,32,.1);}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid rgba(200,120,32,.08);justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;font-weight:400;letter-spacing:0.06em;}
+.cs{color:#d8a850;}
+.co{color:#f09060;}
+.cg{color:#90c870;}
+.trust-text span{font-size:0.68rem;color:#2a1a08;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:8px;}
+.es{color:var(--savanna);}
+.eo{color:var(--sunset);}
+.eg{color:var(--green);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS ── */
+.hl-grid{max-width:1200px;margin:0 auto;padding:0 40px 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 22px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;flex:1;}
+.hl-tag{font-size:0.62rem;padding:2px 8px;align-self:flex-start;margin-top:auto;}
+.ht-s{background:var(--savanna-lt);color:var(--savanna-deep);}
+.ht-o{background:var(--sunset-lt);color:var(--sunset);}
+.ht-g{background:var(--green-lt);color:var(--green);}
+.ht-e{background:var(--earth-lt);color:var(--earth);}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;line-height:1;}
+.dns{color:var(--savanna);}
+.dno{color:var(--sunset);}
+.dng{color:var(--green);}
+.dne{color:var(--earth);}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#2a1a08;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:var(--green-lt);color:var(--green);}
+.dtag-savanna{background:var(--savanna-lt);color:var(--savanna-deep);}
+.dtag-sunset{background:var(--sunset-lt);color:var(--sunset);}
+.dtag-earth{background:var(--earth-lt);color:var(--earth);}
+.dtag-opt{background:var(--self-bg);color:#8a5008;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-note{background:#fff8e8;color:#8a5010;}
+.dtag-warn{background:#ffeee8;color:#8a1a00;}
+.dtag-free{background:var(--bg2);color:var(--muted);}
+
+/* ── OPTIONAL TABLE ── */
+.optional-wrap{padding:0 40px 56px;}
+.op-inner{max-width:1200px;margin:0 auto;}
+.op-hero-balloon{background:linear-gradient(135deg,#1a0c00,#2a1800);border:1px solid rgba(200,120,32,.3);padding:18px 24px;margin-bottom:16px;display:flex;align-items:center;gap:16px;}
+.balloon-icon{font-size:2.5rem;}
+.balloon-text strong{display:block;font-size:1rem;color:var(--savanna);font-family:'Noto Serif SC',serif;margin-bottom:4px;}
+.balloon-text span{font-size:0.78rem;color:#7a5030;}
+.balloon-price{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--sunset);margin-left:auto;white-space:nowrap;}
+.balloon-price small{font-size:0.72rem;color:#7a5030;display:block;text-align:right;}
+.op-table-wrap{overflow-x:auto;}
+.op-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);}
+.op-table thead tr{background:var(--ink);}
+.op-table th{padding:10px 16px;color:var(--savanna);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;}
+.op-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.op-table tr:last-child td{border-bottom:none;}
+.op-table tbody tr:nth-child(even) td{background:#fdf8ee;}
+.price-cell{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--sunset);white-space:nowrap;}
+.note-cell{font-size:0.7rem;color:var(--muted);}
+.op-note{font-size:0.72rem;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── SHOPPING POLICY ── */
+.shop-policy{padding:0 40px 56px;}
+.policy-inner{max-width:1200px;margin:0 auto;}
+.policy-card{background:var(--white);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.policy-col{padding:26px 28px;}
+.policy-col:first-child{border-right:1px solid var(--border);}
+.policy-col-head{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;}
+.ph-g{color:var(--green);}
+.ph-s{color:var(--earth);}
+.policy-col ul{list-style:none;}
+.policy-col li{font-size:0.78rem;color:#2a1a08;line-height:1.9;padding-left:16px;position:relative;}
+.policy-col li::before{position:absolute;left:0;}
+.inc-list li::before{content:'✓';color:var(--green);}
+.exc-list li::before{content:'○';color:var(--earth);}
+.souvenir-note{background:var(--savanna-lt);border:1px solid rgba(200,120,32,.3);padding:12px 16px;margin-top:14px;font-size:0.74rem;color:var(--savanna-deep);line-height:1.75;}
+.prod-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.ptag{font-size:0.7rem;padding:3px 12px;background:var(--savanna-lt);color:var(--savanna-deep);}
+
+/* ── COSTS ── */
+.costs{padding:0 40px 40px;}
+.costs-inner{max-width:1200px;margin:0 auto;}
+.must-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+.must-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.must-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#8a2010;margin-bottom:10px;}
+.must-box ul{list-style:none;}
+.must-box li{font-size:0.76rem;color:#2a1a08;line-height:1.85;padding-left:14px;position:relative;}
+.must-box li::before{content:'·';position:absolute;left:0;color:var(--savanna);}
+.must-box li strong{color:var(--ink);}
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.ch-s{color:var(--savanna);}
+.ch-e{color:#d0a870;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── CONSULTANT ── */
+.consult{padding:0 40px 56px;}
+.consult-inner{max-width:1200px;margin:0 auto;}
+.consult-card{background:linear-gradient(135deg,#faf4e8,#f8ede0);border:1px solid var(--border);padding:32px 36px;display:flex;align-items:center;gap:40px;}
+.consult-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--savanna),var(--sunset));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.consult-info h3{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.consult-info p{font-size:0.8rem;color:var(--muted);margin-bottom:12px;}
+.consult-contact{display:flex;flex-wrap:wrap;gap:10px;}
+.contact-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;transition:all .2s;}
+.cb-s{background:var(--savanna);color:#fff;}
+.cb-s:hover{background:var(--savanna-deep);}
+.cb-o{border:1px solid var(--sunset);color:var(--sunset);}
+.cb-o:hover{background:var(--sunset-lt);}
+.cb-ghost{border:1px solid var(--border);color:var(--muted);}
+.cb-ghost:hover{background:var(--bg2);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--earth);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#2a1a08;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* YELLOW CARD ALERT */
+.yc-alert{max-width:1200px;margin:0 auto 0;padding:0 40px 28px;}
+.yc-box{background:#fff8e8;border:1px solid #e8c870;border-left:4px solid #c89820;padding:14px 20px;font-size:0.8rem;color:#6a4a00;line-height:1.85;}
+.yc-box strong{color:#8a6010;}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;transition:all .2s;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.float-btn:hover{transform:translateX(-3px);}
+.fb-s{background:var(--savanna);color:#fff;box-shadow:0 4px 16px rgba(200,120,32,.3);}
+.fb-s:hover{background:var(--savanna-deep);}
+.fb-o{background:var(--sunset);color:#fff;box-shadow:0 4px 16px rgba(208,64,16,.25);}
+.fb-o:hover{background:#a03010;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--savanna);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#4a3010;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--savanna);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .must-grid{grid-template-columns:1fr 1fr;}
+  .costs-cols{grid-template-columns:1fr;}
+  .policy-card{grid-template-columns:1fr;}
+  .policy-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+  .consult-card{flex-direction:column;gap:20px;}
+  .op-hero-balloon{flex-wrap:wrap;}
+  .balloon-price{margin-left:0;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(200,120,32,.08);min-width:50%;}
+  .hl-grid,.itinerary,.optional-wrap,.shop-policy,.costs,.consult,.notices{padding-left:16px;padding-right:16px;}
+  .hl-grid{grid-template-columns:1fr;}
+  .yc-alert{padding:0 16px 20px;}
+  .must-grid{grid-template-columns:1fr;padding:0;}
+  .sec-head{padding:36px 16px 20px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn fb-s">🦁 立即咨询</a>
+  <a href="#consult" class="float-btn fb-o">💬 咨询顾问高盼</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#optional">自费清单</a>
+      <a href="#shopping">购物政策</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-acacia"></div>
+  <div class="hero-horizon"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="migration-badge">
+      <span class="mbadge">🦬 追踪大迁徙</span>
+      <span class="mbadge">🦁 动物王国</span>
+      <span class="mbadge">0 距离接触</span>
+    </div>
+    <div class="hero-eyebrow">Kenya · 10 Days · Three National Parks · Direct Flight</div>
+    <div class="hero-title">
+      马上趣草原<br>
+      肯尼亚深度探索 · <em>追踪大迁徙</em>
+    </div>
+    <div class="hero-subtitle">探秘非凡 · 动物王国 · 生命的赞歌</div>
+    <div class="hero-sub">
+      南航广州直飞内罗毕 · 马赛马拉+安博塞利+纳瓦沙三大公园<br>
+      乞力马扎罗雪峰下的象群 · 马拉河持枪护卫徒步 · 日落香槟 · 马赛村家访
+    </div>
+    <div class="parks-row">
+      <span class="ppill">🦏 安博塞利（雪山象群）</span>
+      <span class="ppill">🦁 马赛马拉（大迁徙）</span>
+      <span class="ppill">🦢 纳瓦沙湖（鸟类天堂）</span>
+      <span class="ppill">🦒 长颈鹿公园</span>
+    </div>
+    <div class="usp-row">
+      <span class="usp us">✈ 南航广州直飞</span>
+      <span class="usp uo">🦁 三大国家公园</span>
+      <span class="usp ug">🌿 马拉河持枪徒步</span>
+      <span class="usp us">🥂 日落香槟体验</span>
+    </div>
+    <div class="hero-meta">
+      <div class="price-block">
+        <div class="price-lbl">参考价格</div>
+        <div class="price-sub">成人团费 ＋ <strong>必付杂费¥2,000/人</strong></div>
+        <div style="font-size:0.68rem;color:#3a2010;margin-top:2px;">签证+杂费，机场现付</div>
+      </div>
+      <div class="vaccine-note">
+        <span style="font-size:1.4rem;">📋</span>
+        <div><strong>⚠️ 黄皮书（必须提前办理）</strong>入境肯尼亚须持国际防疫接种证明，请提前10天办理</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-savanna">立即咨询团期</a>
+      <a href="#itinerary" class="btn-earth">查看完整行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程手册</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── GRASS DIVIDER ── -->
+<div class="grass-div"></div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">🦁</span>
+      <div class="trust-text"><strong class="cs">马赛马拉大迁徙</strong><span>全球最震撼自然奇观</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🐘</span>
+      <div class="trust-text"><strong class="cs">乞力马扎罗象群</strong><span>雪峰下的生命奇迹</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🥂</span>
+      <div class="trust-text"><strong class="co">日落香槟体验</strong><span>草原金色黄昏</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚶</span>
+      <div class="trust-text"><strong class="cs">持枪护卫徒步</strong><span>马拉河独家深度</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏡</span>
+      <div class="trust-text"><strong class="cg">马赛村家访</strong><span>真实非洲文化体验</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow es">Highlights · 六大深度体验</div>
+    <div class="sec-title">草原之魂 · 非凡探索</div>
+    <div class="sec-sub">不只是观光，是一场与大自然生命脉搏的零距离接触</div>
+  </div>
+  <div class="hl-grid">
+    <div class="hl-item up">
+      <div class="hl-icon">🦬</div>
+      <div class="hl-title">马赛马拉 · 追踪大迁徙</div>
+      <div class="hl-desc">每年7-10月，超过150万头角马和斑马在坦桑尼亚与肯尼亚之间进行壮阔的年度大迁徙，在马拉河的惊天一跃是大自然最残酷也最震撼的生命剧场。</div>
+      <div class="hl-tag ht-s">🦬 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🐘</div>
+      <div class="hl-title">安博塞利 · 乞力马扎罗象群</div>
+      <div class="hl-desc">在非洲第一高峰乞力马扎罗雪峰的壮阔背景下，数十头非洲象悠然漫步，这是全球最经典的野生动物摄影画面之一，每一帧都是震撼人心的大自然杰作。</div>
+      <div class="hl-tag ht-s">🐘 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🚶</div>
+      <div class="hl-title">马拉河持枪护卫徒步</div>
+      <div class="hl-desc">由专业持枪护卫陪同，徒步进入马赛马拉核心区域，感受在野生动物领地中行走的震撼体验——这是标准游船safari无法提供的极致深度探索。</div>
+      <div class="hl-tag ht-o">🚶 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🥂</div>
+      <div class="hl-title">日落香槟 · 篝火夜晚</div>
+      <div class="hl-desc">在金色草原日落中举起一杯香槟，远处是剪影般的金合欢树和归巢的飞鸟；夜晚在Lodge外围的篝火边，听马赛向导讲述星空下草原的故事。</div>
+      <div class="hl-tag ht-o">🥂 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🏡</div>
+      <div class="hl-title">艾尔莎庄园 · 英式下午茶</div>
+      <div class="hl-desc">参观小狮子"艾尔莎"故事发生地——艾尔莎庄园，这里是《狮子与我》的真实取景地。在肯尼亚的热带花园中品尝一杯正宗英式下午茶，感受殖民时代的浪漫遗韵。</div>
+      <div class="hl-tag ht-e">🏡 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🦒</div>
+      <div class="hl-title">长颈鹿公园 · 近距离喂食</div>
+      <div class="hl-desc">在内罗毕的罗斯柴尔德长颈鹿中心，近距离与世界上最高的陆地动物互动喂食，将食物放在手掌上，感受长颈鹿温柔的长舌触碰——老少咸宜的温馨体验。</div>
+      <div class="hl-tag ht-g">🦒 含于团费</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── YELLOW CARD ALERT ── -->
+<div class="yc-alert up">
+  <div class="yc-box">
+    📋 <strong>重要：黄皮书（国际防疫接种证明）</strong>——肯尼亚海关规定，所有入境游客<strong>必须</strong>持有有效的黄热病接种证明（黄皮书）。请在出发前至少<strong>10天</strong>前往指定疾控中心接种黄热病疫苗并领取证明，否则将被拒绝入境。请立即联系顾问了解最近的接种点信息。
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow es">Itinerary · 10日行程</div>
+    <div class="sec-title">肯尼亚 10天深度探索</div>
+    <div class="sec-sub">金色=安博塞利·橙色=马赛马拉·绿色=纳瓦沙·棕色=内罗毕</div>
+  </div>
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">广州 → 内罗毕 · 启程非洲</div>
+          <div class="day-route">南方航空 CZ · 广州直飞内罗毕</div>
+          <div class="day-text">搭乘中国南方航空从广州直飞肯尼亚首都内罗毕，开启这场追踪生命奇迹的草原探索之旅。抵达后导游接机，入住升级版国际五星酒店，感受非洲第一夜。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 南航广州直飞</span>
+            <span class="dtag dtag-inc">✓ 全国联运</span>
+            <span class="dtag dtag-inc">✓ 内罗毕五星酒店</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">前往安博塞利 · 抵达象群故乡</div>
+          <div class="day-route">Amboseli National Park · 第一次Game Drive</div>
+          <div class="day-text">驱车前往安博塞利国家公园，这里是全球最著名的观象地点。乘坐safari越野车开始第一次野外游猎（Game Drive），在非洲第一高峰乞力马扎罗雪峰的壮阔背景下，寻找悠然漫步的象群、斑马、角马与长颈鹿。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-savanna">🐘 安博塞利国家公园</span>
+            <span class="dtag dtag-inc">✓ 第一次Game Drive</span>
+            <span class="dtag dtag-savanna">🏔 乞力马扎罗远景</span>
+            <span class="dtag dtag-inc">✓ 当地特色Lodge入住</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">安博塞利全天游猎 · 雪山日出</div>
+          <div class="day-route">Amboseli · 晨昏两次Game Drive</div>
+          <div class="day-text">全天深度游猎，早晨在朝霞与乞力马扎罗雪峰的金色背景下寻找晨间出动的象群，傍晚在橙红日落中目送动物回巢。安博塞利的光线是非洲最迷人的摄影课——每一刻都值得按下快门。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-savanna">🌅 乞力马扎罗雪山日出</span>
+            <span class="dtag dtag-inc">✓ 晨昏两次Game Drive</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dng">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">裂谷风光 · 艾尔莎庄园</div>
+          <div class="day-route">Rift Valley → Elsa's Kopje</div>
+          <div class="day-text">驱车穿越东非大裂谷，壮阔的地质奇观令人肃然；前往<strong>艾尔莎庄园</strong>，这里是《狮子与我》中小狮子艾尔莎真实生活的地方，在热带花园中品尝精致的<strong>英式下午茶</strong>，感受肯尼亚殖民时代最优雅的历史遗韵。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-earth">🏞 东非大裂谷</span>
+            <span class="dtag dtag-inc">✓ 艾尔莎庄园英式下午茶</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dng">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">纳瓦沙湖 · 埃尔门泰塔湖</div>
+          <div class="day-route">Lake Naivasha · Lake Elementaita</div>
+          <div class="day-text">游览纳瓦沙湖，这片淡水湖是超过400种鸟类的天堂，湖岸边有数千只火烈鸟与其他水鸟栖居；参观<strong>埃尔门泰塔湖</strong>，探索宁静清新的火烈鸟聚居地。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 纳瓦沙湖（鸟类天堂）</span>
+            <span class="dtag dtag-inc">✓ 埃尔门泰塔湖</span>
+            <span class="dtag dtag-opt">可选 纳瓦沙游船 $65/人</span>
+            <span class="dtag dtag-opt">可选 新月岛徒步 $65/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dno">06</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">抵达马赛马拉 · 大迁徙震撼现场</div>
+          <div class="day-route">Masai Mara National Reserve · 世界奇观</div>
+          <div class="day-text">进入全球最著名的野生动物保护区<strong>马赛马拉</strong>，开始追踪大迁徙的壮阔旅程。下午safari游猎，在广袤的稀树草原上寻找狮子、猎豹、犀牛、河马与庞大迁徙兽群；傍晚在草原上举起日落香槟，与大自然最壮丽的黄昏共同干杯。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-savanna">🦁 马赛马拉保护区</span>
+            <span class="dtag dtag-inc">✓ 下午safari游猎</span>
+            <span class="dtag dtag-inc">✓ 日落香槟（随团含）</span>
+            <span class="dtag dtag-inc">✓ 草原Lodge/茅草屋入住</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dno">07</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">马拉河徒步 · 马赛村家访 · 篝火</div>
+          <div class="day-route">Mara River · Maasai Village</div>
+          <div class="day-text">清晨在<strong>马拉河</strong>边进行独家持枪护卫徒步体验，沿着大迁徙角马渡河的传奇地点行走，近距离感受生命与自然的边界；下午参访真实的<strong>马赛村落</strong>，与马赛人共同跳跃舞蹈，了解这个游牧民族的独特文化；夜晚在篝火边与向导一同仰望无边际的非洲星空。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 马拉河持枪护卫徒步</span>
+            <span class="dtag dtag-inc">✓ 马赛村落家访</span>
+            <span class="dtag dtag-inc">✓ 篝火活动</span>
+            <span class="dtag dtag-opt">强烈推荐 热气球 $500起/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dne">08</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">返回内罗毕 · 长颈鹿公园</div>
+          <div class="day-route">Nairobi · Giraffe Centre</div>
+          <div class="day-text">驱车返回内罗毕，参观著名的<strong>罗斯柴尔德长颈鹿中心</strong>，近距离与濒危的罗斯柴尔德长颈鹿互动喂食，感受与高大温柔的非洲巨兽的亲密接触；游览内罗毕城市建筑景观；前往内罗毕当地商场自由购买当地特产礼品。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 长颈鹿公园（含入场+喂食）</span>
+            <span class="dtag dtag-earth">🌆 内罗毕城市游览</span>
+            <span class="dtag dtag-free">🛍 当地商场自由购物</span>
+            <span class="dtag dtag-opt">可选 Safaripark晚宴 $80/人</span>
+            <span class="dtag dtag-opt">可选 Carnivore百兽宴 $70/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dne">09</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">内罗毕 · 自由活动 · 送机</div>
+          <div class="day-route">Nairobi · Departure</div>
+          <div class="day-text">自由活动，最后整理在非洲大地上收获的记忆与照片；下午专车送往乔莫·肯雅塔国际机场，办理登机手续，准备踏上归程。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-free">🗺 自由活动</span>
+            <span class="dtag dtag-fly">✈ 候机返程</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">10</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">抵达广州 · 圆满归途</div>
+          <div class="day-route">南方航空 CZ · 抵达广州</div>
+          <div class="day-text">搭乘南方航空返抵广州，带着草原的金色、象群的壮阔与马赛人的篝火余温，满载非洲生命奇迹的记忆回到家乡。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 南航抵达广州</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── OPTIONAL ── -->
+<div class="optional-wrap" id="optional">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow eo">Optional · 自费项目</div>
+    <div class="sec-title">自愿参加项目清单</div>
+    <div class="sec-sub">自愿参加，绝无强迫；热气球为全程最值得体验的终极项目</div>
+  </div>
+  <div class="op-inner">
+    <!-- Balloon highlight -->
+    <div class="op-hero-balloon up">
+      <div class="balloon-icon">🎈</div>
+      <div class="balloon-text">
+        <strong>马赛马拉热气球之旅（极力推荐）</strong>
+        <span>晨间飞越马赛马拉草原，高空俯瞰角马迁徙全景及草原生态全貌，含草坪冠军早餐（价格随季节浮动）。此生难忘的非洲视角，建议6人起订。</span>
+      </div>
+      <div>
+        <div class="balloon-price">$500<small>起/人</small></div>
+      </div>
+    </div>
+    <div class="op-table-wrap up">
+      <table class="op-table">
+        <thead>
+          <tr>
+            <th>项目名称</th>
+            <th>包含内容说明</th>
+            <th>参考价格（美元/人）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🎈 热气球之旅</strong></td>
+            <td class="note-cell">晨间飞越马赛马拉，含高空俯瞰及草坪早餐（价格随季节浮动）<br><em style="color:var(--sunset);">建议6人起订</em></td>
+            <td class="price-cell">$500 起</td>
+          </tr>
+          <tr>
+            <td><strong>纳库鲁湖公园</strong></td>
+            <td class="note-cell">著名"观鸟天堂"，观赏成千上万的火烈鸟（含门票、车费）</td>
+            <td class="price-cell">$220</td>
+          </tr>
+          <tr>
+            <td><strong>博戈里亚湖</strong></td>
+            <td class="note-cell">壮观的间歇泉及火烈鸟聚居地探索</td>
+            <td class="price-cell">$160</td>
+          </tr>
+          <tr>
+            <td><strong>Safaripark 晚宴</strong></td>
+            <td class="note-cell">极具非洲特色的烤肉餐及传统民族表演</td>
+            <td class="price-cell">$80</td>
+          </tr>
+          <tr>
+            <td><strong>Carnivore 百兽宴</strong></td>
+            <td class="note-cell">世界排名前50的特色餐厅自助烤肉体验</td>
+            <td class="price-cell">$70</td>
+          </tr>
+          <tr>
+            <td><strong>埃尔门泰塔湖</strong></td>
+            <td class="note-cell">探索宁静清新的火烈鸟栖息地</td>
+            <td class="price-cell">$70</td>
+          </tr>
+          <tr>
+            <td><strong>纳瓦沙游船</strong></td>
+            <td class="note-cell">乘船入湖观赏河马群、鱼鹰及各类飞鸟</td>
+            <td class="price-cell">$65</td>
+          </tr>
+          <tr>
+            <td><strong>新月岛徒步</strong></td>
+            <td class="note-cell">湖中孤岛与食草动物漫步（含门票及讲解）</td>
+            <td class="price-cell">$65</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="op-note up">* 所有自费项目均遵循<strong>完全自愿</strong>原则。热气球受天气影响，建议提前向领队确认；部分项目建议6人起订。</div>
+    <div style="font-size:0.74rem;color:var(--savanna-deep);margin-top:10px;padding:10px 14px;background:var(--savanna-lt);border:1px solid rgba(200,120,32,.3);" class="up">
+      📌 <strong>餐费说明：</strong>原行程餐费已抵扣在自费项目费用中，遇用餐时间不另退费。
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOPPING POLICY ── -->
+<div class="shop-policy" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow es">Shopping Policy · 购物政策</div>
+    <div class="sec-title">购物安排说明</div>
+    <div class="sec-sub">深度探索团，不强制购物，所有消费完全自愿</div>
+  </div>
+  <div class="policy-inner">
+    <div class="policy-card up">
+      <div class="policy-col">
+        <div class="policy-col-head ph-g">✓ 购物承诺</div>
+        <ul class="inc-list">
+          <li>本团为深度探索团，不安排任何强制购物店</li>
+          <li>D8内罗毕商场为自由活动，游客完全自主</li>
+          <li>所有购物行为属于游客个人意愿，导游无强制</li>
+          <li>如遇任何强制消费行为，请立即告知领队</li>
+        </ul>
+      </div>
+      <div class="policy-col">
+        <div class="policy-col-head ph-s">○ 内罗毕特产推荐</div>
+        <ul class="exc-list">
+          <li>D8安排内罗毕商场自由购物时间</li>
+          <li>导游可推介当地特色土产（自愿选购）</li>
+          <li>建议在正规商场购买有收据的商品</li>
+        </ul>
+        <div class="souvenir-note">
+          <strong>🛍 肯尼亚著名特产</strong>
+        </div>
+        <div class="prod-tags">
+          <span class="ptag">🦁 木雕艺术品</span>
+          <span class="ptag">☕ 肯尼亚AA咖啡</span>
+          <span class="ptag">🫖 肯尼亚红茶</span>
+          <span class="ptag">🌺 马赛饰品</span>
+          <span class="ptag">🎨 非洲彩绘画</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MUST-PAY & COSTS ── -->
+<div class="costs" id="booking">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow es">Fees · 费用说明</div>
+    <div class="sec-title">必付费用与团费明细</div>
+    <div class="sec-sub">必付杂费¥2,000/人，机场现付</div>
+  </div>
+  <div class="costs-inner">
+    <div class="must-grid">
+      <div class="must-box up">
+        <div class="must-head">必付杂费（¥2,000/人）</div>
+        <ul>
+          <li>签证+杂费合计：<strong>¥2,000元/人</strong></li>
+          <li>于机场现场支付</li>
+          <li>含肯尼亚落地签证及当地杂费</li>
+        </ul>
+      </div>
+      <div class="must-box up">
+        <div class="must-head">单房补差（旺季）</div>
+        <ul>
+          <li>7-8月旺季单房差：<strong>¥5,000元/人</strong></li>
+          <li>6月单房差：<strong>¥3,500元/人</strong></li>
+          <li>如需独住请提前告知顾问确认</li>
+        </ul>
+      </div>
+      <div class="must-box up">
+        <div class="must-head">年龄与健康限制</div>
+        <ul>
+          <li><strong>75岁以上及孕妇</strong>：暂不接待</li>
+          <li><strong>70岁以上</strong>：须健康证及高额保险</li>
+          <li>请出发前充分告知顾问身体状况</li>
+        </ul>
+      </div>
+    </div>
+    <div class="costs-cols up">
+      <div class="cost-box">
+        <div class="cost-head ch-s">团费包含</div>
+        <table class="cost-table">
+          <tr><td>航班</td><td>南方航空广州往返内罗毕直飞</td></tr>
+          <tr><td>住宿</td><td>内罗毕五星酒店＋草原Lodge/茅草屋</td></tr>
+          <tr><td>餐食</td><td>行程内正餐（含英式下午茶）</td></tr>
+          <tr><td>游猎</td><td>全程safari越野车（专属4WD）</td></tr>
+          <tr><td>特色</td><td>马拉河持枪徒步·日落香槟·马赛村家访·篝火</td></tr>
+          <tr><td>公园</td><td>三大国家公园入场费（安博塞利·马赛马拉·纳瓦沙）</td></tr>
+          <tr><td>长颈鹿</td><td>长颈鹿公园入场+喂食</td></tr>
+          <tr><td>导服</td><td>全程中文领队及境外当地导游</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head ch-e">团费不含</div>
+        <table class="cost-table">
+          <tr><td>必付杂费</td><td>¥2,000/人（签证+杂费，机场现付）</td></tr>
+          <tr><td>单房差</td><td>¥3,500-5,000/人（按季节，如需独住）</td></tr>
+          <tr><td>黄皮书</td><td>黄热病疫苗接种费（提前10天办理）</td></tr>
+          <tr><td>自费项目</td><td>热气球·纳库鲁湖等可选体验</td></tr>
+          <tr><td>个人消费</td><td>酒店内私人消费、购物等</td></tr>
+          <tr><td>保险</td><td>70岁以上须购高额保险</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSULTANT ── -->
+<div class="consult" id="consult">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow es">Consultant · 资深草原顾问</div>
+    <div class="sec-title">联系专属草原旅行顾问</div>
+    <div class="sec-sub">有任何疑问或需了解最新团期与旺季席位，请直接联系</div>
+  </div>
+  <div class="consult-inner">
+    <div class="consult-card up">
+      <div class="consult-avatar">🦁</div>
+      <div class="consult-info">
+        <h3>高盼 · 非洲草原线路资深顾问</h3>
+        <p>专注肯尼亚、非洲草原精品线路，熟悉各季动物迁徙规律，为您选择最佳出发时机</p>
+        <div class="consult-contact">
+          <a href="tel:15907190570" class="contact-btn cb-s">📞 15907190570</a>
+          <a href="#" class="contact-btn cb-o">💬 微信咨询</a>
+          <a href="#" class="contact-btn cb-ghost">📄 预约签证办理</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow eo">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读，保障顺畅安全的非洲草原之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>📋 黄皮书（极重要）</h4>
+        <ul>
+          <li>入境肯尼亚<strong>必须</strong>持有黄热病接种证明（黄皮书）</li>
+          <li>请提前至少<strong>10天</strong>前往指定疾控中心接种</li>
+          <li>未持黄皮书者将被海关拒绝入境，费用不退</li>
+          <li>请立即联系顾问了解当地接种点信息</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🛂 证件要求</h4>
+        <ul>
+          <li>护照有效期须在 <strong>6个月以上</strong></li>
+          <li>护照须有至少 <strong>3页连续空白页</strong></li>
+          <li>签证费¥2,000含于必付杂费中，机场现付</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>👴 年龄与健康</h4>
+        <ul>
+          <li><strong>75岁以上及孕妇</strong>：暂不接待</li>
+          <li><strong>70-75岁</strong>：须提供健康证明及购买高额保险</li>
+          <li>safari越野颠簸，有腰背问题者须提前告知</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>⚠️ 安全与脱团</h4>
+        <ul>
+          <li>游猎区域须遵从领队指示，<strong>严禁擅自下车</strong></li>
+          <li>严禁擅自脱团，若脱团将<strong>视为违约解除合同，费用不退</strong></li>
+          <li>草原区域无WIFI，建议提前告知家人行程</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>必付杂费¥2,000/人（签证+杂费），机场现付</span>
+    <span>黄皮书（黄热病接种证明）入境必须，提前10天办理</span>
+    <span>75岁以上及孕妇暂不接待</span>
+    <span>热气球约$500起，受天气影响，建议6人起订</span>
+    <span>游猎区域严禁擅自下车，遵从领队指示</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','optional','shopping','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

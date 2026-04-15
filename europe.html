@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 奢华欧洲5国12天 德法意瑞比纯玩深度游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f4f0;
+  --bg2: #ece9e2;
+  --ink: #14100c;
+  --gold: #c5a059;
+  --gold-lt: #f0e0b8;
+  --royal: #003399;
+  --royal-mid: #1a4aaa;
+  --royal-lt: #d8e4f8;
+  --red: #b03a2e;
+  --teal: #2c6b65;
+  --muted: #7a7060;
+  --border: #d8d0c4;
+  --white: #fdfbf8;
+  --self-bg: #fff8ed;
+  --self-border: #e8c87a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--royal);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--gold);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:rgba(255,255,255,.3);letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--gold);background:rgba(197,160,89,.15);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:540px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(150deg,#001a5a 0%,#003399 50%,#001040 100%);}
+.hero-bg::before{content:'🗼';position:absolute;right:80px;top:20px;font-size:18rem;opacity:.045;line-height:1;filter:blur(1px);}
+.hero-bg::after{content:'⚜️';position:absolute;left:0px;bottom:-20px;font-size:22rem;opacity:.025;line-height:1;}
+.hero-pattern{position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 70px,rgba(197,160,89,.012) 70px,rgba(197,160,89,.012) 71px);z-index:1;}
+.hero-content{position:relative;z-index:2;padding:80px 40px 64px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.8rem);font-style:italic;color:#f0eadc;line-height:1.1;margin-bottom:14px;}
+.hero-title em{color:var(--gold);font-style:normal;}
+.hero-countries{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.country-pill{font-size:0.7rem;letter-spacing:0.1em;color:rgba(255,255,255,.5);border:1px solid rgba(197,160,89,.3);padding:3px 12px;}
+.hero-sub{font-size:0.85rem;color:#5a6a8a;letter-spacing:0.06em;max-width:580px;margin-bottom:28px;line-height:1.9;}
+
+/* price + visa badge */
+.hero-info{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:28px;}
+.price-tag{background:rgba(0,0,0,.3);border:1px solid rgba(197,160,89,.4);padding:12px 22px;}
+.price-lbl{font-size:0.62rem;color:#8a9ab8;letter-spacing:0.1em;margin-bottom:2px;}
+.price-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);line-height:1;}
+.price-unit{font-size:0.72rem;color:#8a9ab8;}
+.visa-badge{background:rgba(44,107,101,.2);border:1px solid rgba(44,107,101,.5);padding:10px 18px;font-size:0.76rem;color:#90c8c0;letter-spacing:0.06em;}
+.visa-badge strong{color:#b0dcd8;display:block;font-size:0.82rem;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--royal);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;font-weight:500;}
+.btn-primary:hover{background:#a08040;}
+.btn-sec{display:inline-block;border:1px solid rgba(197,160,89,.5);color:var(--gold);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-sec:hover{background:rgba(197,160,89,.12);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.8);}
+
+/* ── GIFTS BAND ── */
+.gifts{background:var(--white);border-bottom:1px solid var(--border);}
+.gifts-inner{max-width:1200px;margin:0 auto;padding:28px 40px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;}
+.gifts-lbl{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);white-space:nowrap;border-right:1px solid var(--border);padding-right:20px;}
+.gifts-list{display:flex;flex-wrap:wrap;gap:8px;}
+.gift-tag{font-size:0.7rem;background:var(--royal-lt);color:var(--royal);padding:4px 12px;letter-spacing:0.04em;}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--royal);border-bottom:1px solid rgba(255,255,255,.06);}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid rgba(255,255,255,.06);justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;color:var(--gold);font-weight:400;letter-spacing:0.06em;}
+.trust-text span{font-size:0.68rem;color:rgba(255,255,255,.28);}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--royal);line-height:1;}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#3a3428;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-gift{background:var(--royal-lt);color:var(--royal);}
+.dtag-opt{background:var(--self-bg);color:#8a5c00;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-note{background:#fff0f0;color:var(--red);}
+.dtag-free{background:var(--bg2);color:var(--muted);}
+
+/* ── SELF-PAY TABLE ── */
+.selfpay-wrap{padding:0 40px 56px;}
+.sp-inner{max-width:1200px;margin:0 auto;}
+.sp-table-wrap{overflow-x:auto;}
+.sp-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);}
+.sp-table thead tr{background:var(--royal);}
+.sp-table th{padding:10px 16px;color:var(--gold);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;}
+.sp-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.sp-table tr:last-child td{border-bottom:none;}
+.sp-table tbody tr:nth-child(even) td{background:#fafaf6;}
+.zone-cell{font-weight:500;color:var(--royal);font-size:0.72rem;letter-spacing:0.06em;white-space:nowrap;}
+.price-cell{color:var(--red);font-family:'Cormorant Garamond',serif;font-size:1rem;white-space:nowrap;}
+.note-cell{font-size:0.7rem;color:var(--muted);}
+.sp-note{font-size:0.72rem;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── SHOPPING POLICY ── */
+.shop-policy{padding:0 40px 56px;}
+.policy-inner{max-width:1200px;margin:0 auto;}
+.policy-card{background:var(--white);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.policy-col{padding:28px 30px;}
+.policy-col:first-child{border-right:1px solid var(--border);}
+.policy-col-head{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;}
+.ph-green{color:var(--teal);}
+.ph-royal{color:var(--royal);}
+.policy-col ul{list-style:none;}
+.policy-col li{font-size:0.78rem;color:#3a3428;line-height:1.9;padding-left:16px;position:relative;}
+.policy-col li::before{position:absolute;left:0;}
+.inc-list li::before{content:'✓';color:var(--teal);}
+.exc-list li::before{content:'○';color:var(--royal);}
+
+/* refund block */
+.refund-note{background:var(--royal-lt);border:1px solid rgba(0,51,153,.2);padding:16px 20px;margin-top:16px;font-size:0.77rem;color:var(--royal);}
+.refund-note strong{color:var(--royal);display:block;margin-bottom:4px;}
+
+/* ── COSTS ── */
+.costs{padding:0 40px 56px;}
+.costs-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--royal);color:var(--gold);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── MUST-PAY 3-grid ── */
+.must-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 40px 28px;}
+.must-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.must-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.must-box ul{list-style:none;}
+.must-box li{font-size:0.76rem;color:#3a3428;line-height:1.85;padding-left:14px;position:relative;}
+.must-box li::before{content:'·';position:absolute;left:0;color:var(--gold);}
+.must-box li strong{color:var(--ink);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#3a3428;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;background:var(--red);color:#fff;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:all .2s;white-space:nowrap;}
+.float-btn:hover{background:#8a2a20;transform:translateX(-3px);}
+.float-btn.gold{background:var(--gold);color:var(--royal);}
+.float-btn.gold:hover{background:#a08040;}
+.float-btn.royal{background:var(--royal);color:var(--gold);border:1px solid rgba(197,160,89,.4);}
+.float-btn.royal:hover{background:#001a70;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--royal);border-top:2px solid var(--gold);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:rgba(255,255,255,.28);letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--gold);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .gifts-inner{grid-template-columns:1fr;}
+  .gifts-lbl{border-right:none;border-bottom:1px solid var(--border);padding-right:0;padding-bottom:10px;}
+  .costs-inner{grid-template-columns:1fr;}
+  .must-grid{grid-template-columns:1fr 1fr;}
+  .policy-card{grid-template-columns:1fr;}
+  .policy-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 48px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);min-width:50%;}
+  .sec-head{padding:36px 16px 20px;}
+  .itinerary,.selfpay-wrap,.shop-policy,.costs,.notices{padding-left:16px;padding-right:16px;}
+  .must-grid{grid-template-columns:1fr;padding-left:16px;padding-right:16px;}
+  .gifts-inner{padding:20px 16px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn gold">立即预订 ¥14,999</a>
+  <a href="#selfpay" class="float-btn royal">自费清单</a>
+  <a href="#" class="float-btn">🔍 签证资料清单</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#selfpay">自费清单</a>
+      <a href="#shopping">购物政策</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Europe · 5 Countries · 12 Days · Pure Play</div>
+    <div class="hero-title">
+      奢华欧洲五国<br>
+      德 · 法 · 意 · 瑞 · 比 ＋ <em>巴黎圣母院</em>
+    </div>
+    <div class="hero-countries">
+      <span class="country-pill">🇩🇪 德国</span>
+      <span class="country-pill">🇫🇷 法国</span>
+      <span class="country-pill">🇮🇹 意大利</span>
+      <span class="country-pill">🇨🇭 瑞士</span>
+      <span class="country-pill">🇧🇪 比利时</span>
+      <span class="country-pill">🇱🇺 卢森堡</span>
+    </div>
+    <div class="hero-sub">
+      海南航空上海直飞布鲁塞尔 · 全程无购物纯玩 · 含领队小费进城费酒店税<br>
+      卢浮宫＋凡尔赛宫入内电子讲解 · 菲斯特雪山缆车 · 塞纳河游船 · 黄金大运河
+    </div>
+    <div class="hero-info">
+      <div class="price-tag">
+        <div class="price-lbl">参考价格 · 含申根签证</div>
+        <span class="price-num">¥14,999</span>
+        <span class="price-unit"> 起/人</span>
+      </div>
+      <div class="visa-badge">
+        <strong>✅ 含申根ADS团签证费</strong>
+        无需额外支付签证费用
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-primary">立即预订团期</a>
+      <a href="#itinerary" class="btn-sec">查看完整行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── GIFTS BAND ── -->
+<div class="gifts up">
+  <div class="gifts-inner">
+    <div class="gifts-lbl">重本随行赠送</div>
+    <div class="gifts-list">
+      <span class="gift-tag">🏔 菲斯特雪山缆车</span>
+      <span class="gift-tag">🏛 卢浮宫入内+电子讲解</span>
+      <span class="gift-tag">🏰 凡尔赛宫入内+电子讲解</span>
+      <span class="gift-tag">⛵ 塞纳河游船</span>
+      <span class="gift-tag">🚤 黄金大运河快艇</span>
+      <span class="gift-tag">⛪ 巴黎圣母院</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">✈️</span>
+      <div class="trust-text"><strong>海航直飞</strong><span>上海直飞布鲁塞尔</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚫</span>
+      <div class="trust-text"><strong>纯玩无购物</strong><span>全程零购物店安排</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🎫</span>
+      <div class="trust-text"><strong>重本赠送</strong><span>6大顶级景点全含</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🍝</span>
+      <div class="trust-text"><strong>特色美食</strong><span>墨鱼面·牛肚包·烤肉</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🪪</span>
+      <div class="trust-text"><strong>含申根签证</strong><span>ADS团签全含</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Itinerary · 12日深度行程</div>
+    <div class="sec-title">欧洲五国 · 12天全景游</div>
+    <div class="sec-sub">蓝色标注为随团赠送项目 · 绿色为含于团费 · 橙色边框为自费可选</div>
+  </div>
+
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">上海 → 布鲁塞尔 · 出发</div>
+          <div class="day-route">海南航空直飞 · 上海–布鲁塞尔</div>
+          <div class="day-text">搭乘海南航空从上海直飞比利时布鲁塞尔，无中转，不经停，开启这段横跨五国的奢华欧洲之旅。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 海南航空直飞</span>
+            <span class="dtag dtag-inc">✓ 全国联运接驳</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">比利时 · 布鲁塞尔 → 卢森堡</div>
+          <div class="day-route">Brussels → Luxembourg · 双城联游</div>
+          <div class="day-text">抵达布鲁塞尔后，探访欧洲最著名的小雕像——<strong>撒尿小童于连</strong>，在古老的大广场拍摄最经典的比利时画面；随后驱车前往大公国卢森堡，打卡这座中世纪要塞城市最壮丽的地标<strong>阿道夫大桥</strong>，感受其横跨深谷的磅礴气势。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 布鲁塞尔大广场</span>
+            <span class="dtag dtag-inc">✓ 撒尿小童于连</span>
+            <span class="dtag dtag-inc">✓ 卢森堡阿道夫大桥</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">德国风情 · 新天鹅堡</div>
+          <div class="day-route">Germany · 童话城堡</div>
+          <div class="day-text">深入德国巴伐利亚腹地，外观<strong>新天鹅堡</strong>与<strong>高天鹅堡</strong>——迪士尼城堡的原型，在阿尔卑斯山麓与镜湖倒影的衬托下，这两座城堡构成了欧洲最梦幻的视觉画面。夜宿奥地利因斯布鲁克，漫步古城黄金屋顶街区。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 新天鹅堡（外观）</span>
+            <span class="dtag dtag-inc">✓ 高天鹅堡（外观）</span>
+            <span class="dtag dtag-opt">可选 新天鹅堡内参 €18/人</span>
+            <span class="dtag dtag-meal">🍺 德国猪肘+黑啤 €50/人（自费）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">水城威尼斯 · 黄金大运河</div>
+          <div class="day-route">Venice · 水上迷宫</div>
+          <div class="day-text">抵达水上之城威尼斯，乘坐<strong>黄金大运河快艇</strong>（随团赠送），在这条威尼斯最宽阔的水道上穿越百年历史的宫殿与教堂；漫步<strong>圣马可广场</strong>，欣赏拜占庭式大教堂的精美马赛克壁画；路过<strong>叹息桥</strong>，感受这座城市凝固在时光里的浪漫忧郁。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-gift">🎁 黄金大运河快艇（赠送）</span>
+            <span class="dtag dtag-inc">✓ 圣马可广场</span>
+            <span class="dtag dtag-inc">✓ 叹息桥</span>
+            <span class="dtag dtag-opt">可选 贡多拉 €60-70/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">佛罗伦萨 · 文艺复兴之城</div>
+          <div class="day-route">Florence · 艺术圣地</div>
+          <div class="day-text">漫步托斯卡纳的艺术之都，仰望<strong>圣母百花大教堂</strong>那举世无双的红色穹顶，感受15世纪工程奇迹的震撼；在旧桥上俯瞰阿诺河流经的金色城市；品尝佛罗伦萨最地道的街头小吃——<strong>牛肚包</strong>（朗博包，团费已含），感受最真实的市井滋味。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 圣母百花大教堂</span>
+            <span class="dtag dtag-inc">✓ 旧桥</span>
+            <span class="dtag dtag-meal">🥪 佛罗伦萨牛肚包（含于团费）</span>
+            <span class="dtag dtag-opt">可选 罗马深度游 €85-90/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">罗马 · 永恒之城</div>
+          <div class="day-route">Rome · 古文明圣地</div>
+          <div class="day-text">置身两千年历史的永恒之城，站在雄伟的<strong>古罗马斗兽场</strong>前，感受共和国时代的壮阔史诗；漫步<strong>君士坦丁凯旋门</strong>，凝视帝国荣光的最后印记；夜游特雷维喷泉，在月光下投下愿望之币。可选梵蒂冈大教堂专业讲解。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 古罗马斗兽场</span>
+            <span class="dtag dtag-inc">✓ 君士坦丁凯旋门</span>
+            <span class="dtag dtag-opt">可选 梵蒂冈大教堂讲解 €80/人</span>
+            <span class="dtag dtag-meal">🥩 意式T骨牛排（自费 €70/人）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">07</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">瑞士 · 琉森湖畔</div>
+          <div class="day-route">Lucerne · Switzerland</div>
+          <div class="day-text">进入风景如画的瑞士，漫步<strong>琉森湖</strong>畔，欣赏倒映着雪山的碧蓝湖面；走过中世纪木廊桥卡佩尔桥，感受瑞士小城最精致的旧世界风情。前往因特拉肯，为明日的雪山之旅做好准备。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 琉森湖</span>
+            <span class="dtag dtag-inc">✓ 卡佩尔廊桥</span>
+            <span class="dtag dtag-opt">可选 金色山口快车 €130-140/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">08</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">瑞士秘境 · 菲斯特雪山（赠送）</div>
+          <div class="day-route">First Mountain · 2167m</div>
+          <div class="day-text">今日重磅！随团赠送<strong>菲斯特缆车</strong>登顶，海拔2,167米的菲斯特悬崖步道蜿蜒于绝壁之上，俯瞰格林德瓦冰川山谷与三座阿尔卑斯雪峰，零距离感受"欧洲屋脊"的震撼；下午自由漫步因特拉肯小镇，感受瑞士度假小城的惬意氛围。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-gift">🎁 菲斯特雪山缆车（随团赠送）</span>
+            <span class="dtag dtag-inc">✓ 悬崖步道</span>
+            <span class="dtag dtag-free">🗺 因特拉肯自由活动</span>
+            <span class="dtag dtag-opt">可选 少女峰雪山 €240/人</span>
+            <span class="dtag dtag-meal">🧀 瑞士奶酪火锅（自费 €50-70/人）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">09</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">浪漫巴黎 · 卢浮宫深度游</div>
+          <div class="day-route">Paris · Louvre &amp; Seine</div>
+          <div class="day-text">抵达浪漫之都巴黎，随团赠送<strong>卢浮宫入内参观及电子讲解</strong>，探寻《蒙娜丽莎》《断臂维纳斯》与《萨莫色雷斯的胜利女神》等人类文明瑰宝；随后乘坐随团赠送的<strong>塞纳河游船</strong>，在河面上优雅掠过大皇宫、奥赛美术馆与巴黎圣母院，感受"光之城"最温柔的一面。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-gift">🎁 卢浮宫入内+电子讲解（赠送）</span>
+            <span class="dtag dtag-gift">🎁 塞纳河游船（赠送）</span>
+            <span class="dtag dtag-opt">可选 红磨坊/丽都表演 €250-260/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">10</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">巴黎 · 凡尔赛宫 · 圣母院</div>
+          <div class="day-route">Paris · Versailles &amp; Notre-Dame</div>
+          <div class="day-text">随团赠送<strong>凡尔赛宫入内及电子讲解</strong>，穿越太阳王路易十四的金碧辉煌宫殿与镜厅，漫步法式几何美学的御花园；下午随团入内参观历经火灾后修缮的<strong>巴黎圣母院</strong>；傍晚在奥斯曼大街或<strong>老佛爷百货</strong>自由购物，欣赏华灯初上的巴黎街景。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-gift">🎁 凡尔赛宫入内+电子讲解（赠送）</span>
+            <span class="dtag dtag-gift">🎁 巴黎圣母院（赠送）</span>
+            <span class="dtag dtag-free">🛍 老佛爷百货自由活动</span>
+            <span class="dtag dtag-opt">可选 枫丹白露宫 €85-90/人</span>
+            <span class="dtag dtag-meal">🍷 法式特色大餐（自费 €90/人）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">11</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">巴黎 → 布鲁塞尔 · 候机</div>
+          <div class="day-route">Paris → Brussels · 返程前夜</div>
+          <div class="day-text">驱车返回布鲁塞尔，在比利时享用最后一晚欧洲美食，品尝比利时松饼与手工巧克力。整理行装，为明日归程做好准备。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 返回布鲁塞尔</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">12</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">布鲁塞尔 → 上海 · 圆满返程</div>
+          <div class="day-route">海南航空直飞返程</div>
+          <div class="day-text">前往布鲁塞尔机场，搭乘海南航空直飞上海，带着五国璀璨记忆踏上归途。<strong>重要提醒</strong>：回国后24小时内须将护照原件和登机牌交给领队办理销签手续。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 海南航空直飞返程</span>
+            <span class="dtag dtag-note">⚠ 回国24H内须办理销签（护照+登机牌）</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SELF-PAY TABLE ── -->
+<div class="selfpay-wrap" id="selfpay">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Optional Activities · 自费项目</div>
+    <div class="sec-title">自费项目参考清单</div>
+    <div class="sec-sub">以下项目均为<strong>自愿参加，绝无强制</strong>；价格以出发时实际为准</div>
+  </div>
+  <div class="sp-inner">
+    <div class="sp-table-wrap up">
+      <table class="sp-table">
+        <thead>
+          <tr>
+            <th>目的地</th>
+            <th>自费项目名称</th>
+            <th>包含内容说明</th>
+            <th>参考价格（欧元/人）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="zone-cell" rowspan="5">🇫🇷 法国<br>France</td>
+            <td><strong>红磨坊 / 丽都表演</strong></td>
+            <td class="note-cell">门票+车费+司导费（含饮料/香槟）</td>
+            <td class="price-cell">€250–260</td>
+          </tr>
+          <tr>
+            <td><strong>枫丹白露宫</strong></td>
+            <td class="note-cell">门票+交通+专业讲解</td>
+            <td class="price-cell">€85–90</td>
+          </tr>
+          <tr>
+            <td><strong>巴黎深度游</strong></td>
+            <td class="note-cell">浪漫深度之旅（约2.5小时）</td>
+            <td class="price-cell">€85–95</td>
+          </tr>
+          <tr>
+            <td><strong>巴黎歌剧院 / 荣军院</strong></td>
+            <td class="note-cell">门票+讲解+服务费</td>
+            <td class="price-cell">€70–80</td>
+          </tr>
+          <tr>
+            <td><strong>法式特色大餐</strong></td>
+            <td class="note-cell">含服务费、餐费、酒水</td>
+            <td class="price-cell">€90</td>
+          </tr>
+          <tr>
+            <td class="zone-cell" rowspan="3">🇨🇭 瑞士<br>Switzerland</td>
+            <td><strong>少女峰雪山</strong></td>
+            <td class="note-cell">欧洲屋脊体验（约5小时）</td>
+            <td class="price-cell">€240</td>
+          </tr>
+          <tr>
+            <td><strong>金色山口快车</strong></td>
+            <td class="note-cell">火车票+预订费+服务费</td>
+            <td class="price-cell">€130–140</td>
+          </tr>
+          <tr>
+            <td><strong>瑞士奶酪火锅餐</strong></td>
+            <td class="note-cell">含预订费及餐费</td>
+            <td class="price-cell">€50–70</td>
+          </tr>
+          <tr>
+            <td class="zone-cell" rowspan="4">🇮🇹 意大利<br>Italy</td>
+            <td><strong>威尼斯贡多拉</strong></td>
+            <td class="note-cell">船票+服务费（约30分钟）</td>
+            <td class="price-cell">€60–70</td>
+          </tr>
+          <tr>
+            <td><strong>梵蒂冈大教堂讲解</strong></td>
+            <td class="note-cell">官方专业讲解</td>
+            <td class="price-cell">€80</td>
+          </tr>
+          <tr>
+            <td><strong>罗马深度游</strong></td>
+            <td class="note-cell">罗马假日精彩深度游</td>
+            <td class="price-cell">€85–90</td>
+          </tr>
+          <tr>
+            <td><strong>意式T骨牛排餐</strong></td>
+            <td class="note-cell">特色意式餐饮体验</td>
+            <td class="price-cell">€70</td>
+          </tr>
+          <tr>
+            <td class="zone-cell" rowspan="2">🇩🇪 德国<br>Germany</td>
+            <td><strong>德国猪肘餐+黑啤酒</strong></td>
+            <td class="note-cell">经典德意志美味体验</td>
+            <td class="price-cell">€50</td>
+          </tr>
+          <tr>
+            <td><strong>宝马世界（BMW）</strong></td>
+            <td class="note-cell">参观宝马慕尼黑总部（约1小时）</td>
+            <td class="price-cell">€60</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sp-note up">* 所有自费项目均遵循<strong>完全自愿</strong>原则，不存在任何强制消费。欧元价格为参考价，以出发时实际报价为准。</div>
+  </div>
+</div>
+
+<!-- ── SHOPPING POLICY ── -->
+<div class="shop-policy" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Shopping Policy · 购物政策</div>
+    <div class="sec-title">纯玩无购物 · 退税须知</div>
+    <div class="sec-sub">本团为纯玩无购物团，全程透明公示</div>
+  </div>
+  <div class="policy-inner">
+    <div class="policy-card up">
+      <div class="policy-col">
+        <div class="policy-col-head ph-green">✓ 纯玩承诺</div>
+        <ul class="inc-list">
+          <li>全程无任何旅游局指定购物店安排</li>
+          <li>全程无任何旅行社指定购物店安排</li>
+          <li>团费已含领队小费、进城费、酒店税及签证费</li>
+          <li>老佛爷百货、奥斯曼大街属当地商业区，游客完全自主消费</li>
+          <li>任何景区附近商店的消费均为游客个人自由行为</li>
+        </ul>
+      </div>
+      <div class="policy-col">
+        <div class="policy-col-head ph-royal">○ 退税须知（欧盟规定）</div>
+        <ul class="exc-list">
+          <li>退税是欧盟对非欧盟公民购物消费的合法优惠政策</li>
+          <li>导游会协助讲解退税申请流程和所需单据</li>
+          <li>退税手续必须由购物者<strong>本人亲自办理</strong></li>
+          <li>退税全程由购物者本人全权负责，旅行社不承担代办义务</li>
+          <li>建议购物后立即索取退税单据，避免离境前手忙脚乱</li>
+        </ul>
+        <div class="refund-note">
+          <strong>💡 退税小贴士</strong>
+          欧盟境内购物满175欧元（法国）或100欧元（其他国家）即可申请退税，退税比例约12%~15%。请在购物时主动向商家索取 Tax Refund 退税单。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MUST PAY ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Mandatory Fees · 必付项目</div>
+    <div class="sec-title">团费外必付说明</div>
+    <div class="sec-sub">以下费用请出发前充分了解</div>
+  </div>
+  <div class="must-grid">
+    <div class="must-box up">
+      <div class="must-head">单房差</div>
+      <ul>
+        <li>单房差：<strong>¥3,500元/人</strong></li>
+        <li>如需独享单人房请提前告知顾问</li>
+        <li>酒店严禁室内吸烟，违者面临高额罚款</li>
+      </ul>
+    </div>
+    <div class="must-box up">
+      <div class="must-head">签证要求</div>
+      <ul>
+        <li>申根签证需按预约时间前往指定签证中心</li>
+        <li>需采集<strong>十指指纹</strong>及拍照，请提前预约</li>
+        <li>签证费已含于团费¥14,999中，无需另付</li>
+      </ul>
+    </div>
+    <div class="must-box up">
+      <div class="must-head">脱团违约</div>
+      <ul>
+        <li>境外擅自脱团违约金：<strong>€200/人/天</strong></li>
+        <li>回国后24小时内须办理销签（<strong>护照原件+登机牌</strong>）</li>
+        <li>未及时销签将列入使馆黑名单，影响日后签证申请</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── COSTS ── -->
+<div class="costs" id="booking">
+  <div class="costs-inner">
+    <div class="cost-box up">
+      <div class="cost-head">费用包含</div>
+      <table class="cost-table">
+        <tr><td>航班</td><td>海南航空上海往返布鲁塞尔直飞机票</td></tr>
+        <tr><td>住宿</td><td>全程指定酒店（标准双人间）</td></tr>
+        <tr><td>餐食</td><td>行程内含餐（含意式墨鱼面·牛肚包·土耳其烤肉）</td></tr>
+        <tr><td>赠送景点</td><td>菲斯特缆车·卢浮宫·凡尔赛宫·塞纳河·黄金大运河·圣母院</td></tr>
+        <tr><td>讲解</td><td>卢浮宫·凡尔赛宫电子导览讲解设备</td></tr>
+        <tr><td>领队</td><td>全程中文领队及境外导游服务费</td></tr>
+        <tr><td>杂费</td><td>领队小费·进城费·酒店税全含</td></tr>
+        <tr><td>签证</td><td>申根ADS团队签证费（已含于团费）</td></tr>
+      </table>
+    </div>
+    <div class="cost-box up">
+      <div class="cost-head">费用不含</div>
+      <table class="cost-table">
+        <tr><td>自费项目</td><td>所有标注"自费"的可选体验</td></tr>
+        <tr><td>单房差</td><td>¥3,500元/人（如需独享单人房）</td></tr>
+        <tr><td>个人消费</td><td>酒店内私人消费·洗衣·通讯·酒水</td></tr>
+        <tr><td>超额行李</td><td>超出航司免费行李额度的费用</td></tr>
+        <tr><td>脱团违约</td><td>擅自脱团罚款€200/人/天</td></tr>
+        <tr><td>保险</td><td>建议另行购买个人境外意外险</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请务必仔细阅读，保障顺畅愉快的欧洲之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>🔏 销签规定（极重要）</h4>
+        <ul>
+          <li>回国后 <strong>24小时内</strong> 必须将<strong>护照原件和登机牌</strong>交给领队办理销签</li>
+          <li>未按时办理销签将被列入使馆黑名单</li>
+          <li>一旦列入黑名单，将严重影响日后申请申根签证</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🖐 签证指纹采集</h4>
+        <ul>
+          <li>申根签证需按预约时间前往签证中心</li>
+          <li>须采集<strong>十指指纹</strong>及正面照片</li>
+          <li>请提前通过旅行社预约签证中心时段，避免过期</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>💧 饮水与日用品</h4>
+        <ul>
+          <li>欧洲自来水可直接饮用，安全放心</li>
+          <li>酒店通常<strong>不提供开水壶</strong>，建议自备保温杯</li>
+          <li>部分酒店不提供一次性牙刷等洗漱用品，请自备</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>💶 现金规定</h4>
+        <ul>
+          <li>欧盟海关规定，入境建议每人每天携带不少于 <strong>€120欧元</strong> 现金</li>
+          <li>欧洲大部分场所支持刷卡，但现金备用仍不可少</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>参考团费¥14,999已含申根ADS团签证费</span>
+    <span>全程纯玩无购物，零购物店安排</span>
+    <span>6大景点随团赠送（缆车·卢浮宫·凡尔赛宫·游船·运河·圣母院）</span>
+    <span>回国24小时内必须持护照+登机牌办理销签</span>
+    <span>自费项目均为自愿参加，绝无强制消费</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html" class="current">🇪🇺 欧洲 · 本页</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','selfpay','shopping','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

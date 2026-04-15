@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 全民澳洲 悉尼+墨尔本+堪培拉 8天6晚纯玩团</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f7fa;
+  --bg2: #e8edf3;
+  --ink: #0d1a2a;
+  --gold: #b8903c;
+  --aus-blue: #002147;
+  --aus-mid: #1a4a7a;
+  --aus-lt: #d0e4f5;
+  --red: #b03a2e;
+  --teal: #2c6b65;
+  --amber: #c07820;
+  --muted: #6a7a8a;
+  --border: #c8d5e0;
+  --white: #fafcff;
+  --self-bg: #fff8ed;
+  --self-border: #e8c87a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--aus-blue);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--amber);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--amber);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:rgba(255,255,255,.3);letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--amber);background:rgba(192,120,32,.15);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(150deg,#001530 0%,#002147 45%,#001a38 100%);}
+.hero-bg::before{content:'🦘';position:absolute;right:60px;top:40px;font-size:16rem;opacity:.05;line-height:1;}
+.hero-bg::after{content:'🌊';position:absolute;left:-20px;bottom:-10px;font-size:18rem;opacity:.04;line-height:1;}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(170deg,transparent,transparent 80px,rgba(255,255,255,.008) 80px,rgba(255,255,255,.008) 81px);z-index:1;}
+.hero-content{position:relative;z-index:2;padding:80px 40px 60px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--amber);text-transform:uppercase;margin-bottom:18px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.7rem);font-style:italic;color:#edf4fc;line-height:1.1;margin-bottom:14px;}
+.hero-title em{color:var(--amber);font-style:normal;}
+.hero-sub{font-size:0.85rem;color:#5a7a9a;letter-spacing:0.06em;max-width:580px;margin-bottom:28px;line-height:1.9;}
+
+/* pure-play badge */
+.pure-badge{display:inline-flex;align-items:center;gap:14px;background:rgba(0,33,71,.6);border:1px solid rgba(192,120,32,.4);padding:10px 20px;margin-bottom:30px;}
+.pb-icon{font-size:1rem;}
+.pb-txt{font-size:0.76rem;color:#8aaac8;letter-spacing:0.08em;}
+.pb-txt strong{color:#c8e0f0;display:block;font-size:0.85rem;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn-primary{display:inline-block;background:var(--amber);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;}
+.btn-primary:hover{background:#9a6010;}
+.btn-sec{display:inline-block;border:1px solid rgba(192,120,32,.5);color:var(--amber);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-sec:hover{background:rgba(192,120,32,.1);}
+.hero-price{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:#edf4fc;line-height:1;}
+.hero-price-lbl{font-size:0.62rem;color:#5a7a9a;letter-spacing:0.1em;display:block;margin-bottom:2px;}
+.hero-price-unit{font-size:0.72rem;color:#5a7a9a;}
+.early-bird{font-size:0.7rem;color:var(--amber);letter-spacing:0.08em;margin-left:10px;background:rgba(192,120,32,.12);padding:3px 10px;border:1px solid rgba(192,120,32,.3);}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--aus-blue);border-bottom:1px solid rgba(255,255,255,.06);}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid rgba(255,255,255,.06);justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;color:var(--amber);font-weight:400;letter-spacing:0.06em;}
+.trust-text span{font-size:0.68rem;color:rgba(255,255,255,.28);}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS 4-grid ── */
+.hl-wrap{max-width:1200px;margin:0 auto;padding:0 40px 52px;}
+.hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:24px 20px;display:flex;flex-direction:column;gap:9px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;}
+.hl-tag{font-size:0.62rem;background:var(--aus-lt);color:var(--aus-mid);padding:2px 8px;align-self:flex-start;margin-top:auto;}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--aus-mid);line-height:1;}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#3a4a5a;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-opt{background:var(--self-bg);color:#8a5c00;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#fce4ec;color:#880e4f;}
+.dtag-note{background:#fff0f0;color:var(--red);}
+.dtag-free{background:var(--aus-lt);color:var(--aus-mid);}
+
+/* ── SELF-PAY TABLE ── */
+.selfpay-wrap{padding:0 40px 56px;}
+.sp-inner{max-width:1200px;margin:0 auto;}
+.sp-table-wrap{overflow-x:auto;}
+.sp-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);}
+.sp-table thead tr{background:var(--aus-blue);}
+.sp-table th{padding:10px 16px;color:var(--amber);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;}
+.sp-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.sp-table tr:last-child td{border-bottom:none;}
+.sp-table tbody tr:nth-child(even) td{background:#f4f8fc;}
+.sp-table .zone{font-weight:500;color:var(--aus-mid);font-size:0.72rem;letter-spacing:0.06em;}
+.sp-table .price{color:var(--red);font-family:'Cormorant Garamond',serif;font-size:1rem;white-space:nowrap;}
+.sp-table .note-cell{font-size:0.7rem;color:var(--muted);}
+.sp-note{font-size:0.72rem;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── SHOPPING POLICY ── */
+.shop-policy{padding:0 40px 56px;}
+.sp-policy-inner{max-width:1200px;margin:0 auto;}
+.policy-card{background:var(--white);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.policy-col{padding:28px 30px;}
+.policy-col:first-child{border-right:1px solid var(--border);}
+.policy-head{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;}
+.policy-head-green{color:var(--teal);}
+.policy-head-blue{color:var(--aus-mid);}
+.policy-col ul{list-style:none;}
+.policy-col li{font-size:0.78rem;color:#3a4a5a;line-height:1.9;padding-left:16px;position:relative;}
+.policy-col li::before{position:absolute;left:0;}
+.inc-list li::before{content:'✓';color:var(--teal);}
+.exc-list li::before{content:'○';color:var(--aus-mid);}
+
+/* ── COSTS ── */
+.costs{padding:0 40px 56px;}
+.costs-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--aus-blue);color:var(--amber);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#3a4a5a;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;background:var(--amber);color:#fff;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:all .2s;white-space:nowrap;}
+.float-btn:hover{background:#9a6010;transform:translateX(-3px);}
+.float-btn.alt{background:var(--aus-blue);color:var(--amber);border:1px solid rgba(192,120,32,.4);}
+.float-btn.alt:hover{background:#001030;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--aus-blue);border-top:2px solid var(--amber);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:rgba(255,255,255,.28);letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--amber);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:var(--gold);border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:var(--gold);border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .costs-inner{grid-template-columns:1fr;}
+  .policy-card{grid-template-columns:1fr;}
+  .policy-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);min-width:50%;}
+  .hl-grid{grid-template-columns:1fr;}
+  .hl-wrap,.itinerary,.selfpay-wrap,.shop-policy,.costs,.notices{padding-left:16px;padding-right:16px;}
+  .sec-head{padding:36px 16px 20px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#itinerary" class="float-btn">📅 咨询最新档期</a>
+  <a href="#selfpay" class="float-btn alt">💰 查看自费清单</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#selfpay">自费清单</a>
+      <a href="#shopping">购物政策</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Australia · Sydney · Canberra · Melbourne · 8 Days</div>
+    <div class="hero-title">
+      全民澳洲<br>
+      悉尼 ＋ 堪培拉 ＋ <em>墨尔本</em> 8天纯玩
+    </div>
+    <div class="hero-sub">
+      吉祥航空上海直飞 · 悉尼进墨尔本出不走回头路<br>
+      大洋路十二门徒岩 · 袋鼠肉餐 · 牛排特色餐 · 全程无购物
+    </div>
+
+    <div class="pure-badge up">
+      <span class="pb-icon">🚫</span>
+      <div class="pb-txt">
+        <strong>纯玩无购物保障</strong>
+        全程无任何旅游局及旅行社指定购物店
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <div>
+        <span class="hero-price-lbl">参考价格</span>
+        <span class="hero-price">¥ 电询</span>
+        <span class="hero-price-unit"> 起/人</span>
+        <span class="early-bird">⚡ 联运最高补贴¥300 · 前10名</span>
+      </div>
+      <a href="#itinerary" class="btn-primary">查看完整行程</a>
+      <a href="#selfpay" class="btn-sec">自费项目清单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">✈️</span>
+      <div class="trust-text"><strong>吉祥航空直飞</strong><span>上海直飞·双点进出</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚫</span>
+      <div class="trust-text"><strong>真无购物</strong><span>全程零购物店安排</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🦘</span>
+      <div class="trust-text"><strong>袋鼠肉特色餐</strong><span>升级澳洲特色牛排</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🌊</span>
+      <div class="trust-text"><strong>大洋路奇观</strong><span>十二门徒岩壮丽海景</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏨</span>
+      <div class="trust-text"><strong>三至四星酒店</strong><span>全程品质住宿保障</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Highlights · 核心亮点</div>
+    <div class="sec-title">四大出行保障</div>
+    <div class="sec-sub">纯玩高品质，每一项都经过严格甄选</div>
+  </div>
+  <div class="hl-wrap" style="padding-top:0;">
+    <div class="hl-grid">
+      <div class="hl-item up">
+        <div class="hl-icon">✈️</div>
+        <div class="hl-title">优选直飞航空</div>
+        <div class="hl-desc">吉祥航空上海直飞，悉尼进·墨尔本出，双城进出不走回头路，全国50+城市联运补贴最高¥300/人。</div>
+        <div class="hl-tag">全程直飞</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🚫</div>
+        <div class="hl-title">纯玩无购物</div>
+        <div class="hl-desc">全程无任何旅游局及旅行社指定购物店安排。鱼市场等属个人自主商业行为，绝非行程内购物安排。</div>
+        <div class="hl-tag">零购物承诺</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🥩</div>
+        <div class="hl-title">升级特色美食</div>
+        <div class="hl-desc">中式六菜一汤保障每日正餐品质，特别升级袋鼠肉特色餐与澳洲风味牛排餐，体验最地道南半球滋味。</div>
+        <div class="hl-tag">特色餐升级</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🎙️</div>
+        <div class="hl-title">资深中文讲解</div>
+        <div class="hl-desc">经典历史古迹及博物馆安排资深中文导游深度讲解，让您真正读懂澳洲的历史文化底蕴与自然奇观。</div>
+        <div class="hl-tag">专业讲解</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Itinerary · 8日行程</div>
+    <div class="sec-title">悉尼·堪培拉·墨尔本 深度8天</div>
+    <div class="sec-sub">绿色为行程包含 · 橙色边框为自费可选 · 蓝色为自由活动</div>
+  </div>
+
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">上海 → 悉尼 · 出发</div>
+          <div class="day-route">吉祥航空直飞 HO1669 · 上海出发</div>
+          <div class="day-text">搭乘吉祥航空直飞班机从上海出发，飞越印度洋，开启这趟南半球8天深度之旅。请至少提前6小时抵达机场，办理托运及登机手续。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 吉祥航空直飞 HO1669</span>
+            <span class="dtag dtag-note">⚠ 请提前6小时抵达机场</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">悉尼 · 地标巡礼</div>
+          <div class="day-route">Sydney · 城市经典</div>
+          <div class="day-text">抵达悉尼，立即开启城市精华游览。漫步<strong>皇家植物园</strong>，移步<strong>麦考利夫人椅子公园</strong>（入内），在港湾全景前留下最美合照；外观全球最具标志性的<strong>悉尼歌剧院</strong>；乘船远眺<strong>海港大桥</strong>，感受这座港湾之城的辽阔气势；最后逛南半球规模最大的<strong>悉尼鱼市场</strong>，午餐可在此自理享用最新鲜的海鲜。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 皇家植物园</span>
+            <span class="dtag dtag-inc">✓ 麦考利夫人椅子公园（入内）</span>
+            <span class="dtag dtag-inc">✓ 悉尼歌剧院（外观）</span>
+            <span class="dtag dtag-inc">✓ 海港大桥游船远眺</span>
+            <span class="dtag dtag-inc">✓ 悉尼鱼市场（参观）</span>
+            <span class="dtag dtag-meal">🍽 鱼市场午餐自理</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">悉尼 · 自由漫步或深度选游</div>
+          <div class="day-route">Sydney · 弹性活动日</div>
+          <div class="day-text">全天弹性安排。您可选择自由探索悉尼，感受这座充满活力的多元城市；或报名参加<strong>悉尼 City Walk 深度游</strong>（自费），走进《哈利·波特》取景地悉尼大学，登上悉尼塔俯瞰360°全景，穿越热闹步行街，最后抵达网红地标邦迪海滩，打卡无边际泳池。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-free">🗺 自由活动</span>
+            <span class="dtag dtag-opt">可选 悉尼City Walk深度游 AUD 280/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">农庄风情 · 悉尼 → 堪培拉</div>
+          <div class="day-route">Sydney → Canberra · 田园过渡</div>
+          <div class="day-text">出发前可选参加有逾200年历史的<strong>卡姆斯利山城市农场</strong>（自费），亲身观看专业剪羊毛和牧羊犬表演，近距离喂食考拉与袋鼠等可爱动物，是家庭游客最受欢迎的互动体验。随后驱车前往澳大利亚首都堪培拉，感受首都的规划气度与宁静氛围。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-opt">可选 卡姆斯利山城市农场（见合同详情）</span>
+            <span class="dtag dtag-inc">✓ 前往堪培拉</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">堪培拉 · 首都掠影 → 奥尔伯里</div>
+          <div class="day-route">Canberra → Albury · 首都深度</div>
+          <div class="day-text">深度游览澳大利亚首都核心区：入内参观气势恢宏的<strong>国会大厦</strong>，了解联邦议会历史；漫步<strong>伯利格里芬湖</strong>畔，感受这座规划之都的湖光山色；游览<strong>皇家铸币厂</strong>，近距离了解澳币的铸造工艺。下午驱车前往奥尔伯里，入住这座可爱的边境小镇酒店，享受一晚澳洲乡间氛围。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 国会大厦（入内）</span>
+            <span class="dtag dtag-inc">✓ 伯利格里芬湖</span>
+            <span class="dtag dtag-inc">✓ 皇家铸币厂</span>
+            <span class="dtag dtag-inc">✓ 奥尔伯里小镇住宿</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">墨尔本 · 艺术与文化</div>
+          <div class="day-route">Melbourne · 城市探索</div>
+          <div class="day-text">抵达墨尔本，走进这座南半球最具文艺气质的城市。打卡南半球最高的哥特式建筑<strong>圣派翠克大教堂</strong>；外观《神秘博士》取景地<strong>库克船长小屋</strong>；最后走进墨尔本网红艺术地标<strong>霍西尔巷（涂鸦街）</strong>，在五彩斑斓的街头艺术中尽情拍照留念。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 圣派翠克大教堂（南半球最高）</span>
+            <span class="dtag dtag-inc">✓ 库克船长小屋（外观）</span>
+            <span class="dtag dtag-inc">✓ 网红涂鸦街（霍西尔巷）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">07</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">墨尔本 · 大洋路自然奇观（强烈推荐）</div>
+          <div class="day-route">Melbourne · Great Ocean Road</div>
+          <div class="day-text">今日强烈推荐参加<strong>大洋路全景自费游</strong>，沿全球最美沿海公路一路驰骋，抵达世界自然遗产<strong>十二门徒岩</strong>，站在悬崖边俯瞰南大洋的惊涛拍岸与巨石林立，此刻的震撼将成为整趟旅程最难忘的记忆。如不参加，则在墨尔本享受自由活动。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-opt">强烈推荐 大洋路（十二门徒岩）AUD 260/人</span>
+            <span class="dtag dtag-opt">可叠加 伦敦断桥+沉船谷 AUD 50/人</span>
+            <span class="dtag dtag-free">🗺 不参加则自由活动</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">08</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">墨尔本 → 上海 · 圆满返程</div>
+          <div class="day-route">吉祥航空直飞 HO1665 · 墨尔本出发</div>
+          <div class="day-text">享用最后一顿澳洲早餐，收拾行囊，办理退税手续，专车送往墨尔本国际机场，搭乘吉祥航空直飞上海，圆满结束这趟南半球深度之旅。全国50+城市可安排联运，国内段最高补贴¥300/人。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 吉祥航空直飞 HO1665</span>
+            <span class="dtag dtag-note">📋 请办理退税后再前往登机口</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SELF-PAY TABLE ── -->
+<div class="selfpay-wrap" id="selfpay">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Optional Activities · 自费项目</div>
+    <div class="sec-title">自费项目参考清单</div>
+    <div class="sec-sub">以下项目均为<strong>自愿参加</strong>，绝无强制消费；价格以出发时实际为准</div>
+  </div>
+  <div class="sp-inner">
+    <div class="sp-table-wrap up">
+      <table class="sp-table">
+        <thead>
+          <tr>
+            <th>城市</th>
+            <th>自费项目名称</th>
+            <th>包含内容及说明</th>
+            <th>参考价格（澳币/人）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="zone" rowspan="2">悉尼<br>Sydney</td>
+            <td><strong>悉尼 City Walk 深度游</strong></td>
+            <td class="note-cell">悉尼大学（哈利波特取景地）+ 悉尼塔（360°观景）+ 步行街 + 邦迪海滩无边际泳池<br><em style="color:var(--muted);">含门票、车费、讲解及服务费</em></td>
+            <td class="price">AUD 280</td>
+          </tr>
+          <tr>
+            <td><strong>卡姆斯利山城市农场</strong></td>
+            <td class="note-cell">逾200年历史农场——专业剪羊毛 + 牧羊犬表演 + 喂食考拉与袋鼠<br><em style="color:var(--muted);">亲子首选体验</em></td>
+            <td class="price">见合同</td>
+          </tr>
+          <tr>
+            <td class="zone" rowspan="3">墨尔本<br>Melbourne</td>
+            <td><strong>大洋路全景（十二门徒岩）</strong></td>
+            <td class="note-cell">世界自然遗产大洋路 + 十二门徒岩壮丽海景<br><em style="color:var(--muted);">含景点门票、往返车费、专业讲解及导游服务</em></td>
+            <td class="price">AUD 260</td>
+          </tr>
+          <tr>
+            <td><strong>大洋路延伸（伦敦断桥 + 沉船谷）</strong></td>
+            <td class="note-cell">可与十二门徒岩叠加选择，深入体验大洋路峡谷奇观<br><em style="color:var(--muted);">含景点门票、车费及讲解服务</em></td>
+            <td class="price">AUD 50</td>
+          </tr>
+          <tr>
+            <td><strong>墨尔本都市精彩体验</strong></td>
+            <td class="note-cell">登上尤利塔第88层 · 180度俯瞰墨尔本全景 + 享用特色冰激凌</td>
+            <td class="price">见合同</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sp-note up">* 所有自费项目均遵循<strong>完全自愿</strong>原则，不存在任何强制消费。价格为参考价，以出发时实际报价为准。如需预订，请提前告知领队。</div>
+  </div>
+</div>
+
+<!-- ── SHOPPING POLICY ── -->
+<div class="shop-policy" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Shopping Policy · 购物政策</div>
+    <div class="sec-title">纯玩购物承诺</div>
+    <div class="sec-sub">透明公示，让您出行无后顾之忧</div>
+  </div>
+  <div class="sp-policy-inner">
+    <div class="policy-card up">
+      <div class="policy-col">
+        <div class="policy-head policy-head-green">✓ 承诺包含 · 纯玩保障</div>
+        <ul class="inc-list">
+          <li>全程无任何旅游局指定购物店安排</li>
+          <li>全程无任何旅行社指定购物店安排</li>
+          <li>团费已含领队小费、进城费、酒店税及签证费</li>
+          <li>景区周边纪念品店为个人自由消费，不在购物行程内</li>
+          <li>行程中的消费场所（鱼市场等）属个人自主商业行为</li>
+        </ul>
+      </div>
+      <div class="policy-col">
+        <div class="policy-head policy-head-blue">○ 个人自主消费（非购物行程）</div>
+        <ul class="exc-list">
+          <li>悉尼鱼市场内的餐饮及海鲜消费（自理）</li>
+          <li>DFS等免税店（行程中途自由逛，非指定购物）</li>
+          <li>景区内的纪念品、手工艺品等个人购买行为</li>
+          <li>酒店内的mini bar、餐厅及个人消费</li>
+          <li>任何超出行程安排的个人购物活动</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── COSTS ── -->
+<div class="costs">
+  <div class="costs-inner">
+    <div class="cost-box up">
+      <div class="cost-head">费用包含</div>
+      <table class="cost-table">
+        <tr><td>航班</td><td>吉祥航空上海往返直飞（HO1669/HO1665）</td></tr>
+        <tr><td>住宿</td><td>全程三至四星级酒店（含奥尔伯里特色小镇住宿）</td></tr>
+        <tr><td>餐食</td><td>中式六菜一汤·袋鼠肉特色餐·澳洲牛排餐</td></tr>
+        <tr><td>门票</td><td>行程内景点首道门票（外观者除外）</td></tr>
+        <tr><td>领队</td><td>中文领队及境外中文导游全程服务费</td></tr>
+        <tr><td>杂费</td><td>领队小费·进城费·酒店税全含</td></tr>
+        <tr><td>签证</td><td>澳洲团队签证费用</td></tr>
+        <tr><td>联运</td><td>全国50+城市联运，最高补贴¥300/人</td></tr>
+      </table>
+    </div>
+    <div class="cost-box up">
+      <div class="cost-head">费用不含</div>
+      <table class="cost-table">
+        <tr><td>自费项目</td><td>所有标注"自费"的可选项目</td></tr>
+        <tr><td>个人消费</td><td>酒店内个人消费·通讯·洗衣等</td></tr>
+        <tr><td>餐食自理</td><td>悉尼鱼市场午餐及自由活动期间餐费</td></tr>
+        <tr><td>超额行李</td><td>超出航司免费额度的行李费用</td></tr>
+        <tr><td>保险</td><td>建议另行购买个人出行意外险</td></tr>
+        <tr><td>脱团违约</td><td>擅自脱团罚款AUD 200/人/天</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Notices · 出行须知</div>
+    <div class="sec-title">重要注意事项</div>
+    <div class="sec-sub">请仔细阅读，保障顺畅愉快的澳洲之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要提示 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>💵 现金规定</h4>
+        <ul>
+          <li>按澳洲海关规定，每人每天建议携带不少于 <strong>100澳币现金</strong> 备查</li>
+          <li>家庭团体最高不超过 <strong>10,000澳币</strong>（超额须申报）</li>
+          <li>建议提前在国内银行或机场兑换好澳币现金</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>⚠️ 脱团规定</h4>
+        <ul>
+          <li>境外擅自脱团需支付违约金 <strong>AUD 200/人/天</strong></li>
+          <li>需提前提交书面脱团说明，方可办理手续</li>
+          <li>脱团期间发生的一切费用及安全责任由本人承担</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🏨 住宿与酒店</h4>
+        <ul>
+          <li>全程入住澳洲当地标准<strong>三至四星级酒店</strong></li>
+          <li>酒店通常<strong>不提供一次性洗漱用品及拖鞋</strong>，请务必自备</li>
+          <li>澳洲自来水可直饮，无需额外购买瓶装水</li>
+          <li>酒店严禁室内吸烟，违者将面临高额罚款</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🎁 赠送项目说明</h4>
+        <ul>
+          <li>行程中赠送的项目（如特色餐等）如不参加，视为<strong>自动放弃</strong></li>
+          <li>放弃赠送项目<strong>不予退费</strong></li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+          <li>具体行程安排以最终出团通知单为准</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>以上价格均为参考含税价，以出发时实际为准</span>
+    <span>全程无购物店安排，纯玩保障</span>
+    <span>自费项目均为自愿参加，绝无强制消费</span>
+    <span>澳洲酒店不提供一次性洗漱用品，请自备</span>
+    <span>联运补贴最高¥300/人，仅限前10位报名</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html" class="current">🦘 澳洲 · 本页</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','selfpay','shopping','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

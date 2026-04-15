@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>胡志明原生态一日游</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+SC:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --jungle: #1a3a2a;
+    --moss: #2d5a3d;
+    --fern: #4a7c59;
+    --sage: #7aab8a;
+    --rice: #f5e6c3;
+    --ochre: #c8922a;
+    --amber: #e8b44a;
+    --earth: #6b4226;
+    --cream: #faf6ec;
+    --ink: #1a1208;
+    --mist: rgba(245, 230, 195, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--jungle);
+    color: var(--rice);
+    font-family: 'Noto Serif SC', serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 110%, rgba(74,124,89,0.45) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 20% 20%, rgba(200,146,42,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 10%, rgba(45,90,61,0.3) 0%, transparent 60%);
+    background-color: var(--jungle);
+  }
+
+  /* decorative rice field lines */
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        175deg,
+        transparent,
+        transparent 48px,
+        rgba(122,171,138,0.06) 48px,
+        rgba(122,171,138,0.06) 49px
+      );
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--amber);
+    border: 1px solid rgba(232,180,74,0.4);
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    animation: fadeUp 0.9s 0.1s ease both;
+    position: relative;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+
+  .hero-sub {
+    margin-top: 28px;
+    font-size: clamp(13px, 2vw, 16px);
+    line-height: 1.9;
+    color: rgba(245,230,195,0.7);
+    max-width: 520px;
+    font-weight: 300;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+  }
+
+  .hero-meta-item .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--amber);
+    display: block;
+    line-height: 1;
+  }
+
+  .hero-meta-item .label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(245,230,195,0.5);
+    font-family: 'DM Mono', monospace;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(245,230,195,0.35);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    font-family: 'DM Mono', monospace;
+    animation: fadeUp 1.2s 0.5s ease both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(245,230,195,0.3), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* ── ROUTE OVERVIEW ── */
+  .section {
+    padding: 80px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+
+  /* Route flow */
+  .route-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .route-flow::-webkit-scrollbar { display: none; }
+
+  .route-stop {
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .route-stop .num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--moss);
+    border: 2px solid var(--fern);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--amber);
+    margin: 0 auto 12px;
+    transition: all 0.3s;
+  }
+
+  .route-stop:hover .num {
+    background: var(--amber);
+    color: var(--jungle);
+    border-color: var(--amber);
+    transform: scale(1.15);
+  }
+
+  .route-stop .name {
+    font-size: 12px;
+    color: rgba(245,230,195,0.75);
+    max-width: 80px;
+    line-height: 1.4;
+  }
+
+  .route-stop .emoji {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .route-arrow {
+    flex-shrink: 0;
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(to right, var(--fern), var(--moss));
+    position: relative;
+    top: -20px;
+    margin: 0 4px;
+  }
+
+  .route-arrow::after {
+    content: '▶';
+    position: absolute;
+    right: -6px;
+    top: -7px;
+    color: var(--fern);
+    font-size: 10px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding: 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 88px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom,
+      transparent,
+      var(--moss) 5%,
+      var(--moss) 95%,
+      transparent
+    );
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 0 32px;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .tl-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tl-time-col {
+    text-align: right;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .tl-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--amber);
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .tl-time-end {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(232,180,74,0.4);
+    margin-top: 4px;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: 84px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--amber);
+    border: 2px solid var(--jungle);
+    margin-top: 32px;
+    box-shadow: 0 0 12px rgba(232,180,74,0.5);
+    z-index: 2;
+  }
+
+  .tl-dot.transit {
+    background: var(--fern);
+    box-shadow: none;
+    width: 7px;
+    height: 7px;
+    left: 85px;
+  }
+
+  .tl-body {
+    padding: 20px 0 20px 0;
+    position: relative;
+  }
+
+  /* Stop card */
+  .stop-card {
+    background: linear-gradient(135deg, rgba(45,90,61,0.25) 0%, rgba(26,58,42,0.4) 100%);
+    border: 1px solid rgba(74,124,89,0.25);
+    border-radius: 4px;
+    padding: 24px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .stop-card:hover {
+    border-color: rgba(122,171,138,0.45);
+    transform: translateX(4px);
+  }
+
+  .stop-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--amber), var(--ochre));
+    border-radius: 4px 0 0 4px;
+  }
+
+  .stop-card.transit-card {
+    background: transparent;
+    border: none;
+    padding: 8px 0;
+  }
+
+  .stop-card.transit-card::before { display: none; }
+
+  .stop-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+
+  .stop-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--rice);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .stop-subtitle {
+    font-size: 12px;
+    color: var(--sage);
+    font-style: italic;
+    margin-bottom: 16px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .stop-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    padding: 3px 10px;
+    border-radius: 2px;
+    background: rgba(74,124,89,0.2);
+    border: 1px solid rgba(74,124,89,0.35);
+    color: var(--sage);
+    letter-spacing: 0.1em;
+  }
+
+  .stop-content {
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(245,230,195,0.8);
+    font-weight: 300;
+  }
+
+  .stop-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .stop-content li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .stop-content li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--fern);
+    font-size: 12px;
+  }
+
+  .warning {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: rgba(200,146,42,0.1);
+    border: 1px solid rgba(200,146,42,0.25);
+    border-radius: 3px;
+    font-size: 13px;
+    color: rgba(232,180,74,0.85);
+  }
+
+  .warning::before {
+    content: '⚠ ';
+    font-size: 12px;
+  }
+
+  /* Transit row */
+  .transit-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    color: rgba(245,230,195,0.4);
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .transit-line {
+    flex: 1;
+    height: 1px;
+    background: repeating-linear-gradient(
+      to right,
+      rgba(74,124,89,0.3) 0,
+      rgba(74,124,89,0.3) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  }
+
+  /* ── HIGHLIGHTS ── */
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .highlight-card {
+    padding: 28px 24px;
+    background: rgba(45,90,61,0.15);
+    border: 1px solid rgba(74,124,89,0.2);
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .highlight-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .highlight-card:hover {
+    background: rgba(45,90,61,0.3);
+    border-color: rgba(122,171,138,0.4);
+    transform: translateY(-4px);
+  }
+
+  .highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .highlight-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .highlight-desc {
+    font-size: 13px;
+    color: rgba(245,230,195,0.6);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── ESSENTIALS ── */
+  .essentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .essential-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    background: rgba(26,58,42,0.5);
+    border: 1px solid rgba(74,124,89,0.2);
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .essential-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .essential-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .essential-text {
+    font-size: 13.5px;
+    color: rgba(245,230,195,0.75);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(74,124,89,0.3), transparent);
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 48px 24px;
+    color: rgba(245,230,195,0.25);
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.15em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 0.8; transform: scaleY(1.15); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .timeline::before { left: 68px; }
+    .tl-dot { left: 64px; }
+    .tl-dot.transit { left: 65px; }
+    .timeline { }
+    .tl-time-col { padding-top: 22px; }
+    .stop-card { padding: 18px 20px; }
+    .route-flow { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div style="position:relative; z-index:1;">
+    <div class="hero-badge">HO CHI MINH CITY · 原生态一日游</div>
+    <h1>胡志明<br><em>原生态</em><br>一日游</h1>
+    <p class="hero-sub">5个差异化原生态点 · 无旅行团 · 无门票<br>稻田 / 小河 / 越战 / 古村 / 钓虾</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="val">09:30</span>
+        <span class="label">出发时间</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">5</span>
+        <span class="label">目的地</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">&lt;1h</span>
+        <span class="label">景点间车程</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">19:30</span>
+        <span class="label">回市区</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>向下滚动</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ ROUTE OVERVIEW ══ -->
+<section class="section">
+  <div class="section-label">一、路线总览</div>
+  <div class="section-title">顺向不回头，<br><em style="font-style:italic; color:var(--sage); font-family:'Cormorant Garamond',serif;">一路向前探索</em></div>
+
+  <div class="route-flow">
+    <div class="route-stop">
+      <span class="emoji">🎣</span>
+      <div class="num">1</div>
+      <div class="name">槟魁村<br><span style="color:var(--amber);font-size:10px;">渔村</span></div>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-stop">
+      <span class="emoji">🧂</span>
+      <div class="num">2</div>
+      <div class="name">古芝盐田<br><span style="color:var(--amber);font-size:10px;">盐农湿地</span></div>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-stop">
+      <span class="emoji">🌾</span>
+      <div class="num">3</div>
+      <div class="name">平新稻田村<br><span style="color:var(--amber);font-size:10px;">农耕水乡</span></div>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-stop">
+      <span class="emoji">⚔️</span>
+      <div class="num">4</div>
+      <div class="name">本铎地道<br><span style="color:var(--amber);font-size:10px;">越战遗址</span></div>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-stop">
+      <span class="emoji">🦐</span>
+      <div class="num">5</div>
+      <div class="name">七郡钓虾场<br><span style="color:var(--amber);font-size:10px;">休闲收尾</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ TIMELINE ══ -->
+<section class="section">
+  <div class="section-label">二、详细时间轴</div>
+  <div class="section-title">精准到分钟的<br><em style="font-style:italic; color:var(--sage); font-family:'Cormorant Garamond',serif;">行程节奏</em></div>
+
+  <div class="timeline" id="timeline">
+
+    <!-- 出发 -->
+    <div class="tl-item" style="transition-delay:0.05s">
+      <div class="tl-time-col">
+        <div class="tl-time">09:30</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="stop-card">
+            <div class="stop-number">出发点</div>
+            <div class="stop-title">1郡市区出发</div>
+            <div class="stop-subtitle">包车 / 打车前往槟魁村</div>
+            <div class="stop-content">
+              走村道，不进景区大门，车程约20分钟
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transit 1 -->
+    <div class="tl-item" style="transition-delay:0.08s">
+      <div class="tl-time-col"></div>
+      <div style="position:relative">
+        <div class="tl-dot transit"></div>
+        <div class="tl-body">
+          <div class="stop-card transit-card">
+            <div class="transit-row">
+              <span>🚗</span>
+              <div class="transit-line"></div>
+              <span>20分钟车程</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stop 1 -->
+    <div class="tl-item" style="transition-delay:0.1s">
+      <div class="tl-time-col">
+        <div class="tl-time">09:50</div>
+        <div class="tl-time-end">↓ 11:20</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="stop-card">
+            <div class="stop-number">STOP 01 · 渔村体验</div>
+            <div class="stop-title">🎣 槟魁村</div>
+            <div class="stop-subtitle">Bình Quới · 西贡河畔渔村</div>
+            <div class="stop-tags">
+              <span class="tag">小木船</span>
+              <span class="tag">渔民撒网</span>
+              <span class="tag">鱼露作坊</span>
+              <span class="tag">织渔网</span>
+            </div>
+            <div class="stop-content">
+              <ul>
+                <li>租小木船（5万盾/小时）逛水巷</li>
+                <li>看渔民撒网、手工鱼露作坊</li>
+                <li>河边喝椰汁，看渔获交易</li>
+                <li>纯原住民生活，无任何商业化</li>
+              </ul>
+            </div>
+            <div class="warning">避坑：绝不进 Khu Du Lịch Bình Quới 景区大门</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transit 2 -->
+    <div class="tl-item" style="transition-delay:0.13s">
+      <div class="tl-time-col">
+        <div class="tl-time" style="font-size:11px; opacity:0.5">11:20</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot transit"></div>
+        <div class="tl-body">
+          <div class="stop-card transit-card">
+            <div class="transit-row">
+              <span>🚗</span>
+              <div class="transit-line"></div>
+              <span>20分钟 · 顺向不绕路</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stop 2 -->
+    <div class="tl-item" style="transition-delay:0.15s">
+      <div class="tl-time-col">
+        <div class="tl-time">11:40</div>
+        <div class="tl-time-end">↓ 12:40</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="stop-card">
+            <div class="stop-number">STOP 02 · 盐田体验</div>
+            <div class="stop-title">🧂 古芝盐田</div>
+            <div class="stop-subtitle">Muối Củ Chi · 咸淡水湿地</div>
+            <div class="stop-tags">
+              <span class="tag">盐埂漫步</span>
+              <span class="tag">盐农收盐</span>
+              <span class="tag">木架盐棚</span>
+              <span class="tag">湿地生态</span>
+            </div>
+            <div class="stop-content">
+              <ul>
+                <li>走盐埂、看盐农收盐、木架盐棚</li>
+                <li>咸淡水湿地生态景观</li>
+                <li>喝本地咸柠檬茶，与盐农聊天</li>
+                <li>无导游、无表演，纯自然互动</li>
+              </ul>
+              <p style="margin-top:12px; font-size:12px; color:var(--sage);">📍 导航：Muối Củ Chi, Huyện Củ Chi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transit 3 -->
+    <div class="tl-item" style="transition-delay:0.18s">
+      <div class="tl-time-col">
+        <div class="tl-time" style="font-size:11px; opacity:0.5">12:40</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot transit"></div>
+        <div class="tl-body">
+          <div class="stop-card transit-card">
+            <div class="transit-row">
+              <span>🚗</span>
+              <div class="transit-line"></div>
+              <span>25分钟车程</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stop 3 -->
+    <div class="tl-item" style="transition-delay:0.2s">
+      <div class="tl-time-col">
+        <div class="tl-time">13:05</div>
+        <div class="tl-time-end">↓ 14:45</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="stop-card">
+            <div class="stop-number">STOP 03 · 农耕水乡</div>
+            <div class="stop-title">🌾 平新稻田村</div>
+            <div class="stop-subtitle">Bình Tân · 农耕水乡</div>
+            <div class="stop-tags">
+              <span class="tag">农家午餐</span>
+              <span class="tag">水牛耕田</span>
+              <span class="tag">米纸作坊</span>
+              <span class="tag">田埂漫游</span>
+            </div>
+            <div class="stop-content">
+              <ul>
+                <li>🍚 午餐：农家稻草锅巴饭 + 稻田鱼 + 野菜（人均20万盾，无菜单）</li>
+                <li>租脚踏三轮车 / 小木船逛田埂水道</li>
+                <li>看水牛耕田、农户晒谷</li>
+                <li>参观家庭米纸 / 米酒小作坊</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transit 4 -->
+    <div class="tl-item" style="transition-delay:0.23s">
+      <div class="tl-time-col">
+        <div class="tl-time" style="font-size:11px; opacity:0.5">14:45</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot transit"></div>
+        <div class="tl-body">
+          <div class="stop-card transit-card">
+            <div class="transit-row">
+              <span>🚗</span>
+              <div class="transit-line"></div>
+              <span>30分钟车程</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stop 4 -->
+    <div class="tl-item" style="transition-delay:0.25s">
+      <div class="tl-time-col">
+        <div class="tl-time">15:15</div>
+        <div class="tl-time-end">↓ 16:45</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="stop-card">
+            <div class="stop-number">STOP 04 · 越战遗址</div>
+            <div class="stop-title">⚔️ 本铎地道</div>
+            <div class="stop-subtitle">Ben Duoc · 乡村段（非景区主入口）</div>
+            <div class="stop-tags">
+              <span class="tag">原始地道</span>
+              <span class="tag">地下厨房</span>
+              <span class="tag">越战故事</span>
+              <span class="tag">椰林散步</span>
+            </div>
+            <div class="stop-content">
+              <ul>
+                <li>钻原始地道（无灯光、无表演）</li>
+                <li>看地下厨房 / 医院遗址</li>
+                <li>椰林 + 稻田散步</li>
+                <li>听本地老人讲越战故事（非职业导游）</li>
+              </ul>
+            </div>
+            <div class="warning">避坑：导航 Ben Duoc Tunnels Rural Area，不进大型停车场主景区</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transit 5 -->
+    <div class="tl-item" style="transition-delay:0.28s">
+      <div class="tl-time-col">
+        <div class="tl-time" style="font-size:11px; opacity:0.5">16:45</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot transit"></div>
+        <div class="tl-body">
+          <div class="stop-card transit-card">
+            <div class="transit-row">
+              <span>🚗</span>
+              <div class="transit-line"></div>
+              <span>40分钟车程（≤1小时）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stop 5 -->
+    <div class="tl-item" style="transition-delay:0.3s">
+      <div class="tl-time-col">
+        <div class="tl-time">17:25</div>
+        <div class="tl-time-end">↓ 18:55</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="stop-card">
+            <div class="stop-number">STOP 05 · 休闲收尾</div>
+            <div class="stop-title">🦐 七郡钓虾场</div>
+            <div class="stop-subtitle">Bãi Tôm Câu Quận 7 · 放松时光</div>
+            <div class="stop-tags">
+              <span class="tag">罗氏大头虾</span>
+              <span class="tag">现钓现做</span>
+              <span class="tag">冰啤酒</span>
+              <span class="tag">晚风</span>
+            </div>
+            <div class="stop-content">
+              <ul>
+                <li>钓罗氏大头虾（12万盾/小时，含加工）</li>
+                <li>钓到的虾现场做蒜蓉 / 白灼 / 烧烤</li>
+                <li>吹晚风、喝冰啤酒，放松全天行程</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 返回 -->
+    <div class="tl-item" style="transition-delay:0.33s">
+      <div class="tl-time-col">
+        <div class="tl-time">18:55</div>
+        <div class="tl-time-end">→ 19:30</div>
+      </div>
+      <div style="position:relative">
+        <div class="tl-dot" style="background:var(--sage);"></div>
+        <div class="tl-body">
+          <div class="stop-card" style="border-color:rgba(122,171,138,0.2);">
+            <div class="stop-card" style="border:none; padding:0; background:none;">
+              <div class="stop-number">返程</div>
+              <div class="stop-title" style="font-size:1.3rem;">返回市区</div>
+              <div class="stop-content">车程约35分钟（可避开晚高峰） · 19:30抵达</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ HIGHLIGHTS ══ -->
+<section class="section">
+  <div class="section-label">三、核心亮点</div>
+  <div class="section-title">为什么选这条<br><em style="font-style:italic; color:var(--sage); font-family:'Cormorant Garamond',serif;">路线</em></div>
+
+  <div class="highlights-grid" id="highlights">
+    <div class="highlight-card">
+      <span class="highlight-icon">🗺️</span>
+      <div class="highlight-title">无同质化</div>
+      <div class="highlight-desc">渔村→盐田→稻田→地道→钓虾，5种完全不同的体验</div>
+    </div>
+    <div class="highlight-card">
+      <span class="highlight-icon">🌿</span>
+      <div class="highlight-title">全原生态</div>
+      <div class="highlight-desc">无旅行团、无门票、无纪念品店，纯本地生活场景</div>
+    </div>
+    <div class="highlight-card">
+      <span class="highlight-icon">⏱️</span>
+      <div class="highlight-title">车程合规</div>
+      <div class="highlight-desc">景点间最长40分钟，全程单程不超过1小时</div>
+    </div>
+    <div class="highlight-card">
+      <span class="highlight-icon">🇻🇳</span>
+      <div class="highlight-title">越南特色满满</div>
+      <div class="highlight-desc">打鱼、制鱼露、盐田、稻田农耕、越战遗址、农家餐、钓虾</div>
+    </div>
+    <div class="highlight-card">
+      <span class="highlight-icon">😌</span>
+      <div class="highlight-title">节奏宽松</div>
+      <div class="highlight-desc">不赶时间，最后钓虾完美收尾，全天舒适惬意</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ ESSENTIALS ══ -->
+<section class="section">
+  <div class="section-label">四、出行必备</div>
+  <div class="section-title">出门前<br><em style="font-style:italic; color:var(--sage); font-family:'Cormorant Garamond',serif;">带好这些</em></div>
+
+  <div class="essentials-grid" id="essentials">
+    <div class="essential-item">
+      <span class="essential-icon">👖</span>
+      <div class="essential-text">
+        <strong style="color:var(--rice);">长裤 + 防滑鞋</strong><br>
+        下田、走盐埂、钻地道，轻便防滑最重要
+      </div>
+    </div>
+    <div class="essential-item">
+      <span class="essential-icon">🦟</span>
+      <div class="essential-text">
+        <strong style="color:var(--rice);">驱蚊液（DEET 20%+）</strong><br>
+        稻田、湿地蚊虫较多，必备
+      </div>
+    </div>
+    <div class="essential-item">
+      <span class="essential-icon">💵</span>
+      <div class="essential-text">
+        <strong style="color:var(--rice);">足量现金（越南盾）</strong><br>
+        乡村无ATM、无刷卡，全程用现金
+      </div>
+    </div>
+    <div class="essential-item">
+      <span class="essential-icon">📲</span>
+      <div class="essential-text">
+        <strong style="color:var(--rice);">离线地图 + 翻译软件</strong><br>
+        Google Maps 离线下载，拍照翻译菜单
+      </div>
+    </div>
+    <div class="essential-item">
+      <span class="essential-icon">☀️</span>
+      <div class="essential-text">
+        <strong style="color:var(--rice);">防晒帽 + 墨镜</strong><br>
+        越南乡下室外时间多，防晒必须到位
+      </div>
+    </div>
+    <div class="essential-item">
+      <span class="essential-icon">🌬️</span>
+      <div class="essential-text">
+        <strong style="color:var(--rice);">小风扇（可充电式）</strong><br>
+        乡下无空调，便携风扇大幅提升舒适度
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  伟哥推荐必属精品@吴伟版权所有 <BR>胡志明市原生态一日游路线 · 9:30—19:30 · 5个目的地 · 全程原汁原味
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.tl-item, .highlight-card, .essential-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Stagger highlight cards
+  document.querySelectorAll('.highlight-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.08}s`;
+  });
+
+  document.querySelectorAll('.essential-item').forEach((item, i) => {
+    item.style.transitionDelay = `${i * 0.06}s`;
+  });
+</script>
+</body>
+</html>

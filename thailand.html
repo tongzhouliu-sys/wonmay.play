@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 轻奢泰兰德 曼谷+芭提雅6天深度游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --bg2: #ede7d9;
+  --ink: #1c1610;
+  --gold: #b8903c;
+  --siam: #c9a227;
+  --gold-lt: #e8d5a0;
+  --red: #b03a2e;
+  --teal: #2c6b65;
+  --sky: #1a6b8a;
+  --muted: #7a6e60;
+  --border: #cfc4b0;
+  --white: #fdfaf4;
+  --self-bg: #fff8ed;
+  --self-border: #e8c87a;
+  --thai-deep: #1a120a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--siam);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--siam);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#666;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#999;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--siam);background:rgba(201,162,39,.1);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:500px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#1a0e05 0%,#2a1a06 35%,#0d2a1a 100%);z-index:0;}
+.hero-deco{position:absolute;inset:0;z-index:1;overflow:hidden;}
+.hero-deco::before{content:'🛕';position:absolute;right:-20px;top:20px;font-size:18rem;opacity:.04;line-height:1;}
+.hero-deco::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(60deg,transparent,transparent 80px,rgba(201,162,39,.015) 80px,rgba(201,162,39,.015) 81px);}
+.hero-content{position:relative;z-index:2;padding:80px 40px 56px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--siam);text-transform:uppercase;margin-bottom:18px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.6rem);font-style:italic;color:#f0ead8;line-height:1.1;margin-bottom:14px;}
+.hero-title em{color:var(--siam);font-style:normal;}
+.hero-sub{font-size:0.85rem;color:#7a6a4a;letter-spacing:0.06em;max-width:580px;margin-bottom:16px;line-height:1.9;}
+
+/* promise badge */
+.promise-badge{display:inline-flex;align-items:center;gap:16px;background:rgba(176,58,46,.12);border:1px solid rgba(176,58,46,.4);padding:10px 20px;margin-bottom:32px;}
+.pb-item{font-size:0.76rem;color:#e8b0a8;letter-spacing:0.08em;}
+.pb-item strong{color:#e87060;display:block;font-size:0.88rem;margin-bottom:1px;}
+.pb-sep{width:1px;height:36px;background:rgba(176,58,46,.3);}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn-primary{display:inline-block;background:var(--siam);color:var(--ink);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;font-weight:500;}
+.btn-primary:hover{background:#a88010;}
+.btn-sec{display:inline-block;border:1px solid rgba(201,162,39,.5);color:var(--siam);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-sec:hover{background:rgba(201,162,39,.1);}
+.hero-price{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:#f0ead8;line-height:1;}
+.hero-price-from{font-size:0.7rem;color:#7a6a4a;letter-spacing:0.1em;margin-right:4px;}
+.hero-price-unit{font-size:0.72rem;color:#7a6a4a;}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--thai-deep);border-bottom:1px solid #2a1e0c;}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid #2a1e0c;justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;color:#c9a850;font-weight:400;letter-spacing:0.06em;}
+.trust-text span{font-size:0.68rem;color:#5a4e38;}
+
+/* ── SECTION HEADERS ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--siam);margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── VERSION TABS ── */
+.ver-tabs{background:var(--white);border-bottom:1px solid var(--border);}
+.ver-tabs-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;gap:0;}
+.ver-btn{font-size:0.78rem;letter-spacing:0.1em;color:var(--muted);padding:14px 24px;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;font-family:'Noto Sans SC',sans-serif;transition:all .2s;white-space:nowrap;}
+.ver-btn:hover{color:var(--ink);}
+.ver-btn.active{color:var(--siam);border-bottom-color:var(--siam);}
+.ver-pane{display:none;}
+.ver-pane.active{display:block;}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--siam);line-height:1;}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#444;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-opt{background:var(--self-bg);color:#8a5c00;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f0e8ff;color:#5b21b6;}
+.dtag-note{background:#fff0f0;color:var(--red);}
+.dtag-shop{background:#fef9e7;color:#7d6608;border:1px dashed #c9a227;}
+
+/* ── HIGHLIGHTS GRID ── */
+.highlights{padding:0 40px 56px;}
+.hl-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 24px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.76rem;color:var(--muted);line-height:1.75;}
+
+/* ── SHOPPING PROTOCOL ── */
+.shopping{padding:0 40px 56px;}
+.shop-inner{max-width:1200px;margin:0 auto;}
+.shop-banner{background:var(--ink);padding:14px 22px;display:flex;align-items:center;gap:14px;margin-bottom:0;border-bottom:2px solid var(--siam);}
+.shop-banner-text{font-size:0.8rem;color:#8a7a5a;letter-spacing:0.06em;}
+.shop-banner-text strong{color:var(--siam);}
+.shop-table-wrap{overflow-x:auto;}
+.shop-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);border-top:none;}
+.shop-table th{padding:10px 16px;background:var(--bg2);color:var(--muted);font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;border-bottom:1px solid var(--border);}
+.shop-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.shop-table tr:last-child td{border-bottom:none;}
+.shop-table .num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--siam);font-style:italic;line-height:1;width:36px;}
+.shop-table .name{font-weight:500;font-size:0.85rem;}
+.shop-table .desc{font-size:0.74rem;color:var(--muted);margin-top:3px;}
+.shop-table .time{font-size:0.72rem;color:var(--muted);white-space:nowrap;}
+.shop-note{font-size:0.72rem;color:var(--muted);margin-top:10px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── OPTIONAL / COSTS ── */
+.costs{padding:0 40px 56px;}
+.costs-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);color:var(--siam);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:38%;}
+
+/* must-pay boxes */
+.must-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 40px 32px;}
+.must-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.must-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.must-box ul{list-style:none;}
+.must-box li{font-size:0.76rem;color:#444;line-height:1.85;padding-left:14px;position:relative;}
+.must-box li::before{content:'·';position:absolute;left:0;color:var(--siam);}
+.must-box li strong{color:var(--ink);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(3),.notice-sec:nth-child(4){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#444;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOATING CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;background:var(--siam);color:var(--ink);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:all .2s;white-space:nowrap;font-weight:500;}
+.float-btn:hover{background:#a88010;transform:translateX(-3px);}
+.float-btn.alt{background:var(--ink);color:var(--siam);border:1px solid var(--siam);}
+.float-btn.alt:hover{background:#2a1e0c;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--siam);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#6a6052;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--siam);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:var(--gold);border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:var(--gold);border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .costs-inner{grid-template-columns:1fr;}
+  .must-grid{grid-template-columns:1fr 1fr;}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid #2a1e0c;min-width:50%;}
+  .hl-grid{grid-template-columns:1fr;}
+  .sec-head{padding:36px 16px 20px;}
+  .itinerary,.costs,.shopping,.highlights,.notices,.notices{padding-left:16px;padding-right:16px;}
+  .must-grid{grid-template-columns:1fr;padding-left:16px;padding-right:16px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#itinerary" class="float-btn">📅 立即咨询排期</a>
+  <a href="#shopping" class="float-btn alt">📋 查看购物协议</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#shopping">购物协议</a>
+      <a href="#optional">自费说明</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Thailand · Bangkok &amp; Pattaya · 6 Days</div>
+    <div class="hero-title">
+      轻奢泰兰德<br>
+      曼谷 ＋ 芭提雅 <em>双飞深度游</em>
+    </div>
+    <div class="hero-sub">
+      6天4晚 · 广州直飞 · 全程网评五钻酒店 · 大皇宫 · 水门寺 · 珊瑚岛 · 金沙岛 · 东方公主号
+    </div>
+
+    <div class="promise-badge">
+      <div class="pb-item">
+        <strong>真无自费</strong>
+        零强制消费
+      </div>
+      <div class="pb-sep"></div>
+      <div class="pb-item">
+        <strong>推一罚十</strong>
+        违约必赔付
+      </div>
+      <div class="pb-sep"></div>
+      <div class="pb-item">
+        <strong>五钻住宿</strong>
+        全程网评保障
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <div>
+        <div style="font-size:0.65rem;color:#7a6a4a;letter-spacing:0.1em;margin-bottom:2px;">参考价格</div>
+        <span class="hero-price">¥3,649</span>
+        <span class="hero-price-unit"> 起/人</span>
+      </div>
+      <a href="#itinerary" class="btn-primary">查看完整行程</a>
+      <a href="#optional" class="btn-sec">自费项目说明</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">💎</span>
+      <div class="trust-text"><strong>五钻酒店</strong><span>全程网评保障</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚫</span>
+      <div class="trust-text"><strong>真无自费</strong><span>推一罚十承诺</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🛕</span>
+      <div class="trust-text"><strong>水门寺大佛</strong><span>网红打卡地标</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏝️</span>
+      <div class="trust-text"><strong>珊瑚岛+金沙岛</strong><span>双岛碧海阳光</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚢</span>
+      <div class="trust-text"><strong>东方公主号</strong><span>与人妖公主共舞</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Highlights · 行程亮点</div>
+    <div class="sec-title">六大独家体验</div>
+    <div class="sec-sub">精心设计的泰国深度行程，每一天都有惊喜</div>
+  </div>
+  <div class="highlights" style="padding-top:0;">
+    <div class="hl-grid">
+      <div class="hl-item up">
+        <div class="hl-icon">🏯</div>
+        <div class="hl-title">大皇宫 · 玉佛寺</div>
+        <div class="hl-desc">探访曼谷最辉煌的皇家建筑群，欣赏镶金殿堂与精美壁画，感受泰国王室文化的极致美学。</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🛕</div>
+        <div class="hl-title">水门寺大佛</div>
+        <div class="hl-desc">打卡曼谷最新网红地标！巨型白色大佛俯瞰湄南河，拥有无数摄影师追捧的绝美机位与倒影。</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🔫</div>
+        <div class="hl-title">实弹射击（赠5发）</div>
+        <div class="hl-desc">在合法射击场亲手持真枪实弹，体验高度刺激的射击乐趣。团费已赠送5发子弹，超出自费。</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🌊</div>
+        <div class="hl-title">珊瑚岛 + 金沙岛</div>
+        <div class="hl-desc">乘快艇驰骋碧蓝海面，在芭提雅两大海岛尽享沙滩阳光。55岁以上长者由旅行社安排岸边休闲。</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🛳️</div>
+        <div class="hl-title">东方公主号巡游</div>
+        <div class="hl-desc">登上豪华游轮欣赏芭提雅海湾夜景，与人妖公主同台共舞，享用海鲜大餐，感受热带海上浪漫夜晚。</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🪙</div>
+        <div class="hl-title">阿赞贴金祈福</div>
+        <div class="hl-desc">前往天明寺参与独家阿赞贴金仪式，由资深高僧主持，为您和家人祈愿平安健康、财运亨通。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Itinerary · 行程详情</div>
+    <div class="sec-title">6天深度曼谷·芭提雅</div>
+    <div class="sec-sub">提供两个版本：轻奢版（推一罚十）与超值版，请选择适合您的方案</div>
+  </div>
+
+  <div class="ver-tabs">
+    <div class="ver-tabs-inner">
+      <button class="ver-btn active" onclick="switchVer(this,'luxury')">💎 轻奢无自费版 · ¥3,649起</button>
+      <button class="ver-btn" onclick="switchVer(this,'value')">🌟 泰超值经典版 · ¥3,100起</button>
+    </div>
+  </div>
+
+  <!-- LUXURY VERSION -->
+  <div class="ver-pane active" id="ver-luxury">
+    <div style="background:#fdf5e0;border:1px solid var(--self-border);padding:12px 22px;max-width:1200px;margin:20px 40px 0;font-size:0.8rem;color:#7a5c00;">
+      💎 <strong>轻奢无自费版（推一罚十）</strong>：全程承诺无强制性自费游览项目，如有违约，旅行社赔付十倍团费。全程网评五钻酒店。
+    </div>
+    <div class="itinerary" style="padding-top:28px;">
+      <div class="it-inner">
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">广州 → 曼谷</div>
+            <div class="day-route">广州直飞 · 专车接送</div>
+            <div class="day-text">乘飞机直飞曼谷，专车接机，入住网评五钻酒店（曼谷夏日之树或同级）。欢迎晚宴，开启轻奢泰国之旅。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 广州直飞曼谷</span>
+              <span class="dtag dtag-inc">✓ 专车接机</span>
+              <span class="dtag dtag-inc">✓ 五钻酒店</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">曼谷文化深度打卡</div>
+            <div class="day-route">Bangkok · 文化一日</div>
+            <div class="day-text">参观泰国最神圣的大皇宫与玉佛寺；乘长尾船游览湄南河，远观郑王庙；打卡网红地标水门寺大佛（最佳倒影机位）；享受正宗泰式按摩放松身心；夜游JODD夜市品尝地道泰国小吃。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 大皇宫 · 玉佛寺</span>
+              <span class="dtag dtag-inc">✓ 湄南河长尾船游</span>
+              <span class="dtag dtag-inc">✓ 水门寺大佛</span>
+              <span class="dtag dtag-inc">✓ 泰式按摩</span>
+              <span class="dtag dtag-inc">✓ JODD夜市</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">动感芭提雅</div>
+            <div class="day-route">Pattaya · 刺激体验</div>
+            <div class="day-text">前往芭提雅，游览珠宝中心博物馆；观看惊险人蛇大战表演；体验骑大象穿越热带雨林；前往合法射击场进行实弹射击（团费赠5发子弹）；观看精彩泰拳表演；欣赏三合一特色歌舞秀。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 实弹射击（赠5发）</span>
+              <span class="dtag dtag-inc">✓ 泰拳表演</span>
+              <span class="dtag dtag-inc">✓ 三合一特色秀</span>
+              <span class="dtag dtag-shop">🛍 珠宝中心 约120分钟</span>
+              <span class="dtag dtag-shop">🛍 毒蛇研究中心 约60-90分钟</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">双岛度假 · 东方公主号</div>
+            <div class="day-route">Coral Island · Ko Lan · Oriental Princess</div>
+            <div class="day-text">乘快艇前往珊瑚岛与金沙岛，尽享碧海白沙与热带阳光（55岁以上长者岸边休闲）；下午游览充满水乡风情的杜拉拉水上市场；傍晚登上豪华东方公主号，与人妖公主共舞，享用豪华海鲜大餐，在波光粼粼的海湾中度过难忘夜晚。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 珊瑚岛 · 金沙岛快艇游</span>
+              <span class="dtag dtag-inc">✓ 杜拉拉水上市场</span>
+              <span class="dtag dtag-inc">✓ 东方公主号 · 海鲜大餐</span>
+              <span class="dtag dtag-note">⚠ 55岁以上严禁乘坐快艇</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">祈福 · 富贵黄金屋 · 归程</div>
+            <div class="day-route">Bangkok · 祈福收尾</div>
+            <div class="day-text">前往天明寺参与独家阿赞贴金祈福仪式，由资深高僧为您和家人祈愿；游览《流星花园》经典取景地富贵黄金屋，感受泰式奢华；前往热带水果园品尝时令水果（含水果餐）；最后游览King Power免税店，为亲友选购特色伴手礼。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 阿赞贴金祈福（天明寺）</span>
+              <span class="dtag dtag-inc">✓ 富贵黄金屋</span>
+              <span class="dtag dtag-inc">✓ 热带水果园 · 水果餐</span>
+              <span class="dtag dtag-shop">🛍 沉香博物馆 约90分钟</span>
+              <span class="dtag dtag-shop">🛍 King Power免税店 约90-120分钟</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">曼谷 → 广州 返程</div>
+            <div class="day-route">直飞返程</div>
+            <div class="day-text">乳胶制品中心自由参观（含乳胶枕头·床垫体验），办理退税手续，专车送机，搭乘直飞班机返回广州。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 直飞返程广州</span>
+              <span class="dtag dtag-shop">🛍 乳胶制品中心 约90-120分钟</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUE VERSION -->
+  <div class="ver-pane" id="ver-value">
+    <div style="background:#f0f4f8;border:1px solid #b8c8d8;padding:12px 22px;max-width:1200px;margin:20px 40px 0;font-size:0.8rem;color:#1a4a6a;">
+      🌟 <strong>泰超值经典版（¥3,100起）</strong>：行程内容与轻奢版基本相同，住宿调整为四星标准，部分升级项目（如实弹射击赠送子弹）以自费形式参与，适合预算有弹性的旅客。
+    </div>
+    <div class="itinerary" style="padding-top:28px;">
+      <div class="it-inner">
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">广州 → 曼谷</div>
+            <div class="day-route">广州直飞 · 四星酒店</div>
+            <div class="day-text">直飞曼谷，入住四星标准酒店。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 广州直飞曼谷</span>
+              <span class="dtag dtag-inc">✓ 四星酒店</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">曼谷文化打卡</div>
+            <div class="day-route">Bangkok</div>
+            <div class="day-text">大皇宫 · 玉佛寺 · 湄南河长尾船 · 水门寺大佛 · 泰式按摩 · JODD夜市（同轻奢版D2）。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 大皇宫 · 玉佛寺 · 水门寺大佛 · 泰式按摩</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">动感芭提雅</div>
+            <div class="day-route">Pattaya</div>
+            <div class="day-text">珠宝中心 · 人蛇大战 · 骑大象 · 泰拳表演 · 三合一特色秀。实弹射击以自费形式参与。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 泰拳表演 · 三合一特色秀</span>
+              <span class="dtag dtag-opt">可选 实弹射击（自费）</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">双岛 · 东方公主号</div>
+            <div class="day-route">Pattaya Islands</div>
+            <div class="day-text">珊瑚岛+金沙岛 · 杜拉拉水上市场 · 东方公主号（同轻奢版D4）。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 珊瑚岛 · 金沙岛 · 东方公主号</span>
+              <span class="dtag dtag-note">⚠ 55岁以上严禁乘坐快艇</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">祈福 · 富贵黄金屋</div>
+            <div class="day-route">Bangkok</div>
+            <div class="day-text">天明寺阿赞贴金 · 富贵黄金屋 · 热带水果园 · King Power免税店（同轻奢版D5）。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 阿赞贴金 · 富贵黄金屋 · 水果园</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">曼谷 → 广州 返程</div>
+            <div class="day-route">直飞返程</div>
+            <div class="day-tags"><span class="dtag dtag-fly">✈ 直飞返程广州</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOPPING PROTOCOL ── -->
+<div class="shopping" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Shopping Protocol · 购物协议</div>
+    <div class="sec-title">购物安排透明公示</div>
+    <div class="sec-sub">依据旅游合同明确公示，所有消费均为自愿原则</div>
+  </div>
+  <div class="shop-inner">
+    <div class="shop-banner up">
+      <span style="font-size:1.2rem;">📋</span>
+      <div class="shop-banner-text">
+        本行程依合同约定进入以下 <strong>5个协议购物店</strong>，停留时间如下表所示。<strong>所有消费均为自愿，绝无任何强制</strong>。如遇强制购物，请立即投诉领队，旅行社将严肃处理。
+      </div>
+    </div>
+    <div class="shop-table-wrap up">
+      <table class="shop-table">
+        <thead>
+          <tr>
+            <th style="width:40px;">#</th>
+            <th>购物店名称</th>
+            <th>经营商品与特色</th>
+            <th>停留时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">①</td>
+            <td><div class="name">珠宝中心博物馆</div><div class="desc">D3 · 芭提雅</div></td>
+            <td class="desc">红、蓝、黄宝石首饰，各类饰品及手工艺品</td>
+            <td class="time">约 120 分钟</td>
+          </tr>
+          <tr>
+            <td class="num">②</td>
+            <td><div class="name">毒蛇研究中心</div><div class="desc">D3 · 芭提雅</div></td>
+            <td class="desc">各类蛇药（解毒丹、蛇油丸等）及人蛇大战表演</td>
+            <td class="time">约 60–90 分钟</td>
+          </tr>
+          <tr>
+            <td class="num">③</td>
+            <td><div class="name">乳胶制品中心</div><div class="desc">D6 · 曼谷</div></td>
+            <td class="desc">泰国特色乳胶枕头、床垫、精油香薰等</td>
+            <td class="time">约 90–120 分钟</td>
+          </tr>
+          <tr>
+            <td class="num">④</td>
+            <td><div class="name">沉香博物馆</div><div class="desc">D5 · 曼谷</div></td>
+            <td class="desc">沉香手串、沉香雕刻等本土特产</td>
+            <td class="time">约 90 分钟</td>
+          </tr>
+          <tr>
+            <td class="num">⑤</td>
+            <td><div class="name">King Power 免税店</div><div class="desc">D5 · 曼谷</div></td>
+            <td class="desc">世界名牌服饰、名表、护肤品及香水</td>
+            <td class="time">约 90–120 分钟</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shop-note up">* 以上购物店均为行程合同约定，停留时间仅供参考，以实际情况为准。所有消费均为<strong>完全自愿</strong>，游客有权选择不购买任何商品。</div>
+  </div>
+</div>
+
+<!-- ── OPTIONAL & MUST-PAY ── -->
+<div id="optional">
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Optional &amp; Fees · 自费与必付</div>
+    <div class="sec-title">费用透明说明</div>
+    <div class="sec-sub">以下费用请出发前充分了解，避免产生误解</div>
+  </div>
+  <div class="must-grid">
+    <div class="must-box up">
+      <div class="must-head">必付服务费</div>
+      <ul>
+        <li>导游服务费：<strong>240元/人</strong>（必付）</li>
+        <li>全程由专业中文导游陪同服务</li>
+      </ul>
+    </div>
+    <div class="must-box up">
+      <div class="must-head">年龄补差（合同约束）</div>
+      <ul>
+        <li>适龄优惠年龄：<strong>28–68岁</strong></li>
+        <li>其余年龄段需加收 <strong>300–600元/人</strong></li>
+        <li>具体以出团通知单为准</li>
+      </ul>
+    </div>
+    <div class="must-box up">
+      <div class="must-head">礼仪小费参考</div>
+      <ul>
+        <li>快速通关费：<strong>20–50元/人</strong></li>
+        <li>床头/行李小费：<strong>20泰铢/间/晚</strong></li>
+        <li>拍照/骑象/按摩小费：<strong>50–100泰铢</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── COSTS INCLUDE/EXCLUDE ── -->
+<div class="costs" style="padding-top:0;">
+  <div class="costs-inner">
+    <div class="cost-box up">
+      <div class="cost-head">费用包含</div>
+      <table class="cost-table">
+        <tr><td>航班</td><td>广州往返曼谷直飞机票</td></tr>
+        <tr><td>住宿</td><td>全程指定酒店（轻奢版五钻·超值版四星）</td></tr>
+        <tr><td>餐食</td><td>行程内含餐（含豪华海鲜大餐·水果餐等）</td></tr>
+        <tr><td>景点</td><td>大皇宫·玉佛寺·水门寺·岛屿游等门票</td></tr>
+        <tr><td>射击</td><td>轻奢版赠送实弹射击5发子弹</td></tr>
+        <tr><td>游轮</td><td>东方公主号含餐晚宴</td></tr>
+        <tr><td>按摩</td><td>泰式按摩一次</td></tr>
+        <tr><td>接送</td><td>全程专业中文导游及专车服务</td></tr>
+      </table>
+    </div>
+    <div class="cost-box up">
+      <div class="cost-head">费用不含</div>
+      <table class="cost-table">
+        <tr><td>导游费</td><td>¥240元/人（必付，当地支付）</td></tr>
+        <tr><td>年龄差价</td><td>28岁以下或68岁以上加收300–600元/人</td></tr>
+        <tr><td>快艇水上项目</td><td>跳伞·浮潜·摩托艇等（直接付给船家）</td></tr>
+        <tr><td>超额子弹</td><td>射击5发以外的子弹另收费</td></tr>
+        <tr><td>礼仪小费</td><td>快速通关·床头小费·拍照等</td></tr>
+        <tr><td>个人消费</td><td>酒店内私人消费·洗衣等</td></tr>
+        <tr><td>保险</td><td>建议另行购买个人意外险</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读以下条款，保障您的出行权益</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Terms</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>🏦 现金备查要求</h4>
+        <ul>
+          <li>入境泰国必须携带不少于 <strong>20,000泰铢</strong>（约5,000人民币）现金</li>
+          <li>移民局有权抽查，现金不足者可能被拒绝入境</li>
+          <li>建议提前兑换，在国内或机场均可办理</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>👴 年龄与健康限制</h4>
+        <ul>
+          <li><strong>55岁以上长者</strong>：严禁乘坐快艇过岛（安全原因）</li>
+          <li>55岁以上旅客由旅行社安排岸边或酒店休闲，费用不退</li>
+          <li>如有特殊健康情况，请出发前告知顾问</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>👗 寺庙着装要求</h4>
+        <ul>
+          <li>游览寺庙须穿<strong>长裤/长裙（过膝）</strong></li>
+          <li>禁止穿着露肩、吊带及破洞裤进入寺庙</li>
+          <li>建议准备一套适合参观宗教场所的服装</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>⚠️ 脱团与违规处罚</h4>
+        <ul>
+          <li>擅自离团需支付离团费 <strong>500–1,000元/天/人</strong></li>
+          <li>轻奢版"推一罚十"：如有违约，旅行社赔付十倍团费</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>以上价格均为参考含税价，以出发时实际为准</span>
+    <span>导游服务费¥240为必付费用</span>
+    <span>轻奢版"推一罚十"承诺：违约赔付十倍团费</span>
+    <span>购物均为自愿消费原则，绝无强制</span>
+    <span>55岁以上严禁乘坐快艇，费用不退</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html" class="current">🇹🇭 泰国 · 本页</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchVer(btn, id) {
+  document.querySelectorAll('.ver-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.ver-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('ver-' + id).classList.add('active');
+  document.querySelectorAll('#ver-' + id + ' .up').forEach(el => {
+    el.classList.remove('in');
+    setTimeout(() => el.classList.add('in'), 40);
+  });
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','shopping','optional','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

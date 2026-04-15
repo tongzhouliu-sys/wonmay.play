@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 全景美国东西岸13天深度之旅</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --bg2: #ede7d9;
+  --ink: #1c1610;
+  --gold: #b8903c;
+  --gold-lt: #e8d5a0;
+  --red: #b03a2e;
+  --teal: #2c6b65;
+  --navy: #002868;
+  --muted: #7a6e60;
+  --border: #cfc4b0;
+  --white: #fdfaf4;
+  --self-bg: #fff8ed;
+  --self-border: #e8c87a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--gold);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#666;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#999;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--gold);background:rgba(184,144,60,.1);}
+
+/* ── HERO ── */
+.hero{background:var(--navy);color:var(--bg);padding:0;position:relative;overflow:hidden;min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#001845 0%,#002868 40%,#1a0a00 100%);z-index:0;}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,.015) 60px,rgba(255,255,255,.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,.015) 60px,rgba(255,255,255,.015) 61px);z-index:1;}
+.hero-stars{position:absolute;top:20px;right:60px;font-size:6rem;opacity:.06;z-index:1;line-height:1;}
+.hero-content{position:relative;z-index:2;padding:80px 40px 60px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.6rem);font-style:italic;color:#f0ebd8;line-height:1.1;margin-bottom:14px;}
+.hero-title em{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:0.85rem;color:#7a8faa;letter-spacing:0.06em;max-width:600px;margin-bottom:36px;line-height:1.9;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn-primary{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;}
+.btn-primary:hover{background:#8a2a20;}
+.btn-sec{display:inline-block;border:1px solid rgba(184,144,60,.5);color:var(--gold);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-sec:hover{background:rgba(184,144,60,.1);}
+.hero-price-tag{background:rgba(176,58,46,.15);border:1px solid rgba(176,58,46,.4);padding:8px 20px;display:inline-flex;align-items:baseline;gap:8px;}
+.hero-price-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--red);line-height:1;}
+.hero-price-unit{font-size:0.72rem;color:#7a8faa;}
+.hero-price-save{font-size:0.68rem;color:var(--gold);letter-spacing:0.08em;margin-left:8px;}
+
+/* ── HIGHLIGHT PILLS ── */
+.highlights{background:var(--white);border-bottom:1px solid var(--border);}
+.hl-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.hl-item{background:var(--white);padding:20px 18px;display:flex;align-items:flex-start;gap:12px;}
+.hl-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px;}
+.hl-text strong{display:block;font-size:0.82rem;font-weight:500;color:var(--ink);margin-bottom:3px;}
+.hl-text span{font-size:0.72rem;color:var(--muted);line-height:1.6;}
+
+/* ── SECTION HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── VERSIONS TAB ── */
+.ver-tabs{background:var(--white);border-bottom:1px solid var(--border);}
+.ver-tabs-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;gap:0;}
+.ver-btn{font-size:0.78rem;letter-spacing:0.1em;color:var(--muted);padding:14px 24px;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;font-family:'Noto Sans SC',sans-serif;transition:all .2s;white-space:nowrap;}
+.ver-btn:hover{color:var(--ink);}
+.ver-btn.active{color:var(--navy);border-bottom-color:var(--navy);}
+.ver-pane{display:none;}
+.ver-pane.active{display:block;}
+
+/* ── ITINERARY TIMELINE ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;margin-bottom:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--navy);line-height:1;}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#444;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-opt{background:var(--self-bg);color:#8a5c00;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f0e8ff;color:#5b21b6;}
+.dtag-note{background:#fff0f0;color:var(--red);}
+.dtag-cherry{background:#fce4ec;color:#880e4f;}
+
+/* ── COSTS ── */
+.costs{padding:0 40px 56px;}
+.costs-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);color:var(--gold);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:38%;}
+
+/* ── SELF-PAY TABLE ── */
+.selfpay-wrap{padding:0 40px 56px;}
+.selfpay-inner{max-width:1200px;margin:0 auto;}
+.sp-table-wrap{overflow-x:auto;}
+.sp-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);}
+.sp-table thead tr{background:var(--ink);}
+.sp-table th{padding:10px 16px;color:var(--gold);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;}
+.sp-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.sp-table tr:last-child td{border-bottom:none;}
+.sp-table tbody tr:nth-child(even) td{background:#fdfaf2;}
+.sp-table .zone{font-weight:500;color:var(--navy);font-size:0.72rem;letter-spacing:0.06em;}
+.sp-table .price{color:var(--red);font-family:'Cormorant Garamond',serif;font-size:1rem;white-space:nowrap;}
+.sp-table .note{font-size:0.7rem;color:var(--muted);}
+.sp-note{font-size:0.72rem;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── MUST-PAY / NOTICE ── */
+.must-pay{padding:0 40px 32px;}
+.must-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.must-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.must-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.must-box ul{list-style:none;padding:0;}
+.must-box li{font-size:0.76rem;color:#444;line-height:1.85;padding-left:14px;position:relative;}
+.must-box li::before{content:'·';position:absolute;left:0;color:var(--gold);}
+.must-box li strong{color:var(--ink);}
+
+/* ── BOOKING NOTICE ── */
+.bk-notice{padding:0 40px 56px;}
+.bk-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.bk-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.bk-body{display:grid;grid-template-columns:1fr 1fr 1fr;font-size:0.76rem;}
+.bk-sec{padding:20px 22px;border-right:1px solid var(--border);color:#444;line-height:1.85;}
+.bk-sec:last-child{border-right:none;}
+.bk-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.bk-sec ul{list-style:none;padding:0;}
+.bk-sec li{padding-left:12px;position:relative;}
+.bk-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+
+/* ── FLOATING CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;background:var(--red);color:#fff;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:all .2s;white-space:nowrap;}
+.float-btn:hover{background:#8a2a20;transform:translateX(-3px);}
+.float-btn.gold{background:var(--gold);color:var(--ink);}
+.float-btn.gold:hover{background:#9a7430;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--gold);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#6a6052;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--gold);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:var(--gold);border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:var(--gold);border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-inner{grid-template-columns:1fr 1fr;}
+  .costs-inner{grid-template-columns:1fr;}
+  .must-inner{grid-template-columns:1fr 1fr;}
+  .bk-body{grid-template-columns:1fr;}
+  .bk-sec{border-right:none;border-bottom:1px solid var(--border);}
+  .bk-sec:last-child{border-bottom:none;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .hl-inner{grid-template-columns:1fr;}
+  .sec-head{padding:36px 16px 20px;}
+  .itinerary,.costs,.selfpay-wrap,.must-pay,.bk-notice{padding-left:16px;padding-right:16px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  .must-inner{grid-template-columns:1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn">🎟 立即预订团期</a>
+  <a href="#" class="float-btn gold">🔔 前10名立减¥800</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#selfpay">自费清单</a>
+      <a href="#costs">费用说明</a>
+      <a href="#booking">预订须知</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-stars">🇺🇸</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">USA · East &amp; West Coast · 13 Days</div>
+    <div class="hero-title">
+      2026 美国全景<br>
+      东西岸<em>六大名城</em> ＋ 三大国家公园
+    </div>
+    <div class="hero-sub">
+      锡安 · 布莱斯峡谷 · 大峡谷 · 纽约 · 费城 · 华盛顿 · 圣地亚哥 · 洛杉矶<br>
+      国泰航空香港直飞 · 内陆跨城直飞省去3000公里 · 不走回头路
+    </div>
+    <div class="hero-cta">
+      <div class="hero-price-tag">
+        <span class="hero-price-num">¥25,999</span>
+        <span class="hero-price-unit">起/人</span>
+        <span class="hero-price-save">⚡ 前10位报名立减¥800</span>
+      </div>
+      <a href="#itinerary" class="btn-primary">查看完整行程</a>
+      <a href="#selfpay" class="btn-sec">自费项目清单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div class="highlights">
+  <div class="hl-inner">
+    <div class="hl-item up">
+      <div class="hl-icon">✈️</div>
+      <div class="hl-text">
+        <strong>优选五星航司</strong>
+        <span>国泰航空香港直飞<br>纽约进·洛杉矶出</span>
+      </div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🛫</div>
+      <div class="hl-text">
+        <strong>内陆直飞省时</strong>
+        <span>华盛顿→拉斯维加斯内陆飞<br>省去3000公里拉车劳顿</span>
+      </div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🎫</div>
+      <div class="hl-text">
+        <strong>重本价值包含</strong>
+        <span>赠价值¥2500国家公园+博物馆门票<br>自由女神游船·大都会博物馆入内</span>
+      </div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🥩</div>
+      <div class="hl-text">
+        <strong>升级美食体验</strong>
+        <span>16个正餐·美式牛排特色餐<br>IN-N-OUT汉堡·大餐自助</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Itinerary · 行程详情</div>
+    <div class="sec-title">13天深度美洲之旅</div>
+    <div class="sec-sub">行程共提供两个版本，请选择适合您的出发时段</div>
+  </div>
+
+  <!-- Version Tabs -->
+  <div class="ver-tabs">
+    <div class="ver-tabs-inner">
+      <button class="ver-btn active" onclick="switchVer(this,'std')">标准版 CX(L)-MGDX12</button>
+      <button class="ver-btn" onclick="switchVer(this,'cherry')">🌸 赏樱特别版 HL(Q)-MGSY12A</button>
+    </div>
+  </div>
+
+  <!-- STANDARD VERSION -->
+  <div class="ver-pane active" id="ver-std">
+    <div class="itinerary" style="padding-top:32px;">
+      <div class="it-inner">
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">出发 → 香港转飞纽约</div>
+            <div class="day-route">国泰航空 CX · 香港中转直飞</div>
+            <div class="day-text">乘坐国泰航空由香港直飞纽约，开启13天美洲壮游。如需国内联运，可从全国50+城市出发提前汇聚香港。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 国泰航空直飞</span>
+              <span class="dtag dtag-inc">✓ 全国50+城市联运</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">纽约 · 漫步曼哈顿</div>
+            <div class="day-route">New York City</div>
+            <div class="day-text">抵达纽约后，搭乘游船近距离观赏自由女神像（不上岛）。漫步华尔街，打卡"大松果"Vessel地标，感受纽约金融与艺术的独特碰撞。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 自由女神游船（不上岛）</span>
+              <span class="dtag dtag-inc">✓ 华尔街</span>
+              <span class="dtag dtag-inc">✓ Vessel大松果</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">纽约 · 大都会博物馆深度游</div>
+            <div class="day-route">New York City</div>
+            <div class="day-text">深度参观全球顶级的大都会博物馆，专业中文讲解随行。自由探索纽约城市魅力，傍晚可选曼哈顿岛夜游（自费）。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 大都会博物馆（入内）</span>
+              <span class="dtag dtag-opt">可选 纽约深度游 $165/人</span>
+              <span class="dtag dtag-opt">可选 曼哈顿夜游 $65/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">费城 → 华盛顿</div>
+            <div class="day-route">Philadelphia → Washington D.C.</div>
+            <div class="day-text">驱车至费城，参观美国独立圣地——独立宫（外观）与自由钟（入内），追溯240余年建国历史。再驶向首都华盛顿，探访白宫与国会大厦。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 独立宫（外观）</span>
+              <span class="dtag dtag-inc">✓ 自由钟（入内）</span>
+              <span class="dtag dtag-inc">✓ 白宫</span>
+              <span class="dtag dtag-inc">✓ 国会大厦</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">华盛顿 → 内陆飞行 → 拉斯维加斯</div>
+            <div class="day-route">Washington D.C. → Las Vegas · 内陆直飞</div>
+            <div class="day-text">搭乘内陆航班飞往拉斯维加斯，一步跨越3000公里，省去漫长拉车。抵达后游览这座不夜城，感受霓虹灯光与奢华秀场的交融魅力。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 华盛顿→拉斯维加斯内陆直飞</span>
+              <span class="dtag dtag-opt">可选 表演秀 $125起/人</span>
+              <span class="dtag dtag-opt">可选 拉斯夜游 $80/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">锡安国家公园</div>
+            <div class="day-route">Zion National Park</div>
+            <div class="day-text">深入美国最美国家公园之一——锡安，感受红岩峡谷的壮阔气势。乘坐园区专属摆渡车穿越主要景区，仰望悬崖峭壁与清澈河流交织的震撼景观。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 锡安国家公园（含门票）</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">07</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">布莱斯峡谷 · 神的阅兵场</div>
+            <div class="day-route">Bryce Canyon National Park</div>
+            <div class="day-text">抵达号称"神的阅兵场"的布莱斯峡谷，数千支橙红色石柱矗立天地间，宛若外星地貌。俯瞰全景后步入峡谷，沉浸于这片令人叹为观止的地质奇迹。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 布莱斯峡谷国家公园（含门票）</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">08</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">大峡谷国家公园</div>
+            <div class="day-route">Grand Canyon National Park</div>
+            <div class="day-text">站在大峡谷南缘，俯瞰这条绵延446公里、深达1.6公里的地球伤疤。晨光与暮色为峡谷渲染出无数层次的红褐色彩，此刻感受到的，是文字无法描述的壮阔。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 大峡谷国家公园（含门票）</span>
+              <span class="dtag dtag-opt">可选 南峡直升机 $295-390/人</span>
+              <span class="dtag dtag-opt">可选 羚羊彩穴+马蹄湾 $280/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">09</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">拉斯维加斯自由游</div>
+            <div class="day-route">Las Vegas</div>
+            <div class="day-text">返回拉斯维加斯，自由探索这座赌城之都。可选观看世界顶级表演秀，或漫步著名的赌城大道，感受米高梅百乐宫喷泉与威尼斯人天幕的奢华氛围。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-opt">可选 KA秀/O秀/蓝人秀 $125起/人</span>
+              <span class="dtag dtag-opt">可选 拉斯夜游 $80/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">10</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">圣地亚哥</div>
+            <div class="day-route">San Diego</div>
+            <div class="day-text">驱车前往阳光之城圣地亚哥，远眺军港停泊的美国太平洋舰队，打卡经典雕塑《胜利之吻》，游览文化艺术中心巴尔博亚公园。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 圣地亚哥军港</span>
+              <span class="dtag dtag-inc">✓ 胜利之吻雕塑</span>
+              <span class="dtag dtag-inc">✓ 巴尔博亚公园</span>
+              <span class="dtag dtag-opt">可选 墨西哥蒂华纳 $100/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">11</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">洛杉矶 · 好莱坞与星光大道</div>
+            <div class="day-route">Los Angeles</div>
+            <div class="day-text">漫步好莱坞星光大道，在数千颗星印中寻找心仪的名字，外观杜比剧院感受奥斯卡颁奖礼的现场氛围。品尝网红IN-N-OUT汉堡，感受最地道的加州快餐文化。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 好莱坞星光大道</span>
+              <span class="dtag dtag-inc">✓ 杜比剧院（外观）</span>
+              <span class="dtag dtag-meal">🍔 IN-N-OUT汉堡</span>
+              <span class="dtag dtag-opt">可选 洛杉矶深度半天游 $80/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">12</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">洛杉矶自由活动 / 购物</div>
+            <div class="day-route">Los Angeles</div>
+            <div class="day-text">自由活动时间，可前往贝弗利山庄、圣塔莫妮卡海滩漫步，或前往奥特莱斯购物中心选购心仪品牌商品。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 自由活动</span>
+              <span class="dtag dtag-opt">可选 洛杉矶深度半天游 $80/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">13</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">洛杉矶 → 香港 → 返程</div>
+            <div class="day-route">LAX → HKG · 国泰航空</div>
+            <div class="day-text">前往洛杉矶国际机场，搭乘国泰航空经香港返程。结束这段横跨东西岸的壮阔美洲旅程，满载记忆踏上归途。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 国泰航空返程</span>
+              <span class="dtag dtag-note">📋 行李限额：托运1件不超过23kg</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CHERRY BLOSSOM VERSION -->
+  <div class="ver-pane" id="ver-cherry">
+    <div class="itinerary" style="padding-top:32px;">
+      <div class="it-inner">
+
+        <div style="background:#fff0f5;border:1px solid #f8bbd0;padding:14px 20px;margin-bottom:28px;font-size:0.82rem;color:#880e4f;max-width:1200px;margin-left:auto;margin-right:auto;" class="up">
+          🌸 <strong>赏樱特别版（HL(Q)-MGSY12A）</strong>：在标准版基础上，D5特别加入华盛顿潮汐湖畔3000余株吉野樱赏花体验，限定春季出发，席位极为有限。
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">出发 → 香港转飞纽约</div>
+            <div class="day-route">国泰航空 CX · 香港中转直飞</div>
+            <div class="day-text">乘坐国泰航空由香港直飞纽约，开启赏樱版13天限定美洲之旅。</div>
+            <div class="day-tags"><span class="dtag dtag-fly">✈ 国泰航空直飞</span></div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">纽约 · 漫步曼哈顿</div>
+            <div class="day-route">New York City</div>
+            <div class="day-text">自由女神游船·华尔街·Vessel大松果（同标准版D2）。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 自由女神游船</span>
+              <span class="dtag dtag-inc">✓ 华尔街</span>
+              <span class="dtag dtag-inc">✓ Vessel大松果</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">纽约 · 大都会博物馆</div>
+            <div class="day-route">New York City</div>
+            <div class="day-text">深度参观大都会博物馆（同标准版D3）。</div>
+            <div class="day-tags"><span class="dtag dtag-inc">✓ 大都会博物馆（入内）</span></div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">费城 → 华盛顿</div>
+            <div class="day-route">Philadelphia → Washington D.C.</div>
+            <div class="day-text">独立宫·自由钟·白宫·国会大厦（同标准版D4）。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 独立宫 · 自由钟 · 白宫 · 国会大厦</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">🌸 华盛顿潮汐湖赏樱 【限定加场】</div>
+            <div class="day-route">Washington D.C. · Tidal Basin</div>
+            <div class="day-text">赏樱版专属亮点！华盛顿潮汐湖畔3000余株吉野樱竞相绽放，与林肯纪念堂和杰斐逊纪念堂构成令人屏息的春日画卷。这是一场与自然的约定，只在春天限定开启。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-cherry">🌸 潮汐湖·3000株吉野樱（限定）</span>
+              <span class="dtag dtag-cherry">🌸 林肯纪念堂·杰斐逊纪念堂</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">华盛顿 → 内陆直飞 → 拉斯维加斯</div>
+            <div class="day-route">Washington D.C. → Las Vegas · 内陆直飞</div>
+            <div class="day-text">内陆直飞拉斯维加斯（同标准版D5）。</div>
+            <div class="day-tags"><span class="dtag dtag-fly">✈ 内陆直飞</span></div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">07</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">锡安国家公园</div>
+            <div class="day-route">Zion National Park</div>
+            <div class="day-tags"><span class="dtag dtag-inc">✓ 锡安国家公园（含门票）</span></div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">08</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">布莱斯峡谷 · 神的阅兵场</div>
+            <div class="day-route">Bryce Canyon National Park</div>
+            <div class="day-tags"><span class="dtag dtag-inc">✓ 布莱斯峡谷国家公园（含门票）</span></div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">09</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">大峡谷国家公园</div>
+            <div class="day-route">Grand Canyon National Park</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 大峡谷国家公园（含门票）</span>
+              <span class="dtag dtag-opt">可选 南峡直升机 $295-390/人</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">10</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">圣地亚哥</div>
+            <div class="day-route">San Diego</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 军港·胜利之吻·巴尔博亚公园</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">11</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">洛杉矶 · 好莱坞星光大道</div>
+            <div class="day-route">Los Angeles</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 好莱坞星光大道</span>
+              <span class="dtag dtag-inc">✓ 杜比剧院（外观）</span>
+              <span class="dtag dtag-meal">🍔 IN-N-OUT汉堡</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">12</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">洛杉矶自由活动</div>
+            <div class="day-route">Los Angeles</div>
+            <div class="day-tags"><span class="dtag dtag-inc">✓ 自由活动</span></div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">13</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">洛杉矶 → 香港 → 返程</div>
+            <div class="day-route">LAX → HKG · 国泰航空</div>
+            <div class="day-tags"><span class="dtag dtag-fly">✈ 国泰航空返程</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SELF-PAY TABLE ── -->
+<div class="selfpay-wrap" id="selfpay">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Optional Activities · 自费项目</div>
+    <div class="sec-title">自费项目清单</div>
+    <div class="sec-sub">以下项目均为自愿参加，绝不强制；价格以出发时实际为准</div>
+  </div>
+  <div class="selfpay-inner">
+    <div class="sp-table-wrap up">
+      <table class="sp-table">
+        <thead>
+          <tr>
+            <th>区域</th>
+            <th>项目名称</th>
+            <th>服务内容</th>
+            <th>参考价格（美元/人）</th>
+            <th>时长</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="zone" rowspan="2">拉斯维加斯</td>
+            <td><strong>拉斯表演秀</strong></td>
+            <td class="note">KA秀、O秀、蓝人秀、魔术秀等视听盛宴</td>
+            <td class="price">$125 起</td>
+            <td class="note">约1.5H</td>
+          </tr>
+          <tr>
+            <td><strong>拉斯维加斯夜游</strong></td>
+            <td class="note">灯光秀·米高梅/百乐宫喷泉·威尼斯人天幕</td>
+            <td class="price">$80</td>
+            <td class="note">约1H</td>
+          </tr>
+          <tr>
+            <td class="zone" rowspan="2">大峡谷区</td>
+            <td><strong>南峡直升机体验</strong></td>
+            <td class="note">震撼雄鹰视角，180度无障碍俯瞰大峡谷</td>
+            <td class="price">$295–$390</td>
+            <td class="note">约0.5H</td>
+          </tr>
+          <tr>
+            <td><strong>羚羊彩穴 + 马蹄湾</strong></td>
+            <td class="note">奇特光洞与科罗拉多河U形弯道<br><em style="color:var(--red);font-style:normal;font-size:0.68rem;">需提前72H预订</em></td>
+            <td class="price">$280</td>
+            <td class="note">半天</td>
+          </tr>
+          <tr>
+            <td class="zone" rowspan="2">洛杉矶</td>
+            <td><strong>洛杉矶深度半天游</strong></td>
+            <td class="note">彼得森汽车/盖蒂中心（三选一）+ 圣塔莫妮卡海滩</td>
+            <td class="price">$80</td>
+            <td class="note">约3H</td>
+          </tr>
+          <tr>
+            <td><strong>墨西哥蒂华纳</strong></td>
+            <td class="note">乘车前往墨西哥边境城市，体验异国风情</td>
+            <td class="price">$100</td>
+            <td class="note">约2–3H</td>
+          </tr>
+          <tr>
+            <td class="zone" rowspan="3">纽约</td>
+            <td><strong>纽约深度一天游</strong></td>
+            <td class="note">中央公园·中央车站·世贸登顶·联合国入内</td>
+            <td class="price">$165</td>
+            <td class="note">约4H</td>
+          </tr>
+          <tr>
+            <td><strong>曼哈顿岛夜游</strong></td>
+            <td class="note">乘车游览霓虹闪耀的曼哈顿不夜城</td>
+            <td class="price">$65</td>
+            <td class="note">约2H</td>
+          </tr>
+          <tr>
+            <td><strong>无畏号航母博物馆</strong></td>
+            <td class="note">二战、冷战及越战名舰，门票+服务费</td>
+            <td class="price">$50</td>
+            <td class="note">约1H</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sp-note up">* 所有自费项目均遵循<strong>自愿参加</strong>原则，不存在任何强制消费。价格为参考价，以出发时实际报价为准。</div>
+  </div>
+</div>
+
+<!-- ── MUST PAY ── -->
+<div class="must-pay" id="costs">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Mandatory Fees · 必付费用</div>
+    <div class="sec-title">出行必付项目</div>
+    <div class="sec-sub">以下费用为出行必须支付的项目，请出发前与顾问确认</div>
+  </div>
+  <div class="must-inner">
+    <div class="must-box up">
+      <div class="must-head">司导服务费 · 必付</div>
+      <ul>
+        <li>司机导游服务小费：<strong>$195美金/人</strong></li>
+        <li>费用在当地向司导直接支付</li>
+        <li>此为行业通行标准，感谢您的理解与支持</li>
+      </ul>
+    </div>
+    <div class="must-box up">
+      <div class="must-head">国家公园附加门票 · 按需</div>
+      <ul>
+        <li>非美国居民附加费：若景区落实，现场需补约 <strong>$100美金/人</strong></li>
+        <li>已含价值¥2500门票于团费内</li>
+        <li>以景区现场规定为准</li>
+      </ul>
+    </div>
+    <div class="must-box up">
+      <div class="must-head">住宿单房差</div>
+      <ul>
+        <li>单房差：<strong>¥4,900元/人</strong></li>
+        <li>美洲酒店通常无官方星级评定</li>
+        <li>严禁室内吸烟，违者罚款约 <strong>$300美金</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── COSTS TABLE ── -->
+<div class="costs" style="padding-top:0;">
+  <div class="costs-inner">
+    <div class="cost-box up">
+      <div class="cost-head">费用包含</div>
+      <table class="cost-table">
+        <tr><td>航班</td><td>国泰航空往返国际机票（香港中转）</td></tr>
+        <tr><td>内陆段</td><td>华盛顿→拉斯维加斯内陆直飞</td></tr>
+        <tr><td>住宿</td><td>全程指定酒店（标准双人间）</td></tr>
+        <tr><td>餐食</td><td>16个正餐，含美式牛排餐·IN-N-OUT汉堡</td></tr>
+        <tr><td>门票</td><td>价值¥2500三大国家公园+博物馆门票</td></tr>
+        <tr><td>游船</td><td>自由女神像游船（不上岛）</td></tr>
+        <tr><td>领队</td><td>全程中文领队及境外司导服务费</td></tr>
+        <tr><td>签证</td><td>团队赴美签证相关协助</td></tr>
+      </table>
+    </div>
+    <div class="cost-box up">
+      <div class="cost-head">费用不含</div>
+      <table class="cost-table">
+        <tr><td>司导小费</td><td>$195美金/人（必付，当地支付）</td></tr>
+        <tr><td>公园附加费</td><td>非美国居民或需补约$100美金/人</td></tr>
+        <tr><td>单房差</td><td>¥4,900元/人</td></tr>
+        <tr><td>自费项目</td><td>所有自愿参加的可选项目费用</td></tr>
+        <tr><td>个人消费</td><td>酒店内私人消费·洗衣·理发等</td></tr>
+        <tr><td>超额行李</td><td>超出航司免费行李额（限1件23kg）</td></tr>
+        <tr><td>保险</td><td>建议另行购买个人意外险</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── BOOKING NOTICE ── -->
+<div class="bk-notice" id="booking">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Terms · 预订须知</div>
+    <div class="sec-title">重要条款与须知</div>
+    <div class="sec-sub">出发前请仔细阅读以下条款，如有疑问请联系顾问确认</div>
+  </div>
+  <div class="bk-inner up">
+    <div class="bk-head">预订须知 · 重要条款</div>
+    <div class="bk-body">
+      <div class="bk-sec">
+        <h4>签证与证件</h4>
+        <ul>
+          <li>持B1/B2签证者出发前必须更新<strong>EVUS登记</strong>状态</li>
+          <li>中国护照申请美国签证需提前充分准备</li>
+          <li>因证件问题无法出行，责任自负</li>
+          <li>请确认护照有效期至少6个月以上</li>
+        </ul>
+      </div>
+      <div class="bk-sec">
+        <h4>行程纪律</h4>
+        <ul>
+          <li>境外擅自脱团需支付 <strong>$200–$1000美金</strong> 罚金</li>
+          <li>擅自脱团视为主动解除合同</li>
+          <li>航班限带托运行李<strong>1件，不超过23kg</strong></li>
+          <li>酒店严禁室内吸烟，违者罚款约$300美金</li>
+        </ul>
+      </div>
+      <div class="bk-sec">
+        <h4>其他须知</h4>
+        <ul>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+          <li>国家公园门票已含，但非美国居民或需现场补差价</li>
+          <li>行程内容以最终出团通知单为准</li>
+          <li>如遇不可抗力，旅行社保留调整行程权利</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>以上价格均为参考含税价，以出发时实际为准</span>
+    <span>司导服务费$195美元为必付费用</span>
+    <span>国家公园门票已含，非美国居民或需补差价~$100</span>
+    <span>自费项目均为自愿原则，不存在任何强制消费</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html" class="current">🗽 美国 · 本页</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Version tabs
+function switchVer(btn, id) {
+  document.querySelectorAll('.ver-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.ver-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('ver-' + id).classList.add('active');
+  document.querySelectorAll('#ver-' + id + ' .up').forEach(el => {
+    el.classList.remove('in');
+    setTimeout(() => el.classList.add('in'), 40);
+  });
+}
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+// Nav highlight
+const secs = ['itinerary','selfpay','costs','booking'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

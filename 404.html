@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 · 迷路了 — 逍遥国际旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --ink: #1c1610;
+  --gold: #b8903c;
+  --gold-lt: #e8d5a0;
+  --red: #b03a2e;
+  --muted: #7a6e60;
+  --border: #cfc4b0;
+  --white: #fdfaf4;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 300;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── STARFIELD ── */
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 65%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 55%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 50%, rgba(255,255,255,.15) 0%, transparent 100%),
+    radial-gradient(2px 2px at 33% 40%, rgba(255,255,255,.18) 0%, transparent 100%),
+    radial-gradient(2px 2px at 75% 70%, rgba(255,255,255,.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48% 28%, rgba(255,255,255,.22) 0%, transparent 100%);
+}
+
+/* ── HEADER ── */
+header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid rgba(184,144,60,.2);
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-style: italic;
+  line-height: 1.15;
+  text-decoration: none;
+}
+.logo-sub { font-style: normal; font-size: 0.6rem; color: #555; letter-spacing: 0.16em; display: block; }
+
+/* ── MAIN ── */
+main {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+/* floating plane */
+.plane-wrap {
+  font-size: 5rem;
+  margin-bottom: 8px;
+  animation: drift 6s ease-in-out infinite;
+  display: inline-block;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.4));
+}
+@keyframes drift {
+  0%,100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-18px) rotate(4deg); }
+}
+
+/* 404 big number */
+.four-o-four {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(7rem, 18vw, 14rem);
+  font-style: italic;
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(184,144,60,.6);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  position: relative;
+}
+.four-o-four::after {
+  content: '404';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(184,144,60,.08) 0%, transparent 70%);
+  -webkit-text-stroke: 0;
+  color: transparent;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+
+.sub {
+  font-size: 0.88rem;
+  color: #6a5e50;
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 2;
+}
+.sub em { color: #a89070; font-style: normal; }
+
+/* destination strip */
+.dest-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 40px;
+  max-width: 640px;
+}
+.dest-pill {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border: 1px solid rgba(184,144,60,.25);
+  color: #a89070;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dest-pill:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(184,144,60,.06);
+  transform: translateY(-2px);
+}
+
+/* CTA buttons */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+.btn-home {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  padding: 12px 32px;
+  font-weight: 500;
+  transition: all .2s;
+}
+.btn-home:hover { background: #9a7020; }
+.btn-consult {
+  display: inline-block;
+  border: 1px solid rgba(184,144,60,.4);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  padding: 12px 28px;
+  transition: all .2s;
+}
+.btn-consult:hover { background: rgba(184,144,60,.08); }
+
+/* travel tip */
+.tip-box {
+  background: rgba(184,144,60,.06);
+  border: 1px solid rgba(184,144,60,.18);
+  padding: 16px 28px;
+  max-width: 480px;
+  font-size: 0.78rem;
+  color: #5a4e3a;
+  line-height: 1.9;
+}
+.tip-box strong { color: #a89060; display: block; font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; }
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(184,144,60,.12);
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 0.68rem;
+  color: #3a3020;
+  letter-spacing: 0.06em;
+}
+footer a { color: #7a6040; text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+@media(max-width:640px){
+  header, footer { padding: 0 20px; }
+  header { height: 56px; }
+  main { padding: 40px 20px; }
+  .four-o-four { font-size: clamp(6rem, 22vw, 8rem); }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<header>
+  <a href="index.html" class="logo">
+    逍遥国际旅行社
+    <span class="logo-sub">栖梦投资旗下产业 · Xiao Yao International Tours</span>
+  </a>
+</header>
+
+<main>
+  <div class="plane-wrap">✈️</div>
+
+  <div class="four-o-four">404</div>
+
+  <div class="tagline">您的飞机飞偏了航线</div>
+
+  <p class="sub">
+    抱歉，我们找不到您要前往的页面。<br>
+    也许它被<em>云朵遮住了</em>，也许它还在<em>旅途中</em>——<br>
+    不如让我们带您去一个真正值得到达的目的地。
+  </p>
+
+  <div class="dest-strip">
+    <a href="japan.html" class="dest-pill">🌸 日本</a>
+    <a href="thailand.html" class="dest-pill">🛕 泰国</a>
+    <a href="usa.html" class="dest-pill">🗽 美国</a>
+    <a href="europe.html" class="dest-pill">🗼 欧洲</a>
+    <a href="bali.html" class="dest-pill">🌊 巴厘岛</a>
+    <a href="egypt.html" class="dest-pill">🏛 埃及</a>
+    <a href="turkey.html" class="dest-pill">🎈 土耳其</a>
+    <a href="kenya.html" class="dest-pill">🦁 肯尼亚</a>
+    <a href="australia.html" class="dest-pill">🦘 澳洲</a>
+    <a href="korea.html" class="dest-pill">🏯 韩国</a>
+  </div>
+
+  <div class="cta-row">
+    <a href="index.html" class="btn-home">← 返回首页</a>
+    <a href="tel:15907190570" class="btn-consult">📞 咨询顾问高盼</a>
+  </div>
+
+  <div class="tip-box">
+    <strong>✈ 旅行小贴士</strong>
+    迷路本身就是旅行的一部分——很多旅行者的最美回忆，恰恰来自那些不在计划里的转角。<br>
+    但如果您是在找某条具体的线路，欢迎直接联系我们的顾问 <strong style="color:#c0a060;">高盼 · 159-0719-0570</strong>。
+  </div>
+</main>
+
+<footer>
+  © 2026 逍遥国际旅行社 · 栖梦投资旗下产业 ·
+  <a href="index.html">返回首页</a> ·
+  <a href="tel:15907190570">159-0719-0570</a>
+</footer>
+
+</body>
+</html>

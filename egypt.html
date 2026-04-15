@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 穿越古国 埃及10天7晚深度游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f8f4ec;
+  --bg2: #ede5d5;
+  --ink: #1a1408;
+  --nile: #1a5878;
+  --nile-lt: #d0e8f0;
+  --nile-deep: #0e3850;
+  --sand: #c89838;
+  --sand-lt: #f8eccc;
+  --sand-deep: #8a6010;
+  --stone: #d8c8a8;
+  --red-sea: #1a7860;
+  --red-sea-lt: #d0f0e8;
+  --muted: #7a6848;
+  --border: #d8c8a0;
+  --white: #fdfaf4;
+  --self-bg: #fff8ea;
+  --self-border: #e8c870;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--sand);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--sand);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#5a4a28;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#7a6040;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--sand);background:rgba(200,152,56,.12);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#0a0800 0%,#1a1008 35%,#080e18 70%,#0e1820 100%);}
+.hero-bg::before{content:'🏛️';position:absolute;right:40px;bottom:-10px;font-size:22rem;opacity:.04;line-height:1;filter:blur(2px);}
+.hero-bg::after{content:'☀️';position:absolute;right:20%;top:30px;font-size:10rem;opacity:.04;line-height:1;filter:blur(3px);}
+/* pyramid silhouette via css triangle */
+.hero-pyramid{position:absolute;bottom:0;left:50px;width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:160px solid rgba(200,152,56,.04);z-index:1;}
+.hero-pyramid2{position:absolute;bottom:0;left:200px;width:0;height:0;border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:110px solid rgba(200,152,56,.03);z-index:1;}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(160deg,transparent,transparent 80px,rgba(200,152,56,.008) 80px,rgba(200,152,56,.008) 81px);z-index:1;}
+.hero-content{position:relative;z-index:2;padding:80px 40px 64px;max-width:1200px;margin:0 auto;width:100%;}
+
+/* epoch badge */
+.epoch-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,152,56,.1);border:1px solid rgba(200,152,56,.3);padding:5px 16px;margin-bottom:18px;font-size:0.68rem;letter-spacing:0.2em;color:#c8a870;}
+
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--sand);text-transform:uppercase;margin-bottom:14px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.9rem);font-style:italic;color:#f0e8d0;line-height:1.08;margin-bottom:12px;}
+.hero-title em{color:var(--sand);font-style:normal;}
+.hero-sub{font-size:0.85rem;color:#5a4830;letter-spacing:0.06em;max-width:600px;margin-bottom:28px;line-height:1.9;}
+
+/* USP tags */
+.usp-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+.usp{font-size:0.72rem;letter-spacing:0.06em;padding:5px 14px;border:1px solid;}
+.us-sand{color:#d8b870;border-color:rgba(200,152,56,.35);background:rgba(200,152,56,.08);}
+.us-nile{color:#80b8d0;border-color:rgba(26,88,120,.35);background:rgba(26,88,120,.08);}
+.us-rs{color:#80c8b0;border-color:rgba(26,120,96,.35);background:rgba(26,120,96,.08);}
+
+/* price + gifts */
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:28px;}
+.price-block{background:rgba(0,0,0,.35);border:1px solid rgba(200,152,56,.35);padding:12px 22px;}
+.price-lbl{font-size:0.62rem;color:#6a5030;letter-spacing:0.1em;margin-bottom:2px;}
+.price-sub{font-size:0.76rem;color:#b09060;margin-bottom:3px;}
+.price-sub strong{color:#e0c080;}
+.price-note2{font-size:0.68rem;color:#5a4030;}
+.gift-block{background:rgba(26,88,120,.1);border:1px solid rgba(26,88,120,.3);padding:12px 18px;display:flex;flex-direction:column;justify-content:center;gap:5px;}
+.gift-row{display:flex;align-items:center;gap:8px;font-size:0.76rem;color:#90c0d8;}
+.gift-row strong{color:#b0d8e8;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-sand{display:inline-block;background:var(--sand);color:var(--ink);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;font-weight:500;}
+.btn-sand:hover{background:var(--sand-deep);color:#f0e0b0;}
+.btn-nile{display:inline-block;border:1px solid rgba(26,88,120,.5);color:#80b8d0;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 26px;transition:all .2s;}
+.btn-nile:hover{background:rgba(26,88,120,.15);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 22px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.65);}
+
+/* ── DIVIDER ── */
+.divider{height:4px;background:linear-gradient(90deg,var(--sand),var(--nile),var(--red-sea));}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--ink);border-bottom:1px solid rgba(200,152,56,.1);}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid rgba(200,152,56,.08);justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;font-weight:400;letter-spacing:0.06em;}
+.cn{color:#d8b870;}
+.cni{color:#80b8d0;}
+.crs{color:#80c8b0;}
+.trust-text span{font-size:0.68rem;color:#2a2010;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:8px;}
+.es{color:var(--sand);}
+.en{color:var(--nile);}
+.er{color:var(--red-sea);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS ── */
+.hl-grid{max-width:1200px;margin:0 auto;padding:0 40px 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 22px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;flex:1;}
+.hl-tag{font-size:0.62rem;padding:2px 8px;align-self:flex-start;margin-top:auto;}
+.ht-sand{background:var(--sand-lt);color:var(--sand-deep);}
+.ht-nile{background:var(--nile-lt);color:var(--nile-deep);}
+.ht-rs{background:var(--red-sea-lt);color:var(--red-sea);}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;line-height:1;}
+.dns{color:var(--sand);}
+.dnn{color:var(--nile);}
+.dnr{color:var(--red-sea);}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#2a2010;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-sand{background:var(--sand-lt);color:var(--sand-deep);}
+.dtag-nile{background:var(--nile-lt);color:var(--nile-deep);}
+.dtag-rs{background:var(--red-sea-lt);color:var(--red-sea);}
+.dtag-opt{background:var(--self-bg);color:#7a5010;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-gift{background:var(--nile-lt);color:var(--nile-deep);}
+.dtag-note{background:#fff8e8;color:#8a5010;}
+.dtag-free{background:var(--bg2);color:var(--muted);}
+
+/* ── OPTIONAL TABLE ── */
+.optional-wrap{padding:0 40px 56px;}
+.op-inner{max-width:1200px;margin:0 auto;}
+.op-table-wrap{overflow-x:auto;}
+.op-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);}
+.op-table thead tr{background:var(--ink);}
+.op-table th{padding:10px 16px;color:var(--sand);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;}
+.op-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.op-table tr:last-child td{border-bottom:none;}
+.op-table tbody tr:nth-child(even) td{background:#fdf8ee;}
+.cat-cell{font-size:0.7rem;letter-spacing:0.1em;color:var(--nile-deep);font-weight:500;white-space:nowrap;}
+.price-cell{font-family:'Cormorant Garamond',serif;font-size:1rem;color:#8a3010;white-space:nowrap;}
+.note-cell{font-size:0.7rem;color:var(--muted);}
+.op-note{font-size:0.72rem;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── SHOPPING POLICY ── */
+.shop-policy{padding:0 40px 56px;}
+.policy-inner{max-width:1200px;margin:0 auto;}
+.policy-card{background:var(--white);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.policy-col{padding:26px 28px;}
+.policy-col:first-child{border-right:1px solid var(--border);}
+.policy-col-head{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;}
+.ph-g{color:#2e7d32;}
+.ph-s{color:var(--sand-deep);}
+.policy-col ul{list-style:none;}
+.policy-col li{font-size:0.78rem;color:#2a2010;line-height:1.9;padding-left:16px;position:relative;}
+.policy-col li::before{position:absolute;left:0;}
+.inc-list li::before{content:'✓';color:#2e7d32;}
+.exc-list li::before{content:'○';color:var(--sand-deep);}
+.souvenir-note{background:var(--sand-lt);border:1px solid rgba(200,152,56,.3);padding:12px 16px;margin-top:14px;font-size:0.74rem;color:#5a3a10;line-height:1.75;}
+.souvenir-note strong{color:var(--sand-deep);}
+.prod-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.ptag{font-size:0.7rem;padding:3px 12px;background:var(--sand-lt);color:var(--sand-deep);}
+
+/* ── COSTS ── */
+.costs{padding:0 40px 40px;}
+.costs-inner{max-width:1200px;margin:0 auto;}
+.must-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+.must-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.must-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#8a2010;margin-bottom:10px;}
+.must-box ul{list-style:none;}
+.must-box li{font-size:0.76rem;color:#2a2010;line-height:1.85;padding-left:14px;position:relative;}
+.must-box li::before{content:'·';position:absolute;left:0;color:var(--sand);}
+.must-box li strong{color:var(--ink);}
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.ch-s{color:var(--sand);}
+.ch-n{color:var(--nile);}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── CONSULTANT ── */
+.consult{padding:0 40px 56px;}
+.consult-inner{max-width:1200px;margin:0 auto;}
+.consult-card{background:linear-gradient(135deg,#f8f0d8,#e8f0f8);border:1px solid var(--border);padding:32px 36px;display:flex;align-items:center;gap:40px;}
+.consult-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--sand),var(--nile));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.consult-info h3{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.consult-info p{font-size:0.8rem;color:var(--muted);margin-bottom:12px;}
+.consult-contact{display:flex;flex-wrap:wrap;gap:10px;}
+.contact-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;transition:all .2s;}
+.cb-sand{background:var(--sand);color:var(--ink);font-weight:500;}
+.cb-sand:hover{background:var(--sand-deep);color:#f0e0a0;}
+.cb-nile{border:1px solid var(--nile);color:var(--nile);}
+.cb-nile:hover{background:var(--nile-lt);}
+.cb-ghost{border:1px solid var(--border);color:var(--muted);}
+.cb-ghost:hover{background:var(--bg2);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--nile-deep);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#2a2010;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;transition:all .2s;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.float-btn:hover{transform:translateX(-3px);}
+.fb-sand{background:var(--sand);color:var(--ink);font-weight:500;box-shadow:0 4px 16px rgba(200,152,56,.3);}
+.fb-sand:hover{background:var(--sand-deep);color:#f0e0a0;}
+.fb-nile{background:var(--nile);color:#fff;box-shadow:0 4px 16px rgba(26,88,120,.25);}
+.fb-nile:hover{background:var(--nile-deep);}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--sand);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#4a3818;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--sand);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .must-grid{grid-template-columns:1fr 1fr;}
+  .costs-cols{grid-template-columns:1fr;}
+  .policy-card{grid-template-columns:1fr;}
+  .policy-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+  .consult-card{flex-direction:column;gap:20px;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(200,152,56,.08);min-width:50%;}
+  .hl-grid,.itinerary,.optional-wrap,.shop-policy,.costs,.consult,.notices{padding-left:16px;padding-right:16px;}
+  .hl-grid{grid-template-columns:1fr;}
+  .must-grid{grid-template-columns:1fr;padding:0;}
+  .sec-head{padding:36px 16px 20px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn fb-sand">🏛 立即预订</a>
+  <a href="#consult" class="float-btn fb-nile">💬 咨询顾问高盼</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#optional">自费清单</a>
+      <a href="#shopping">购物政策</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pyramid"></div>
+  <div class="hero-pyramid2"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="epoch-badge">🏛 世界七大奇迹 · 五千年文明 · Egypt</div>
+    <div class="hero-eyebrow">Egypt · 10 Days · Direct Flight · Deep Culture</div>
+    <div class="hero-title">
+      穿越古国<br>
+      埃及 10天7晚 · <em>大埃及博物馆</em>
+    </div>
+    <div class="hero-sub">
+      海南航空深圳直飞开罗 · 全程七晚五星酒店 · 金字塔群·狮身人面像·卡纳克神庙<br>
+      红海度假·尼罗河风情·老城烟火·悬空教堂 · 一半沙漠，一半海水
+    </div>
+    <div class="usp-row">
+      <span class="usp us-sand">✈ 海航深圳直飞开罗</span>
+      <span class="usp us-nile">🏛 全程7晚五星酒店</span>
+      <span class="usp us-rs">🌊 红海深度度假2天</span>
+      <span class="usp us-sand">🎁 赠流量卡+特色礼品</span>
+    </div>
+    <div class="hero-meta">
+      <div class="price-block">
+        <div class="price-lbl">参考价格</div>
+        <div class="price-sub">成人团费 ＋ <strong>必付杂费¥2,200/人</strong></div>
+        <div class="price-note2">含落地签·导服费·小费·保险等</div>
+      </div>
+      <div class="gift-block">
+        <div class="gift-row"><span>📱</span><span><strong>人手一张</strong>电话流量卡</span></div>
+        <div class="gift-row"><span>🎁</span><span><strong>埃及特色</strong>小礼品</span></div>
+        <div class="gift-row"><span>🍹</span><span><strong>一人一杯</strong>鲜榨果汁</span></div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-sand">立即预订团期</a>
+      <a href="#itinerary" class="btn-nile">查看完整行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── DIVIDER ── -->
+<div class="divider"></div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">🏛️</span>
+      <div class="trust-text"><strong class="cn">大埃及博物馆</strong><span>最新建成·全球最大</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🔺</span>
+      <div class="trust-text"><strong class="cn">金字塔·狮身人面像</strong><span>世界七大奇迹</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🌊</span>
+      <div class="trust-text"><strong class="crs">红海深度度假</strong><span>洪加达2天自由畅游</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🌙</span>
+      <div class="trust-text"><strong class="cni">穆埃兹老街</strong><span>伊斯兰烟火老城</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏨</span>
+      <div class="trust-text"><strong class="cn">全程五星酒店</strong><span>含卢克索特别升级</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow es">Highlights · 深度亮点</div>
+    <div class="sec-title">三大主题，十天穿越五千年</div>
+    <div class="sec-sub">古文明奇迹 · 红海碧波 · 伊斯兰烟火，三种截然不同的埃及面孔</div>
+  </div>
+  <div class="hl-grid">
+    <div class="hl-item up">
+      <div class="hl-icon">🏛️</div>
+      <div class="hl-title">大埃及博物馆（GEM）</div>
+      <div class="hl-desc">2023年全球最受瞩目的文化开幕——大埃及博物馆，距吉萨金字塔仅2公里，馆内珍藏图坦卡蒙法老完整陪葬品，超过10万件古文物震撼登场，是人类文明史上最恢宏的博物馆体验。</div>
+      <div class="hl-tag ht-sand">🏛 含于团费·入内参观</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🔺</div>
+      <div class="hl-title">吉萨金字塔群与狮身人面像</div>
+      <div class="hl-desc">站在胡夫大金字塔脚下，仰望这座以230万块巨石垒砌而成的人类奇迹；与狮身人面像同框合影——这些矗立了4500年的石砌传奇，将令每一位游客无比渺小而震撼。</div>
+      <div class="hl-tag ht-sand">🔺 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🌊</div>
+      <div class="hl-title">红海深度度假（2天自由）</div>
+      <div class="hl-desc">在洪加达享受2天完全自由的红海时光，五星酒店无限畅饮，清澈蔚蓝的红海伸手可及。可选出海浮潜、玻璃底船、沙漠4x4越野骆驼探险，沙漠与海洋在此交界。</div>
+      <div class="hl-tag ht-rs">🌊 2天自由度假</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🌙</div>
+      <div class="hl-title">穆埃兹老街 · 汗哈利利集市</div>
+      <div class="hl-desc">漫步开罗最古老、保存最完整的伊斯兰老城街道穆埃兹大街，登顶扎维亚门双塔俯瞰千年古城；在汗哈利利集市中迷失于香料、铜器与纸莎草的迷宫，享用传统咖啡馆下午茶。</div>
+      <div class="hl-tag ht-nile">🌙 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🛕</div>
+      <div class="hl-title">卡纳克神庙 · 香蕉岛 · 马车游</div>
+      <div class="hl-desc">在卢克索——古埃及的底比斯——深度游览拥有134根巨柱的卡纳克神庙；乘机动船登香蕉岛，骑独特"法拉利"马车穿越城区，在这座全球最大露天博物馆中感受法老时代的余温。</div>
+      <div class="hl-tag ht-sand">🛕 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">⛪</div>
+      <div class="hl-title">悬空教堂 · 沙画体验</div>
+      <div class="hl-desc">参观公元3世纪建于古罗马城堡之上的神秘悬空教堂，见证基督教在尼罗河流域最早的传播印记；在老城亲手制作埃及特色沙画，带走一份专属记忆。</div>
+      <div class="hl-tag ht-nile">⛪ 含于团费</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow es">Itinerary · 10日行程</div>
+    <div class="sec-title">埃及 10天7晚全景深度游</div>
+    <div class="sec-sub">金色=开罗文明 · 蓝色=尼罗河卢克索 · 绿色=红海度假</div>
+  </div>
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">深圳集合 → 飞往开罗</div>
+          <div class="day-route">海南航空 HU · 深圳直飞开罗</div>
+          <div class="day-text">专业领队在深圳机场集合，协助全体团员办理登机手续及行李托运。搭乘海南航空直飞开罗，开启这段穿越五千年古文明的旅程。如需国内联运，可从全国各城市提前汇聚深圳。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 海航深圳直飞开罗</span>
+            <span class="dtag dtag-inc">✓ 全国联运接驳</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">开罗 · 古文明奇迹日</div>
+          <div class="day-route">Cairo · 世界七大奇迹</div>
+          <div class="day-text">今日是整个行程最令人屏息的一天。游览刚开幕的<strong>大埃及博物馆（GEM）</strong>，探寻图坦卡蒙的千年秘藏；驱车至吉萨高原，在<strong>金字塔群与卡夫拉河谷神庙</strong>前感受4500年历史的重量；与<strong>狮身人面像</strong>同框留念，感受这座守护古埃及的神兽注视；下午游览建于伊本图伦清真寺。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 大埃及博物馆（入内）</span>
+            <span class="dtag dtag-sand">🔺 吉萨金字塔群</span>
+            <span class="dtag dtag-sand">🔺 卡夫拉河谷神庙</span>
+            <span class="dtag dtag-sand">🔺 狮身人面像</span>
+            <span class="dtag dtag-inc">✓ 伊本图伦清真寺</span>
+            <span class="dtag dtag-meal">🍽 金字塔景观餐厅（升级）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">开罗 → 洪加达 · 红海到达</div>
+          <div class="day-route">Cairo → Hurghada · 红海出发</div>
+          <div class="day-text">告别开罗，乘车前往红海度假圣城洪加达，享用尼罗河边特色餐，入住五星级红海酒店，感受沙漠与碧海的壮丽交汇。傍晚可在海边漫步，迎接明日开始的红海自由时光。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-rs">🌊 前往红海洪加达</span>
+            <span class="dtag dtag-inc">✓ 红海五星酒店入住</span>
+            <span class="dtag dtag-meal">🍽 尼罗河边特色餐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnn">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">卢克索 · 露天博物馆</div>
+          <div class="day-route">Luxor · 法老圣地</div>
+          <div class="day-text">驱车前往被誉为"全球最大露天博物馆"的卢克索。乘坐机动船登上<strong>香蕉岛</strong>，感受尼罗河怀抱中的热带风情；进入壮观的<strong>卡纳克神庙</strong>，仰望那134根参天石柱构成的圣林；傍晚乘坐卢克索独有的<strong>特色"法拉利"马车</strong>穿城而过，感受这座古城最不羁的另一面。入住卢克索国际五星酒店（特别升级）。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-nile">🛕 香蕉岛机动船</span>
+            <span class="dtag dtag-nile">🛕 卡纳克神庙（入内）</span>
+            <span class="dtag dtag-nile">🐎 "法拉利"马车游</span>
+            <span class="dtag dtag-inc">✓ 卢克索五星酒店（特别升级）</span>
+            <span class="dtag dtag-opt">可选 卢克索热气球 $160/人</span>
+            <span class="dtag dtag-opt">可选 帝王谷深度游 $65-105/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnr">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">红海 · 自由度假（第一天）</div>
+          <div class="day-route">Red Sea · Free Day 1</div>
+          <div class="day-text">全天完全自由，无任何行程约束。在五星酒店享受无限畅饮，漫步白沙海滩，在清澈的红海中游泳浮潜，感受这片被称为"地球上色彩最丰富的海洋"的震撼之美。可选参加各类海岛与沙漠自费活动。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-free">🌊 全天自由活动</span>
+            <span class="dtag dtag-inc">✓ 五星酒店无限畅饮</span>
+            <span class="dtag dtag-opt">可选 红海出海体验 $95/人</span>
+            <span class="dtag dtag-opt">可选 玻璃船/潜水艇 $80-105/人</span>
+            <span class="dtag dtag-opt">可选 4x4越野沙漠骆驼 $80/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnr">06</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">红海 · 自由度假（第二天）</div>
+          <div class="day-route">Red Sea · Free Day 2</div>
+          <div class="day-text">继续享受红海的自由时光。可选前往赫尔格达老城区参观清真寺与海鲜市场，或在无边际泳池畔晒日光浴，又或乘船出海寻找海底珊瑚礁的七彩世界。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-free">🌊 全天自由活动</span>
+            <span class="dtag dtag-opt">可选 赫尔格达半日游 $75/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">07</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">开罗老城烟火 · 穆埃兹大街</div>
+          <div class="day-route">Cairo · 伊斯兰文明</div>
+          <div class="day-text">返回开罗，深度游览城市最古老的伊斯兰老城区。漫步联合国教科文组织列入世界遗产的<strong>穆埃兹老街</strong>，感受1000年来几乎未曾改变的街巷风貌；登顶<strong>扎维亚门双塔</strong>俯瞰开罗全景；在世界最古老的集市<strong>汗哈利利</strong>中迷失于铜器、香料与纸莎草的迷宫，享用传统咖啡馆下午茶；亲手体验<strong>沙画手工制作</strong>，带走独一无二的埃及记忆。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-sand">🌙 穆埃兹老街</span>
+            <span class="dtag dtag-sand">🗼 扎维亚门双塔（登顶）</span>
+            <span class="dtag dtag-sand">🛍 汗哈利利集市</span>
+            <span class="dtag dtag-inc">✓ 沙画手工制作体验</span>
+            <span class="dtag dtag-gift">☕ 老城特色下午茶</span>
+            <span class="dtag dtag-opt">可选 尼罗河游船晚宴 $80/人</span>
+            <span class="dtag dtag-opt">可选 萨拉丁城堡 $55/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">08</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">开罗 · 文化博览日</div>
+          <div class="day-route">Cairo · 多元文明</div>
+          <div class="day-text">今日探访开罗多元宗教文化的交汇之地。参观建于公元3世纪、悬于古罗马城堡之上的神秘<strong>悬空教堂</strong>；游览伊斯兰教老城区，参观庄严古朴的<strong>阿米尔·伊本·阿斯清真寺</strong>——北非最古老的清真寺之一；感受千年来基督教、伊斯兰教与古埃及文明在这片土地上和谐共存的独特氛围。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-nile">⛪ 悬空教堂（入内）</span>
+            <span class="dtag dtag-nile">🕌 伊斯兰老城区</span>
+            <span class="dtag dtag-nile">🕌 阿米尔清真寺</span>
+            <span class="dtag dtag-meal">🍽 中式海鲜火锅</span>
+            <span class="dtag dtag-opt">可选 亚历山大一日游 $135/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">09</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">开罗 · 自由活动</div>
+          <div class="day-route">Cairo · Free Day</div>
+          <div class="day-text">最后一天自由活动，可选返回金字塔区内骑骆驼留念，或前往当地超市购买纸莎草画、香精、铜器等纪念品，或在开罗现代商场感受城市的另一面。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-free">🗺 开罗自由活动</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">10</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">开罗 → 深圳 · 圆满返程</div>
+          <div class="day-route">海南航空 HU · 直飞深圳</div>
+          <div class="day-text">专车送往开罗国际机场，搭乘海南航空直飞深圳返程。带着法老的祝福、红海的蓝与沙漠的金，满载而归。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 海航直飞深圳返程</span>
+            <span class="dtag dtag-note">📋 时差提示：埃及比北京时间晚5-6小时</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── OPTIONAL TABLE ── -->
+<div class="optional-wrap" id="optional">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow en">Optional · 自费项目</div>
+    <div class="sec-title">自愿参加项目清单</div>
+    <div class="sec-sub">自愿参加，绝无强迫；价格以出发时实际为准</div>
+  </div>
+  <div class="op-inner">
+    <div class="op-table-wrap up">
+      <table class="op-table">
+        <thead>
+          <tr>
+            <th>城市</th>
+            <th>项目名称</th>
+            <th>包含内容说明</th>
+            <th>参考价格（美元/人）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cat-cell" rowspan="2">开罗<br>Cairo</td>
+            <td><strong>尼罗河游船晚宴</strong></td>
+            <td class="note-cell">西式自助餐＋肚皮舞/苏菲舞表演（约1.5小时）</td>
+            <td class="price-cell">$80</td>
+          </tr>
+          <tr>
+            <td><strong>萨拉丁城堡</strong></td>
+            <td class="note-cell">门票＋交通＋专业讲解（约1小时）</td>
+            <td class="price-cell">$55</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">亚历山大<br>Alexandria</td>
+            <td><strong>亚历山大一日游</strong></td>
+            <td class="note-cell">门票＋烤鱼餐＋车费＋灯塔遗址/凯特贝城堡</td>
+            <td class="price-cell">$135</td>
+          </tr>
+          <tr>
+            <td class="cat-cell" rowspan="4">红海<br>Red Sea</td>
+            <td><strong>红海出海体验</strong></td>
+            <td class="note-cell">天堂岛游览＋浮潜＋游泳＋游船午餐（约2-4小时）</td>
+            <td class="price-cell">$95</td>
+          </tr>
+          <tr>
+            <td><strong>红海玻璃船 / 潜水艇</strong></td>
+            <td class="note-cell">观赏海底珊瑚群及热带鱼类</td>
+            <td class="price-cell">$80–$105</td>
+          </tr>
+          <tr>
+            <td><strong>4×4 越野沙漠探险</strong></td>
+            <td class="note-cell">Jeep 沙漠驰骋＋骑骆驼＋贝都因族家访</td>
+            <td class="price-cell">$80</td>
+          </tr>
+          <tr>
+            <td><strong>赫尔格达半日游</strong></td>
+            <td class="note-cell">清真寺＋购物街＋海鲜大餐</td>
+            <td class="price-cell">$75</td>
+          </tr>
+          <tr>
+            <td class="cat-cell" rowspan="2">卢克索<br>Luxor</td>
+            <td><strong>卢克索热气球</strong></td>
+            <td class="note-cell">凌晨出发，高空俯瞰露天博物馆及帝王谷（约1小时）</td>
+            <td class="price-cell">$160</td>
+          </tr>
+          <tr>
+            <td><strong>帝王谷深度游</strong></td>
+            <td class="note-cell">含63座帝王陵墓区门票及导服（可加女王神殿）</td>
+            <td class="price-cell">$65–$105</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="op-note up">* 所有自费项目均遵循<strong>完全自愿</strong>原则，不存在任何强制消费。价格为参考价，以出发时实际报价为准。</div>
+  </div>
+</div>
+
+<!-- ── SHOPPING POLICY ── -->
+<div class="shop-policy" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow es">Shopping Policy · 购物政策</div>
+    <div class="sec-title">纯玩购物政策与特色产品</div>
+    <div class="sec-sub">全程无强制购物，汗哈利利集市等属游客个人自主消费</div>
+  </div>
+  <div class="policy-inner">
+    <div class="policy-card up">
+      <div class="policy-col">
+        <div class="policy-col-head ph-g">✓ 纯玩无购物承诺</div>
+        <ul class="inc-list">
+          <li>全程不安排任何指定旅游购物店</li>
+          <li>不存在任何形式的强制购物</li>
+          <li>汗哈利利集市属当地历史商业区，游客完全自主消费</li>
+          <li>沙画体验免费参与，带走成品须自愿付费</li>
+          <li>机场及酒店免税店为个人商业行为，非旅行社安排</li>
+        </ul>
+        <div class="souvenir-note" style="margin-top:14px;">
+          <strong>🛍 购物温馨提示</strong><br>
+          汗哈利利集市是世界著名的传统集市，请根据需求谨慎选购并<strong>保管好购物凭证</strong>。集市商家惯于讨价还价，建议出价从低开始，享受这独特的购物文化体验。
+        </div>
+      </div>
+      <div class="policy-col">
+        <div class="policy-col-head ph-s">○ 埃及特色伴手礼参考</div>
+        <ul class="exc-list">
+          <li>汗哈利利集市及景区周边均为自主购物区域</li>
+          <li>导游可能介绍当地特产，属文化介绍，非强制购物</li>
+          <li>建议在正规店铺购买有票据的商品</li>
+          <li>贵重商品（香精、黄金、珊瑚）建议货比三家</li>
+        </ul>
+        <div style="margin-top:14px;font-size:0.72rem;color:var(--muted);margin-bottom:8px;letter-spacing:0.1em;text-transform:uppercase;">🎁 埃及著名特产</div>
+        <div class="prod-tags">
+          <span class="ptag">📜 纸莎草画</span>
+          <span class="ptag">💫 香精·香料</span>
+          <span class="ptag">🪩 彩绘玻璃制品</span>
+          <span class="ptag">🌴 耶枣（椰枣）</span>
+          <span class="ptag">🔩 铜器·铜制工艺品</span>
+          <span class="ptag">🪡 手工地毯</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MUST-PAY & COSTS ── -->
+<div class="costs" id="booking">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow en">Fees · 费用说明</div>
+    <div class="sec-title">必付杂费与费用明细</div>
+    <div class="sec-sub">必付杂费¥2,200/人，报名时须付清</div>
+  </div>
+  <div class="costs-inner">
+    <div class="must-grid">
+      <div class="must-box up">
+        <div class="must-head">落地签证 + 导服费（必付）</div>
+        <ul>
+          <li>落地签证费 ＋ 导游服务费合计：<strong>¥2,200元/人</strong></li>
+          <li>报名时须付清，不可欠款出发</li>
+          <li>含全程中文导游服务、签证代办</li>
+        </ul>
+      </div>
+      <div class="must-box up">
+        <div class="must-head">单房补差</div>
+        <ul>
+          <li>全程单房补差：<strong>¥3,000元/人</strong></li>
+          <li>如需独享单人房请提前告知顾问</li>
+          <li>含全程7晚酒店单房溢价</li>
+        </ul>
+      </div>
+      <div class="must-box up">
+        <div class="must-head">小费礼仪（参考）</div>
+        <ul>
+          <li>埃及有给小费的习惯，约 <strong>1美金/次</strong></li>
+          <li>洗手间收费约 <strong>10-20 埃镑</strong></li>
+          <li>属礼仪性支出，自愿支付</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="costs-cols up">
+      <div class="cost-box">
+        <div class="cost-head ch-s">团费包含</div>
+        <table class="cost-table">
+          <tr><td>航班</td><td>海南航空深圳往返开罗直飞机票</td></tr>
+          <tr><td>住宿</td><td>全程7晚五星酒店（含卢克索特别升级）</td></tr>
+          <tr><td>餐食</td><td>金字塔景观餐厅·尼罗河特色餐·中式海鲜火锅等</td></tr>
+          <tr><td>景点</td><td>大埃及博物馆·金字塔·狮身人面像·卡纳克神庙等</td></tr>
+          <tr><td>体验</td><td>卢克索马车游·香蕉岛机动船·沙画制作</td></tr>
+          <tr><td>赠品</td><td>电话流量卡·埃及特色礼品·鲜榨果汁</td></tr>
+          <tr><td>领队</td><td>全程中文领队及境外中文导游服务</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head ch-n">团费不含</div>
+        <table class="cost-table">
+          <tr><td>必付杂费</td><td>落地签+导服费¥2,200/人（报名时付清）</td></tr>
+          <tr><td>单房差</td><td>¥3,000/人（如需独享单人房）</td></tr>
+          <tr><td>自费项目</td><td>所有表格中列出的可选自费体验</td></tr>
+          <tr><td>礼仪小费</td><td>约$1/次（自愿）；洗手间10-20埃镑</td></tr>
+          <tr><td>个人消费</td><td>酒店内私人消费、购物、超额行李等</td></tr>
+          <tr><td>保险</td><td>建议另行购买个人境外意外险</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSULTANT ── -->
+<div class="consult" id="consult">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow en">Consultant · 专属顾问</div>
+    <div class="sec-title">联系专属旅行顾问</div>
+    <div class="sec-sub">有任何疑问或需了解最新团期，请直接联系我们的资深顾问</div>
+  </div>
+  <div class="consult-inner">
+    <div class="consult-card up">
+      <div class="consult-avatar">🏛️</div>
+      <div class="consult-info">
+        <h3>高盼 · 中东及非洲线路专属顾问</h3>
+        <p>专注埃及、中东及非洲精品线路，丰富出团经验，为您详解每一处古迹与行程安排</p>
+        <div class="consult-contact">
+          <a href="tel:15907190570" class="contact-btn cb-sand">📞 15907190570</a>
+          <a href="#" class="contact-btn cb-nile">💬 微信咨询</a>
+          <a href="#" class="contact-btn cb-ghost">📄 签证材料清单</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow en">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读，保障顺畅愉快的埃及穿越之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>👴 年龄与健康限制</h4>
+        <ul>
+          <li><strong>70岁以上</strong>：须提供健康证明及亲友陪同</li>
+          <li><strong>80岁以上</strong>：恕不接受报名</li>
+          <li>如有特殊健康状况，请出发前详细告知顾问</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>💵 现金与入境规定</h4>
+        <ul>
+          <li>入境建议随身携带不少于 <strong>$2,000美金</strong>（或等值¥5,000人民币）现金备查</li>
+          <li>埃及镑（EGP）可在当地机场或酒店换取</li>
+          <li>小费约$1/次为当地惯例，洗手间约10-20埃镑</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🕐 时差与气候</h4>
+        <ul>
+          <li>埃及比北京时间<strong>晚5-6小时</strong>（夏时制期间晚5小时）</li>
+          <li>开罗气候干燥炎热，沙漠地区昼夜温差较大，建议携带薄外套</li>
+          <li>红海地区全年水温适宜，建议携带泳衣及防晒品</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🕌 礼仪与注意事项</h4>
+        <ul>
+          <li>参观清真寺须<strong>脱鞋</strong>，女士须佩戴头巾（现场可租借）</li>
+          <li>拍摄当地人或警察须事先征得同意</li>
+          <li>部分古迹严禁自行拍摄，请听从导游指引</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>必付杂费¥2,200/人（落地签+导服费），报名时须付清</span>
+    <span>全程7晚五星酒店，含卢克索特别升级</span>
+    <span>自费项目均为自愿参加，绝无强迫</span>
+    <span>80岁以上恕不接受报名；70岁以上须健康证明</span>
+    <span>埃及比北京时间晚5-6小时，请注意时差调整</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html" class="current">🇪🇬 埃及 · 本页</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','optional','shopping','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

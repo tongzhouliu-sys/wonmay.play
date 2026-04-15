@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 春樱限定 日本伊豆河津早樱 阪东/东阪6天精华游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fdf8f9;
+  --bg2: #f5ecee;
+  --ink: #1a100e;
+  --gold: #c8a860;
+  --sakura: #e8829a;
+  --sakura-lt: #fce8ed;
+  --sakura-deep: #a03050;
+  --sakura-pale: #fdf0f3;
+  --fuji: #f8f4f8;
+  --mint: #3a7068;
+  --sky: #4a6888;
+  --muted: #7a6870;
+  --border: #e8d8dc;
+  --white: #fefcfd;
+  --self-bg: #fff8f0;
+  --self-border: #eac870;
+  --warm: #c85020;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--sakura);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--sakura);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#555;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#888;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--sakura);background:rgba(232,130,154,.1);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:540px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#1a0810 0%,#2a0e18 45%,#100818 100%);}
+.hero-petals{position:absolute;inset:0;z-index:1;}
+.hero-petals::before{content:'🌸';position:absolute;right:60px;top:30px;font-size:20rem;opacity:.055;line-height:1;filter:blur(2px);}
+.hero-petals::after{content:'🗻';position:absolute;left:0;bottom:-30px;font-size:20rem;opacity:.035;line-height:1;filter:blur(1px);}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(160deg,transparent,transparent 90px,rgba(232,130,154,.01) 90px,rgba(232,130,154,.01) 91px);z-index:1;}
+
+/* seasonal badge */
+.season-ribbon{position:absolute;top:0;left:0;right:0;z-index:3;background:linear-gradient(90deg,var(--sakura-deep),var(--sakura),var(--sakura-deep));padding:7px 0;text-align:center;}
+.season-ribbon span{font-size:0.68rem;letter-spacing:0.22em;color:#fff;text-transform:uppercase;}
+
+.hero-content{position:relative;z-index:2;padding:88px 40px 64px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--sakura);text-transform:uppercase;margin-bottom:18px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.8rem);font-style:italic;color:#f8eef2;line-height:1.1;margin-bottom:14px;}
+.hero-title em{color:var(--sakura);font-style:normal;}
+.hero-routes{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.route-pill{font-size:0.68rem;letter-spacing:0.1em;color:rgba(255,255,255,.4);border:1px solid rgba(232,130,154,.28);padding:3px 13px;}
+.hero-sub{font-size:0.85rem;color:#6a4850;letter-spacing:0.06em;max-width:580px;margin-bottom:26px;line-height:1.9;}
+
+/* price + gift row */
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:28px;}
+.price-block{background:rgba(0,0,0,.35);border:1px solid rgba(200,168,96,.4);padding:12px 22px;}
+.price-lbl{font-size:0.62rem;color:#8a6878;letter-spacing:0.1em;margin-bottom:2px;}
+.price-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);line-height:1;}
+.price-unit{font-size:0.72rem;color:#8a6878;}
+.gift-block{background:rgba(168,48,80,.1);border:1px solid rgba(232,130,154,.3);padding:12px 18px;display:flex;flex-direction:column;justify-content:center;}
+.gift-lbl{font-size:0.6rem;letter-spacing:0.16em;color:#b08090;text-transform:uppercase;margin-bottom:4px;}
+.gift-text{font-size:0.76rem;color:#e8c0c8;letter-spacing:0.04em;}
+.gift-text strong{color:#f0d0d8;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-primary{display:inline-block;background:var(--sakura);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;}
+.btn-primary:hover{background:var(--sakura-deep);}
+.btn-sec{display:inline-block;border:1px solid rgba(232,130,154,.5);color:var(--sakura);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-sec:hover{background:rgba(232,130,154,.1);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.45);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 24px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.75);}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:#140810;border-bottom:1px solid #2a1020;}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid #2a1020;justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;color:#d49090;font-weight:400;letter-spacing:0.06em;}
+.trust-text span{font-size:0.68rem;color:#4a2838;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--sakura);margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS ── */
+.hl-wrap{max-width:1200px;margin:0 auto;padding:0 40px 48px;}
+.hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:24px 20px;display:flex;flex-direction:column;gap:9px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;flex:1;}
+.hl-tag{font-size:0.62rem;background:var(--sakura-lt);color:var(--sakura-deep);padding:2px 8px;align-self:flex-start;margin-top:auto;}
+
+/* ── ROUTE VERSIONS ── */
+.ver-tabs{background:var(--white);border-bottom:1px solid var(--border);}
+.ver-tabs-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;gap:0;overflow-x:auto;}
+.ver-btn{font-size:0.76rem;letter-spacing:0.1em;color:var(--muted);padding:14px 22px;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;font-family:'Noto Sans SC',sans-serif;transition:all .2s;white-space:nowrap;}
+.ver-btn:hover{color:var(--ink);}
+.ver-btn.active{color:var(--sakura);border-bottom-color:var(--sakura);}
+.ver-pane{display:none;}
+.ver-pane.active{display:block;}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--sakura);line-height:1;}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#3a2830;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-sakura{background:var(--sakura-lt);color:var(--sakura-deep);}
+.dtag-opt{background:var(--self-bg);color:#8a5c00;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-note{background:#fff0f0;color:var(--warm);}
+.dtag-hot{background:#fde8e8;color:var(--warm);border:1px solid #f0c0c0;}
+.dtag-shop{background:#fef9e7;color:#7d6608;border:1px dashed #c9a227;}
+
+/* ── SHOPPING TABLE ── */
+.shopping{padding:0 40px 56px;}
+.shop-inner{max-width:1200px;margin:0 auto;}
+.shop-banner{background:var(--ink);padding:14px 22px;display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--sakura);}
+.shop-banner-text{font-size:0.8rem;color:#5a3848;letter-spacing:0.05em;}
+.shop-banner-text strong{color:var(--sakura);}
+.shop-table-wrap{overflow-x:auto;}
+.shop-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);border-top:none;}
+.shop-table th{padding:10px 16px;background:var(--bg2);color:var(--muted);font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;border-bottom:1px solid var(--border);}
+.shop-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top;}
+.shop-table tr:last-child td{border-bottom:none;}
+.shop-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--sakura);font-style:italic;line-height:1;width:36px;}
+.shop-name{font-weight:500;font-size:0.85rem;color:var(--ink);}
+.shop-desc{font-size:0.74rem;color:var(--muted);margin-top:3px;}
+.shop-time{font-size:0.72rem;color:var(--muted);white-space:nowrap;}
+.shop-note{font-size:0.72rem;color:var(--muted);margin-top:10px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── SURCHARGE ── */
+.surcharge{padding:0 40px 56px;}
+.sc-inner{max-width:1200px;margin:0 auto;}
+
+/* mandatory / optional split */
+.fee-split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+.fee-box{background:var(--white);border:1px solid var(--border);}
+.fee-head{padding:10px 18px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;}
+.fee-head-red{background:var(--warm);color:#fff;}
+.fee-head-green{background:var(--mint);color:#fff;}
+.fee-body{padding:0;}
+.fee-row{display:grid;grid-template-columns:1fr auto;align-items:baseline;padding:10px 18px;border-bottom:1px solid var(--border);gap:12px;}
+.fee-row:last-child{border-bottom:none;}
+.fee-name{font-size:0.78rem;color:var(--ink);}
+.fee-name small{display:block;font-size:0.68rem;color:var(--muted);margin-top:2px;}
+.fee-price{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--warm);white-space:nowrap;text-align:right;}
+.fee-price-opt{color:var(--muted);}
+
+/* costs include/exclude */
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);color:var(--sakura);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#3a2830;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* deposit alert */
+.deposit-alert{max-width:1200px;margin:0 auto 32px;padding:0 40px;}
+.alert-box{background:#fff5f0;border:1px solid #f0c0a0;border-left:4px solid var(--warm);padding:16px 20px;font-size:0.78rem;color:#5a2010;line-height:1.85;}
+.alert-box strong{color:var(--warm);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;background:var(--sakura);color:#fff;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 18px rgba(168,48,80,.3);transition:all .2s;white-space:nowrap;}
+.float-btn:hover{background:var(--sakura-deep);transform:translateX(-3px);}
+.float-btn.gold{background:var(--gold);color:var(--ink);}
+.float-btn.gold:hover{background:#a08030;}
+.float-btn.dark{background:var(--ink);color:var(--sakura);border:1px solid rgba(232,130,154,.35);}
+.float-btn.dark:hover{background:#2a1020;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--sakura);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#5a3848;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--sakura);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .fee-split,.costs-cols{grid-template-columns:1fr;}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:80px 16px 48px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid #2a1020;min-width:50%;}
+  .hl-grid{grid-template-columns:1fr;}
+  .hl-wrap,.itinerary,.shopping,.surcharge,.notices{padding-left:16px;padding-right:16px;}
+  .deposit-alert{padding:0 16px;}
+  .sec-head{padding:36px 16px 20px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn gold">立即预订 ¥3,999起</a>
+  <a href="#surcharge" class="float-btn dark">费用明细</a>
+  <a href="#" class="float-btn">📋 签证资料清单</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#shopping">购物协议</a>
+      <a href="#surcharge">费用说明</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="season-ribbon"><span>🌸 2026 春樱限定 · 2月上旬—3月上旬限定出发 · 席位极为有限 🌸</span></div>
+  <div class="hero-bg"></div>
+  <div class="hero-petals"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Japan · Spring Sakura · 6 Days · Limited Season</div>
+    <div class="hero-title">
+      2026 早樱限定<br>
+      日本本州全景 · <em>伊豆河津樱</em>
+    </div>
+    <div class="hero-routes">
+      <span class="route-pill">YWQB6-A · 阪东路线（大阪入→东京出）</span>
+      <span class="route-pill">YWQB6-B · 东阪路线（东京入→大阪出）</span>
+      <span class="route-pill">YWQB6-C/D · 含温泉升级版</span>
+    </div>
+    <div class="hero-sub">
+      河津町深粉河津樱 · 富士山五合目 · 清水寺 · 奈良公园 · 银座 · 台场<br>
+      全程4-5星酒店 · 特别升级2晚温泉酒店 · 6天5晚精华游
+    </div>
+    <div class="hero-meta">
+      <div class="price-block">
+        <div class="price-lbl">参考价格</div>
+        <span class="price-num">¥3,999</span>
+        <span class="price-unit"> 起/人</span>
+      </div>
+      <div class="gift-block">
+        <div class="gift-lbl">🎁 随团赠送</div>
+        <div class="gift-text"><strong>深圳口岸↔香港机场 往返接送用车</strong></div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-primary">立即预订团期</a>
+      <a href="#itinerary" class="btn-sec">查看完整行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">🌸</span>
+      <div class="trust-text"><strong>河津早樱限定</strong><span>2月—3月独家赏樱季</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">♨️</span>
+      <div class="trust-text"><strong>2晚温泉酒店</strong><span>升级4-5星温泉体验</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🗻</span>
+      <div class="trust-text"><strong>富士山五合目</strong><span>登顶云端感受壮阔</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🦌</span>
+      <div class="trust-text"><strong>奈良小鹿</strong><span>零距离喂食萌鹿</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🍵</span>
+      <div class="trust-text"><strong>京都抹茶体验</strong><span>和风美食文化全覆盖</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Highlights · 四大亮点</div>
+    <div class="sec-title">为什么选择这条限定线路</div>
+    <div class="sec-sub">每一项都是精心设计的独家体验，只在樱花季限定开放</div>
+  </div>
+  <div class="hl-wrap" style="padding-top:0;">
+    <div class="hl-grid">
+      <div class="hl-item up">
+        <div class="hl-icon">🌸</div>
+        <div class="hl-title">伊豆河津早樱（季节限定）</div>
+        <div class="hl-desc">2月上旬至3月上旬，河津町800株深粉河津樱提前盛开，形成壮观的樱花隧道，是全日本最早的赏樱胜地，比东京早开整整一个月。</div>
+        <div class="hl-tag">🌸 限定季节</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">♨️</div>
+        <div class="hl-title">2晚特色温泉酒店</div>
+        <div class="hl-desc">全程入住当地4-5星酒店，特别升级2晚温泉旅馆，在天然温泉中消除旅途疲劳，配合温泉晚宴，感受最纯粹的日式款待之道。</div>
+        <div class="hl-tag">♨️ 温泉升级</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🎌</div>
+        <div class="hl-title">关东关西全景一次走遍</div>
+        <div class="hl-desc">一次行程覆盖大阪城、清水寺、奈良公园、富士山五合目、忍野八海、银座、台场，双路线选择（阪东/东阪），最大化旅途效率。</div>
+        <div class="hl-tag">双线可选</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🍣</div>
+        <div class="hl-title">和风美食全程升级</div>
+        <div class="hl-desc">炙樱手作料理、京都精进料理、富士特色料理、温泉晚宴及东京特色餐，五餐各具特色，每一顿都是一场味觉与文化的沉浸式体验。</div>
+        <div class="hl-tag">特色料理</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Itinerary · 6日5夜行程</div>
+    <div class="sec-title">樱花季6天精华游</div>
+    <div class="sec-sub">提供两大路线，请根据出发需求选择</div>
+  </div>
+
+  <!-- Version Tabs -->
+  <div class="ver-tabs">
+    <div class="ver-tabs-inner">
+      <button class="ver-btn active" onclick="switchVer(this,'ab')">🌸 阪东路线 YWQB6-A/C（大阪入→东京出）</button>
+      <button class="ver-btn" onclick="switchVer(this,'ba')">🗼 东阪路线 YWQB6-B/D（东京入→大阪出）</button>
+    </div>
+  </div>
+
+  <!-- OSAKA→TOKYO -->
+  <div class="ver-pane active" id="ver-ab">
+    <div class="itinerary" style="padding-top:28px;">
+      <div class="it-inner">
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">出发 → 大阪 · 抵达</div>
+            <div class="day-route">飞抵大阪关西国际机场</div>
+            <div class="day-text">搭乘班机飞抵大阪关西国际机场，专车接送入住酒店，稍作休整，开启这段春日日本之旅。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 飞抵大阪</span>
+              <span class="dtag dtag-inc">✓ 专车接机</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">关西人文 · 大阪 → 奈良 → 京都</div>
+            <div class="day-route">Osaka → Nara → Kyoto</div>
+            <div class="day-text">游览<strong>大阪城公园</strong>，春日樱花与历史古城相映成趣；前往<strong>奈良公园</strong>，零距离喂食自由漫步的萌鹿，参拜千年古社<strong>春日大社</strong>；移步古都京都，拾级而上至名列世界文化遗产的<strong>清水寺</strong>，在山间舞台俯瞰京都城的春日画卷。晚间体验<strong>抹茶制作</strong>，感受日式茶道精髓。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 大阪城公园</span>
+              <span class="dtag dtag-inc">✓ 奈良公园（喂鹿）</span>
+              <span class="dtag dtag-inc">✓ 春日大社</span>
+              <span class="dtag dtag-inc">✓ 清水寺</span>
+              <span class="dtag dtag-inc">✓ 抹茶体验</span>
+              <span class="dtag dtag-meal">🍵 京都特色料理</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">京都 → 心斋桥 · 温泉旅馆</div>
+            <div class="day-route">Kyoto → Osaka · 温泉升级</div>
+            <div class="day-text">漫步<strong>心斋桥与道顿堀</strong>，体验大阪最热闹的美食与购物街区，品尝章鱼烧与大阪烧；下午前往特色温泉旅馆，在天然温泉中放松身心，享用精心准备的温泉晚宴，度过最纯粹的日式旅馆之夜。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 心斋桥</span>
+              <span class="dtag dtag-inc">✓ 道顿堀美食街</span>
+              <span class="dtag dtag-hot">♨️ 温泉旅馆入住（升级）</span>
+              <span class="dtag dtag-meal">🍜 温泉晚宴</span>
+              <span class="dtag dtag-shop">🛍 综合免税店 约60分钟</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">富士山 · 忍野八海 · 伊豆河津樱</div>
+            <div class="day-route">Mt. Fuji → Oshino → Kawazu</div>
+            <div class="day-text">抵达<strong>富士山五合目</strong>（海拔2,305米），在云端俯瞰四周火山地貌与关东平原；游览名水百选<strong>忍野八海</strong>，在富士山雪融水汇聚的清澈池塘旁感受纯净自然；下午奔赴此行最重要的限定目的地——<strong>伊豆河津町</strong>，沿着800株深粉河津樱构成的浪漫樱花大道漫步，赏全日本最早盛开的早樱。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 富士山五合目</span>
+              <span class="dtag dtag-inc">✓ 忍野八海</span>
+              <span class="dtag dtag-sakura">🌸 伊豆河津樱花大道（季节限定）</span>
+              <span class="dtag dtag-meal">🍱 富士特色料理</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">东京风尚 · 银座 · 台场</div>
+            <div class="day-route">Tokyo · 都市风情</div>
+            <div class="day-text">清晨漫步<strong>大横川散步道</strong>，欣赏早樱盛放的江户水岸风光（季节限定）；参拜<strong>樱神宫</strong>，祈福打卡这座以樱花命名的古老神社；下午穿梭于时尚与古典并存的<strong>银座</strong>，感受东京最奢华的购物街区；傍晚前往<strong>台场</strong>，这座东京湾上的人工岛囊括了彩虹大桥夜景、娱乐设施与海景餐厅，是此行最适合拍照留念的压轴地点。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-sakura">🌸 大横川散步道（早樱·季节限定）</span>
+              <span class="dtag dtag-inc">✓ 樱神宫</span>
+              <span class="dtag dtag-inc">✓ 银座</span>
+              <span class="dtag dtag-inc">✓ 台场</span>
+              <span class="dtag dtag-shop">🛍 长岛奥特莱斯 约60分钟</span>
+              <span class="dtag dtag-meal">🍱 东京特色餐</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">东京 → 返程 · 圆满归途</div>
+            <div class="day-route">成田/羽田国际机场 · 返程</div>
+            <div class="day-text">珍珠博览馆自由参观（自愿消费），专车送往机场，搭乘班机踏上归途，带着满满的樱花记忆与温泉余韵返程。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 飞返出发地</span>
+              <span class="dtag dtag-shop">🛍 珍珠博览馆 约60分钟</span>
+              <span class="dtag dtag-note">📋 请预留充足办理退税时间</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TOKYO→OSAKA -->
+  <div class="ver-pane" id="ver-ba">
+    <div style="background:var(--sakura-lt);border:1px solid var(--sakura);padding:12px 22px;max-width:1200px;margin:20px 40px 0;font-size:0.8rem;color:var(--sakura-deep);">
+      🗼 <strong>东阪路线（YWQB6-B/D）</strong>：行程景点与阪东路线完全相同，方向相反——从东京入境，以大阪出境，适合不同出发地的旅客灵活选择。以下展示完整行程顺序：
+    </div>
+    <div class="itinerary" style="padding-top:28px;">
+      <div class="it-inner">
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">出发 → 东京 · 抵达</div>
+            <div class="day-route">飞抵东京成田/羽田国际机场</div>
+            <div class="day-tags"><span class="dtag dtag-fly">✈ 飞抵东京</span><span class="dtag dtag-inc">✓ 专车接机</span></div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">东京风尚 · 银座 · 台场</div>
+            <div class="day-route">Tokyo</div>
+            <div class="day-text">大横川散步道早樱 → 樱神宫祈福 → 银座 → 台场夜景（同阪东版D5）。</div>
+            <div class="day-tags">
+              <span class="dtag dtag-sakura">🌸 大横川早樱（季节限定）</span>
+              <span class="dtag dtag-inc">✓ 樱神宫·银座·台场</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">富士山 · 忍野八海 · 伊豆河津樱</div>
+            <div class="day-route">Mt. Fuji → Kawazu</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 富士山五合目 · 忍野八海</span>
+              <span class="dtag dtag-sakura">🌸 伊豆河津樱花大道（季节限定）</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">心斋桥 · 温泉旅馆</div>
+            <div class="day-route">Osaka · 温泉升级</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 心斋桥 · 道顿堀</span>
+              <span class="dtag dtag-hot">♨️ 温泉旅馆入住</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">关西人文 · 奈良 → 京都</div>
+            <div class="day-route">Nara → Kyoto</div>
+            <div class="day-tags">
+              <span class="dtag dtag-inc">✓ 大阪城公园 · 奈良公园 · 清水寺</span>
+              <span class="dtag dtag-inc">✓ 抹茶体验</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-row up">
+          <div class="day-num-col"><div class="day-num">06</div><div class="day-lbl">Day</div></div>
+          <div class="day-body">
+            <div class="day-head">大阪 → 返程</div>
+            <div class="day-route">关西国际机场</div>
+            <div class="day-tags">
+              <span class="dtag dtag-fly">✈ 大阪飞返出发地</span>
+              <span class="dtag dtag-shop">🛍 珍珠博览馆 约60分钟</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOPPING PROTOCOL ── -->
+<div class="shopping" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Shopping Protocol · 购物协议</div>
+    <div class="sec-title">购物安排透明公示</div>
+    <div class="sec-sub">依合同约定明确列出，所有消费均为完全自愿原则</div>
+  </div>
+  <div class="shop-inner">
+    <div class="shop-banner up">
+      <span style="font-size:1.2rem;">📋</span>
+      <div class="shop-banner-text">
+        本行程依合同约定进入以下 <strong>3个协议购物场所</strong>，停留时间如下表所示。<strong>所有消费均为自愿，绝无任何强制</strong>。如遇任何不适，请立即向领队反映。
+      </div>
+    </div>
+    <div class="shop-table-wrap up">
+      <table class="shop-table">
+        <thead>
+          <tr>
+            <th style="width:40px;">#</th>
+            <th>购物场所</th>
+            <th>经营商品与特色</th>
+            <th>停留时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="shop-num">①</td>
+            <td><div class="shop-name">珍珠博览馆 / 民意品店</div></td>
+            <td><div class="shop-desc">展示日本Akoya珍珠、珊瑚制品等珠宝艺术，传承大和民族百年工艺</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">②</td>
+            <td><div class="shop-name">综合免税店</div></td>
+            <td><div class="shop-desc">日本本国生产的生化科技产品、家电、光学制品、珍珠、医药品及化妆品</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">③</td>
+            <td><div class="shop-name">长岛奥特莱斯</div></td>
+            <td><div class="shop-desc">日本店铺数最多的品牌购物城，囊括奢侈品、服装、运动精品及游乐设施</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shop-note up">* 购物场所停留时间仅供参考，所有消费完全<strong>自愿</strong>，游客有权选择不购买任何商品。</div>
+  </div>
+</div>
+
+<!-- ── SURCHARGE ── -->
+<div class="surcharge" id="surcharge">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Fees · 费用透明说明</div>
+    <div class="sec-title">团费外支出明细</div>
+    <div class="sec-sub">请出发前仔细阅读，所有必付费用须在出发前结清</div>
+  </div>
+
+  <!-- DEPOSIT ALERT -->
+  <div class="deposit-alert">
+    <div class="alert-box up">
+      ⚠️ <strong>归国保证金提醒（重要）</strong>：出团前须向我社交纳保证金至少 <strong>¥50,000人民币/人</strong>。按时随团归国后，保证金全额退还。此为我社风控要求，详情请咨询顾问。
+    </div>
+  </div>
+
+  <div class="sc-inner">
+    <div class="fee-split">
+      <!-- MANDATORY -->
+      <div class="fee-box up">
+        <div class="fee-head fee-head-red">必付费用 · Mandatory</div>
+        <div class="fee-body">
+          <div class="fee-row">
+            <div class="fee-name">
+              境外司陪服务费
+              <small>含小童及婴儿，出团前须付清</small>
+            </div>
+            <div class="fee-price">¥850/人</div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-name">
+              单房差
+              <small>单人入住需补差价</small>
+            </div>
+            <div class="fee-price">¥1,800–2,000/人</div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-name">
+              外籍护照附加费
+              <small>外籍及港澳台护照旅客</small>
+            </div>
+            <div class="fee-price">¥800/人</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTIONAL -->
+      <div class="fee-box up">
+        <div class="fee-head fee-head-green">自愿消费 · Optional</div>
+        <div class="fee-body">
+          <div class="fee-row">
+            <div class="fee-name">
+              和牛 / 刺身套餐升级
+              <small>导游现场推荐，餐标约¥1,500日元/正</small>
+            </div>
+            <div class="fee-price fee-price-opt">按需选择</div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-name">
+              特色纪念品
+              <small>导游车上推介：钥匙扣·指甲剪·零食等</small>
+            </div>
+            <div class="fee-price fee-price-opt">自愿原则</div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-name">
+              购物场所内消费
+              <small>3个协议购物场所均为自愿消费</small>
+            </div>
+            <div class="fee-price fee-price-opt">完全自愿</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="costs-cols up">
+      <div class="cost-box">
+        <div class="cost-head">团费包含</div>
+        <table class="cost-table">
+          <tr><td>航班</td><td>往返国际机票（含税）</td></tr>
+          <tr><td>住宿</td><td>全程当地4-5星酒店（含2晚温泉旅馆）</td></tr>
+          <tr><td>餐食</td><td>行程内含餐（炙樱手作·京都料理·温泉晚宴·富士料理·东京特色餐）</td></tr>
+          <tr><td>景点</td><td>行程内所有景点门票（含富士山五合目）</td></tr>
+          <tr><td>抹茶</td><td>京都抹茶制作体验</td></tr>
+          <tr><td>接送</td><td>全程专车及专业中文领队服务</td></tr>
+          <tr><td>赠品</td><td>深圳口岸↔香港机场往返接送用车</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head">团费不含</div>
+        <table class="cost-table">
+          <tr><td>司陪费</td><td>¥850/人（必付，出发前结清）</td></tr>
+          <tr><td>单房差</td><td>¥1,800–2,000/人（如需独享单人房）</td></tr>
+          <tr><td>外籍附加</td><td>¥800/人（外籍及港澳台护照）</td></tr>
+          <tr><td>保证金</td><td>¥50,000/人（按时归团后退还）</td></tr>
+          <tr><td>美食升级</td><td>和牛/刺身等套餐（自愿选择）</td></tr>
+          <tr><td>个人消费</td><td>酒店内私人消费·电话·洗衣等</td></tr>
+          <tr><td>保险</td><td>建议另行购买个人境外意外险</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读以下条款，确保顺畅愉快的日本之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>🖐 入境指纹采集</h4>
+        <ul>
+          <li>入境日本必须接受<strong>双食指指纹采集及面部拍照</strong></li>
+          <li>拒绝配合指纹采集者将不获准入境，且<strong>不退任何费用</strong></li>
+          <li>请提前告知同团旅客，避免产生不必要的麻烦</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🏨 日本酒店须知</h4>
+        <ul>
+          <li>日本酒店房间紧凑，寸土寸金</li>
+          <li>请勿与国内同级酒店面积作对比</li>
+          <li>温泉旅馆着浴衣使用公共温泉，请留意礼仪规范</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🚌 巴士服务规定</h4>
+        <ul>
+          <li>日本法律规定司机每天行车<strong>不超过10小时</strong></li>
+          <li>因游客迟到导致需延长巴士服务，需支付 <strong>¥10,000日元/小时</strong> 延长金</li>
+          <li>请务必准时集合，避免影响全团行程安排</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>⚠️ 脱团与保证金</h4>
+        <ul>
+          <li>擅自脱团属于违法行为，违规金 <strong>¥1,000元/天/人</strong></li>
+          <li>出团前须交纳归国保证金 <strong>¥50,000元/人</strong>，按时随团归国后全额退还</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>以上价格均为参考含税价，以出发时实际为准</span>
+    <span>司陪服务费¥850为必付费用，出发前须结清</span>
+    <span>归国保证金¥50,000/人，按时随团归国后全额退还</span>
+    <span>购物均为完全自愿消费原则</span>
+    <span>入境必须配合双食指指纹采集，拒绝者不退费</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html" class="current">🇯🇵 日本 · 本页</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchVer(btn, id) {
+  document.querySelectorAll('.ver-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.ver-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('ver-' + id).classList.add('active');
+  document.querySelectorAll('#ver-' + id + ' .up').forEach(el => {
+    el.classList.remove('in');
+    setTimeout(() => el.classList.add('in'), 40);
+  });
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','shopping','surcharge','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

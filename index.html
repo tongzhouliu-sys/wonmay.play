@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 精品国际跟团游 · 纯玩无购物</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f0e8;
+  --bg2:#ede7d9;
+  --ink:#1c1610;
+  --gold:#b8903c;
+  --gold-lt:#e8d5a0;
+  --red:#b03a2e;
+  --teal:#2c6b65;
+  --navy:#003399;
+  --green:#28a745;
+  --muted:#7a6e60;
+  --border:#cfc4b0;
+  --white:#fdfaf4;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--gold);}
+.hd{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo-link{text-decoration:none;display:flex;align-items:center;gap:12px;}
+.logo-icon{font-size:1.6rem;}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);font-style:italic;line-height:1.1;}
+.logo-sub{font-style:normal;font-size:0.62rem;color:#666;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;align-items:center;}
+nav a{color:#999;text-decoration:none;font-size:0.74rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover{color:var(--gold);background:rgba(184,144,60,.1);}
+.nav-consult{border:1px solid rgba(184,144,60,.4);color:var(--gold)!important;padding:6px 16px!important;font-size:0.72rem!important;}
+.nav-consult:hover{background:var(--gold)!important;color:var(--ink)!important;}
+
+/* ── ACTION BUTTONS ── */
+.action-bar{background:var(--ink);padding:20px 40px 24px;border-bottom:2px solid rgba(184,144,60,.2);}
+.action-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.action-btn{display:flex;align-items:center;gap:12px;padding:16px 20px;text-decoration:none;border-radius:4px;transition:all .25s;border:1px solid rgba(255,255,255,.08);}
+.action-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.ab-icon{font-size:1.5rem;flex-shrink:0;}
+.ab-text strong{display:block;font-size:0.82rem;letter-spacing:0.06em;margin-bottom:2px;}
+.ab-text span{font-size:0.66rem;letter-spacing:0.04em;opacity:.75;}
+.ab1{background:linear-gradient(135deg,#003399,#1a5aa8);color:#d0e8ff;}
+.ab1:hover{background:linear-gradient(135deg,#1a5aa8,#2a7ad8);}
+.ab2{background:linear-gradient(135deg,#1a6848,#2a9060);color:#d0f0e0;}
+.ab2:hover{background:linear-gradient(135deg,#2a9060,#3ab878);}
+.ab3{background:linear-gradient(135deg,#8a2010,#c03028);color:#ffe0d8;}
+.ab3:hover{background:linear-gradient(135deg,#c03028,#e04040);}
+.ab4{background:linear-gradient(135deg,#7a6010,#c8a028);color:#fff8d8;}
+.ab4:hover{background:linear-gradient(135deg,#c8a028,#e8c040);}
+
+/* ── SECTION HEADERS ── */
+.sec-wrap{max-width:1280px;margin:0 auto;padding:0 40px;}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;padding:48px 0 24px;}
+.sec-hd-left{}
+.sec-eyebrow{font-size:0.6rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;color:var(--ink);}
+.sec-more{font-size:0.72rem;letter-spacing:0.1em;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;}
+.sec-more:hover{color:var(--gold);border-color:var(--gold);}
+
+/* ── SEASONAL PICKS ── */
+.seasonal{background:var(--white);}
+.picks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:56px;}
+.pick-card{background:var(--white);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .25s;position:relative;overflow:hidden;}
+.pick-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12);z-index:2;}
+.pick-banner{height:5px;}
+.pick-banner-gold{background:var(--gold);}
+.pick-banner-red{background:var(--red);}
+.pick-banner-navy{background:var(--navy);}
+.pick-body{padding:24px 22px 20px;flex:1;display:flex;flex-direction:column;}
+.pick-flag{font-size:1.8rem;margin-bottom:10px;}
+.pick-eyebrow{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.pick-title{font-family:'Noto Serif SC',serif;font-size:1.05rem;font-weight:600;line-height:1.45;margin-bottom:10px;}
+.pick-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+.ptag{font-size:0.62rem;padding:2px 9px;letter-spacing:0.04em;}
+.ptag-gold{background:#fff8e8;color:#7a5000;}
+.ptag-red{background:#fff0ee;color:#8a2010;}
+.ptag-green{background:#e8f5e9;color:#2e7d32;}
+.ptag-blue{background:#e8eeff;color:#003399;}
+.pick-highlights{font-size:0.76rem;color:var(--muted);line-height:1.8;margin-bottom:14px;flex:1;}
+.pick-highlights li{padding-left:14px;position:relative;list-style:none;}
+.pick-highlights li::before{content:'·';position:absolute;left:0;color:var(--gold);}
+.pick-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;margin-top:auto;}
+.pick-price-lbl{font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;}
+.pick-price{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--red);line-height:1;}
+.pick-price-unit{font-size:0.64rem;color:var(--muted);}
+.pick-cta{font-size:0.68rem;letter-spacing:0.1em;border:1px solid var(--gold);color:var(--gold);padding:5px 14px;transition:all .2s;}
+.pick-card:hover .pick-cta{background:var(--gold);color:var(--ink);}
+
+/* ── DESTINATIONS GRID ── */
+.destinations{}
+.dest-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:56px;}
+.dest-tile{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:3/4;text-decoration:none;display:block;background:var(--bg2);}
+.dest-tile.wide{grid-column:span 2;aspect-ratio:auto;height:280px;}
+.dest-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:.65;transition:transform .5s ease,opacity .3s;}
+.dest-tile:hover .dest-bg{transform:scale(1.08);opacity:.8;}
+.dest-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,22,16,.75) 0%,rgba(28,22,16,.1) 55%,transparent 100%);}
+.dest-info{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;}
+.dest-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:#f5f0e8;line-height:1;}
+.dest-sub{font-size:0.62rem;letter-spacing:0.12em;color:#a89870;margin-top:3px;}
+.dest-badge{position:absolute;top:10px;right:10px;font-size:0.6rem;letter-spacing:0.1em;padding:2px 8px;background:rgba(184,144,60,.85);color:var(--ink);}
+/* destination background colors */
+.bg-usa{background-color:#8baab8;}
+.bg-australia{background-color:#a8c4b0;}
+.bg-bali{background-color:#2ab8c8;opacity:.7;}
+.bg-egypt{background-color:#c89838;}
+.bg-dubai{background-color:#c4b882;}
+.bg-europe{background-color:#9aabb5;}
+.bg-japan{background-color:#d4a5b5;}
+.bg-kenya{background-color:#c87820;}
+.bg-korea{background-color:#b5a8c4;}
+.bg-thailand{background-color:#c4a882;}
+
+/* ── COMING SOON ── */
+.coming-section{background:var(--ink);padding:48px 0;}
+.coming-inner{max-width:1280px;margin:0 auto;padding:0 40px;}
+.coming-hd{margin-bottom:28px;}
+.coming-hd .sec-eyebrow{color:var(--gold);}
+.coming-hd .sec-title{color:#d8cdb8;}
+.coming-hd .sec-sub{font-size:0.78rem;color:#5a5040;margin-top:4px;}
+.coming-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.coming-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,144,60,.15);padding:20px 18px;text-decoration:none;color:inherit;transition:all .2s;display:flex;flex-direction:column;gap:8px;}
+.coming-card:hover{background:rgba(184,144,60,.07);border-color:rgba(184,144,60,.35);transform:translateY(-2px);}
+.coming-flag{font-size:1.6rem;}
+.coming-name{font-family:'Noto Serif SC',serif;font-size:0.88rem;font-weight:600;color:#c8b890;}
+.coming-days{font-size:0.66rem;color:#5a4a30;letter-spacing:0.08em;}
+.coming-tag{font-size:0.6rem;background:rgba(184,144,60,.12);color:var(--gold);padding:2px 8px;letter-spacing:0.1em;align-self:flex-start;margin-top:auto;}
+
+/* ── STRENGTHS ── */
+.strengths{padding:56px 0;}
+.str-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.str-item{background:var(--white);padding:30px 24px;text-align:center;}
+.str-icon{font-size:2rem;margin-bottom:14px;}
+.str-title{font-family:'Noto Serif SC',serif;font-size:0.92rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.str-desc{font-size:0.75rem;color:var(--muted);line-height:1.8;}
+
+/* ── CONSULTANT BAND ── */
+.consult-band{background:var(--ink);padding:0;}
+.consult-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;min-height:200px;}
+.consult-left{padding:40px 48px 40px 0;border-right:1px solid rgba(184,144,60,.15);display:flex;align-items:center;gap:24px;}
+.c-avatar{width:80px;height:80px;background:linear-gradient(135deg,var(--gold),#8a5810);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;flex-shrink:0;}
+.c-info h3{font-family:'Noto Serif SC',serif;font-size:1.15rem;font-weight:600;color:var(--gold);margin-bottom:4px;}
+.c-info p{font-size:0.76rem;color:#5a4a30;line-height:1.7;margin-bottom:10px;}
+.c-phone{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);letter-spacing:0.04em;font-style:italic;display:block;}
+.c-phone-sub{font-size:0.62rem;color:#5a4a30;letter-spacing:0.12em;display:block;margin-top:2px;}
+.c-btns{display:flex;gap:8px;margin-top:12px;}
+.c-btn{font-size:0.7rem;letter-spacing:0.1em;padding:7px 18px;text-decoration:none;transition:all .2s;}
+.c-btn-gold{background:var(--gold);color:var(--ink);}
+.c-btn-gold:hover{background:#9a7010;}
+.c-btn-outline{border:1px solid rgba(184,144,60,.4);color:var(--gold);}
+.c-btn-outline:hover{background:rgba(184,144,60,.1);}
+.consult-right{padding:40px 0 40px 48px;display:flex;flex-direction:column;justify-content:center;}
+.c-right-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#5a4a30;margin-bottom:16px;}
+.c-address{font-size:0.78rem;color:#6a5a40;line-height:1.9;margin-bottom:16px;}
+.c-address strong{color:#c0a060;display:block;margin-bottom:2px;}
+.c-qr-row{display:flex;align-items:center;gap:12px;}
+.c-qr-box{width:64px;height:64px;background:rgba(184,144,60,.1);border:1px solid rgba(184,144,60,.2);display:flex;align-items:center;justify-content:center;font-size:2rem;}
+.c-qr-text{font-size:0.72rem;color:#5a4a30;line-height:1.7;}
+.c-qr-text strong{color:#c0a060;display:block;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--gold);padding:18px 40px;}
+.note-strip-inner{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 36px;justify-content:center;}
+.note-strip span{font-size:0.68rem;color:#5a4838;letter-spacing:0.07em;}
+.note-strip span::before{content:'—  ';color:var(--gold);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.64rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>.f-copy{font-size:0.74rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:14px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.7rem;letter-spacing:0.08em;padding:5px 13px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:var(--gold);border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.coming-label{font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:8px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.66rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:.65;transition:all .2s;}
+.coming-row a:hover{opacity:.9;color:#5a4e3a;}
+.ctag{font-size:0.5rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:1100px){
+  .dest-grid{grid-template-columns:repeat(3,1fr);}
+  .dest-tile.wide{grid-column:span 1;height:220px;}
+  .coming-grid{grid-template-columns:repeat(3,1fr);}
+  .str-grid{grid-template-columns:1fr 1fr;}
+  .consult-inner{grid-template-columns:1fr;}
+  .consult-left{border-right:none;border-bottom:1px solid rgba(184,144,60,.15);padding-right:0;}
+  .consult-right{padding-left:0;}
+}
+@media(max-width:900px){
+  .action-inner{grid-template-columns:1fr 1fr;}
+  .picks-grid{grid-template-columns:1fr;}
+  .dest-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .action-bar{padding:16px;}
+  .action-inner{grid-template-columns:1fr;}
+  .sec-wrap,.coming-inner{padding:0 16px;}
+  .strengths{padding:40px 0;}
+  .consult-inner{padding:0 16px;}
+  .note-strip,.note-strip-inner{padding-left:16px;padding-right:16px;}
+  footer{padding:36px 16px 28px;}
+  .coming-grid{grid-template-columns:1fr 1fr;}
+  .dest-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo-link">
+      <span class="logo-icon">✈️</span>
+      <div>
+        <span class="logo-text">逍遥国际旅行社</span>
+        <span class="logo-sub">栖梦投资旗下产业 · Xiao Yao International Tours</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#destinations">热门目的地</a>
+      <a href="#picks">精选线路</a>
+      <a href="#coming">更多线路</a>
+      <a href="#strengths">品质保障</a>
+      <a href="#consult" class="nav-consult">📞 立即咨询</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── ACTION BUTTONS ── -->
+<div class="action-bar">
+  <div class="action-inner">
+    <a href="#destinations" class="action-btn ab1">
+      <span class="ab-icon">🌍</span>
+      <div class="ab-text"><strong>全球热门线路</strong><span>13+ 目的地一站直达</span></div>
+    </a>
+    <a href="#picks" class="action-btn ab2">
+      <span class="ab-icon">💎</span>
+      <div class="ab-text"><strong>私家团 · 精品团</strong><span>专属行程，五钻品质</span></div>
+    </a>
+    <a href="thailand.html" class="action-btn ab3">
+      <span class="ab-icon">🚫</span>
+      <div class="ab-text"><strong>纯玩无购物专区</strong><span>推一罚十承诺，拒绝隐形消费</span></div>
+    </a>
+    <a href="#consult" class="action-btn ab4">
+      <span class="ab-icon">🎫</span>
+      <div class="ab-text"><strong>签证 · 联运补贴</strong><span>全国50+城市，最高¥300补贴</span></div>
+    </a>
+  </div>
+</div>
+
+<!-- ── SEASONAL PICKS ── -->
+<div class="seasonal" id="picks">
+  <div class="sec-wrap">
+    <div class="sec-hd up">
+      <div class="sec-hd-left">
+        <div class="sec-eyebrow">Seasonal Picks · 当季必玩</div>
+        <div class="sec-title">精选热门线路</div>
+      </div>
+      <a href="#destinations" class="sec-more">查看全部目的地 →</a>
+    </div>
+    <div class="picks-grid">
+
+      <!-- Japan -->
+      <a class="pick-card up" href="japan.html">
+        <div class="pick-banner pick-banner-gold"></div>
+        <div class="pick-body">
+          <div class="pick-flag">🌸</div>
+          <div class="pick-eyebrow">Japan · Spring Limited</div>
+          <div class="pick-title">日本樱花季 · 伊豆河津早樱<br>阪东/东阪 6天5晚精华游</div>
+          <div class="pick-tags">
+            <span class="ptag ptag-gold">♨️ 温泉酒店</span>
+            <span class="ptag ptag-green">✓ 河津早樱限定</span>
+            <span class="ptag ptag-blue">✈ 直飞</span>
+          </div>
+          <ul class="pick-highlights">
+            <li>伊豆河津樱·千鸟之渊·伏见十石舟</li>
+            <li>富士山五合目·忍野八海</li>
+            <li>2晚特色温泉旅馆·和风美食全程</li>
+            <li>赠深圳↔香港机场往返接送</li>
+          </ul>
+          <div class="pick-footer">
+            <div>
+              <div class="pick-price-lbl">参考价格</div>
+              <span class="pick-price">¥3,999</span>
+              <span class="pick-price-unit"> 起/人</span>
+            </div>
+            <span class="pick-cta">查看详情</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Thailand -->
+      <a class="pick-card up" href="thailand.html">
+        <div class="pick-banner pick-banner-red"></div>
+        <div class="pick-body">
+          <div class="pick-flag">🛕</div>
+          <div class="pick-eyebrow">Thailand · Luxury Pure Play</div>
+          <div class="pick-title">轻奢泰兰德 · 曼谷+芭提雅<br>真无自费 6天5晚</div>
+          <div class="pick-tags">
+            <span class="ptag ptag-red">推一罚十</span>
+            <span class="ptag ptag-gold">💎 五钻酒店</span>
+            <span class="ptag ptag-green">零购物</span>
+          </div>
+          <ul class="pick-highlights">
+            <li>大皇宫·玉佛寺·水门寺大佛</li>
+            <li>珊瑚岛·金沙岛·东方公主号</li>
+            <li>承诺真无自费，违约推一罚十</li>
+            <li>全程网评五钻住宿</li>
+          </ul>
+          <div class="pick-footer">
+            <div>
+              <div class="pick-price-lbl">参考价格</div>
+              <span class="pick-price">¥3,649</span>
+              <span class="pick-price-unit"> 起/人</span>
+            </div>
+            <span class="pick-cta">查看详情</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- USA -->
+      <a class="pick-card up" href="usa.html">
+        <div class="pick-banner pick-banner-navy"></div>
+        <div class="pick-body">
+          <div class="pick-flag">🗽</div>
+          <div class="pick-eyebrow">USA · East &amp; West Coast</div>
+          <div class="pick-title">全景美国东西岸<br>三大国家公园 13天深度游</div>
+          <div class="pick-tags">
+            <span class="ptag ptag-blue">✈ 国泰直飞</span>
+            <span class="ptag ptag-gold">赠¥2500门票</span>
+            <span class="ptag ptag-green">内陆直飞</span>
+          </div>
+          <ul class="pick-highlights">
+            <li>大峡谷·锡安·布莱斯峡谷</li>
+            <li>自由女神·大都会博物馆·好莱坞</li>
+            <li>华盛顿内陆直飞，省去3000公里</li>
+            <li>另有赏樱特别版（潮汐湖吉野樱）</li>
+          </ul>
+          <div class="pick-footer">
+            <div>
+              <div class="pick-price-lbl">参考价格</div>
+              <span class="pick-price">¥25,999</span>
+              <span class="pick-price-unit"> 起/人</span>
+            </div>
+            <span class="pick-cta">查看详情</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── DESTINATIONS ── -->
+<div class="destinations" id="destinations">
+  <div class="sec-wrap">
+    <div class="sec-hd up">
+      <div class="sec-hd-left">
+        <div class="sec-eyebrow">Global Destinations · 全球目的地</div>
+        <div class="sec-title">探索每一片大陆</div>
+      </div>
+    </div>
+    <div class="dest-grid">
+
+      <a class="dest-tile wide up" href="usa.html">
+        <div class="dest-bg bg-usa" style="font-size:7rem;">🗽</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">直飞</span>
+        <div class="dest-info">
+          <div class="dest-name">美国</div>
+          <div class="dest-sub">USA · 东西岸全景 13天</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="japan.html">
+        <div class="dest-bg bg-japan">🌸</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">限定樱花季</span>
+        <div class="dest-info">
+          <div class="dest-name">日本</div>
+          <div class="dest-sub">Japan · 6天5晚</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="europe.html">
+        <div class="dest-bg bg-europe">🗼</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">7国12天</span>
+        <div class="dest-info">
+          <div class="dest-name">欧洲</div>
+          <div class="dest-sub">Europe · 德法意瑞比</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="australia.html">
+        <div class="dest-bg bg-australia">🦘</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">纯玩</span>
+        <div class="dest-info">
+          <div class="dest-name">澳洲</div>
+          <div class="dest-sub">Australia · 8天6晚</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="thailand.html">
+        <div class="dest-bg bg-thailand">🛕</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">推一罚十</span>
+        <div class="dest-info">
+          <div class="dest-name">泰国</div>
+          <div class="dest-sub">Thailand · 6天5晚</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="egypt.html">
+        <div class="dest-bg bg-egypt">🏛️</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">直飞</span>
+        <div class="dest-info">
+          <div class="dest-name">埃及</div>
+          <div class="dest-sub">Egypt · 10天7晚</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="bali.html">
+        <div class="dest-bg" style="background-color:#1a8898;display:flex;align-items:center;justify-content:center;font-size:5rem;">🌊</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">五星泳池</span>
+        <div class="dest-info">
+          <div class="dest-name">巴厘岛</div>
+          <div class="dest-sub">Bali · 南纬8° · 6天</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="dubai.html">
+        <div class="dest-bg bg-dubai">🌆</div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-name">迪拜</div>
+          <div class="dest-sub">Dubai · 哈利法塔</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="kenya.html">
+        <div class="dest-bg bg-kenya">🦁</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">大迁徙</span>
+        <div class="dest-info">
+          <div class="dest-name">肯尼亚</div>
+          <div class="dest-sub">Kenya · 马赛马拉 10天</div>
+        </div>
+      </a>
+
+      <a class="dest-tile up" href="korea.html">
+        <div class="dest-bg bg-korea">🏯</div>
+        <div class="dest-overlay"></div>
+        <span class="dest-badge">免签</span>
+        <div class="dest-info">
+          <div class="dest-name">韩国</div>
+          <div class="dest-sub">Korea · 5天4晚</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── COMING SOON ── -->
+<div class="coming-section" id="coming">
+  <div class="coming-inner">
+    <div class="coming-hd up">
+      <div class="sec-eyebrow">More Destinations · 更多特色深度线路</div>
+      <div class="sec-title">敬请期待 · 深度探索</div>
+      <div class="sec-sub">更多精品线路持续上线中，欢迎咨询最新排期</div>
+    </div>
+    <div class="coming-grid">
+      <a class="coming-card up" href="russia.html">
+        <div class="coming-flag">🇷🇺</div>
+        <div class="coming-name">俄罗斯全景轻奢</div>
+        <div class="coming-days">贝加尔湖 · 圣彼得堡 · 莫斯科 12日</div>
+        <div class="coming-tag">0自费 · 0小费</div>
+      </a>
+      <a class="coming-card up" href="turkey.html">
+        <div class="coming-flag">🇹🇷</div>
+        <div class="coming-name">土耳其星月传奇</div>
+        <div class="coming-days">番红花城 · 棉花堡 · 卡帕多奇亚 9天</div>
+        <div class="coming-tag">热气球 · 免签</div>
+      </a>
+      <a class="coming-card up" href="vietnam.html">
+        <div class="coming-flag">🇻🇳</div>
+        <div class="coming-name">越南双城记</div>
+        <div class="coming-days">胡志明 + 美奈 5天4晚纯玩</div>
+        <div class="coming-tag">法式浪漫 · 沙漠海洋</div>
+      </a>
+      <a class="coming-card up" href="morocco.html">
+        <div class="coming-flag">🇲🇦</div>
+        <div class="coming-name">摩洛哥异域风情</div>
+        <div class="coming-days">马拉喀什 · 非斯 · 撒哈拉</div>
+        <div class="coming-tag">蓝色小镇</div>
+      </a>
+      <a class="coming-card up" href="nepal.html">
+        <div class="coming-flag">🇳🇵</div>
+        <div class="coming-name">尼泊尔雪山之旅</div>
+        <div class="coming-days">加德满都 · 博卡拉 · 珠峰</div>
+        <div class="coming-tag">世界屋脊</div>
+      </a>
+      <a class="coming-card up" href="malaysia.html">
+        <div class="coming-flag">🇲🇾</div>
+        <div class="coming-name">新马纯玩</div>
+        <div class="coming-days">吉隆坡 · 槟城 · 狮城 7日</div>
+        <div class="coming-tag">旧南洋 · 多元文化</div>
+      </a>
+      <a class="coming-card up" href="antarctica.html">
+        <div class="coming-flag">🧊</div>
+        <div class="coming-name">南极探索</div>
+        <div class="coming-days">地球最后净土 · 终极之旅</div>
+        <div class="coming-tag">极地限定</div>
+      </a>
+      <a class="coming-card up" href="usa-west.html">
+        <div class="coming-flag">🌵</div>
+        <div class="coming-name">美西精华游</div>
+        <div class="coming-days">大峡谷 · 拉斯维加斯 · 洛杉矶</div>
+        <div class="coming-tag">纯玩直飞</div>
+      </a>
+      <a class="coming-card up" href="dubai.html">
+        <div class="coming-flag">🇦🇪</div>
+        <div class="coming-name">迪拜奢华之旅</div>
+        <div class="coming-days">哈利法塔 · 棕榈岛 · 沙漠冲沙</div>
+        <div class="coming-tag">精品团</div>
+      </a>
+      <a class="coming-card up" href="#consult">
+        <div class="coming-flag">✉️</div>
+        <div class="coming-name">定制私家团</div>
+        <div class="coming-days">专属行程设计 · 灵活出发时间</div>
+        <div class="coming-tag">联系高盼顾问</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── STRENGTHS ── -->
+<div class="strengths" id="strengths">
+  <div class="sec-wrap">
+    <div class="sec-hd up">
+      <div class="sec-hd-left">
+        <div class="sec-eyebrow">Our Strengths · 平台核心优势</div>
+        <div class="sec-title">为什么选择逍遥国际</div>
+      </div>
+    </div>
+    <div class="str-grid">
+      <div class="str-item up">
+        <div class="str-icon">💬</div>
+        <div class="str-title">24H 专属管家</div>
+        <div class="str-desc">专属微信管家群全天候在线，境外中文司导无缝对接，出行任何问题即时响应。</div>
+      </div>
+      <div class="str-item up">
+        <div class="str-icon">🚫</div>
+        <div class="str-title">真纯玩无购物</div>
+        <div class="str-desc">合同白纸黑字约定推一罚十，行程透明公示购物店信息，拒绝一切形式的隐形消费。</div>
+      </div>
+      <div class="str-item up">
+        <div class="str-icon">✈️</div>
+        <div class="str-title">优选五星航司</div>
+        <div class="str-desc">国航、南航、国泰等五星航司直飞优先，全国50+城市免费联运，最高补贴¥300/人。</div>
+      </div>
+      <div class="str-item up">
+        <div class="str-icon">🏨</div>
+        <div class="str-title">甄选品质住宿</div>
+        <div class="str-desc">全程网评四至五钻或当地特色五星酒店，部分线路特别升级温泉旅馆、草原Lodge等。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSULTANT BAND ── -->
+<div class="consult-band" id="consult">
+  <div class="consult-inner">
+    <div class="consult-left">
+      <div class="c-avatar">😊</div>
+      <div class="c-info">
+        <h3>高盼 · 资深旅行管家</h3>
+        <p>逍遥国际旅行社资深顾问，专注日本、东南亚、非洲、中东及欧美精品线路<br>为您量身定制最适合的出行方案</p>
+        <a href="tel:15907190570" class="c-phone">159-0719-0570</a>
+        <span class="c-phone-sub">微信同号 · 随时咨询</span>
+        <div class="c-btns">
+          <a href="tel:15907190570" class="c-btn c-btn-gold">📞 立即电话咨询</a>
+          <a href="#" class="c-btn c-btn-outline">💬 添加微信</a>
+        </div>
+      </div>
+    </div>
+    <div class="consult-right">
+      <div class="c-right-label">门店地址 · 服务信息</div>
+      <div class="c-address">
+        <strong>线下门店</strong>
+        武汉百事通 · 黄陂区盘龙城巢上城门市
+      </div>
+      <div class="c-address">
+        <strong>服务范围</strong>
+        日本 · 东南亚 · 非洲 · 中东 · 欧洲 · 美洲 · 大洋洲
+      </div>
+      <div class="c-qr-row">
+        <div class="c-qr-box">📱</div>
+        <div class="c-qr-text">
+          <strong>扫码加微信</strong>
+          获取详细PDF行程单<br>咨询最新排期与报价
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>以上价格均为参考含税价，以出发时实际为准</span>
+    <span>签证费、司陪费、小费等均为另行费用</span>
+    <span>绿色标注景点/服务为行程包含内容</span>
+    <span>自费项目价格以当地实际收费为准</span>
+    <span>本站所有行程均作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Xiao Yao International Tours · Tour Collection 2025–2026</div>
+  <p class="f-copy">行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:10px;color:#3a3528;font-size:0.7rem;">© 2026 逍遥国际旅行社 · 版权所有 · 武汉百事通黄陂区盘龙城巢上城</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">全部目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+      <a href="kenya.html">🦁 肯尼亚</a>
+    </div>
+    <div style="margin-top:14px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.04 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 胡情美意 越南 胡志明+美奈 5天4晚纯玩游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fefcf8;
+  --bg2: #f5f0e8;
+  --ink: #1a1410;
+  --gold: #b8903c;
+  --pink: #d4607a;
+  --pink-lt: #fce8ed;
+  --pink-deep: #8a2840;
+  --teal: #2a7888;
+  --teal-lt: #d8f0f4;
+  --sand: #c89040;
+  --sand-lt: #f8eed8;
+  --muted: #7a7060;
+  --border: #e8ddd5;
+  --white: #fefdfb;
+  --self-bg: #fffaf4;
+  --self-border: #e8c878;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--pink);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--pink);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#555;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#888;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--pink);background:rgba(212,96,122,.1);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;}
+/* layered gradient: pink church meets sandy dunes meets ocean teal */
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#1a0a12 0%,#240c18 30%,#0c1e24 65%,#0a1a10 100%);}
+.hero-bg::before{content:'🏖️';position:absolute;right:50px;bottom:20px;font-size:18rem;opacity:.04;line-height:1;filter:blur(2px);}
+.hero-bg::after{content:'🌸';position:absolute;left:20px;top:40px;font-size:14rem;opacity:.05;line-height:1;filter:blur(1px);}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(155deg,transparent,transparent 80px,rgba(212,96,122,.01) 80px,rgba(212,96,122,.01) 81px);z-index:1;}
+.hero-content{position:relative;z-index:2;padding:80px 40px 60px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--pink);text-transform:uppercase;margin-bottom:16px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.7rem);font-style:italic;color:#f8f0f2;line-height:1.1;margin-bottom:10px;}
+.hero-title em{color:var(--pink);font-style:normal;}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:#6a8a8a;letter-spacing:0.1em;margin-bottom:18px;}
+.hero-sub{font-size:0.85rem;color:#5a6a6a;letter-spacing:0.06em;max-width:580px;margin-bottom:28px;line-height:1.9;}
+
+/* three-color promise badges */
+.promise-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+.pbadge{display:flex;align-items:center;gap:8px;padding:8px 16px;font-size:0.74rem;letter-spacing:0.06em;}
+.pbadge-pink{background:rgba(212,96,122,.12);border:1px solid rgba(212,96,122,.35);color:#e8a0b0;}
+.pbadge-pink strong{color:#f0c0c8;}
+.pbadge-teal{background:rgba(42,120,136,.12);border:1px solid rgba(42,120,136,.35);color:#80c0c8;}
+.pbadge-teal strong{color:#a0d0d8;}
+.pbadge-sand{background:rgba(200,144,64,.12);border:1px solid rgba(200,144,64,.35);color:#c8a870;}
+.pbadge-sand strong{color:#e0c090;}
+
+/* price row */
+.price-row-hero{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:28px;}
+.price-card{background:rgba(0,0,0,.3);border:1px solid rgba(212,96,122,.3);padding:12px 20px;}
+.price-lbl{font-size:0.62rem;color:#7a8080;letter-spacing:0.1em;margin-bottom:2px;}
+.price-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--pink);line-height:1;}
+.price-unit{font-size:0.72rem;color:#7a8080;}
+.price-card.child{border-color:rgba(42,120,136,.3);}
+.price-card.child .price-num{color:var(--teal);font-size:1.9rem;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-primary{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;}
+.btn-primary:hover{background:var(--pink-deep);}
+.btn-sec{display:inline-block;border:1px solid rgba(212,96,122,.5);color:var(--pink);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 26px;transition:all .2s;}
+.btn-sec:hover{background:rgba(212,96,122,.1);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.45);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 22px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.75);}
+
+/* ── COLOR STRIPE ── */
+.stripe{height:5px;background:linear-gradient(90deg,var(--pink) 0%,var(--pink) 33%,var(--teal) 33%,var(--teal) 67%,var(--sand) 67%,var(--sand) 100%);}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--ink);border-bottom:1px solid #2a1e18;}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid #2a1e18;justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;font-weight:400;letter-spacing:0.06em;}
+.trust-text strong.c-pink{color:#d89098;}
+.trust-text strong.c-teal{color:#80b8c0;}
+.trust-text strong.c-sand{color:#c8a068;}
+.trust-text span{font-size:0.68rem;color:#3a2c28;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:8px;}
+.ec-pink{color:var(--pink);}
+.ec-teal{color:var(--teal);}
+.ec-sand{color:var(--sand);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS GRID ── */
+.hl-grid{max-width:1200px;margin:0 auto;padding:0 40px 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 22px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;flex:1;}
+.hl-tag{font-size:0.62rem;padding:2px 8px;align-self:flex-start;margin-top:auto;}
+.hl-tag-pink{background:var(--pink-lt);color:var(--pink-deep);}
+.hl-tag-teal{background:var(--teal-lt);color:var(--teal);}
+.hl-tag-sand{background:var(--sand-lt);color:var(--sand);}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;line-height:1;}
+.day-num.dn-pink{color:var(--pink);}
+.day-num.dn-teal{color:var(--teal);}
+.day-num.dn-sand{color:var(--sand);}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#3a3028;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-pink{background:var(--pink-lt);color:var(--pink-deep);}
+.dtag-teal{background:var(--teal-lt);color:var(--teal);}
+.dtag-sand{background:var(--sand-lt);color:var(--sand);}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-opt{background:var(--self-bg);color:#8a5c00;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-note{background:#fff0f0;color:#b03a2e;}
+.dtag-free{background:var(--bg2);color:var(--muted);}
+
+/* ── OPTIONAL / SURCHARGE ── */
+.surcharge{padding:0 40px 56px;}
+.sc-inner{max-width:1200px;margin:0 auto;}
+.optional-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:28px;}
+.opt-card{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.opt-zone{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:6px;}
+.opt-name{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.opt-desc{font-size:0.76rem;color:var(--muted);line-height:1.75;}
+.opt-badge{font-size:0.62rem;background:var(--sand-lt);color:var(--sand);padding:2px 8px;display:inline-block;margin-top:8px;}
+
+/* mandatory fees */
+.fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+.fee-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.fee-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#b03a2e;margin-bottom:10px;}
+.fee-box ul{list-style:none;}
+.fee-box li{font-size:0.76rem;color:#3a3028;line-height:1.85;padding-left:14px;position:relative;}
+.fee-box li::before{content:'·';position:absolute;left:0;color:var(--pink);}
+.fee-box li strong{color:var(--ink);}
+
+/* costs */
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.cost-head.ch-pink{color:var(--pink);}
+.cost-head.ch-teal{color:var(--teal);}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── SHOPPING POLICY ── */
+.shop-policy{padding:0 40px 56px;}
+.policy-inner{max-width:1200px;margin:0 auto;}
+.policy-card{background:var(--white);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.policy-col{padding:26px 28px;}
+.policy-col:first-child{border-right:1px solid var(--border);}
+.policy-col-head{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;}
+.ph-green{color:#2e7d32;}
+.ph-muted{color:var(--muted);}
+.policy-col ul{list-style:none;}
+.policy-col li{font-size:0.78rem;color:#3a3028;line-height:1.9;padding-left:16px;position:relative;}
+.policy-col li::before{position:absolute;left:0;}
+.inc-list li::before{content:'✓';color:#2e7d32;}
+.exc-list li::before{content:'○';color:var(--teal);}
+.cashew-note{background:var(--sand-lt);border:1px solid rgba(200,144,64,.3);padding:12px 16px;margin-top:14px;font-size:0.74rem;color:#6a4a20;line-height:1.75;}
+.cashew-note strong{color:var(--sand);}
+
+/* ── CONSULTANT ── */
+.consult{padding:0 40px 56px;}
+.consult-inner{max-width:1200px;margin:0 auto;}
+.consult-card{background:linear-gradient(135deg,#fdf0f4,#f0faf8);border:1px solid var(--border);padding:32px 36px;display:flex;align-items:center;gap:40px;}
+.consult-avatar{width:72px;height:72px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.consult-info h3{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.consult-info p{font-size:0.8rem;color:var(--muted);margin-bottom:12px;}
+.consult-contact{display:flex;flex-wrap:wrap;gap:10px;}
+.contact-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;transition:all .2s;}
+.contact-btn.pink{background:var(--pink);color:#fff;}
+.contact-btn.pink:hover{background:var(--pink-deep);}
+.contact-btn.teal{border:1px solid var(--teal);color:var(--teal);}
+.contact-btn.teal:hover{background:var(--teal-lt);}
+.contact-btn.sand{border:1px solid var(--sand);color:var(--sand);}
+.contact-btn.sand:hover{background:var(--sand-lt);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#3a3028;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;background:var(--pink);color:#fff;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 16px rgba(212,96,122,.3);transition:all .2s;white-space:nowrap;}
+.float-btn:hover{background:var(--pink-deep);transform:translateX(-3px);}
+.float-btn.teal-btn{background:var(--teal);box-shadow:0 4px 16px rgba(42,120,136,.25);}
+.float-btn.teal-btn:hover{background:#1a5868;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--pink);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#5a4838;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--pink);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .optional-grid{grid-template-columns:1fr;}
+  .fee-grid{grid-template-columns:1fr 1fr;}
+  .costs-cols{grid-template-columns:1fr;}
+  .policy-card{grid-template-columns:1fr;}
+  .policy-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+  .consult-card{flex-direction:column;gap:20px;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid #2a1e18;min-width:50%;}
+  .hl-grid{grid-template-columns:1fr;padding:0 16px 40px;}
+  .sec-head{padding:36px 16px 20px;}
+  .itinerary,.surcharge,.shop-policy,.consult,.notices{padding-left:16px;padding-right:16px;}
+  .fee-grid{grid-template-columns:1fr;padding:0;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn">📅 立即预订</a>
+  <a href="#consult" class="float-btn teal-btn">💬 咨询顾问高盼</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#optional">自费说明</a>
+      <a href="#shopping">购物政策</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Vietnam · Ho Chi Minh &amp; Mũi Né · 5 Days · Pure Play</div>
+    <div class="hero-title">
+      胡情美意 · 越南越行<br>
+      胡志明 ＋ <em>美奈</em> 双城深度游
+    </div>
+    <div class="hero-tagline">东方小巴黎 · 法式情怀 · 纯玩不进店</div>
+    <div class="hero-sub">
+      粉红教堂 · 百年邮局 · 白沙丘吉普车 · 仙女溪 · 热矿泥浆浴 · 咖啡公寓<br>
+      越南航空广州直飞 · 全程不进旅游购物店 · 5天4晚高品质体验
+    </div>
+    <div class="promise-row">
+      <div class="pbadge pbadge-pink">
+        <span>🚫</span>
+        <span><strong>纯玩不进店</strong>全程零购物安排</span>
+      </div>
+      <div class="pbadge pbadge-teal">
+        <span>✈️</span>
+        <span><strong>越南航空</strong>广州往返正点直飞</span>
+      </div>
+      <div class="pbadge pbadge-sand">
+        <span>🚙</span>
+        <span><strong>吉普车沙漠驰骋</strong>深度含于团费</span>
+      </div>
+    </div>
+    <div class="price-row-hero">
+      <div class="price-card">
+        <div class="price-lbl">成人参考价</div>
+        <span class="price-num">¥3,999</span>
+        <span class="price-unit"> /人</span>
+      </div>
+      <div class="price-card child">
+        <div class="price-lbl">儿童优惠（11岁以下·不占床）</div>
+        <span class="price-num">¥3,399</span>
+        <span class="price-unit"> /人</span>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-primary">立即预订团期</a>
+      <a href="#itinerary" class="btn-sec">查看完整行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── COLOR STRIPE ── -->
+<div class="stripe"></div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">🏰</span>
+      <div class="trust-text"><strong class="c-pink">粉红教堂</strong><span>胡志明法式建筑地标</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏜️</span>
+      <div class="trust-text"><strong class="c-sand">白沙丘吉普车</strong><span>沙漠海洋奇境驰骋</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">♨️</span>
+      <div class="trust-text"><strong class="c-teal">热矿泥浆浴</strong><span>美奈独有疗愈体验</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">☕</span>
+      <div class="trust-text"><strong class="c-pink">咖啡公寓</strong><span>网红打卡+滴滴壶咖啡</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🚫</span>
+      <div class="trust-text"><strong class="c-teal">纯玩不进店</strong><span>全程零购物店安排</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow ec-pink">Highlights · 行程亮点</div>
+    <div class="sec-title">三种颜色的越南</div>
+    <div class="sec-sub">粉色的浪漫教堂 · 湖蓝的仙女溪涧 · 金黄的沙漠奇境，一次全部拥有</div>
+  </div>
+  <div class="hl-grid">
+    <div class="hl-item up">
+      <div class="hl-icon">🏙️</div>
+      <div class="hl-title">东方小巴黎 · 胡志明</div>
+      <div class="hl-desc">漫步总统府、市政厅，在百年邮局寄出一张手写明信片，在玫瑰粉教堂前留下最美倒影，在咖啡公寓高楼俯瞰城市街景。</div>
+      <div class="hl-tag hl-tag-pink">🌸 法式殖民风情</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🏜️</div>
+      <div class="hl-title">美奈沙漠奇境</div>
+      <div class="hl-desc">越南最令人震撼的地貌：白沙丘是一半海水一半沙漠的天然奇观，红沙丘在斜阳下呈现火焰色，仙女溪是流淌在红橙沙地间的清澈溪流。</div>
+      <div class="hl-tag hl-tag-sand">🏜️ 沙漠吉普车驰骋</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🌊</div>
+      <div class="hl-title">美奈渔港与泥浆浴</div>
+      <div class="hl-desc">傍晚驱车至美奈渔港，看归来的渔船将一天的收获卸入岸边；次日体验美奈独有的热矿泥浆浴，富含矿物质的天然温泥彻底放松每一块肌肉。</div>
+      <div class="hl-tag hl-tag-teal">♨️ 热矿泥浆浴</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">☕</div>
+      <div class="hl-title">越式咖啡文化</div>
+      <div class="hl-desc">登上胡志明著名的咖啡公寓，逐层探访嵌入老楼的小众咖啡馆，用滴滴壶慢慢滴出一杯越南黑咖啡，感受最悠闲的东南亚时光。</div>
+      <div class="hl-tag hl-tag-pink">☕ 咖啡公寓打卡</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🍤</div>
+      <div class="hl-title">越南美食全覆盖</div>
+      <div class="hl-desc">越式自助餐（¥100标准）、海鲜风味餐、法棍三明治、滴滴壶咖啡，五天行程特色餐食全程安排，体验越南最正宗的多元饮食文化。</div>
+      <div class="hl-tag hl-tag-sand">🍲 特色餐食全含</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🛕</div>
+      <div class="hl-title">占族文化与古塔</div>
+      <div class="hl-desc">美奈郊外的占族古塔是越南中部占族文明的历史遗存，已矗立逾千年，红砖古塔与热带椰林构成独特的异域人文风景。</div>
+      <div class="hl-tag hl-tag-teal">🛕 占族古塔文化</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow ec-teal">Itinerary · 5日行程</div>
+    <div class="sec-title">胡志明 · 美奈 5天4晚</div>
+    <div class="sec-sub">绿色为包含 · 彩色标签区分城市 · 橙色边框为自费可选</div>
+  </div>
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dn-pink">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">广州 → 胡志明 · 初抵东方小巴黎</div>
+          <div class="day-route">越南航空 VN · 广州直飞胡志明</div>
+          <div class="day-text">搭乘越南航空 (VN) 从广州直飞胡志明市国际机场。抵达后专车接机，稍作安顿，享用欢迎中式围餐，入住四星酒店，开启这段充满法式浪漫与热带风情的越南之旅。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 越南航空广州直飞</span>
+            <span class="dtag dtag-inc">✓ 专车接机</span>
+            <span class="dtag dtag-inc">✓ 四星酒店</span>
+            <span class="dtag dtag-meal">🍜 中式围餐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dn-pink">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">胡志明法式人文 → 美奈渔港日落</div>
+          <div class="day-route">Ho Chi Minh → Mũi Né</div>
+          <div class="day-text">上午深度游览胡志明城区的法式殖民建筑群：在<strong>总统府</strong>前感受历史的厚重，外观流光溢彩的<strong>市政厅</strong>，在玫瑰粉红的<strong>粉红教堂（西贡圣母圣殿大教堂）</strong>前拍下此行最具代表性的照片，在<strong>百年邮局</strong>寄出一张承载记忆的手写明信片。午餐后驱车前往美奈，傍晚抵达美奈渔港，观看归来渔船带来一天的丰收，感受越南最鲜活的渔村生活。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-pink">🌸 总统府</span>
+            <span class="dtag dtag-pink">🌸 市政厅</span>
+            <span class="dtag dtag-pink">🌸 粉红教堂</span>
+            <span class="dtag dtag-pink">🌸 百年邮局</span>
+            <span class="dtag dtag-teal">🌊 美奈渔港日落</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dn-sand">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">美奈全景 · 吉普车沙漠探险</div>
+          <div class="day-route">Mũi Né · 沙漠奇境日</div>
+          <div class="day-text">今日是整个行程最震撼的自然体验。坐上<strong>吉普车</strong>（含于团费）在<strong>白沙丘</strong>上奔驰，感受"一半是海水，一半是沙漠"的越南奇景；移步<strong>红沙丘</strong>，在斜阳下欣赏橙红色沙丘如火焰般燃烧的壮观画面；徒步穿越热带原始风光中流淌的<strong>仙女溪</strong>，溪水清澈见底，两岸红砂岩色彩斑斓；最后前往参观已屹立千年的<strong>占族古塔</strong>，了解越南历史上神秘的占族文明。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 吉普车沙漠体验（含于团费）</span>
+            <span class="dtag dtag-sand">🏜️ 白沙丘</span>
+            <span class="dtag dtag-sand">🏜️ 红沙丘</span>
+            <span class="dtag dtag-teal">🌊 仙女溪</span>
+            <span class="dtag dtag-teal">🛕 占族古塔</span>
+            <span class="dtag dtag-opt">可选 滑沙/沙漠摩托（现场自费）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dn-teal">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">美奈泥浆浴 → 胡志明 · 咖啡公寓</div>
+          <div class="day-route">Mũi Né → Ho Chi Minh</div>
+          <div class="day-text">上午体验美奈最具治愈性的<strong>热矿泥浆浴</strong>，天然矿物质泥浆裹覆全身，随后在温泉水中冲净，全身毛孔舒张，疲惫一扫而光。下午驱车返回胡志明市，打卡必来的<strong>美术博物馆</strong>，探访保存完好的法式建筑内部；最后前往著名的<strong>咖啡公寓</strong>，在这栋网红旧楼的每一层发现藏匿其中的小众咖啡馆，用正宗<strong>滴滴壶越南咖啡</strong>为午后画上一个香醇的句点。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 热矿泥浆浴（含于团费）</span>
+            <span class="dtag dtag-pink">🌸 美术博物馆</span>
+            <span class="dtag dtag-pink">☕ 咖啡公寓</span>
+            <span class="dtag dtag-meal">☕ 滴滴壶越南咖啡</span>
+            <span class="dtag dtag-free">🌙 夜市自由活动（可选）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dn-pink">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">胡志明 → 广州 · 圆满返程</div>
+          <div class="day-route">越南航空 VN · 直飞广州</div>
+          <div class="day-text">享用早餐后，收拾行李，专车送往胡志明市国际机场，搭乘越南航空直飞广州返程，带着满满的法式浪漫与热带沙漠记忆踏上归途。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 越南航空直飞广州</span>
+            <span class="dtag dtag-inc">✓ 专车送机</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── OPTIONAL ── -->
+<div class="surcharge" id="optional">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow ec-sand">Optional · 自费项目</div>
+    <div class="sec-title">自愿参加项目说明</div>
+    <div class="sec-sub">绝无强制，按需选择；现场自愿消费，不存在任何隐形压力</div>
+  </div>
+  <div class="sc-inner">
+    <div class="optional-grid">
+      <div class="opt-card up">
+        <div class="opt-zone">美奈 · Mũi Né</div>
+        <div class="opt-name">🏜️ 沙漠运动项目</div>
+        <div class="opt-desc">白沙丘与红沙丘上有各类沙漠运动可选：滑沙体验、沙漠四驱车（ATV）、沙漠摩托车等。均在沙丘现场由当地服务商提供，可按兴趣自愿参加。</div>
+        <div class="opt-badge">现场自愿付费</div>
+      </div>
+      <div class="opt-card up">
+        <div class="opt-zone">胡志明 · Ho Chi Minh</div>
+        <div class="opt-name">🌃 夜市美食自由行</div>
+        <div class="opt-desc">自由活动期间，可前往胡志明夜市，品尝海鲜、越南粉、炸春卷、烤生蚝等地道街头美食，是体验当地饮食文化最自然的方式。</div>
+        <div class="opt-badge">个人意愿消费</div>
+      </div>
+      <div class="opt-card up">
+        <div class="opt-zone">各地 · All Destinations</div>
+        <div class="opt-name">🖼️ 沙画工艺品</div>
+        <div class="opt-desc">行程中独家安排沙画制作体验，游客可亲手参与制作过程。体验本身免费，如需带走完成的沙画成品，须支付相应的纪念品费用。</div>
+        <div class="opt-badge">现场结算，自愿带走</div>
+      </div>
+      <div class="opt-card up">
+        <div class="opt-zone">各地 · All Destinations</div>
+        <div class="opt-name">💰 礼仪性小费参考</div>
+        <div class="opt-desc">酒店行李小费、床头小费、与吉普车司机合影等礼仪性消费均属随心支付，无统一标准，游客可根据自身意愿决定是否及支付多少。</div>
+        <div class="opt-badge">随心支付</div>
+      </div>
+    </div>
+
+    <div class="fee-grid">
+      <div class="fee-box up">
+        <div class="fee-head">必付费用 · 落地签及导服费</div>
+        <ul>
+          <li>越南落地签及导服费：<strong>¥550元/人</strong></li>
+          <li>出团前须付清，随团费一并结算</li>
+          <li>含越南入境签证及全程导游服务费</li>
+        </ul>
+      </div>
+      <div class="fee-box up">
+        <div class="fee-head">单房补差</div>
+        <ul>
+          <li>全程单房补差：<strong>¥800元/人</strong></li>
+          <li>本行程不设自然单间，需独住须补差价</li>
+          <li>请出发前告知顾问确认安排</li>
+        </ul>
+      </div>
+      <div class="fee-box up">
+        <div class="fee-head">脱团违约金</div>
+        <ul>
+          <li>行程中不允许私自离团</li>
+          <li>确需离团须交违约金：<strong>¥800元/人/天</strong></li>
+          <li>离团期间产生的一切风险由本人自负</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="costs-cols up" id="booking">
+      <div class="cost-box">
+        <div class="cost-head ch-pink">团费包含</div>
+        <table class="cost-table">
+          <tr><td>航班</td><td>越南航空广州往返胡志明直飞机票</td></tr>
+          <tr><td>住宿</td><td>全程四星酒店（标准双人间）</td></tr>
+          <tr><td>餐食</td><td>全程¥50/人正餐标准，含越式自助（¥100）·海鲜风味餐·法棍·咖啡</td></tr>
+          <tr><td>吉普车</td><td>美奈沙漠吉普车体验（含于团费）</td></tr>
+          <tr><td>泥浆浴</td><td>美奈热矿泥浆浴（含于团费）</td></tr>
+          <tr><td>景点</td><td>行程内所有景点门票及导览</td></tr>
+          <tr><td>接送</td><td>全程专车及专业中文导游服务</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head ch-teal">团费不含</div>
+        <table class="cost-table">
+          <tr><td>签证导服</td><td>越南落地签及导服费¥550/人（必付）</td></tr>
+          <tr><td>单房差</td><td>¥800/人（如需独享单人房）</td></tr>
+          <tr><td>沙漠运动</td><td>滑沙·ATV·摩托车等（现场自愿）</td></tr>
+          <tr><td>夜市餐食</td><td>自由活动期间的个人餐饮消费</td></tr>
+          <tr><td>礼仪小费</td><td>行李·床头·合影等随心支付</td></tr>
+          <tr><td>保险</td><td>建议另行购买个人境外意外险</td></tr>
+          <tr><td>违约金</td><td>擅自脱团¥800/人/天</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOPPING POLICY ── -->
+<div class="shop-policy" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow ec-pink">Shopping Policy · 购物政策</div>
+    <div class="sec-title">纯玩购物承诺</div>
+    <div class="sec-sub">走心出品，拒绝隐形消费，让每一分钱都花在体验上</div>
+  </div>
+  <div class="policy-inner">
+    <div class="policy-card up">
+      <div class="policy-col">
+        <div class="policy-col-head ph-green">✓ 纯玩无购物店承诺</div>
+        <ul class="inc-list">
+          <li>全程不安排任何旅游局指定购物店</li>
+          <li>全程不安排任何旅行社协议购物店</li>
+          <li>本行程以"走心出品"为核心，拒绝隐形消费</li>
+          <li>所有行程景点均为真实旅游体验，不含商业购物属性</li>
+          <li>如发现任何强制购物行为，请立即联系顾问投诉</li>
+        </ul>
+      </div>
+      <div class="policy-col">
+        <div class="policy-col-head ph-muted">○ 土特产说明（非购物店）</div>
+        <ul class="exc-list">
+          <li>根据当地风俗，导游可能在车上推介越南土特产</li>
+          <li>主要商品：腰果、越南咖啡、干果等当地特产</li>
+          <li>此为导游个人推介，<strong>非购物店安排</strong></li>
+          <li>游客凭完全个人意愿决定是否购买，绝不强制</li>
+        </ul>
+        <div class="cashew-note">
+          <strong>🥜 腰果 &amp; ☕ 咖啡推荐</strong><br>
+          越南是全球最大腰果产国，越南咖啡（尤其是G7、中原等品牌）也是著名伴手礼。如有兴趣可自愿选购，价格透明合理。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSULTANT ── -->
+<div class="consult" id="consult">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow ec-teal">Consultant · 专属顾问</div>
+    <div class="sec-title">联系专属旅行顾问</div>
+    <div class="sec-sub">有任何疑问，请直接联系我们的专属顾问获取最新团期与报价</div>
+  </div>
+  <div class="consult-inner">
+    <div class="consult-card up">
+      <div class="consult-avatar">😊</div>
+      <div class="consult-info">
+        <h3>高盼 · 越南线专属顾问</h3>
+        <p>专注越南及东南亚精品线路，丰富出团经验，为您量身定制最适合的行程方案</p>
+        <div class="consult-contact">
+          <a href="tel:15907190570" class="contact-btn pink">📞 15907190570</a>
+          <a href="#" class="contact-btn teal">💬 微信咨询</a>
+          <a href="#" class="contact-btn sand">📄 签证材料清单</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow ec-teal">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读以下条款，保障顺畅愉快的越南之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>👴 年龄与健康限制</h4>
+        <ul>
+          <li><strong>81周岁以上老人</strong>及孕妇：恕无法接待</li>
+          <li><strong>70–80周岁老人</strong>：须提供健康证明及亲友陪同</li>
+          <li>如有特殊健康状况，请出发前详细告知顾问</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>💵 现金与入境须知</h4>
+        <ul>
+          <li>建议随身携带适量<strong>美金或人民币</strong>现金备查</li>
+          <li>越南当地货币为越南盾（VND），小额消费可换少量盾</li>
+          <li>落地签费用¥550已含，无需在机场另行支付签证费</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>⚠️ 脱团与行程纪律</h4>
+        <ul>
+          <li>行程中<strong>不允许私自离团</strong></li>
+          <li>确需离团须提前告知领队并支付违约金 <strong>¥800/人/天</strong></li>
+          <li>离团期间的人身安全及一切费用由本人全权负责</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🌡️ 气候与着装</h4>
+        <ul>
+          <li>胡志明及美奈全年高温，建议携带轻薄透气服装</li>
+          <li>参观教堂时需着装得体（不可露肩、短裤），建议备一件薄外套</li>
+          <li>沙漠活动建议穿着长裤，防止沙粒摩擦</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>成人¥3,999 · 11岁以下不占床儿童¥3,399</span>
+    <span>越南落地签及导服费¥550为必付费用</span>
+    <span>全程不进任何旅游购物店，纯玩保障</span>
+    <span>吉普车沙漠体验及热矿泥浆浴均含于团费</span>
+    <span>81岁以上老人及孕妇恕无法接待</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html" class="current">🇻🇳 越南 · 本页</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','optional','shopping','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

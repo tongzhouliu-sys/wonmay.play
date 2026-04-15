@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 浪漫土耳其 9天7晚 卡帕多奇亚热气球深度游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f8f6f2;
+  --bg2: #ede8e0;
+  --ink: #18100a;
+  --turq: #1a88a8;
+  --turq-lt: #d0eef8;
+  --turq-deep: #0e5870;
+  --amber: #d87820;
+  --amber-lt: #fde8c8;
+  --amber-deep: #8a4800;
+  --marble: #e8e4dc;
+  --purple: #7840a0;
+  --purple-lt: #eee0f8;
+  --muted: #6a6050;
+  --border: #d8d0c4;
+  --white: #fdfbf8;
+  --self-bg: #fff8ee;
+  --self-border: #e8c888;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--turq);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--turq);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#4a4030;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#7a6850;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--turq);background:rgba(26,136,168,.12);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(155deg,#08100a 0%,#101820 40%,#18100a 100%);}
+.hero-bg::before{content:'🎈';position:absolute;right:60px;top:20px;font-size:18rem;opacity:.055;line-height:1;filter:blur(2px);}
+.hero-bg::after{content:'🕌';position:absolute;left:-10px;bottom:-20px;font-size:20rem;opacity:.04;line-height:1;filter:blur(1px);}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(165deg,transparent,transparent 80px,rgba(26,136,168,.008) 80px,rgba(26,136,168,.008) 81px);z-index:1;}
+/* crescent moon */
+.hero-crescent{position:absolute;top:40px;left:50%;transform:translateX(-50%);font-size:3rem;opacity:.12;z-index:1;letter-spacing:-0.5em;}
+
+.hero-content{position:relative;z-index:2;padding:80px 40px 64px;max-width:1200px;margin:0 auto;width:100%;}
+
+/* nights badge */
+.nights-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,136,168,.1);border:1px solid rgba(26,136,168,.3);padding:5px 16px;margin-bottom:18px;font-size:0.68rem;letter-spacing:0.2em;color:#80c8e0;}
+
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--turq);text-transform:uppercase;margin-bottom:14px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.9rem);font-style:italic;color:#f0ece4;line-height:1.08;margin-bottom:12px;}
+.hero-title em{color:var(--amber);font-style:normal;}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:#5a7888;letter-spacing:0.12em;margin-bottom:18px;}
+.hero-sub{font-size:0.85rem;color:#4a5060;letter-spacing:0.06em;max-width:580px;margin-bottom:26px;line-height:1.9;}
+
+/* USP row */
+.usp-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+.usp{font-size:0.72rem;letter-spacing:0.06em;padding:5px 14px;border:1px solid;}
+.ut{color:#80c8d8;border-color:rgba(26,136,168,.35);background:rgba(26,136,168,.08);}
+.ua{color:#e8b880;border-color:rgba(216,120,32,.35);background:rgba(216,120,32,.08);}
+.up2{color:#c898e8;border-color:rgba(120,64,160,.35);background:rgba(120,64,160,.08);}
+
+/* price + visa */
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:28px;}
+.price-block{background:rgba(0,0,0,.32);border:1px solid rgba(26,136,168,.3);padding:12px 22px;}
+.price-lbl{font-size:0.62rem;color:#4a6070;letter-spacing:0.1em;margin-bottom:2px;}
+.price-sub{font-size:0.78rem;color:#90b8c8;letter-spacing:0.04em;}
+.price-sub strong{color:#b0d8e8;}
+.price-note2{font-size:0.68rem;color:#3a5060;}
+.visa-free{background:rgba(42,128,72,.1);border:1px solid rgba(42,128,72,.35);padding:12px 18px;display:flex;align-items:center;gap:10px;font-size:0.78rem;color:#80c0a0;}
+.visa-free strong{color:#a0d8b8;display:block;}
+.wifi-gift{background:rgba(216,120,32,.1);border:1px solid rgba(216,120,32,.3);padding:12px 18px;display:flex;align-items:center;gap:10px;}
+.wifi-gift-text{font-size:0.75rem;color:#c8a060;}
+.wifi-gift-text strong{color:#e8c080;display:block;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-turq{display:inline-block;background:var(--turq);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;}
+.btn-turq:hover{background:var(--turq-deep);}
+.btn-amber{display:inline-block;border:1px solid rgba(216,120,32,.5);color:var(--amber);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 26px;transition:all .2s;}
+.btn-amber:hover{background:rgba(216,120,32,.1);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 22px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.65);}
+
+/* ── DIVIDER ── */
+.divider{height:4px;background:linear-gradient(90deg,var(--turq),var(--amber),var(--purple));}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--ink);border-bottom:1px solid rgba(26,136,168,.1);}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid rgba(26,136,168,.1);justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;font-weight:400;letter-spacing:0.06em;}
+.ct{color:#80c0d0;}
+.ca{color:#e0b070;}
+.cp{color:#c898e0;}
+.trust-text span{font-size:0.68rem;color:#2a2818;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:8px;}
+.et{color:var(--turq);}
+.ea{color:var(--amber);}
+.ep{color:var(--purple);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS ── */
+.hl-grid{max-width:1200px;margin:0 auto;padding:0 40px 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 22px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;flex:1;}
+.hl-tag{font-size:0.62rem;padding:2px 8px;align-self:flex-start;margin-top:auto;}
+.ht-t{background:var(--turq-lt);color:var(--turq-deep);}
+.ht-a{background:var(--amber-lt);color:var(--amber-deep);}
+.ht-p{background:var(--purple-lt);color:var(--purple);}
+.ht-m{background:var(--marble);color:#5a5048;}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;line-height:1;}
+.dnt{color:var(--turq);}
+.dna{color:var(--amber);}
+.dnp{color:var(--purple);}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#2a2018;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-turq{background:var(--turq-lt);color:var(--turq-deep);}
+.dtag-amber{background:var(--amber-lt);color:var(--amber-deep);}
+.dtag-purple{background:var(--purple-lt);color:var(--purple);}
+.dtag-opt{background:var(--self-bg);color:#7a4808;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-gift{background:var(--turq-lt);color:var(--turq-deep);}
+.dtag-note{background:#fff8e8;color:#8a4808;}
+.dtag-shop{background:#fef9e4;color:#7a6008;border:1px dashed #d8b840;}
+.dtag-free{background:var(--bg2);color:var(--muted);}
+
+/* ── SHOPPING TABLE ── */
+.shopping{padding:0 40px 56px;}
+.shop-inner{max-width:1200px;margin:0 auto;}
+.shop-banner{background:var(--ink);padding:14px 22px;display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--turq);}
+.shop-banner-text{font-size:0.8rem;color:#4a4030;letter-spacing:0.05em;}
+.shop-banner-text strong{color:var(--turq);}
+.shop-table-wrap{overflow-x:auto;}
+.shop-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);border-top:none;}
+.shop-table th{padding:10px 16px;background:var(--bg2);color:var(--muted);font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;border-bottom:1px solid var(--border);}
+.shop-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top;}
+.shop-table tr:last-child td{border-bottom:none;}
+.shop-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--turq);font-style:italic;line-height:1;width:36px;}
+.shop-name{font-weight:500;font-size:0.85rem;color:var(--ink);}
+.shop-desc{font-size:0.74rem;color:var(--muted);margin-top:3px;}
+.shop-time{font-size:0.72rem;color:var(--muted);white-space:nowrap;}
+.shop-note{font-size:0.72rem;color:var(--muted);margin-top:10px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── OPTIONAL TABLE ── */
+.optional-wrap{padding:0 40px 56px;}
+.op-inner{max-width:1200px;margin:0 auto;}
+.op-table-wrap{overflow-x:auto;}
+.op-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);}
+.op-table thead tr{background:var(--ink);}
+.op-table th{padding:10px 16px;color:var(--turq);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;}
+.op-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.op-table tr:last-child td{border-bottom:none;}
+.op-table tbody tr:nth-child(even) td{background:#fdf8f0;}
+.cat-cell{font-size:0.7rem;letter-spacing:0.1em;color:var(--turq-deep);font-weight:500;white-space:nowrap;}
+.price-cell{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--amber-deep);white-space:nowrap;}
+.note-cell{font-size:0.7rem;color:var(--muted);}
+.op-note{font-size:0.72rem;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── COSTS ── */
+.costs{padding:0 40px 40px;}
+.costs-inner{max-width:1200px;margin:0 auto;}
+.must-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+.must-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.must-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#8a2010;margin-bottom:10px;}
+.must-box ul{list-style:none;}
+.must-box li{font-size:0.76rem;color:#2a2018;line-height:1.85;padding-left:14px;position:relative;}
+.must-box li::before{content:'·';position:absolute;left:0;color:var(--turq);}
+.must-box li strong{color:var(--ink);}
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.ch-t{color:var(--turq);}
+.ch-a{color:var(--amber);}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── CONSULTANT ── */
+.consult{padding:0 40px 56px;}
+.consult-inner{max-width:1200px;margin:0 auto;}
+.consult-card{background:linear-gradient(135deg,#f0f8fc,#fef4e8);border:1px solid var(--border);padding:32px 36px;display:flex;align-items:center;gap:40px;}
+.consult-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--turq),var(--amber));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.consult-info h3{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.consult-info p{font-size:0.8rem;color:var(--muted);margin-bottom:12px;}
+.consult-contact{display:flex;flex-wrap:wrap;gap:10px;}
+.contact-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;transition:all .2s;}
+.cb-t{background:var(--turq);color:#fff;}
+.cb-t:hover{background:var(--turq-deep);}
+.cb-a{border:1px solid var(--amber);color:var(--amber);}
+.cb-a:hover{background:var(--amber-lt);}
+.cb-g{border:1px solid var(--border);color:var(--muted);}
+.cb-g:hover{background:var(--bg2);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--turq-deep);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#2a2018;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;transition:all .2s;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.float-btn:hover{transform:translateX(-3px);}
+.fb-t{background:var(--turq);color:#fff;box-shadow:0 4px 16px rgba(26,136,168,.3);}
+.fb-t:hover{background:var(--turq-deep);}
+.fb-a{background:var(--amber);color:#fff;box-shadow:0 4px 16px rgba(216,120,32,.25);}
+.fb-a:hover{background:var(--amber-deep);}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--turq);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#3a3020;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--turq);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .must-grid{grid-template-columns:1fr 1fr;}
+  .costs-cols{grid-template-columns:1fr;}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+  .consult-card{flex-direction:column;gap:20px;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(26,136,168,.1);min-width:50%;}
+  .hl-grid,.itinerary,.shopping,.optional-wrap,.costs,.consult,.notices{padding-left:16px;padding-right:16px;}
+  .hl-grid{grid-template-columns:1fr;}
+  .must-grid{grid-template-columns:1fr;padding:0;}
+  .sec-head{padding:36px 16px 20px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn fb-t">🕌 立即预订</a>
+  <a href="#consult" class="float-btn fb-a">💬 咨询顾问高盼</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#shopping">购物协议</a>
+      <a href="#optional">自费清单</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-crescent">☽★</div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="nights-badge">🌙 一千零一夜的童话 · Turkey · 9 Days 7 Nights</div>
+    <div class="hero-eyebrow">Turkey · 5 World Heritage Sites · Direct Flight</div>
+    <div class="hero-title">
+      浪漫土耳其<br>
+      星月传奇 · <em>热气球</em> · 五大世界遗产
+    </div>
+    <div class="hero-subtitle">一半沙漠 · 一半海水 · 全程五星</div>
+    <div class="hero-sub">
+      南航直飞伊斯坦布尔 · 卡帕多奇亚热气球 · 棉花堡温泉 · 番红花城奥斯曼民宿<br>
+      以弗所古城 · 蓝色清真寺 · 博斯普鲁斯游船 · 巴士全程免费 WIFI
+    </div>
+    <div class="usp-row">
+      <span class="usp ut">✈ 南航乌鲁木齐直飞</span>
+      <span class="usp ua">🎈 卡帕多奇亚热气球</span>
+      <span class="usp ut">🏨 全程五星+特色民宿</span>
+      <span class="usp up2">🇹🇷 免签入境</span>
+    </div>
+    <div class="hero-meta">
+      <div class="price-block">
+        <div class="price-lbl">参考价格</div>
+        <div class="price-sub">成人团费 ＋ <strong>必付杂费¥2,000/人</strong></div>
+        <div class="price-note2">报名时须一并支付</div>
+      </div>
+      <div class="visa-free">
+        <span style="font-size:1.3rem;">✅</span>
+        <div><strong>中国公民免签入境</strong>无需提前办理签证</div>
+      </div>
+      <div class="wifi-gift">
+        <span style="font-size:1.3rem;">📶</span>
+        <div class="wifi-gift-text"><strong>巴士全程免费WIFI</strong>随时分享旅途美景</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-turq">立即预订团期</a>
+      <a href="#itinerary" class="btn-amber">查看完整行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── DIVIDER ── -->
+<div class="divider"></div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">🎈</span>
+      <div class="trust-text"><strong class="ca">卡帕多奇亚热气球</strong><span>晨曦万球漫天</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏛️</span>
+      <div class="trust-text"><strong class="ct">5大世界遗产</strong><span>以弗所·棉花堡等</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🛁</span>
+      <div class="trust-text"><strong class="ct">棉花堡温泉酒店</strong><span>特别升级1晚</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏡</span>
+      <div class="trust-text"><strong class="ca">番红花城民宿</strong><span>奥斯曼风格1晚</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">✅</span>
+      <div class="trust-text"><strong class="cp">中国公民免签</strong><span>无需提前申请签证</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow et">Highlights · 深度亮点</div>
+    <div class="sec-title">星月传奇 · 六大独家体验</div>
+    <div class="sec-sub">蓝色清真寺的神圣 · 热气球的浪漫 · 棉花堡的梦幻，三种维度的土耳其</div>
+  </div>
+  <div class="hl-grid">
+    <div class="hl-item up">
+      <div class="hl-icon">🎈</div>
+      <div class="hl-title">卡帕多奇亚热气球</div>
+      <div class="hl-desc">凌晨在奇幻岩石地貌上空乘热气球升空，数百只彩色气球漫天飞舞，在金色朝霞中俯瞰这片由亿万年火山灰堆积而成的月球地貌——这是地球上最震撼的日出体验之一。</div>
+      <div class="hl-tag ht-a">🎈 自费强烈推荐</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🌊</div>
+      <div class="hl-title">棉花堡 · 温泉钙华奇迹</div>
+      <div class="hl-desc">棉花堡（Pamukkale）是大自然用千年温泉水创造的白色阶梯奇迹，纯白棉絮状钙华台地层叠而下，在蓝天映衬下宛如棉花铺就的仙境。特别安排1晚温泉酒店，泡进古老温泉。</div>
+      <div class="hl-tag ht-t">🌊 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🏛️</div>
+      <div class="hl-title">以弗所古城 · 地中海最完整遗址</div>
+      <div class="hl-desc">地中海沿岸保存最完整的古罗马城市遗址，2000年前的大理石大道、圆形剧场、图书馆废墟历历在目。圣母玛利亚曾在此度过晚年，使弗所成为基督徒朝圣的圣地之一。</div>
+      <div class="hl-tag ht-t">🏛️ 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🕌</div>
+      <div class="hl-title">蓝色清真寺 · 博斯普鲁斯游船</div>
+      <div class="hl-desc">伊斯坦布尔城中最宏伟的蓝色清真寺，6座宣礼塔直刺苍穹；乘博斯普鲁斯海峡游船，在亚欧两大洲之间的碧波上穿梭，感受这座横跨两大洲的千年帝都的宏大气势。</div>
+      <div class="hl-tag ht-t">🕌 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🏡</div>
+      <div class="hl-title">番红花城 · 奥斯曼风情民宿</div>
+      <div class="hl-desc">被列入世界遗产的番红花城是土耳其保存最完整的奥斯曼小镇，数百栋17世纪黑白木构建筑密密层叠，行程特别安排1晚真正的奥斯曼风格民宿，回到五百年前的土耳其。</div>
+      <div class="hl-tag ht-a">🏡 特别升级</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🍢</div>
+      <div class="hl-title">特色美食全程升级</div>
+      <div class="hl-desc">瓦罐焖肉餐（Testi Kebab）、海景烤鱼餐、风味烤肉餐，特别赠送土耳其红茶、土耳其咖啡及网红冰激凌（被冰激凌师傅耍的那种）——每一口都是土耳其最正宗的味道。</div>
+      <div class="hl-tag ht-m">🍢 特色餐食升级</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow et">Itinerary · 9日行程</div>
+    <div class="sec-title">土耳其 9天7晚全景深度游</div>
+    <div class="sec-sub">蓝色=伊斯坦布尔 · 橙色=卡帕多奇亚热气球地带 · 紫色=棉花堡&以弗所</div>
+  </div>
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">出发 → 伊斯坦布尔</div>
+          <div class="day-route">南方航空 CZ · 乌鲁木齐直飞伊斯坦布尔</div>
+          <div class="day-text">搭乘中国南方航空经乌鲁木齐直飞伊斯坦布尔，飞行时间短，可全国联运。抵达后专车接机，入住伊斯坦布尔五星酒店，感受这座横跨亚欧两洲的千年帝都的第一个夜晚。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 南航乌鲁木齐直飞</span>
+            <span class="dtag dtag-inc">✓ 全国联运接驳</span>
+            <span class="dtag dtag-inc">✓ 五星酒店</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">伊斯坦布尔 · 千年帝都巡礼</div>
+          <div class="day-route">Istanbul · 亚欧交汇之城</div>
+          <div class="day-text">游览世界七大奇迹之一的<strong>蓝色清真寺（苏丹艾哈迈德清真寺）</strong>，6座宣礼塔直刺苍穹，内部2万余块伊兹尼克蓝色瓷砖令人叹为观止；漫步<strong>古罗马竞技场遗址</strong>；乘坐<strong>博斯普鲁斯海峡游船</strong>在亚欧两洲之间穿梭，感受这座伟大城市的开阔气势。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-turq">🕌 蓝色清真寺</span>
+            <span class="dtag dtag-turq">🏛 古罗马竞技场</span>
+            <span class="dtag dtag-inc">✓ 博斯普鲁斯海峡游船</span>
+            <span class="dtag dtag-opt">可选 圣索菲亚大教堂 $75/人</span>
+            <span class="dtag dtag-opt">可选 多尔玛巴切新皇宫 $95/人</span>
+            <span class="dtag dtag-opt">可选 土耳其浴 $85/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">伊斯坦布尔 → 番红花城</div>
+          <div class="day-route">Istanbul → Safranbolu · 世界遗产小镇</div>
+          <div class="day-text">驱车前往联合国教科文组织列入世界遗产的<strong>番红花城</strong>，数百栋17世纪黑白木构奥斯曼建筑密密层叠于山谷之中；登上<strong>希德尔立克山丘</strong>俯瞰这片童话般的古镇全景；今晚特别安排入住正宗奥斯曼风格民宿，亲身感受五百年前的土耳其生活。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-turq">🏡 番红花城（世界遗产）</span>
+            <span class="dtag dtag-turq">🔭 希德尔立克山丘</span>
+            <span class="dtag dtag-amber">🏡 奥斯曼民宿（特别升级）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dna">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">番红花城 → 卡帕多奇亚</div>
+          <div class="day-route">Safranbolu → Cappadocia · 月球地貌</div>
+          <div class="day-text">告别番红花城，驱车前往卡帕多奇亚，这片亿万年火山灰堆积而成的奇幻地貌是土耳其最标志性的景观。下午开始参观<strong>鸽子谷</strong>，漫步火山岩洞穴民居，感受这片神奇大地的史前气息。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-amber">🌋 鸽子谷</span>
+            <span class="dtag dtag-inc">✓ 抵达卡帕多奇亚</span>
+            <span class="dtag dtag-shop">🛍 地毯店参观 约1小时</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dna">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">卡帕多奇亚 · 热气球 · 深度探索</div>
+          <div class="day-route">Cappadocia · 最大机率热气球日</div>
+          <div class="day-text">【本行程连住2晚，最大机率体验热气球】清晨，若天气允许，可选参加令生人永生难忘的<strong>卡帕多奇亚热气球飞行</strong>（强烈推荐自费项目），在数百只彩色气球漫天的金色朝霞中俯瞰这片月球地貌；下午可选探秘基督徒藏身的<strong>凯马克勒地下城</strong>（8层地下迷宫）；晚间可选观看神秘的<strong>土耳其肚皮舞</strong>表演。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-opt">🎈 强烈推荐 热气球飞行（自费）</span>
+            <span class="dtag dtag-opt">可选 凯马克勒地下城 $50/人</span>
+            <span class="dtag dtag-opt">可选 土耳其肚皮舞 $75/人</span>
+            <span class="dtag dtag-opt">可选 吉普车探险 $120/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnp">06</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">孔亚 · 棉花堡 · 温泉奇迹</div>
+          <div class="day-route">Konya → Pamukkale · 世界遗产</div>
+          <div class="day-text">参观<strong>梅夫拉纳博物馆</strong>，了解伊斯兰神秘主义苏菲派的旋转舞文化；驱车前往<strong>棉花堡（世界遗产）</strong>，赤脚踏上纯白的钙华台地，浸泡在43°C的千年温泉水池中；随后探访紧邻的<strong>希拉波利斯古城遗址</strong>（世界遗产），这座公元前190年建立的希腊-罗马城市至今留有大剧场、神庙与墓地。今晚特别升级1晚棉花堡温泉酒店。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-turq">🕌 梅夫拉纳博物馆</span>
+            <span class="dtag dtag-purple">🌊 棉花堡（世界遗产）</span>
+            <span class="dtag dtag-purple">🏛 希拉波利斯古城</span>
+            <span class="dtag dtag-amber">🛁 棉花堡温泉酒店（升级）</span>
+            <span class="dtag dtag-opt">可选 梅夫拉那旋转舞 $65/人</span>
+            <span class="dtag dtag-opt">可选 棉花堡滑翔伞 $120/人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnp">07</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">以弗所 · 地中海古城</div>
+          <div class="day-route">Ephesus · 世界遗产</div>
+          <div class="day-text">今日探访地中海沿岸保存最完整的<strong>以弗所古城（世界遗产）</strong>，2000年前的大理石大道、圣约翰图书馆废墟、宏伟的大剧场历历在目；游览<strong>朱马勒克历史小镇</strong>，感受爱琴海风情的传统街区；随后品味<strong>席林斯小镇水果酒</strong>，以一杯当地特色果酒为今日的古城之旅画上完美句点。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-purple">🏛 以弗所古城（世界遗产）</span>
+            <span class="dtag dtag-inc">✓ 朱马勒克历史小镇</span>
+            <span class="dtag dtag-gift">🍷 席林斯小镇水果酒</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">08</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">布尔萨 · 伊斯坦布尔老城烟火</div>
+          <div class="day-route">Bursa → Istanbul · 归程前夜</div>
+          <div class="day-text">游览奥斯曼帝国第一都城<strong>布尔萨</strong>，走过传统织品集市，感受这座丝绸之路上古城最鲜活的市井气息；返回伊斯坦布尔，打卡五颜六色的<strong>巴拉特彩色街区</strong>，感受这座城市最文艺时髦的波西米亚一面；漫步伊斯坦布尔最热闹的<strong>塔克西姆步行街</strong>，享用最后一个土耳其夜晚。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-turq">🏙 布尔萨古城</span>
+            <span class="dtag dtag-turq">🎨 巴拉特彩色街区</span>
+            <span class="dtag dtag-turq">🛍 塔克西姆步行街</span>
+            <span class="dtag dtag-opt">可选 地下水宫 $75/人</span>
+            <span class="dtag dtag-opt">可选 尼罗河游船晚宴（伊斯坦布尔版）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">09</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">伊斯坦布尔 → 返程</div>
+          <div class="day-route">南方航空 CZ · 返程</div>
+          <div class="day-text">早餐后收拾行李，专车送往伊斯坦布尔机场，搭乘南方航空返程班机。带着星月传奇、棉花堡的白与热气球的橙，满载而归。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 南航返程</span>
+            <span class="dtag dtag-note">📋 免签入境，无需签证手续</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOPPING PROTOCOL ── -->
+<div class="shopping" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow et">Shopping Protocol · 购物协议</div>
+    <div class="sec-title">购物安排透明公示</div>
+    <div class="sec-sub">依合同约定列出，所有消费完全自愿</div>
+  </div>
+  <div class="shop-inner">
+    <div class="shop-banner up">
+      <span style="font-size:1.2rem;">📋</span>
+      <div class="shop-banner-text">
+        本行程依合同约定进入以下 <strong>6个协议购物场所</strong>。<strong>所有消费均为完全自愿，绝无任何强制</strong>，游客有权选择不购买任何商品。
+      </div>
+    </div>
+    <div class="shop-table-wrap up">
+      <table class="shop-table">
+        <thead>
+          <tr>
+            <th style="width:40px;">#</th>
+            <th>购物场所</th>
+            <th>经营商品与特色</th>
+            <th>停留时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="shop-num">①</td>
+            <td><div class="shop-name">皮革店</div></td>
+            <td><div class="shop-desc">土耳其优质牛羊皮具，工艺精良，设计时尚，欧式剪裁</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">②</td>
+            <td><div class="shop-name">珠宝店</div></td>
+            <td><div class="shop-desc">土耳其蓝宝石、金饰品及各类贵重金属首饰</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">③</td>
+            <td><div class="shop-name">地毯店</div></td>
+            <td><div class="shop-desc">闻名世界的土耳其手工编织地毯，富有传统民族色彩</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">④</td>
+            <td><div class="shop-name">乳胶 / 棉纺店</div></td>
+            <td><div class="shop-desc">土耳其高品质手工艺品及特色纺织品，棉质产品享誉全球</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">⑤</td>
+            <td><div class="shop-name">陶瓷店</div></td>
+            <td><div class="shop-desc">延续17-18世纪传统工艺的人手制造陶瓷制品（伊兹尼克风格）</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">⑥</td>
+            <td><div class="shop-name">糖果店</div></td>
+            <td><div class="shop-desc">种类丰富的土耳其软糖（Turkish Delight）及各类特色土产</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shop-note up">* 所有购物场所均为合同约定，停留时间仅供参考。所有消费完全<strong>自愿</strong>，导游不得施压。</div>
+  </div>
+</div>
+
+<!-- ── OPTIONAL TABLE ── -->
+<div class="optional-wrap" id="optional">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow ea">Optional · 自费项目</div>
+    <div class="sec-title">自愿参加项目清单</div>
+    <div class="sec-sub">自愿参加，绝无强迫；热气球为全程最值得体验的项目之一</div>
+  </div>
+  <div class="op-inner">
+    <!-- highlight balloon -->
+    <div style="background:var(--amber-lt);border:1px solid rgba(216,120,32,.3);border-left:4px solid var(--amber);padding:14px 20px;margin-bottom:20px;font-size:0.82rem;color:var(--amber-deep);" class="up">
+      🎈 <strong>特别推荐：卡帕多奇亚热气球飞行</strong>——连住2晚的安排已为您提供最大机率。热气球为当地最热门体验，受天气影响可能取消；一旦天气允许，强烈建议预定，此生难忘。
+    </div>
+    <div class="op-table-wrap up">
+      <table class="op-table">
+        <thead>
+          <tr>
+            <th>城市</th>
+            <th>项目名称</th>
+            <th>内容说明</th>
+            <th>参考价格（美元/人）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cat-cell" rowspan="4">伊斯坦布尔<br>Istanbul</td>
+            <td><strong>土耳其浴</strong></td>
+            <td class="note-cell">传统洗浴方式，含清除污垢、舒活筋骨（约45分钟）</td>
+            <td class="price-cell">$85</td>
+          </tr>
+          <tr>
+            <td><strong>圣索菲亚大教堂</strong></td>
+            <td class="note-cell">世界遗产，巨大圆顶及精美内饰（约45-80分钟）</td>
+            <td class="price-cell">$75</td>
+          </tr>
+          <tr>
+            <td><strong>多尔玛巴切新皇宫</strong></td>
+            <td class="note-cell">奥斯曼帝国后期王宫，装饰极尽奢华（约45-80分钟）</td>
+            <td class="price-cell">$95</td>
+          </tr>
+          <tr>
+            <td><strong>地下水宫（沉没宫殿）</strong></td>
+            <td class="note-cell">著名地下蓄水设施，壮观的地下奇观（约20-40分钟）</td>
+            <td class="price-cell">$75</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">棉花堡<br>Pamukkale</td>
+            <td><strong>滑翔伞</strong></td>
+            <td class="note-cell">一对一教练，高空俯瞰棉花堡及古城全景（约8-20分钟）</td>
+            <td class="price-cell">$120</td>
+          </tr>
+          <tr>
+            <td class="cat-cell" rowspan="4">卡帕多奇亚<br>Cappadocia</td>
+            <td><strong>🎈 热气球飞行（强烈推荐）</strong></td>
+            <td class="note-cell" style="color:var(--amber-deep);">凌晨出发，漫天气球中俯瞰月球地貌，此生必做体验</td>
+            <td class="price-cell" style="color:var(--amber-deep);">请询价</td>
+          </tr>
+          <tr>
+            <td><strong>吉普车沙漠探险</strong></td>
+            <td class="note-cell">越野车探索独特风化地形（约45分钟）</td>
+            <td class="price-cell">$120</td>
+          </tr>
+          <tr>
+            <td><strong>土耳其肚皮舞</strong></td>
+            <td class="note-cell">传统舞蹈表演，不含餐</td>
+            <td class="price-cell">$75</td>
+          </tr>
+          <tr>
+            <td><strong>凯马克勒地下城</strong></td>
+            <td class="note-cell">探秘8层地下迷宫（约40-60分钟）</td>
+            <td class="price-cell">$50</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">孔亚<br>Konya</td>
+            <td><strong>梅夫拉那旋转舞</strong></td>
+            <td class="note-cell">神秘肃穆的苏菲派宗教艺术仪式（约1.5-2小时）</td>
+            <td class="price-cell">$65</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="op-note up">* 所有自费项目均为<strong>完全自愿</strong>，绝无强迫。价格为参考价，以出发时实际报价为准。热气球受天气影响，出发前请向领队确认。</div>
+  </div>
+</div>
+
+<!-- ── COSTS ── -->
+<div class="costs" id="booking">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow et">Fees · 费用说明</div>
+    <div class="sec-title">必付杂费与费用明细</div>
+    <div class="sec-sub">必付杂费¥2,000/人，报名时须一并支付</div>
+  </div>
+  <div class="costs-inner">
+    <div class="must-grid">
+      <div class="must-box up">
+        <div class="must-head">必付杂费（¥2,000/人）</div>
+        <ul>
+          <li>杂费：<strong>¥2,000元/人</strong></li>
+          <li>报名时须一并支付，不可欠款</li>
+          <li>含导游服务费、司机费、票务等</li>
+        </ul>
+      </div>
+      <div class="must-box up">
+        <div class="must-head">年龄补差与特殊规定</div>
+        <ul>
+          <li><strong>8岁以下小童</strong>不占床享团费<strong>95折</strong></li>
+          <li><strong>18岁以下</strong>须有监护人陪同</li>
+          <li><strong>65岁以上</strong>有特殊陪同要求</li>
+        </ul>
+      </div>
+      <div class="must-box up">
+        <div class="must-head">违规脱团 + 小费</div>
+        <ul>
+          <li>擅自离团违约金：<strong>¥3,000元/人</strong>（须签免责协议）</li>
+          <li>小费礼仪：约$1/次（自愿）</li>
+          <li>街道厕所通常收费</li>
+        </ul>
+      </div>
+    </div>
+    <div class="costs-cols up">
+      <div class="cost-box">
+        <div class="cost-head ch-t">团费包含</div>
+        <table class="cost-table">
+          <tr><td>航班</td><td>南方航空往返伊斯坦布尔（乌鲁木齐中转）</td></tr>
+          <tr><td>住宿</td><td>全程五星酒店＋番红花城奥斯曼民宿＋棉花堡温泉酒店</td></tr>
+          <tr><td>餐食</td><td>瓦罐焖肉餐·海景烤鱼·风味烤肉，赠红茶·咖啡·冰激凌</td></tr>
+          <tr><td>景点</td><td>行程内所有景点门票（外观者除外）</td></tr>
+          <tr><td>游船</td><td>博斯普鲁斯海峡游船</td></tr>
+          <tr><td>WIFI</td><td>土耳其段巴士全程免费WIFI</td></tr>
+          <tr><td>领队</td><td>全程中文领队及境外中文导游服务</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head ch-a">团费不含</div>
+        <table class="cost-table">
+          <tr><td>必付杂费</td><td>¥2,000/人（报名时付清）</td></tr>
+          <tr><td>热气球</td><td>卡帕多奇亚热气球飞行（强烈推荐·自费）</td></tr>
+          <tr><td>自费项目</td><td>表格中所有可选自费体验</td></tr>
+          <tr><td>购物消费</td><td>6个协议购物场所内的商品（自愿）</td></tr>
+          <tr><td>礼仪小费</td><td>约$1/次（自愿）；厕所按需</td></tr>
+          <tr><td>保险</td><td>建议另行购买个人境外意外险</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSULTANT ── -->
+<div class="consult" id="consult">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow et">Consultant · 专属顾问</div>
+    <div class="sec-title">联系专属旅行顾问</div>
+    <div class="sec-sub">有任何疑问或想了解最新团期，请直接联系我们的资深顾问</div>
+  </div>
+  <div class="consult-inner">
+    <div class="consult-card up">
+      <div class="consult-avatar">🕌</div>
+      <div class="consult-info">
+        <h3>高盼 · 土耳其及中东线路专属顾问</h3>
+        <p>专注土耳其及中东精品线路，对热气球、棉花堡、卡帕多奇亚每一处体验了如指掌</p>
+        <div class="consult-contact">
+          <a href="tel:15907190570" class="contact-btn cb-t">📞 15907190570</a>
+          <a href="#" class="contact-btn cb-a">💬 微信咨询</a>
+          <a href="#" class="contact-btn cb-g">📄 签证及保证金咨询</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow et">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读，保障顺畅愉快的土耳其星月之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>✅ 签证政策</h4>
+        <ul>
+          <li>中国普通公民护照<strong>免签入境</strong>土耳其</li>
+          <li>无需提前申请任何签证，护照有效即可</li>
+          <li>建议护照有效期距返程日6个月以上</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>👴 年龄与特殊规定</h4>
+        <ul>
+          <li><strong>8岁以下小童</strong>不占床享团费95折优惠</li>
+          <li><strong>18岁以下</strong>须有监护人全程陪同</li>
+          <li><strong>65岁以上</strong>有特殊陪同要求，请提前咨询顾问</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>⚠️ 脱团与违约</h4>
+        <ul>
+          <li>严禁擅自脱团</li>
+          <li>若执意离团须支付违约金 <strong>¥3,000元/人</strong></li>
+          <li>须签署免责协议，脱团期间风险自负</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🎈 热气球特别说明</h4>
+        <ul>
+          <li>热气球属自费项目，受<strong>天气影响</strong>可能取消</li>
+          <li>本行程连住2晚卡帕多奇亚，已最大化体验机率</li>
+          <li>如因天气取消，费用全额退还</li>
+          <li>建议提前向领队确认天气预报再决定是否预订</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>必付杂费¥2,000/人，报名时须一并支付</span>
+    <span>中国公民免签入境土耳其</span>
+    <span>购物场所6个，均为自愿消费原则</span>
+    <span>热气球为自费项目，受天气影响，连住2晚最大化机率</span>
+    <span>脱团违约金¥3,000/人</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html" class="current">🇹🇷 土耳其 · 本页</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','shopping','optional','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thailand · 微笑国度</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Noto+Serif+SC:wght@300;400;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════════════════
+   ROOT & RESET
+════════════════════════════════════════ */
+:root {
+  --ink:      #1A1208;
+  --forest:   #1E3A2A;
+  --jade:     #2D6A4F;
+  --moss:     #52875E;
+  --amber:    #C8701A;
+  --gold:     #E8A830;
+  --sand:     #F5DFA8;
+  --cream:    #FAF4E4;
+  --paper:    #FDF9F0;
+  --white:    #FFFFFF;
+  --muted:    #7A6B50;
+  --border:   rgba(200,112,26,0.18);
+  --r: 14px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family:'Noto Serif SC', serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  cursor:none;
+}
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+
+/* ════════ CUSTOM CURSOR ════════ */
+.cursor {
+  position:fixed; z-index:9999; pointer-events:none;
+  width:10px; height:10px; border-radius:50%;
+  background:var(--gold); mix-blend-mode:multiply;
+  transform:translate(-50%,-50%);
+  transition:width .2s,height .2s,opacity .2s;
+}
+.cursor-ring {
+  position:fixed; z-index:9998; pointer-events:none;
+  width:36px; height:36px; border-radius:50%;
+  border:1.5px solid var(--amber);
+  transform:translate(-50%,-50%);
+  transition:all .12s ease;
+}
+body:hover .cursor { opacity:1; }
+
+/* ════════ SCROLLBAR ════════ */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--cream); }
+::-webkit-scrollbar-thumb { background:var(--amber); border-radius:2px; }
+
+/* ════════════════════════════════════════
+   NAVBAR
+════════════════════════════════════════ */
+#nav {
+  position:fixed; top:0; left:0; right:0; z-index:900;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 4vw; height:68px;
+  transition:background .4s, backdrop-filter .4s, border-color .4s;
+  border-bottom:1px solid transparent;
+}
+#nav.scrolled {
+  background:rgba(26,18,8,0.88);
+  backdrop-filter:blur(16px);
+  border-color:rgba(232,168,48,0.2);
+}
+.nav-brand {
+  font-family:'Fraunces', serif;
+  font-size:1.3rem; font-weight:700; letter-spacing:.04em;
+  color:var(--white);
+  display:flex; align-items:center; gap:.6rem;
+}
+.nav-brand-dot {
+  width:8px; height:8px; border-radius:50%;
+  background:var(--gold); flex-shrink:0;
+}
+.nav-links {
+  display:flex; gap:2.5rem;
+}
+.nav-links a {
+  font-size:.78rem; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+  transition:color .2s;
+  position:relative;
+}
+.nav-links a::after {
+  content:''; position:absolute; left:0; bottom:-3px;
+  width:0; height:1px; background:var(--gold);
+  transition:width .3s;
+}
+.nav-links a:hover { color:var(--gold); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  font-size:.78rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--ink); background:var(--gold);
+  padding:.5rem 1.4rem; border-radius:50px;
+  font-weight:600; transition:transform .2s, box-shadow .2s;
+}
+.nav-cta:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(232,168,48,.5); }
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+#hero {
+  position:relative; height:100vh; min-height:600px;
+  overflow:hidden; display:flex; align-items:flex-end;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:
+    linear-gradient(to top, rgba(26,18,8,1) 0%, rgba(26,18,8,.4) 50%, rgba(26,18,8,.1) 100%),
+    url('https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=1800&q=85') center/cover no-repeat;
+}
+.hero-orb {
+  position:absolute; border-radius:50%; filter:blur(80px); opacity:.35;
+}
+.hero-orb-1 {
+  width:600px; height:600px; top:-100px; right:-100px;
+  background:radial-gradient(circle, #C8701A, transparent);
+}
+.hero-orb-2 {
+  width:400px; height:400px; bottom:100px; left:-50px;
+  background:radial-gradient(circle, #2D6A4F, transparent);
+}
+.hero-content {
+  position:relative; z-index:2;
+  padding:0 8vw 8vh;
+  max-width:1400px; width:100%;
+}
+.hero-eyebrow {
+  font-family:'DM Mono', monospace;
+  font-size:.72rem; letter-spacing:.35em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1.6rem;
+  opacity:0; animation:heroIn .8s .2s forwards;
+  display:flex; align-items:center; gap:1rem;
+}
+.hero-eyebrow::before {
+  content:''; width:40px; height:1px; background:var(--gold);
+}
+.hero-h1 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(4rem, 11vw, 9.5rem);
+  font-weight:900; line-height:.92;
+  color:var(--white);
+  opacity:0; animation:heroIn .9s .38s forwards;
+}
+.hero-h1 em {
+  font-style:italic; font-weight:300;
+  color:var(--sand);
+}
+.hero-sub {
+  margin-top:2rem;
+  font-size:clamp(.95rem, 1.5vw, 1.15rem);
+  color:rgba(255,255,255,.55);
+  line-height:1.9; max-width:540px;
+  opacity:0; animation:heroIn .9s .55s forwards;
+}
+.hero-actions {
+  margin-top:3rem; display:flex; gap:1.5rem; align-items:center;
+  opacity:0; animation:heroIn .9s .7s forwards;
+}
+.btn-primary {
+  background:var(--amber); color:#fff;
+  padding:.85rem 2.4rem; border-radius:50px;
+  font-size:.88rem; letter-spacing:.1em;
+  font-weight:600; transition:all .25s;
+  display:inline-flex; align-items:center; gap:.6rem;
+}
+.btn-primary:hover { background:var(--gold); color:var(--ink); transform:translateY(-3px); box-shadow:0 10px 30px rgba(200,112,26,.5); }
+.btn-ghost {
+  color:rgba(255,255,255,.7); font-size:.88rem;
+  display:inline-flex; align-items:center; gap:.5rem;
+  transition:color .2s;
+}
+.btn-ghost:hover { color:var(--gold); }
+.hero-scroll {
+  position:absolute; right:4vw; bottom:6vh; z-index:2;
+  display:flex; flex-direction:column; align-items:center; gap:.8rem;
+  color:rgba(255,255,255,.4); font-size:.65rem; letter-spacing:.25em; text-transform:uppercase;
+  animation:scrollPulse 2.5s infinite;
+}
+.hero-scroll-line {
+  width:1px; height:60px;
+  background:linear-gradient(to bottom, rgba(232,168,48,.7), transparent);
+}
+.hero-stats {
+  position:absolute; right:4vw; top:50%; transform:translateY(-50%);
+  z-index:2; display:flex; flex-direction:column; gap:2rem;
+  opacity:0; animation:heroIn .8s .9s forwards;
+}
+.hero-stat {
+  text-align:center;
+}
+.hero-stat-num {
+  font-family:'Fraunces', serif; font-size:2rem; font-weight:700;
+  color:var(--gold); line-height:1;
+}
+.hero-stat-label {
+  font-size:.65rem; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(255,255,255,.45); margin-top:.3rem;
+}
+
+@keyframes heroIn {
+  from { opacity:0; transform:translateY(28px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes scrollPulse {
+  0%,100% { opacity:.4; }
+  50% { opacity:.9; }
+}
+
+/* ════════════════════════════════════════
+   SECTION UTILITY
+════════════════════════════════════════ */
+.sec { padding:7rem 8vw; max-width:1400px; margin:0 auto; }
+.sec-full { padding:7rem 8vw; }
+.sec-label {
+  font-family:'DM Mono', monospace;
+  font-size:.7rem; letter-spacing:.35em; text-transform:uppercase;
+  color:var(--amber); display:flex; align-items:center; gap:.9rem;
+  margin-bottom:1.2rem;
+}
+.sec-label::after { content:''; flex:0 0 32px; height:1px; background:var(--amber); }
+.sec-h2 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(2.2rem, 5vw, 4rem);
+  font-weight:700; line-height:1.1; color:var(--ink);
+}
+.sec-h2 em { font-style:italic; font-weight:300; color:var(--moss); }
+.sec-body {
+  font-size:.95rem; line-height:2; color:var(--muted);
+  max-width:500px; margin-top:1rem;
+}
+
+/* ════════════════════════════════════════
+   INTRO MARQUEE BAND
+════════════════════════════════════════ */
+.marquee-band {
+  background:var(--forest); overflow:hidden;
+  padding:1rem 0; border-top:1px solid rgba(82,135,94,.2);
+  border-bottom:1px solid rgba(82,135,94,.2);
+}
+.marquee-track {
+  display:flex; gap:0; white-space:nowrap;
+  animation:marquee 22s linear infinite;
+}
+.marquee-item {
+  padding:0 2rem;
+  font-family:'Fraunces', serif; font-style:italic;
+  font-size:1.1rem; color:rgba(245,223,168,.65);
+  display:flex; align-items:center; gap:2rem;
+}
+.marquee-item::after {
+  content:'✦'; color:var(--amber); font-style:normal; font-size:.75rem;
+}
+@keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+/* ════════════════════════════════════════
+   OVERVIEW — BENTO GRID
+════════════════════════════════════════ */
+.bento {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:320px 240px;
+  gap:16px; margin-top:4rem;
+}
+.bento-card {
+  border-radius:var(--r); overflow:hidden; position:relative;
+  transition:transform .4s, box-shadow .4s;
+}
+.bento-card:hover { transform:scale(1.02); box-shadow:0 20px 60px rgba(26,18,8,.25); }
+.bento-card img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .5s;
+}
+.bento-card:hover img { transform:scale(1.08); }
+.bento-card-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(26,18,8,.85) 0%, transparent 60%);
+  display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem;
+}
+.bento-card-tag {
+  font-family:'DM Mono', monospace;
+  font-size:.65rem; letter-spacing:.25em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:.4rem;
+}
+.bento-card-title {
+  font-family:'Fraunces', serif; font-size:1.35rem; font-weight:700;
+  color:#fff;
+}
+.bento-card-desc {
+  font-size:.8rem; color:rgba(255,255,255,.6); margin-top:.3rem; line-height:1.6;
+}
+.bento-card.span2 { grid-column:span 2; }
+.bento-card.span3 { grid-column:span 3; }
+.bento-card.tall  { grid-row:span 2; }
+
+/* ════════════════════════════════════════
+   ATTRACTIONS TABS
+════════════════════════════════════════ */
+.att-section { background:var(--cream); }
+.att-tabs {
+  display:flex; gap:.5rem; flex-wrap:wrap;
+  margin:2.5rem 0;
+}
+.att-tab {
+  padding:.55rem 1.4rem; border-radius:50px;
+  font-size:.82rem; letter-spacing:.08em;
+  border:1.5px solid var(--border);
+  color:var(--muted); background:transparent;
+  cursor:pointer; transition:all .25s; font-family:'Noto Serif SC', serif;
+}
+.att-tab.active, .att-tab:hover {
+  background:var(--forest); color:var(--sand);
+  border-color:var(--forest);
+}
+.att-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(310px, 1fr));
+  gap:1.5rem;
+}
+.att-item {
+  background:var(--white); border-radius:var(--r);
+  overflow:hidden; box-shadow:0 2px 16px rgba(26,18,8,.07);
+  transition:transform .3s, box-shadow .3s;
+  display:none;
+}
+.att-item.show { display:block; }
+.att-item:hover { transform:translateY(-6px); box-shadow:0 14px 40px rgba(26,18,8,.14); }
+.att-img {
+  height:210px; overflow:hidden; position:relative;
+  background:linear-gradient(135deg, var(--forest), var(--moss));
+}
+.att-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.att-item:hover .att-img img { transform:scale(1.06); }
+.att-img-badge {
+  position:absolute; top:1rem; left:1rem;
+  background:rgba(26,18,8,.7); color:var(--sand);
+  font-family:'DM Mono', monospace; font-size:.62rem; letter-spacing:.15em;
+  padding:.3rem .8rem; border-radius:50px; backdrop-filter:blur(6px);
+}
+.att-body { padding:1.4rem; }
+.att-title {
+  font-family:'Fraunces', serif; font-size:1.2rem; font-weight:700;
+  color:var(--ink); margin-bottom:.3rem;
+}
+.att-sub { font-size:.78rem; color:var(--amber); margin-bottom:.8rem; }
+.att-text { font-size:.85rem; color:var(--muted); line-height:1.85; margin-bottom:1.1rem; }
+.att-chips { display:flex; flex-wrap:wrap; gap:.4rem; }
+.chip {
+  font-size:.72rem; padding:.28rem .75rem;
+  border-radius:50px; background:var(--cream);
+  color:var(--muted);
+}
+.chip.gold { background:rgba(232,168,48,.15); color:#8A5E10; }
+
+/* ════════════════════════════════════════
+   FOOD SECTION — horizontal scroll
+════════════════════════════════════════ */
+.food-section { background:var(--forest); overflow:hidden; }
+.food-section .sec-h2 { color:var(--sand); }
+.food-section .sec-h2 em { color:var(--gold); }
+.food-section .sec-label { color:var(--gold); }
+.food-section .sec-label::after { background:var(--gold); }
+.food-scroll-wrap {
+  overflow-x:auto; overflow-y:hidden;
+  padding-bottom:1.5rem; margin-top:3rem;
+  scrollbar-width:thin; scrollbar-color:var(--amber) var(--forest);
+}
+.food-row {
+  display:flex; gap:1.5rem;
+  width:max-content; padding-right:8vw;
+}
+.food-card {
+  width:260px; flex-shrink:0;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(232,168,48,.15);
+  border-radius:var(--r); overflow:hidden;
+  transition:transform .3s;
+}
+.food-card:hover { transform:translateY(-6px); }
+.food-card-img { height:170px; overflow:hidden; }
+.food-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.food-card:hover .food-card-img img { transform:scale(1.08); }
+.food-card-body { padding:1.2rem; }
+.food-card-name {
+  font-family:'Fraunces', serif; font-size:1.1rem;
+  color:var(--sand); font-weight:700; margin-bottom:.4rem;
+}
+.food-card-desc { font-size:.8rem; color:rgba(245,223,168,.55); line-height:1.75; }
+.food-card-price {
+  font-family:'DM Mono', monospace; font-size:.75rem;
+  color:var(--gold); margin-top:.8rem;
+}
+
+/* ════════════════════════════════════════
+   TIPS — accordion
+════════════════════════════════════════ */
+.tips-section { background:var(--ink); }
+.tips-section .sec-h2 { color:var(--white); }
+.tips-section .sec-body { color:rgba(255,255,255,.4); }
+.tips-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:4rem; }
+.tip-acc {
+  border:1px solid rgba(232,168,48,.15); border-radius:var(--r);
+  overflow:hidden;
+}
+.tip-acc-head {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.4rem 1.6rem; cursor:pointer;
+  background:rgba(255,255,255,.04);
+  transition:background .2s;
+}
+.tip-acc-head:hover { background:rgba(255,255,255,.08); }
+.tip-acc-head-left { display:flex; align-items:center; gap:1rem; }
+.tip-icon { font-size:1.4rem; }
+.tip-acc-title { font-size:.95rem; font-weight:700; color:var(--sand); }
+.tip-acc-arrow {
+  width:22px; height:22px; border:1px solid rgba(232,168,48,.4); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold); font-size:.75rem;
+  transition:transform .3s;
+}
+.tip-acc.open .tip-acc-arrow { transform:rotate(180deg); }
+.tip-acc-body {
+  max-height:0; overflow:hidden;
+  transition:max-height .4s ease;
+  background:rgba(255,255,255,.02);
+}
+.tip-acc.open .tip-acc-body { max-height:500px; }
+.tip-acc-content { padding:1.4rem 1.6rem; }
+.tip-acc-content p, .tip-acc-content li {
+  font-size:.87rem; color:rgba(255,255,255,.5);
+  line-height:1.9; margin-bottom:.4rem;
+}
+.tip-acc-content li { list-style:none; padding-left:1.2rem; position:relative; }
+.tip-acc-content li::before { content:'›'; position:absolute; left:0; color:var(--amber); }
+.emergency {
+  margin-top:3rem; padding:2rem 2.5rem;
+  background:rgba(200,112,26,.1);
+  border:1px solid rgba(200,112,26,.35); border-radius:var(--r);
+}
+.emergency-title {
+  font-family:'Fraunces', serif; font-size:1.1rem; color:var(--amber);
+  margin-bottom:1.2rem; display:flex; align-items:center; gap:.7rem;
+}
+.emergency-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));
+  gap:1rem;
+}
+.emergency-item { display:flex; flex-direction:column; gap:.2rem; }
+.em-label { font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.35); }
+.em-val { font-family:'DM Mono', monospace; font-size:1.1rem; color:var(--gold); font-weight:400; }
+
+/* ════════════════════════════════════════
+   SHOPPING
+════════════════════════════════════════ */
+.shop-split {
+  display:grid; grid-template-columns:1fr 1.6fr; gap:6rem;
+  align-items:start; margin-top:4rem;
+}
+.shop-sticky { position:sticky; top:100px; }
+.shop-sticky-title {
+  font-family:'Fraunces', serif; font-size:3rem; font-weight:700;
+  line-height:1.1; color:var(--ink);
+}
+.shop-sticky-title em { font-style:italic; color:var(--moss); }
+.shop-sticky-body { font-size:.9rem; color:var(--muted); line-height:1.9; margin-top:1.2rem; }
+.shop-top5 { margin-top:2.5rem; }
+.shop-top5-label {
+  font-family:'DM Mono', monospace; font-size:.68rem; letter-spacing:.25em; text-transform:uppercase;
+  color:var(--amber); margin-bottom:1.2rem;
+}
+.top5-row {
+  display:flex; align-items:center; gap:1rem;
+  padding:.9rem 0; border-bottom:1px solid var(--border);
+  transition:padding-left .2s;
+}
+.top5-row:hover { padding-left:.6rem; }
+.top5-num {
+  font-family:'Fraunces', serif; font-size:1.6rem; font-weight:700;
+  color:var(--sand); line-height:1; flex-shrink:0;
+}
+.top5-name { font-size:.9rem; font-weight:600; color:var(--ink); }
+.top5-tip { font-size:.78rem; color:var(--muted); margin-top:.1rem; }
+.shop-list { display:flex; flex-direction:column; gap:1.2rem; }
+.shop-cat {
+  border:1px solid var(--border); border-radius:var(--r);
+  overflow:hidden;
+}
+.shop-cat-head {
+  display:flex; align-items:center; gap:1rem;
+  padding:1.3rem 1.6rem;
+  background:var(--cream);
+}
+.shop-cat-icon { font-size:1.5rem; }
+.shop-cat-name { font-family:'Fraunces', serif; font-size:1.1rem; font-weight:700; }
+.shop-cat-badge {
+  margin-left:auto; font-family:'DM Mono', monospace;
+  font-size:.65rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--amber);
+}
+.shop-cat-items { padding:.5rem 1.6rem 1.2rem; background:var(--white); }
+.shop-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:.7rem 0; border-bottom:1px solid rgba(200,160,80,.1);
+}
+.shop-row:last-child { border-bottom:none; }
+.shop-row-name { font-size:.88rem; font-weight:600; color:var(--ink); }
+.shop-row-desc { font-size:.78rem; color:var(--muted); margin-top:.15rem; }
+.shop-row-where {
+  font-family:'DM Mono', monospace; font-size:.68rem;
+  color:var(--amber); flex-shrink:0; margin-left:1rem;
+}
+
+/* ════════════════════════════════════════
+   TOUR TYPE
+════════════════════════════════════════ */
+.tour-bg { background:var(--forest); }
+.tour-compare {
+  display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:4rem;
+}
+.tour-card {
+  border-radius:var(--r); overflow:hidden;
+}
+.tour-card-head { padding:2.5rem 2.5rem 2rem; }
+.tour-card.shopping .tour-card-head { background:rgba(255,255,255,.07); }
+.tour-card.pure .tour-card-head {
+  background:linear-gradient(135deg, rgba(200,112,26,.25), rgba(232,168,48,.15));
+}
+.tour-badge {
+  font-family:'DM Mono', monospace; font-size:.65rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:.8rem;
+}
+.tour-name {
+  font-family:'Fraunces', serif; font-size:2.2rem; font-weight:700; color:#fff;
+}
+.tour-name em { font-style:italic; font-weight:300; }
+.tour-card-body {
+  padding:1.5rem 2.5rem 2.5rem;
+  background:rgba(255,255,255,.05);
+}
+.tour-row { padding:.9rem 0; border-bottom:1px solid rgba(255,255,255,.07); }
+.tour-row:last-child { border-bottom:none; }
+.tour-row-key {
+  font-family:'DM Mono', monospace; font-size:.65rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--amber); margin-bottom:.3rem;
+}
+.tour-row-val { font-size:.88rem; color:rgba(255,255,255,.65); line-height:1.7; }
+.tour-rec {
+  margin-top:3rem; padding:2rem 2.5rem;
+  background:rgba(232,168,48,.08); border:1px solid rgba(232,168,48,.2);
+  border-radius:var(--r);
+  font-size:.92rem; color:rgba(255,255,255,.7); line-height:1.9;
+}
+.tour-rec strong { color:var(--gold); }
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer {
+  background:var(--ink);
+  padding:5rem 8vw 3rem;
+  display:flex; flex-direction:column;
+  align-items:center; text-align:center;
+  border-top:1px solid rgba(232,168,48,.1);
+}
+.footer-logo {
+  font-family:'Fraunces', serif; font-style:italic;
+  font-size:3rem; color:var(--gold); margin-bottom:.5rem;
+}
+.footer-tagline {
+  font-size:.82rem; letter-spacing:.25em; text-transform:uppercase;
+  color:rgba(255,255,255,.25); margin-bottom:3rem;
+}
+.footer-nav {
+  display:flex; gap:3rem; margin-bottom:3rem;
+}
+.footer-nav a { font-size:.8rem; color:rgba(255,255,255,.35); letter-spacing:.1em; transition:color .2s; }
+.footer-nav a:hover { color:var(--gold); }
+.footer-copy { font-size:.72rem; color:rgba(255,255,255,.2); }
+
+/* ════════════════════════════════════════
+   REVEAL ANIMATION
+════════════════════════════════════════ */
+.reveal { opacity:0; transform:translateY(32px); transition:opacity .7s, transform .7s; }
+.reveal.up { opacity:1; transform:none; }
+.reveal-delay-1 { transition-delay:.1s; }
+.reveal-delay-2 { transition-delay:.2s; }
+.reveal-delay-3 { transition-delay:.3s; }
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:1024px){
+  .bento { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+  .bento-card.span2 { grid-column:span 1; }
+  .shop-split { grid-template-columns:1fr; gap:4rem; }
+  .shop-sticky { position:static; }
+  .tips-grid { grid-template-columns:1fr; }
+  .tour-compare { grid-template-columns:1fr; }
+}
+@media(max-width:768px){
+  body { cursor:auto; }
+  .cursor, .cursor-ring { display:none; }
+  .nav-links, .nav-cta { display:none; }
+  #nav { padding:0 5vw; }
+  .hero-stats { display:none; }
+  .bento { grid-template-columns:1fr; }
+  .hero-h1 { font-size:3.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- cursor -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="nav-brand"><span class="nav-brand-dot"></span>Thailand</div>
+  <div class="nav-links">
+    <a href="#overview">概览</a>
+    <a href="#attractions">景点</a>
+    <a href="#food">美食</a>
+    <a href="#tour">团型</a>
+    <a href="#shopping">购物</a>
+    <a href="#tips">须知</a>
+  </div>
+  <a class="nav-cta" href="#attractions">开始探索 →</a>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">77</div><div class="hero-stat-label">个府</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">3500+</div><div class="hero-stat-label">寺庙</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">1400+</div><div class="hero-stat-label">公里海岸</div></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Thailand · 微笑国度旅游攻略</div>
+    <h1 class="hero-h1">发现<em>泰国</em><br>的灵魂</h1>
+    <p class="hero-sub">从曼谷金碧辉煌的大皇宫，到芭提雅碧蓝的海岛；从夜市飘香的街头美食，到令人沉醉的古法按摩——这片微笑国度，正等待你的到来。</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#attractions">探索景点 <span>→</span></a>
+      <a class="btn-ghost" href="#tips">▶ 出行须知</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>滚动</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<!-- ════════ MARQUEE ════════ -->
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span class="marquee-item">大皇宫 Grand Palace</span>
+    <span class="marquee-item">湄南河 Chao Phraya</span>
+    <span class="marquee-item">芭提雅 Pattaya</span>
+    <span class="marquee-item">泰式按摩 Thai Massage</span>
+    <span class="marquee-item">JODD夜市 Night Market</span>
+    <span class="marquee-item">珊瑚岛 Coral Island</span>
+    <span class="marquee-item">铁道市场 Train Market</span>
+    <span class="marquee-item">水门寺 Wat Paknam</span>
+    <span class="marquee-item">四面佛 Erawan Shrine</span>
+    <span class="marquee-item">泰拳 Muay Thai</span>
+    <span class="marquee-item">大皇宫 Grand Palace</span>
+    <span class="marquee-item">湄南河 Chao Phraya</span>
+    <span class="marquee-item">芭提雅 Pattaya</span>
+    <span class="marquee-item">泰式按摩 Thai Massage</span>
+    <span class="marquee-item">JODD夜市 Night Market</span>
+    <span class="marquee-item">珊瑚岛 Coral Island</span>
+    <span class="marquee-item">铁道市场 Train Market</span>
+    <span class="marquee-item">水门寺 Wat Paknam</span>
+    <span class="marquee-item">四面佛 Erawan Shrine</span>
+    <span class="marquee-item">泰拳 Muay Thai</span>
+  </div>
+</div>
+
+<!-- ════════ OVERVIEW BENTO ════════ -->
+<section id="overview">
+<div class="sec">
+  <div class="reveal">
+    <div class="sec-label">Why Thailand</div>
+    <h2 class="sec-h2">多元魅力，<em>一次满足</em></h2>
+  </div>
+  <div class="bento reveal reveal-delay-1">
+    <div class="bento-card tall">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="寺庙">
+      <div class="bento-card-overlay">
+        <div class="bento-card-tag">Culture · 文化</div>
+        <div class="bento-card-title">千年文化古迹</div>
+        <div class="bento-card-desc">大皇宫、玉佛寺、郑王庙，金碧辉煌的泰式建筑群诉说着王朝的荣耀</div>
+      </div>
+    </div>
+    <div class="bento-card">
+      <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80" alt="海岛">
+      <div class="bento-card-overlay">
+        <div class="bento-card-tag">Island · 海岛</div>
+        <div class="bento-card-title">碧海蓝天海岛</div>
+      </div>
+    </div>
+    <div class="bento-card">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="美食">
+      <div class="bento-card-overlay">
+        <div class="bento-card-tag">Food · 美食</div>
+        <div class="bento-card-title">街头美食天堂</div>
+      </div>
+    </div>
+    <div class="bento-card span2">
+      <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&q=80" alt="夜市">
+      <div class="bento-card-overlay">
+        <div class="bento-card-tag">Nightlife · 夜生活</div>
+        <div class="bento-card-title">霓虹夜市，灯火通明</div>
+        <div class="bento-card-desc">JODD夜市、拉差达夜市，每一口都是地道风味</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════ ATTRACTIONS ════════ -->
+<section id="attractions" class="att-section">
+<div class="sec">
+  <div class="reveal">
+    <div class="sec-label">Must-See Spots</div>
+    <h2 class="sec-h2">精选景点，<em>不容错过</em></h2>
+    <p class="sec-body">精心挑选的曼谷与芭提雅最值得一去的目的地，包含开放时间、门票及实用贴士。</p>
+  </div>
+  <div class="att-tabs reveal">
+    <button class="att-tab active" data-cat="all">全部</button>
+    <button class="att-tab" data-cat="bkk">🏙️ 曼谷</button>
+    <button class="att-tab" data-cat="ptt">🏖️ 芭提雅</button>
+    <button class="att-tab" data-cat="exp">🎭 体验</button>
+    <button class="att-tab" data-cat="mkt">🛒 市场</button>
+  </div>
+  <div class="att-grid" id="attGrid">
+
+    <div class="att-item show" data-cat="bkk">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1568454537842-d933259bb258?w=600&q=80" alt="大皇宫" loading="lazy">
+        <span class="att-img-badge">必游</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">大皇宫 · 玉佛寺</div>
+        <div class="att-sub">曼谷 · 宗教圣地</div>
+        <div class="att-text">泰国规模最大的王宫，保存最完美的历史建筑群。玉佛寺供奉国宝玉佛，壁画精美绝伦。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 8:30–15:30</span>
+          <span class="chip gold">🎫 500฿</span>
+          <span class="chip">👗 需着长裤</span>
+          <span class="chip">🕐 2–3小时</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="bkk">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1596396372770-8b5c8ae5e3ae?w=600&q=80" alt="湄南河" loading="lazy">
+        <span class="att-img-badge">推荐</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">湄南河游览</div>
+        <div class="att-sub">曼谷 · 水上风光</div>
+        <div class="att-text">乘长尾船沿河而行，两岸郑王庙、水上人家、ICONSIAM尽收眼底。傍晚日落景色绝美。</div>
+        <div class="att-chips">
+          <span class="chip">🌅 傍晚最佳</span>
+          <span class="chip gold">💰 500–1500฿</span>
+          <span class="chip">⏰ 1–2小时</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="bkk">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1572804013427-4d7ca7268217?w=600&q=80" alt="水门寺" loading="lazy">
+        <span class="att-img-badge">免费</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">水门寺大佛</div>
+        <div class="att-sub">曼谷 · 新地标</div>
+        <div class="att-text">2021年建成，高达69米（约20层楼）的金色禅定印大佛。BTS至Wutthakat站即达。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 8:00–18:00</span>
+          <span class="chip gold">🎫 免费</span>
+          <span class="chip">📐 69米高</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="bkk">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="四面佛" loading="lazy">
+        <span class="att-img-badge">圣地</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">四面佛</div>
+        <div class="att-sub">曼谷市中心 · 宗教</div>
+        <div class="att-text">香火最旺的佛像之一，四面分别求功名、感情、财富、健康。顺时针参拜，记得还愿。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 全天开放</span>
+          <span class="chip gold">🎫 免费</span>
+          <span class="chip">📍 市中心</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="ptt">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&q=80" alt="珊瑚岛" loading="lazy">
+        <span class="att-img-badge">海岛</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">金沙岛 · 珊瑚岛</div>
+        <div class="att-sub">芭提雅 · 海岛活动</div>
+        <div class="att-text">快艇20分钟可达，浮潜、拖曳伞、香蕉船应有尽有。白沙细腻、海水清澈透明。</div>
+        <div class="att-chips">
+          <span class="chip">⛵ 20分钟快艇</span>
+          <span class="chip">🤿 水上活动另收费</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="ptt">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80" alt="七珍佛山" loading="lazy">
+        <span class="att-img-badge">壮观</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">七珍佛山</div>
+        <div class="att-sub">芭提雅 · 宗教</div>
+        <div class="att-text">使用18吨24K黄金建造，130米高、70米宽，泰王登基50周年纪念建筑。世界最大金佛之一。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 8:00–18:00</span>
+          <span class="chip gold">🎫 免费</span>
+          <span class="chip">📐 130米</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="ptt">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80" alt="富贵黄金屋" loading="lazy">
+        <span class="att-img-badge">庄园</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">富贵黄金屋</div>
+        <div class="att-sub">芭提雅 · 欧式庄园</div>
+        <div class="att-text">正大集团董事长私人庄园，《流星花园》取景地。18万㎡欧式建筑，含歌舞表演和自助餐。</div>
+        <div class="att-chips">
+          <span class="chip">🎭 歌舞演出</span>
+          <span class="chip gold">🍽️ 自助餐</span>
+          <span class="chip">🕐 2–3小时</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="exp">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80" alt="泰式按摩" loading="lazy">
+        <span class="att-img-badge">必体验</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">泰式古法按摩</div>
+        <div class="att-sub">全国 · 传统医学</div>
+        <div class="att-text">2500年历史的传统医学，通过按压拉伸疏通经络。泰式、精油、足部任选，放松身心。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 1–2小时</span>
+          <span class="chip gold">💰 200–500฿</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="exp">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1601929862217-2eb7e1eb1b78?w=600&q=80" alt="泰拳" loading="lazy">
+        <span class="att-img-badge">国粹</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">泰拳表演</div>
+        <div class="att-sub">全国 · 搏击文化</div>
+        <div class="att-text">八肢艺术，热血激烈。推荐仑披尼拳馆，周二五六有赛事，含赛前拜师舞传统仪式。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 2–3小时</span>
+          <span class="chip gold">💰 1000–2000฿</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="exp">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1542747009-c8748c1fc9f5?w=600&q=80" alt="游船" loading="lazy">
+        <span class="att-img-badge">夜游</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">东方公主号</div>
+        <div class="att-sub">芭提雅 · 游船夜景</div>
+        <div class="att-text">人妖歌舞表演、丰盛自助晚餐、芭提雅海湾夜景三合一体验，约2小时。合影需付小费。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 约2小时</span>
+          <span class="chip gold">💰 800–1500฿</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="mkt">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1555229420-8bf4c8e6b0a8?w=600&q=80" alt="JODD夜市" loading="lazy">
+        <span class="att-img-badge">网红</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">JODD夜市</div>
+        <div class="att-sub">曼谷 · 网红夜市</div>
+        <div class="att-text">曼谷最IN夜市，汇聚地道美食、时尚服饰、创意手工。必尝火山排骨。注意部分商品来自义乌。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 17:00–00:00</span>
+          <span class="chip">🍢 火山排骨</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="mkt">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1578469645742-46cae010e5d4?w=600&q=80" alt="铁道市场" loading="lazy">
+        <span class="att-img-badge">奇观</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">美功铁道市场</div>
+        <div class="att-sub">曼谷近郊 · 奇特景观</div>
+        <div class="att-text">世界唯一火车穿越的菜市场，每天4次（8:30/11:10/14:30/17:40），提前到达占位。</div>
+        <div class="att-chips">
+          <span class="chip">🚂 每日4次</span>
+          <span class="chip">🕐 1–2小时</span>
+          <span class="chip">📍 距曼谷80km</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="att-item show" data-cat="mkt">
+      <div class="att-img">
+        <img src="https://images.unsplash.com/photo-1516461688700-9c0af6fc03c7?w=600&q=80" alt="水上市场" loading="lazy">
+        <span class="att-img-badge">传统</span>
+      </div>
+      <div class="att-body">
+        <div class="att-title">丹嫩沙朵水上市场</div>
+        <div class="att-sub">曼谷近郊 · 水乡文化</div>
+        <div class="att-text">泰国最具代表性的水上市场，100+摊船。上午8–11点最佳。必尝椰子冰淇淋、芒果糯米饭。</div>
+        <div class="att-chips">
+          <span class="chip">⏰ 7:00–17:00</span>
+          <span class="chip gold">🚣 150–200฿</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ════════ FOOD ════════ -->
+<section id="food" class="food-section sec-full">
+<div class="sec" style="padding-bottom:0">
+  <div class="reveal">
+    <div class="sec-label">Thai Cuisine</div>
+    <h2 class="sec-h2" style="color:var(--sand)">舌尖上的<em>泰国</em></h2>
+    <p class="sec-body" style="color:rgba(245,223,168,.5)">从街头小摊到高档餐厅，泰式美食的鲜辣酸甜让每一口都成为旅行记忆。</p>
+  </div>
+</div>
+<div class="food-scroll-wrap">
+  <div class="food-row">
+    <div class="food-card">
+      <div class="food-card-img"><img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&q=80" alt="冬阴功" loading="lazy"></div>
+      <div class="food-card-body">
+        <div class="food-card-name">冬阴功汤</div>
+        <div class="food-card-desc">酸辣浓郁的泰式经典，香茅、南姜、柠檬叶香气四溢，虾鲜味美</div>
+        <div class="food-card-price">从 ฿60 起</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400&q=80" alt="泰式炒河粉" loading="lazy"></div>
+      <div class="food-card-body">
+        <div class="food-card-name">泰式炒河粉</div>
+        <div class="food-card-desc">Pad Thai，大街小巷的国民美食，虾仁豆芽花生的完美组合</div>
+        <div class="food-card-price">从 ฿50 起</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=400&q=80" alt="芒果糯米饭" loading="lazy"></div>
+      <div class="food-card-body">
+        <div class="food-card-name">芒果糯米饭</div>
+        <div class="food-card-desc">椰浆浸透的糯米配上新鲜芒果，清甜软糯，必吃甜点之首</div>
+        <div class="food-card-price">从 ฿40 起</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="火山排骨" loading="lazy"></div>
+      <div class="food-card-body">
+        <div class="food-card-name">火山排骨</div>
+        <div class="food-card-desc">JODD夜市网红，现烤排骨骨香肉嫩，佐以特制酱料，一口上瘾</div>
+        <div class="food-card-price">从 ฿120 起</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&q=80" alt="椰子冰淇淋" loading="lazy"></div>
+      <div class="food-card-body">
+        <div class="food-card-name">椰子冰淇淋</div>
+        <div class="food-card-desc">水上市场必尝，天然椰肉作碗，清凉香甜消暑解热</div>
+        <div class="food-card-price">从 ฿30 起</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&q=80" alt="绿咖喱" loading="lazy"></div>
+      <div class="food-card-body">
+        <div class="food-card-name">绿咖喱鸡</div>
+        <div class="food-card-desc">椰浆融合青咖喱的浓香，香辣刺激，配上一碗白饭最满足</div>
+        <div class="food-card-price">从 ฿80 起</div>
+      </div>
+    </div>
+    <div class="food-card">
+      <div class="food-card-img"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&q=80" alt="海鲜" loading="lazy"></div>
+      <div class="food-card-body">
+        <div class="food-card-name">海鲜烧烤</div>
+        <div class="food-card-desc">芭提雅海边的新鲜海鲜，大虾、生蚝、鱿鱼，鲜美至极</div>
+        <div class="food-card-price">按份计价</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════ TOUR TYPE ════════ -->
+<section id="tour" class="tour-bg">
+<div class="sec">
+  <div class="reveal">
+    <div class="sec-label">Tour Selection</div>
+    <h2 class="sec-h2" style="color:var(--sand)">购物团 <em>vs</em> 纯玩团</h2>
+    <p class="sec-body" style="color:rgba(245,223,168,.45)">选择适合自己的出行方式，决定你整个旅程的体验质量</p>
+  </div>
+  <div class="tour-compare reveal">
+    <div class="tour-card shopping">
+      <div class="tour-card-head">
+        <div class="tour-badge">Shopping Tour</div>
+        <div class="tour-name">购物<em>团</em></div>
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-row"><div class="tour-row-key">价格</div><div class="tour-row-val">团费相对较低，适合预算有限的游客</div></div>
+        <div class="tour-row"><div class="tour-row-key">导游态度</div><div class="tour-row-val">取决于购物消费情况，落差较大</div></div>
+        <div class="tour-row"><div class="tour-row-key">行程安排</div><div class="tour-row-val">购物点占用较多时间，景点时间被压缩</div></div>
+        <div class="tour-row"><div class="tour-row-key">适合人群</div><div class="tour-row-val">预算有限、有购物需求、时间充裕的游客</div></div>
+      </div>
+    </div>
+    <div class="tour-card pure">
+      <div class="tour-card-head">
+        <div class="tour-badge">Pure Play Tour ✦ 推荐</div>
+        <div class="tour-name">纯玩<em>团</em></div>
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-row"><div class="tour-row-key">体验质量</div><div class="tour-row-val">专注景点游览与文化体验，更深入</div></div>
+        <div class="tour-row"><div class="tour-row-key">导游态度</div><div class="tour-row-val">服务专业、态度友好，全程无购物压力</div></div>
+        <div class="tour-row"><div class="tour-row-key">行程自由</div><div class="tour-row-val">充足时间游览景点，无强制购物环节</div></div>
+        <div class="tour-row"><div class="tour-row-key">适合人群</div><div class="tour-row-val">追求品质、注重体验、时间宝贵的游客</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="tour-rec reveal">
+    💡 <strong>编辑建议：</strong>如果预算允许，强烈推荐选择纯玩团。虽然价格稍高，但能获得更纯粹的旅行体验，真正享受泰国之旅的乐趣，而不是在一个个购物店之间奔波。
+  </div>
+</div>
+</section>
+
+<!-- ════════ SHOPPING ════════ -->
+<section id="shopping">
+<div class="sec">
+  <div class="reveal">
+    <div class="sec-label">Shopping Guide</div>
+    <h2 class="sec-h2">购物指南，<em>明智消费</em></h2>
+  </div>
+  <div class="shop-split">
+    <div class="shop-sticky reveal">
+      <div class="shop-sticky-title">带什么<em>回家</em></div>
+      <div class="shop-sticky-body">泰国特产琳琅满目，导游会带你去各种购物点。提前了解哪些值得买、哪里更划算，避免踩坑。</div>
+      <div class="shop-top5">
+        <div class="shop-top5-label">强烈推荐 Top 5</div>
+        <div class="top5-row"><div class="top5-num">01</div><div><div class="top5-name">小菠萝</div><div class="top5-tip">泰国特色水果零食，香甜可口</div></div></div>
+        <div class="top5-row"><div class="top5-num">02</div><div><div class="top5-name">青草药膏</div><div class="top5-tip">驱蚊止痒必备，性价比极高</div></div></div>
+        <div class="top5-row"><div class="top5-num">03</div><div><div class="top5-name">芒果干</div><div class="top5-tip">超市购买更实惠，品质有保障</div></div></div>
+        <div class="top5-row"><div class="top5-num">04</div><div><div class="top5-name">泰国红牛</div><div class="top5-tip">原版配方，和中国版味道不同</div></div></div>
+        <div class="top5-row"><div class="top5-num">05</div><div><div class="top5-name">冬阴功作料</div><div class="top5-tip">回家复刻经典，超市有售</div></div></div>
+      </div>
+    </div>
+    <div class="shop-list reveal reveal-delay-1">
+      <div class="shop-cat">
+        <div class="shop-cat-head"><span class="shop-cat-icon">🍍</span><span class="shop-cat-name">特色果干类</span><span class="shop-cat-badge">超市更便宜</span></div>
+        <div class="shop-cat-items">
+          <div class="shop-row"><div><div class="shop-row-name">芒果干</div><div class="shop-row-desc">泰国特产，香甜可口</div></div><span class="shop-row-where">Big C / 711</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">榴莲干</div><div class="shop-row-desc">榴莲爱好者的最爱</div></div><span class="shop-row-where">机场免税</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">菠萝蜜干</div><div class="shop-row-desc">独特风味，独家记忆</div></div><span class="shop-row-where">当地市场</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">龙眼干</div><div class="shop-row-desc">营养丰富，价格实惠</div></div><span class="shop-row-where">Tops超市</span></div>
+        </div>
+      </div>
+      <div class="shop-cat">
+        <div class="shop-cat-head"><span class="shop-cat-icon">💊</span><span class="shop-cat-name">药品类</span><span class="shop-cat-badge">按需购买</span></div>
+        <div class="shop-cat-items">
+          <div class="shop-row"><div><div class="shop-row-name">青草药膏</div><div class="shop-row-desc">驱蚊止痒，旅行必备良药</div></div><span class="shop-row-where">药店 / 711</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">蛇药</div><div class="shop-row-desc">解毒消肿，了解用途再买</div></div><span class="shop-row-where">蛇研究中心</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">风湿膏</div><div class="shop-row-desc">缓解关节疼痛</div></div><span class="shop-row-where">药店</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">鼻通</div><div class="shop-row-desc">提神醒脑，小巧好携带</div></div><span class="shop-row-where">便利店</span></div>
+        </div>
+      </div>
+      <div class="shop-cat">
+        <div class="shop-cat-head"><span class="shop-cat-icon">💎</span><span class="shop-cat-name">精品类</span><span class="shop-cat-badge">谨慎消费</span></div>
+        <div class="shop-cat-items">
+          <div class="shop-row"><div><div class="shop-row-name">天然乳胶枕</div><div class="shop-row-desc">100%天然乳胶，注意含量标识</div></div><span class="shop-row-where">乳胶工厂</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">宝石珠宝</div><div class="shop-row-desc">必须索要鉴定证书，理性消费</div></div><span class="shop-row-where">珠宝中心</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">沉香制品</div><div class="shop-row-desc">手串、雕件、精油，要鉴定证书</div></div><span class="shop-row-where">沉香博物馆</span></div>
+          <div class="shop-row"><div><div class="shop-row-name">国际品牌</div><div class="shop-row-desc">凭护照购物，机场提货</div></div><span class="shop-row-where">King Power</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════ TIPS ════════ -->
+<section id="tips" class="tips-section">
+<div class="sec">
+  <div class="reveal">
+    <div class="sec-label">Travel Notes</div>
+    <h2 class="sec-h2">出行须知，<em>安全第一</em></h2>
+    <p class="sec-body">出发前请认真阅读，这些实用提醒能让你的旅程更加顺畅安全。</p>
+  </div>
+  <div class="tips-grid reveal">
+    <div class="tip-acc open">
+      <div class="tip-acc-head" onclick="toggleAcc(this)">
+        <div class="tip-acc-head-left"><span class="tip-icon">🛡️</span><span class="tip-acc-title">安全提醒</span></div>
+        <div class="tip-acc-arrow">▾</div>
+      </div>
+      <div class="tip-acc-body">
+        <div class="tip-acc-content">
+          <ul>
+            <li>走路不要玩手机，注意交通安全</li>
+            <li>随身物品妥善保管，人多处防扒手</li>
+            <li>警惕绿色叶子饮料和店面，避免接触大麻制品</li>
+            <li>乘坐正规出租车，开启计价表</li>
+            <li>夜间单独外出注意安全</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tip-acc">
+      <div class="tip-acc-head" onclick="toggleAcc(this)">
+        <div class="tip-acc-head-left"><span class="tip-icon">💵</span><span class="tip-acc-title">货币与支付</span></div>
+        <div class="tip-acc-arrow">▾</div>
+      </div>
+      <div class="tip-acc-body">
+        <div class="tip-acc-content">
+          <ul>
+            <li>10%兑换手续费，建议提前在国内银行兑换泰铢</li>
+            <li>可使用支付宝/微信，但现金仍是必需品</li>
+            <li>711和Tops超市购物更划算</li>
+            <li>购物记得砍价，尤其夜市和市场</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tip-acc">
+      <div class="tip-acc-head" onclick="toggleAcc(this)">
+        <div class="tip-acc-head-left"><span class="tip-icon">📋</span><span class="tip-acc-title">证件与保险</span></div>
+        <div class="tip-acc-arrow">▾</div>
+      </div>
+      <div class="tip-acc-body">
+        <div class="tip-acc-content">
+          <ul>
+            <li>随身携带护照复印件</li>
+            <li>出发前购买旅游保险</li>
+            <li>下载翻译APP（谷歌翻译或有道）</li>
+            <li>提前保存各紧急联系电话</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tip-acc">
+      <div class="tip-acc-head" onclick="toggleAcc(this)">
+        <div class="tip-acc-head-left"><span class="tip-icon">☀️</span><span class="tip-acc-title">着装与气候</span></div>
+        <div class="tip-acc-arrow">▾</div>
+      </div>
+      <div class="tip-acc-body">
+        <div class="tip-acc-content">
+          <ul>
+            <li>准备充足防晒用品，紫外线极强</li>
+            <li>参观寺庙需着长裤长裙，不露肩</li>
+            <li>泰国全年气温高，轻薄透气着装为主</li>
+            <li>带一件薄外套以防商场冷气过强</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tip-acc">
+      <div class="tip-acc-head" onclick="toggleAcc(this)">
+        <div class="tip-acc-head-left"><span class="tip-icon">🍽️</span><span class="tip-acc-title">饮食注意</span></div>
+        <div class="tip-acc-arrow">▾</div>
+      </div>
+      <div class="tip-acc-body">
+        <div class="tip-acc-content">
+          <ul>
+            <li>避免饮用自来水，购买瓶装水</li>
+            <li>点餐可说"mai phet"表示不要太辣</li>
+            <li>路边摊食品卫生参差不齐，注意选择</li>
+            <li>饭后1小时再做按摩</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tip-acc">
+      <div class="tip-acc-head" onclick="toggleAcc(this)">
+        <div class="tip-acc-head-left"><span class="tip-icon">🕌</span><span class="tip-acc-title">文化礼仪</span></div>
+        <div class="tip-acc-arrow">▾</div>
+      </div>
+      <div class="tip-acc-body">
+        <div class="tip-acc-content">
+          <ul>
+            <li>双手合十打招呼是泰国礼仪</li>
+            <li>不要触摸别人头部，被视为不敬</li>
+            <li>对王室保持尊重，批评王室为违法行为</li>
+            <li>寺庙内保持安静肃穆</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="emergency reveal">
+    <div class="emergency-title">🚨 紧急联系电话</div>
+    <div class="emergency-grid">
+      <div class="emergency-item"><div class="em-label">旅游警察</div><div class="em-val">1155</div></div>
+      <div class="emergency-item"><div class="em-label">报警</div><div class="em-val">191</div></div>
+      <div class="emergency-item"><div class="em-label">急救</div><div class="em-val">1669</div></div>
+      <div class="emergency-item"><div class="em-label">中国驻泰使馆</div><div class="em-val">02-245-7044</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-logo">Thailand</div>
+  <div class="footer-tagline">微笑国度 · 探索无限精彩</div>
+  <div class="footer-nav">
+    <a href="#overview">概览</a>
+    <a href="#attractions">景点</a>
+    <a href="#food">美食</a>
+    <a href="#tour">团型</a>
+    <a href="#shopping">购物</a>
+    <a href="#tips">须知</a>
+  </div>
+  <div class="footer-copy">旅行愉快 · Enjoy Your Journey · สนุกกับการเดินทาง</div>
+</footer>
+
+<script>
+/* ── Cursor ── */
+const cur = document.getElementById('cur');
+const curRing = document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+function animRing(){
+  rx += (mx-rx)*.12; ry += (my-ry)*.12;
+  curRing.style.left=rx+'px'; curRing.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+/* ── Navbar ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ── Reveal ── */
+const revEls = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('up'); revObs.unobserve(e.target); }
+  });
+}, { threshold:.1 });
+revEls.forEach(el => revObs.observe(el));
+
+/* ── Attraction Tabs ── */
+document.querySelectorAll('.att-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.att-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.att-item').forEach(item => {
+      const show = cat === 'all' || item.dataset.cat === cat;
+      item.classList.toggle('show', show);
+    });
+  });
+});
+
+/* ── Accordion ── */
+function toggleAcc(head){
+  const acc = head.closest('.tip-acc');
+  acc.classList.toggle('open');
+}
+
+/* ── Food drag scroll ── */
+const fw = document.querySelector('.food-scroll-wrap');
+let isDown=false,startX,scrollL;
+fw.addEventListener('mousedown', e => { isDown=true; startX=e.pageX-fw.offsetLeft; scrollL=fw.scrollLeft; fw.style.cursor='grabbing'; });
+fw.addEventListener('mouseleave', () => { isDown=false; fw.style.cursor=''; });
+fw.addEventListener('mouseup', () => { isDown=false; fw.style.cursor=''; });
+fw.addEventListener('mousemove', e => { if(!isDown)return; e.preventDefault(); const x=e.pageX-fw.offsetLeft; fw.scrollLeft=scrollL-(x-startX)*1.5; });
+</script>
+</body>
+</html>

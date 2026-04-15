@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 首约韩国 首尔+仁川5天深度游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf5f7;
+  --bg2: #f0e8ec;
+  --ink: #1c1018;
+  --gold: #b8903c;
+  --rose: #c4637a;
+  --rose-lt: #f7dde5;
+  --rose-deep: #8a3050;
+  --mint: #3a8070;
+  --sky: #4a7898;
+  --muted: #7a6870;
+  --border: #ddd0d5;
+  --white: #fefafc;
+  --self-bg: #fff5f8;
+  --self-border: #e8b0be;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--rose);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--rose);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#666;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#999;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--rose);background:rgba(196,99,122,.1);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(150deg,#1a0c14 0%,#200a18 40%,#0c1820 100%);}
+/* petal scatter */
+.hero-bg::before{content:'🌸';position:absolute;top:30px;right:80px;font-size:14rem;opacity:.06;filter:blur(2px);}
+.hero-bg::after{content:'🏯';position:absolute;left:-20px;bottom:-20px;font-size:18rem;opacity:.04;}
+.hero-pattern{position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 60px,rgba(196,99,122,.012) 60px,rgba(196,99,122,.012) 61px);z-index:1;}
+.hero-content{position:relative;z-index:2;padding:80px 40px 60px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--rose);text-transform:uppercase;margin-bottom:18px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.6rem);font-style:italic;color:#f5eef1;line-height:1.1;margin-bottom:14px;}
+.hero-title em{color:var(--rose);font-style:normal;}
+.hero-sub{font-size:0.85rem;color:#7a5868;letter-spacing:0.06em;max-width:560px;margin-bottom:28px;line-height:1.9;}
+
+/* gift badge */
+.gift-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(196,99,122,.1);border:1px solid rgba(196,99,122,.35);padding:9px 18px;margin-bottom:30px;}
+.gb-icon{font-size:1.1rem;}
+.gb-text{font-size:0.78rem;color:#e8a8b8;letter-spacing:0.06em;}
+.gb-text strong{color:#f0c0cc;display:block;font-size:0.86rem;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn-primary{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;}
+.btn-primary:hover{background:var(--rose-deep);}
+.btn-sec{display:inline-block;border:1px solid rgba(196,99,122,.5);color:var(--rose);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-sec:hover{background:rgba(196,99,122,.1);}
+.hero-price{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:#f5eef1;line-height:1;}
+.hero-price-from{font-size:0.65rem;color:#7a5868;letter-spacing:0.1em;display:block;margin-bottom:2px;}
+.hero-price-unit{font-size:0.72rem;color:#7a5868;}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:#14080e;border-bottom:1px solid #2a1020;}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid #2a1020;justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;color:#d4889a;font-weight:400;letter-spacing:0.06em;}
+.trust-text span{font-size:0.68rem;color:#4a3040;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--rose);margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS ── */
+.hl-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 22px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.76rem;color:var(--muted);line-height:1.75;}
+.hl-badge{font-size:0.62rem;background:var(--rose-lt);color:var(--rose-deep);padding:2px 8px;align-self:flex-start;margin-top:auto;}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--rose);line-height:1;}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#444;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e8f5e9;color:#2e7d32;}
+.dtag-gift{background:var(--rose-lt);color:var(--rose-deep);}
+.dtag-opt{background:var(--self-bg);color:#8a3050;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f0e8ff;color:#5b21b6;}
+.dtag-note{background:#fff0f0;color:#b03a2e;}
+.dtag-shop{background:#fef9e7;color:#7d6608;border:1px dashed #c9a227;}
+.dtag-free{background:#f0f4f8;color:var(--sky);}
+
+/* ── SHOPPING TABLE ── */
+.shopping{padding:0 40px 56px;}
+.shop-inner{max-width:1200px;margin:0 auto;}
+.shop-banner{background:var(--ink);padding:14px 22px;display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--rose);}
+.shop-banner-text{font-size:0.8rem;color:#6a5060;letter-spacing:0.06em;}
+.shop-banner-text strong{color:var(--rose);}
+.shop-table-wrap{overflow-x:auto;}
+.shop-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);border-top:none;}
+.shop-table th{padding:10px 16px;background:var(--bg2);color:var(--muted);font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;border-bottom:1px solid var(--border);}
+.shop-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top;}
+.shop-table tr:last-child td{border-bottom:none;}
+.shop-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--rose);font-style:italic;line-height:1;width:36px;}
+.shop-name{font-weight:500;font-size:0.85rem;color:var(--ink);}
+.shop-desc{font-size:0.74rem;color:var(--muted);margin-top:3px;}
+.shop-time{font-size:0.72rem;color:var(--muted);white-space:nowrap;}
+.shop-note{font-size:0.72rem;color:var(--muted);margin-top:10px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── SURCHARGE / COSTS ── */
+.surcharge{padding:0 40px 56px;}
+.sc-inner{max-width:1200px;margin:0 auto;}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+.sc-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.sc-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--rose);margin-bottom:10px;}
+.sc-box ul{list-style:none;}
+.sc-box li{font-size:0.76rem;color:#444;line-height:1.85;padding-left:14px;position:relative;}
+.sc-box li::before{content:'·';position:absolute;left:0;color:var(--rose);}
+.sc-box li strong{color:var(--ink);}
+
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);color:var(--rose);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:38%;}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#444;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;background:var(--rose);color:#fff;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:all .2s;white-space:nowrap;}
+.float-btn:hover{background:var(--rose-deep);transform:translateX(-3px);}
+.float-btn.alt{background:var(--ink);color:var(--rose);border:1px solid rgba(196,99,122,.4);}
+.float-btn.alt:hover{background:#2a101a;}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--rose);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#6a5060;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--rose);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:var(--gold);border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:var(--gold);border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .sc-grid{grid-template-columns:1fr 1fr;}
+  .costs-cols{grid-template-columns:1fr;}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid #2a1020;min-width:50%;}
+  .hl-grid{grid-template-columns:1fr;}
+  .sec-head{padding:36px 16px 20px;}
+  .itinerary,.shopping,.surcharge,.notices{padding-left:16px;padding-right:16px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  .sc-grid{grid-template-columns:1fr;padding:0;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#itinerary" class="float-btn">📅 咨询最新团期</a>
+  <a href="#surcharge" class="float-btn alt">💰 费用明细</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#shopping">购物协议</a>
+      <a href="#surcharge">费用说明</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">South Korea · Seoul &amp; Incheon · 5 Days</div>
+    <div class="hero-title">
+      首约韩国<br>
+      首尔 ＋ 仁川 <em>传统与潮流</em>
+    </div>
+    <div class="hero-sub">
+      景福宫韩服体验 · 涂鸦秀 · 南山公园爱情锁 · 北村韩屋村 · 明洞自由购<br>
+      全程五花级酒店 · 深圳出发直飞 · 5天深度文化之旅
+    </div>
+
+    <div class="gift-badge up">
+      <span class="gb-icon">🎁</span>
+      <div class="gb-text">
+        <strong>随行赠送：涂鸦秀表演（75分钟）</strong>
+        精彩视听艺术 · 价值较高 · 完全包含于团费
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <div>
+        <span class="hero-price-from">参考价格</span>
+        <span class="hero-price">¥3,100</span>
+        <span class="hero-price-unit"> 起/人</span>
+      </div>
+      <a href="#itinerary" class="btn-primary">查看完整行程</a>
+      <a href="#shopping" class="btn-sec">购物协议公示</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">👘</span>
+      <div class="trust-text"><strong>景福宫韩服</strong><span>传统宫廷写真体验</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🎨</span>
+      <div class="trust-text"><strong>涂鸦秀赠送</strong><span>75分钟视听艺术盛宴</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🗼</span>
+      <div class="trust-text"><strong>N首尔塔</strong><span>爱情锁许愿地标</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🍲</span>
+      <div class="trust-text"><strong>地道韩食</strong><span>部队火锅·人参鸡汤</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">⭐</span>
+      <div class="trust-text"><strong>五花级酒店</strong><span>全程仁川优质住宿</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Highlights · 行程亮点</div>
+    <div class="sec-title">四大深度体验</div>
+    <div class="sec-sub">韩剧里的场景，亲身走进感受</div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px 48px;">
+    <div class="hl-grid">
+      <div class="hl-item up">
+        <div class="hl-icon">👘</div>
+        <div class="hl-title">景福宫韩服摄影</div>
+        <div class="hl-desc">身着华美传统韩服，漫步六百年历史的景福宫，在宫廷楼阁与蓝天白云间留下最美时光剪影。</div>
+        <div class="hl-badge">✓ 含于团费</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🎨</div>
+        <div class="hl-title">涂鸦秀（赠送）</div>
+        <div class="hl-desc">75分钟全程赠送！韩国最知名的视觉艺术表演，演员用涂鸦颜料现场创作，震撼的视觉冲击令人叹为观止。</div>
+        <div class="hl-badge">🎁 随团赠送</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🏘️</div>
+        <div class="hl-title">北村韩屋村 DIY</div>
+        <div class="hl-desc">漫步百年传统韩屋聚落，在蜿蜒石板小巷中感受旧时首尔的市井温情；亲手制作紫菜卷与泡菜，带走专属记忆。</div>
+        <div class="hl-badge">✓ 含于团费</div>
+      </div>
+      <div class="hl-item up">
+        <div class="hl-icon">🍲</div>
+        <div class="hl-title">地道韩食巡礼</div>
+        <div class="hl-desc">部队火锅暖胃开篇，人参鸡汤滋补精华，猪脊骨汤浓香醇厚，韩式拌饭色香味全——五天沉浸式韩国美食体验。</div>
+        <div class="hl-badge">✓ 含于团费</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow">Itinerary · 5日行程</div>
+    <div class="sec-title">首尔·仁川 5天深度之旅</div>
+    <div class="sec-sub">绿色为行程包含项目，粉色为赠送项目，橙色边框为自费可选项目</div>
+  </div>
+
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">深圳 → 首尔 · 仁川抵达</div>
+          <div class="day-route">深圳直飞 · 仁川国际机场</div>
+          <div class="day-text">乘飞机直飞仁川，抵达后游览充满童趣的<strong>松月壁画村</strong>，色彩斑斓的手绘壁画遍布每一条巷子，是韩剧取景地中的网红打卡圣地；随后漫步<strong>仁川中华街</strong>，感受融合了韩中两国风情的独特街景。专车送往五花级酒店入住。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 深圳直飞仁川</span>
+            <span class="dtag dtag-inc">✓ 松月壁画村</span>
+            <span class="dtag dtag-inc">✓ 仁川中华街</span>
+            <span class="dtag dtag-inc">✓ 五花级酒店</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">文化巡礼 · 宫廷韩服 · 涂鸦秀</div>
+          <div class="day-route">Seoul · 文化体验日</div>
+          <div class="day-text">今日是整个行程最具韩国文化底蕴的一天。穿上精心挑选的传统韩服，走进六百年历史的<strong>景福宫</strong>，在宏伟宫廷建筑前留下最美照片；游览紧邻的<strong>国立民俗博物馆</strong>，深入了解韩国传统生活与历史文化；外观曾是总统府邸的<strong>青瓦台</strong>，感受这栋承载无数历史瞬间的蓝瓦建筑的庄严气息。晚间，专程欣赏随团赠送的<strong>涂鸦秀</strong>，75分钟令人目不暇接的视觉艺术表演，精彩绝伦。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 景福宫</span>
+            <span class="dtag dtag-inc">✓ 韩服摄影体验</span>
+            <span class="dtag dtag-inc">✓ 国立民俗博物馆</span>
+            <span class="dtag dtag-inc">✓ 青瓦台（外观）</span>
+            <span class="dtag dtag-gift">🎁 涂鸦秀（赠送·75分钟）</span>
+            <span class="dtag dtag-note">🍽 晚餐自理</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">浪漫地标 · N首尔塔 · 南山公园</div>
+          <div class="day-route">Seoul · 浪漫约会路线</div>
+          <div class="day-text">漫步<strong>南山公园</strong>，沿山路拾阶而上，俯瞰首尔城市全景；来到著名的<strong>N首尔塔</strong>爱情锁墙，在数以万计的锁链间挂上属于你的心愿之锁，将美好祈愿永远留在这座城市最高处。电梯缆车游览（自费可选），在塔顶360度俯瞰首尔全貌。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 南山公园</span>
+            <span class="dtag dtag-inc">✓ N首尔塔爱情锁墙</span>
+            <span class="dtag dtag-opt">可选 N首尔塔电梯券（自费）</span>
+            <span class="dtag dtag-note">🍽 晚餐自理</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">北村韩屋 · DIY体验 · 明洞自由购</div>
+          <div class="day-route">Seoul · 传统 + 现代</div>
+          <div class="day-text">走进静谧的<strong>北村韩屋村</strong>，感受首尔最后一片保存完好的传统韩屋聚落，窄巷青瓦与远处高楼的鲜明对比令人着迷；前往体验馆亲手制作<strong>紫菜卷与泡菜</strong>，带走一份专属的美食记忆；下午尽情畅游<strong>明洞商业区</strong>，时尚潮牌与平价好物一网打尽，这里是购物、美食与街头文化的终极交汇地。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 北村韩屋村</span>
+            <span class="dtag dtag-inc">✓ 紫菜泡菜DIY体验</span>
+            <span class="dtag dtag-free">🛍 明洞商业区（自由购）</span>
+            <span class="dtag dtag-shop">🏪 国际免税店 约60分钟</span>
+            <span class="dtag dtag-note">🍽 晚餐自理</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">仁川 → 深圳 返程</div>
+          <div class="day-route">直飞返程</div>
+          <div class="day-text">收拾行囊，专车送往仁川国际机场。<strong>温馨提示</strong>：入境时需配合柜台完成双食指指纹采集及拍照（韩国移民局要求）。登机直飞深圳，带着满满的韩国记忆踏上归途。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 仁川直飞深圳</span>
+            <span class="dtag dtag-note">📋 出境指纹采集·请预留时间</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOPPING PROTOCOL ── -->
+<div class="shopping" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Shopping Protocol · 购物协议</div>
+    <div class="sec-title">购物安排透明公示</div>
+    <div class="sec-sub">依合同约定明确列出，所有消费均为自愿原则</div>
+  </div>
+  <div class="shop-inner">
+    <div class="shop-banner up">
+      <span style="font-size:1.2rem;">📋</span>
+      <div class="shop-banner-text">
+        本行程依合同约定进入以下 <strong>5个协议购物场所</strong>，停留时间如下表所示。<strong>所有消费均为自愿，绝无任何强制</strong>，游客有权选择不购买任何商品。
+      </div>
+    </div>
+    <div class="shop-table-wrap up">
+      <table class="shop-table">
+        <thead>
+          <tr>
+            <th style="width:40px;">#</th>
+            <th>购物场所</th>
+            <th>经营商品与特色</th>
+            <th>停留时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="shop-num">①</td>
+            <td><div class="shop-name">高丽参专卖店</div></td>
+            <td><div class="shop-desc">了解人参滋补效能，学习人参生长过程及医疗保健功效</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">②</td>
+            <td><div class="shop-name">韩国化妆彩妆免税店</div></td>
+            <td><div class="shop-desc">体验时下流行的护肤和皮肤保养方式，学习韩式美妆知识</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">③</td>
+            <td><div class="shop-name">护肝宝免税店</div></td>
+            <td><div class="shop-desc">了解从天然枳椇果中提取护肝因子的研发过程与功效</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">④</td>
+            <td><div class="shop-name">国际免税店</div></td>
+            <td><div class="shop-desc">享受大牌云集、没有税金的极致购物乐趣</div></td>
+            <td class="shop-time">约 60 分钟</td>
+          </tr>
+          <tr>
+            <td class="shop-num">⑤</td>
+            <td><div class="shop-name">明洞商业区</div><div class="shop-desc">D4 · 自由活动</div></td>
+            <td><div class="shop-desc">自由选购服装、首饰及各类潮流单品</div></td>
+            <td class="shop-time">约 90 分钟</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shop-note up">* 以上购物场所均为行程合同约定，停留时间仅供参考。所有消费完全<strong>自愿</strong>，游客有权选择不购买任何商品，导游不得施压或强制消费。</div>
+  </div>
+</div>
+
+<!-- ── SURCHARGE & COSTS ── -->
+<div class="surcharge" id="surcharge">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Fees &amp; Surcharges · 费用透明</div>
+    <div class="sec-title">另行支出明细</div>
+    <div class="sec-sub">除团费外，以下费用请出发前充分了解</div>
+  </div>
+  <div class="sc-inner">
+    <div class="sc-grid">
+      <div class="sc-box up">
+        <div class="sc-head">必付费用</div>
+        <ul>
+          <li>签证代办手续费：<strong>¥500元/人</strong>（随团费一并支付）</li>
+          <li>签证材料须提前准备，请咨询顾问获取清单</li>
+        </ul>
+      </div>
+      <div class="sc-box up">
+        <div class="sc-head">年龄补差（合同约束）</div>
+        <ul>
+          <li><strong>12–29周岁</strong>：占床加收 <strong>¥600元/人</strong></li>
+          <li><strong>2–11周岁小童</strong>：不占床补¥300，占床补¥600</li>
+          <li>适龄优惠年龄：30岁以上享特惠价</li>
+        </ul>
+      </div>
+      <div class="sc-box up">
+        <div class="sc-head">违约离团费</div>
+        <ul>
+          <li>确需离团自行活动：<strong>¥1,500元/天/人</strong></li>
+          <li>擅自离团需提前告知领队并签署书面确认</li>
+          <li>离团期间产生的一切费用由本人自理</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="costs-cols up">
+      <div class="cost-box">
+        <div class="cost-head">费用包含</div>
+        <table class="cost-table">
+          <tr><td>航班</td><td>深圳往返仁川直飞机票</td></tr>
+          <tr><td>住宿</td><td>全程五花级（网评五钻）酒店</td></tr>
+          <tr><td>餐食</td><td>行程内含餐（部队火锅·人参鸡汤等）</td></tr>
+          <tr><td>景点</td><td>景福宫·北村·南山公园等门票</td></tr>
+          <tr><td>韩服</td><td>景福宫韩服体验（含服装租借）</td></tr>
+          <tr><td>DIY</td><td>紫菜卷·泡菜制作体验</td></tr>
+          <tr><td>涂鸦秀</td><td>75分钟涂鸦秀表演（随团赠送）</td></tr>
+          <tr><td>接送</td><td>全程专业中文导游及专车服务</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head">费用不含</div>
+        <table class="cost-table">
+          <tr><td>签证费</td><td>代办手续费¥500元/人（必付）</td></tr>
+          <tr><td>年龄差价</td><td>12–29岁占床补¥600，2–11岁补¥300–600</td></tr>
+          <tr><td>N首尔塔</td><td>电梯缆车券（自费可选）</td></tr>
+          <tr><td>晚餐自理</td><td>D2、D3、D4晚餐需自理</td></tr>
+          <tr><td>离团费</td><td>¥1,500元/天/人（如需离团）</td></tr>
+          <tr><td>个人消费</td><td>酒店洗理·通讯·酒水等</td></tr>
+          <tr><td>保险</td><td>建议另行购买个人意外险</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读提示</div>
+    <div class="sec-sub">请仔细阅读以下条款，保障顺畅出行</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>🖐 入境指纹采集</h4>
+        <ul>
+          <li>入境仁川空港时需配合柜台进行<strong>双食指指纹采集及拍照</strong></li>
+          <li>此为韩国移民局统一要求，所有外籍旅客均须配合</li>
+          <li>请提前预留充裕时间，避免误机</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>☕ 酒店饮水习惯</h4>
+        <ul>
+          <li>韩国酒店多数<strong>不免费提供饮用开水</strong></li>
+          <li>建议自备小型便携热水壶，方便泡茶冲泡</li>
+          <li>矿泉水可在便利店购买（24小时便利店随处可见）</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🌶️ 饮食注意事项</h4>
+        <ul>
+          <li>韩国饮食习惯偏<strong>生冷及辛辣</strong></li>
+          <li>肠胃敏感者建议自备榨菜等佐食小品</li>
+          <li>D2、D3、D4晚餐需自行安排，建议提前询问导游推荐</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>💵 现金申报规定</h4>
+        <ul>
+          <li>入境韩国携带超过 <strong>10,000美金</strong>（或等值货币）须向海关如实申报</li>
+          <li>未申报或申报不实可能面临罚款或没收</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>以上价格均为参考含税价，以出发时实际为准</span>
+    <span>签证代办手续费¥500为必付费用</span>
+    <span>12–29岁旅客需加收¥600占床补差</span>
+    <span>涂鸦秀（75分钟）已含于团费，随团赠送</span>
+    <span>购物均为完全自愿消费原则</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html" class="current">🇰🇷 韩国 · 本页</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html">🌴 巴厘岛</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','shopping','surcharge','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逍遥国际旅行社 · 寻梦巴厘岛 纯享五星 贝尼达岛+乌布 6天深度游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6fafa;
+  --bg2: #e8f4f4;
+  --ink: #0e1c1c;
+  --gold: #b8903c;
+  --tiff: #2ab8c8;   /* tiffany blue */
+  --tiff-lt: #d0f0f4;
+  --tiff-deep: #1a7888;
+  --sunset: #e07030; /* warm orange */
+  --sunset-lt: #fde8d8;
+  --sunset-deep: #a04010;
+  --green: #2a6848;  /* tropical */
+  --muted: #5a7878;
+  --border: #c8e0e0;
+  --white: #fdfefe;
+  --self-bg: #fff8f2;
+  --self-border: #f0c898;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.8;}
+
+/* ── HEADER ── */
+header{background:var(--ink);position:sticky;top:0;z-index:99;border-bottom:3px solid var(--tiff);}
+.hd{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--tiff);font-style:italic;line-height:1.15;text-decoration:none;}
+.logo-sub{font-style:normal;font-size:0.65rem;color:#4a6868;letter-spacing:0.16em;display:block;}
+nav{display:flex;gap:2px;}
+nav a{color:#5a8888;text-decoration:none;font-size:0.76rem;letter-spacing:0.1em;padding:7px 14px;transition:all .2s;border-radius:2px;}
+nav a:hover,nav a.active{color:var(--tiff);background:rgba(42,184,200,.1);}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#061818 0%,#0c2828 40%,#1a1008 100%);}
+/* layered ocean + sunset elements */
+.hero-bg::before{content:'🌊';position:absolute;bottom:-10px;left:-20px;font-size:22rem;opacity:.05;line-height:1;filter:blur(3px);}
+.hero-bg::after{content:'🌅';position:absolute;right:40px;top:20px;font-size:16rem;opacity:.05;line-height:1;filter:blur(2px);}
+/* horizon glow at bottom */
+.hero-glow{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,rgba(224,112,48,.08),transparent);z-index:1;}
+.hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(165deg,transparent,transparent 80px,rgba(42,184,200,.008) 80px,rgba(42,184,200,.008) 81px);z-index:1;}
+
+/* latitude badge */
+.lat-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(42,184,200,.1);border:1px solid rgba(42,184,200,.3);padding:6px 16px;margin-bottom:20px;font-size:0.7rem;letter-spacing:0.2em;color:#80d8e0;}
+
+.hero-content{position:relative;z-index:2;padding:80px 40px 60px;max-width:1200px;margin:0 auto;width:100%;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.28em;color:var(--tiff);text-transform:uppercase;margin-bottom:16px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.8rem);font-style:italic;color:#e8f8f8;line-height:1.08;margin-bottom:12px;}
+.hero-title em{color:var(--sunset);font-style:normal;}
+.hero-sub{font-size:0.85rem;color:#3a6868;letter-spacing:0.06em;max-width:580px;margin-bottom:28px;line-height:1.9;}
+
+/* USP pills */
+.usp-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+.usp{font-size:0.72rem;letter-spacing:0.06em;padding:5px 14px;border:1px solid;}
+.usp-tiff{color:#80d0d8;border-color:rgba(42,184,200,.3);background:rgba(42,184,200,.08);}
+.usp-sunset{color:#e8a870;border-color:rgba(224,112,48,.3);background:rgba(224,112,48,.08);}
+.usp-green{color:#80c0a0;border-color:rgba(42,104,72,.3);background:rgba(42,104,72,.08);}
+
+/* price area */
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:28px;}
+.price-block{background:rgba(0,0,0,.3);border:1px solid rgba(42,184,200,.3);padding:12px 22px;}
+.price-lbl{font-size:0.62rem;color:#4a7878;letter-spacing:0.1em;margin-bottom:2px;}
+.price-note{font-size:0.78rem;color:#b0d8d8;letter-spacing:0.04em;}
+.price-note strong{color:var(--tiff);}
+.spa-gift{background:rgba(224,112,48,.1);border:1px solid rgba(224,112,48,.3);padding:12px 18px;display:flex;align-items:center;gap:10px;}
+.spa-gift-icon{font-size:1.4rem;}
+.spa-gift-text{font-size:0.76rem;color:#c8a070;}
+.spa-gift-text strong{color:#e8c090;display:block;}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-primary{display:inline-block;background:var(--tiff);color:var(--ink);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 32px;transition:all .2s;font-weight:500;}
+.btn-primary:hover{background:var(--tiff-deep);color:#fff;}
+.btn-sunset{display:inline-block;background:var(--sunset);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 28px;transition:all .2s;}
+.btn-sunset:hover{background:var(--sunset-deep);}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.4);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;padding:12px 22px;transition:all .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7);}
+
+/* ── GRADIENT DIVIDER ── */
+.divider{height:4px;background:linear-gradient(90deg,var(--tiff),var(--sunset));}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--ink);border-bottom:1px solid rgba(42,184,200,.1);}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;}
+.trust-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 0;border-right:1px solid rgba(42,184,200,.1);justify-content:center;}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:1.15rem;}
+.trust-text strong{display:block;font-size:0.78rem;font-weight:400;letter-spacing:0.06em;}
+.ct{color:#70c8d0;}
+.cs{color:#e0a070;}
+.trust-text span{font-size:0.68rem;color:#2a4848;}
+
+/* ── SEC HEADER ── */
+.sec-head{max-width:1200px;margin:0 auto;padding:52px 40px 28px;}
+.sec-eyebrow{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:8px;}
+.et{color:var(--tiff);}
+.es{color:var(--sunset);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.sec-sub{font-size:0.8rem;color:var(--muted);letter-spacing:0.06em;}
+
+/* ── HIGHLIGHTS ── */
+.hl-grid{max-width:1200px;margin:0 auto;padding:0 40px 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.hl-item{background:var(--white);padding:26px 22px;display:flex;flex-direction:column;gap:10px;}
+.hl-icon{font-size:1.6rem;}
+.hl-title{font-family:'Noto Serif SC',serif;font-size:0.9rem;font-weight:600;color:var(--ink);}
+.hl-desc{font-size:0.75rem;color:var(--muted);line-height:1.75;flex:1;}
+.hl-tag{font-size:0.62rem;padding:2px 8px;align-self:flex-start;margin-top:auto;}
+.ht-tiff{background:var(--tiff-lt);color:var(--tiff-deep);}
+.ht-sunset{background:var(--sunset-lt);color:var(--sunset-deep);}
+.ht-green{background:#d8f0e8;color:var(--green);}
+
+/* ── ITINERARY ── */
+.itinerary{padding:0 40px 56px;}
+.it-inner{max-width:1200px;margin:0 auto;}
+.day-row{display:grid;grid-template-columns:88px 1fr;gap:0;}
+.day-num-col{padding-top:4px;text-align:center;}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;line-height:1;}
+.dnt{color:var(--tiff);}
+.dns{color:var(--sunset);}
+.dng{color:var(--green);}
+.day-lbl{font-size:0.58rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;}
+.day-body{border-left:1px solid var(--border);padding:0 0 36px 32px;}
+.day-head{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;margin-bottom:5px;}
+.day-route{font-size:0.71rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:11px;}
+.day-text{font-size:0.82rem;color:#1c3838;line-height:1.9;margin-bottom:10px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-size:0.66rem;padding:2px 9px;letter-spacing:0.03em;}
+.dtag-inc{background:#e0f4ec;color:var(--green);}
+.dtag-tiff{background:var(--tiff-lt);color:var(--tiff-deep);}
+.dtag-sunset{background:var(--sunset-lt);color:var(--sunset-deep);}
+.dtag-opt{background:var(--self-bg);color:#7a4c10;border:1px solid var(--self-border);}
+.dtag-fly{background:#e3f2fd;color:#1565c0;}
+.dtag-meal{background:#f3e5f5;color:#6a1b9a;}
+.dtag-spa{background:#fce4ec;color:#880e4f;}
+.dtag-note{background:#fff5f0;color:var(--sunset-deep);}
+.dtag-free{background:var(--bg2);color:var(--muted);}
+
+/* ── MUST-PAY COSTS ── */
+.mustpay{padding:0 40px 40px;}
+.mp-inner{max-width:1200px;margin:0 auto;}
+.mp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+.mp-box{background:var(--white);border:1px solid var(--border);padding:20px 22px;}
+.mp-head{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#b03a2e;margin-bottom:10px;}
+.mp-box ul{list-style:none;}
+.mp-box li{font-size:0.76rem;color:#1c3838;line-height:1.85;padding-left:14px;position:relative;}
+.mp-box li::before{content:'·';position:absolute;left:0;color:var(--tiff);}
+.mp-box li strong{color:var(--ink);}
+
+/* costs table */
+.costs-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.cost-box{border:1px solid var(--border);background:var(--white);}
+.cost-head{background:var(--ink);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 18px;}
+.ch-t{color:var(--tiff);}
+.ch-s{color:var(--sunset);}
+.cost-table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+.cost-table td{padding:9px 18px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table td:first-child{color:var(--muted);width:36%;}
+
+/* ── OPTIONAL TABLE ── */
+.optional-wrap{padding:0 40px 56px;}
+.op-inner{max-width:1200px;margin:0 auto;}
+.op-table-wrap{overflow-x:auto;}
+.op-table{width:100%;border-collapse:collapse;font-size:0.78rem;background:var(--white);border:1px solid var(--border);}
+.op-table thead tr{background:var(--ink);}
+.op-table th{padding:10px 16px;color:var(--tiff);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;text-align:left;font-weight:400;}
+.op-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink);}
+.op-table tr:last-child td{border-bottom:none;}
+.op-table tbody tr:nth-child(even) td{background:#f4fcfc;}
+.cat-cell{font-size:0.7rem;letter-spacing:0.1em;color:var(--tiff-deep);font-weight:500;}
+.price-cell{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--sunset-deep);white-space:nowrap;}
+.note-cell{font-size:0.7rem;color:var(--muted);}
+.op-note{font-size:0.72rem;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--self-bg);border:1px solid var(--self-border);}
+
+/* ── SHOPPING POLICY ── */
+.shop-policy{padding:0 40px 56px;}
+.policy-inner{max-width:1200px;margin:0 auto;}
+.policy-card{background:var(--white);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.policy-col{padding:26px 28px;}
+.policy-col:first-child{border-right:1px solid var(--border);}
+.policy-col-head{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;}
+.ph-g{color:var(--green);}
+.ph-t{color:var(--tiff-deep);}
+.policy-col ul{list-style:none;}
+.policy-col li{font-size:0.78rem;color:#1c3838;line-height:1.9;padding-left:16px;position:relative;}
+.policy-col li::before{position:absolute;left:0;}
+.inc-list li::before{content:'✓';color:var(--green);}
+.exc-list li::before{content:'○';color:var(--tiff-deep);}
+.product-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.ptag{font-size:0.7rem;padding:3px 12px;background:var(--tiff-lt);color:var(--tiff-deep);}
+
+/* ── CONSULTANT ── */
+.consult{padding:0 40px 56px;}
+.consult-inner{max-width:1200px;margin:0 auto;}
+.consult-card{background:linear-gradient(135deg,#eaf8f8,#fdf4ee);border:1px solid var(--border);padding:32px 36px;display:flex;align-items:center;gap:40px;}
+.consult-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--tiff),var(--sunset));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.consult-info h3{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.consult-info p{font-size:0.8rem;color:var(--muted);margin-bottom:12px;}
+.consult-contact{display:flex;flex-wrap:wrap;gap:10px;}
+.contact-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;font-size:0.78rem;letter-spacing:0.08em;text-decoration:none;transition:all .2s;}
+.cb-tiff{background:var(--tiff);color:var(--ink);font-weight:500;}
+.cb-tiff:hover{background:var(--tiff-deep);color:#fff;}
+.cb-sunset{border:1px solid var(--sunset);color:var(--sunset);}
+.cb-sunset:hover{background:var(--sunset-lt);}
+.cb-ghost{border:1px solid var(--border);color:var(--muted);}
+.cb-ghost:hover{background:var(--bg2);}
+
+/* ── NOTICES ── */
+.notices{padding:0 40px 56px;}
+.notices-inner{max-width:1200px;margin:0 auto;border:1px solid var(--border);background:var(--white);}
+.notices-head{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 22px;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.notices-body{display:grid;grid-template-columns:1fr 1fr;}
+.notice-sec{padding:20px 22px;border-right:1px solid var(--border);}
+.notice-sec:nth-child(even){border-right:none;}
+.notice-sec:nth-child(n+3){border-top:1px solid var(--border);}
+.notice-sec h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--tiff-deep);margin-bottom:10px;}
+.notice-sec ul{list-style:none;}
+.notice-sec li{font-size:0.76rem;color:#1c3838;line-height:1.85;padding-left:12px;position:relative;}
+.notice-sec li::before{content:'·';position:absolute;left:0;color:var(--muted);}
+.notice-sec li strong{color:var(--ink);}
+
+/* ── FLOAT CTA ── */
+.float-cta{position:fixed;right:20px;bottom:40px;z-index:200;display:flex;flex-direction:column;gap:8px;}
+.float-btn{display:block;text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;padding:10px 16px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:all .2s;white-space:nowrap;}
+.float-btn:hover{transform:translateX(-3px);}
+.fb-tiff{background:var(--tiff);color:var(--ink);font-weight:500;box-shadow:0 4px 16px rgba(42,184,200,.3);}
+.fb-tiff:hover{background:var(--tiff-deep);color:#fff;}
+.fb-sunset{background:var(--sunset);color:#fff;box-shadow:0 4px 16px rgba(224,112,48,.25);}
+.fb-sunset:hover{background:var(--sunset-deep);}
+
+/* ── NOTE STRIP ── */
+.note-strip{background:var(--ink);border-top:2px solid var(--tiff);padding:20px 40px;}
+.note-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:center;}
+.note-strip span{font-size:0.7rem;color:#2a5050;letter-spacing:0.08em;}
+.note-strip span::before{content:'—  ';color:var(--tiff);}
+
+/* ── FOOTER ── */
+footer{background:#0e0c09;padding:52px 40px 36px;text-align:center;}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#b8903c;font-style:italic;margin-bottom:4px;}
+.f-sub{font-size:0.65rem;color:#444;letter-spacing:0.2em;margin-bottom:20px;}
+footer>p{font-size:0.76rem;color:#3a3528;line-height:2;}
+.dest-links{border-top:1px solid #1e1a14;margin-top:28px;padding-top:28px;}
+.dest-links-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.dest-links-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.dest-links-grid a{color:#6a6052;text-decoration:none;font-size:0.72rem;letter-spacing:0.08em;padding:5px 14px;border:1px solid #1e1a14;transition:all .2s;}
+.dest-links-grid a:hover{color:#b8903c;border-color:rgba(184,144,60,.4);background:rgba(184,144,60,.05);}
+.dest-links-grid a.current{color:#b8903c;border-color:rgba(184,144,60,.5);background:rgba(184,144,60,.08);pointer-events:none;}
+.coming-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#2e2a24;margin-bottom:10px;}
+.coming-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;}
+.coming-row a{color:#2e2a24;text-decoration:none;font-size:0.68rem;letter-spacing:0.06em;padding:4px 12px;border:1px dashed #2a2520;opacity:0.65;transition:all .2s;}
+.coming-row a:hover{opacity:0.9;color:#5a4e3a;}
+.ctag{font-size:0.52rem;background:#1e1a14;color:#3a3528;padding:1px 5px;margin-left:3px;}
+
+/* ── ANIMATE ── */
+.up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.up.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .hl-grid{grid-template-columns:1fr 1fr;}
+  .mp-grid{grid-template-columns:1fr 1fr;}
+  .costs-cols{grid-template-columns:1fr;}
+  .policy-card{grid-template-columns:1fr;}
+  .policy-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .notices-body{grid-template-columns:1fr;}
+  .notice-sec{border-right:none!important;border-bottom:1px solid var(--border);}
+  .notice-sec:last-child{border-bottom:none;}
+  .notice-sec:nth-child(n+3){border-top:none;}
+  .consult-card{flex-direction:column;gap:20px;}
+}
+@media(max-width:640px){
+  .hd{padding:0 16px;}
+  nav{display:none;}
+  .hero-content{padding:60px 16px 44px;}
+  .trust-inner{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(42,184,200,.1);min-width:50%;}
+  .hl-grid,.itinerary,.mustpay,.optional-wrap,.shop-policy,.consult,.notices{padding-left:16px;padding-right:16px;}
+  .hl-grid{grid-template-columns:1fr;}
+  .mp-grid{grid-template-columns:1fr;padding:0;}
+  .sec-head{padding:36px 16px 20px;}
+  .day-row{grid-template-columns:64px 1fr;}
+  footer{padding:36px 16px 28px;}
+  .float-cta{right:10px;bottom:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="#booking" class="float-btn fb-tiff">🌊 立即预订</a>
+  <a href="#consult" class="float-btn fb-sunset">💬 咨询顾问高盼</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      逍遥国际旅行社
+      <span class="logo-sub">栖梦投资旗下产业 · Tour Collection</span>
+    </a>
+    <nav>
+      <a href="#itinerary">行程详情</a>
+      <a href="#optional">自费说明</a>
+      <a href="#shopping">购物政策</a>
+      <a href="#notices">注意事项</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="lat-badge">🌐 南纬 8° · Bali · Indonesia</div>
+    <div class="hero-eyebrow">Bali · Pure Luxury · 6 Days</div>
+    <div class="hero-title">
+      寻梦巴厘<br>
+      纯享五星 · 贝尼达岛 · <em>金巴兰日落</em>
+    </div>
+    <div class="hero-sub">
+      乌布网红秋千 · 精灵坠崖 · 天神浴池 · 情人崖<br>
+      全程五星泳池酒店 · 赠1小时香薰精油SPA · 金巴兰海滩BBQ日落
+    </div>
+    <div class="usp-row">
+      <span class="usp usp-tiff">🏨 全程五星泳池酒店</span>
+      <span class="usp usp-sunset">🌅 金巴兰日落BBQ</span>
+      <span class="usp usp-green">🚫 不进旅游购物店</span>
+      <span class="usp usp-tiff">💆 赠1H香薰精油SPA</span>
+    </div>
+    <div class="hero-meta">
+      <div class="price-block">
+        <div class="price-lbl">参考价格</div>
+        <div class="price-note">成人团费 ＋ <strong>必付杂费¥1,300/人起</strong></div>
+        <div class="price-note" style="margin-top:4px;font-size:0.7rem;color:#3a6060;">（含导服费¥1,000 · 签证¥300 · 入境税¥70）</div>
+      </div>
+      <div class="spa-gift">
+        <div class="spa-gift-icon">💆</div>
+        <div class="spa-gift-text">
+          <strong>随团赠送</strong>
+          1小时巴厘岛特色香薰精油SPA按摩
+        </div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn-primary">立即预订</a>
+      <a href="#itinerary" class="btn-sunset">查看行程</a>
+      <a href="#" class="btn-ghost">下载PDF行程单</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── GRADIENT DIVIDER ── -->
+<div class="divider"></div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">🏨</span>
+      <div class="trust-text"><strong class="ct">五星泳池酒店</strong><span>全程网评四钻</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">⛵</span>
+      <div class="trust-text"><strong class="ct">贝尼达岛出海</strong><span>精灵坠崖·天神浴池</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🌅</span>
+      <div class="trust-text"><strong class="cs">金巴兰日落BBQ</strong><span>海滩浪漫晚餐</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🎋</span>
+      <div class="trust-text"><strong class="ct">乌布秋千</strong><span>Dtukad网红打卡</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">💆</span>
+      <div class="trust-text"><strong class="cs">赠SPA按摩</strong><span>1小时香薰精油</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHTS ── -->
+<div>
+  <div class="sec-head up">
+    <div class="sec-eyebrow et">Highlights · 六大体验</div>
+    <div class="sec-title">为什么选择这条巴厘线路</div>
+    <div class="sec-sub">蒂芙尼蓝的海洋 · 暖橘色的日落 · 热带绿的丛林，三种维度的巴厘岛</div>
+  </div>
+  <div class="hl-grid">
+    <div class="hl-item up">
+      <div class="hl-icon">🪢</div>
+      <div class="hl-title">Dtukad 网红秋千</div>
+      <div class="hl-desc">乌布丛林中的网红打卡圣地，高度从10米到300米不等的秋千体验、双层无边际泳池、热带鸟巢，每一处都是 Instagram 最热门的巴厘岛画面。</div>
+      <div class="hl-tag ht-tiff">🎋 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🌊</div>
+      <div class="hl-title">精灵坠崖 · 天神浴池</div>
+      <div class="hl-desc">快艇出海至贝尼达岛西线，打卡悬崖跳水圣地精灵坠崖（Devil's Tear）和天仙裂缝，随后在古老神秘的天神浴池（Seganing Waterfall）感受圣水洗礼。</div>
+      <div class="hl-tag ht-tiff">⛵ 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🌅</div>
+      <div class="hl-title">金巴兰海滩 BBQ 日落</div>
+      <div class="hl-desc">傍晚来到巴厘岛最浪漫的金巴兰海滩，在暖橘色的日落余晖中享用精心准备的海鲜 BBQ，脚踩细软白沙，耳边是轻柔海浪，是整个行程最温柔的时刻。</div>
+      <div class="hl-tag ht-sunset">🌅 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🏯</div>
+      <div class="hl-title">情人崖 · 乌鲁瓦图</div>
+      <div class="hl-desc">矗立于70米高断崖之上的乌鲁瓦图神庙，俯瞰印度洋壮阔海景，被誉为巴厘岛"中国版梁祝"故事发生地，是巴厘岛最具传奇色彩的文化地标。</div>
+      <div class="hl-tag ht-green">🏯 含于团费</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">💆</div>
+      <div class="hl-title">香薰精油 SPA（赠送）</div>
+      <div class="hl-desc">随团赠送1小时正宗巴厘岛香薰精油按摩，由专业按摩师以巴厘岛传统手法舒缓旅途疲劳，茉莉、玫瑰、檀香精油任选，是最纯粹的南纬8°疗愈体验。</div>
+      <div class="hl-tag ht-sunset">💆 随团赠送</div>
+    </div>
+    <div class="hl-item up">
+      <div class="hl-icon">🍜</div>
+      <div class="hl-title">巴厘特色美食全程</div>
+      <div class="hl-desc">金巴兰海滩BBQ、乌布传统脏鸭餐（Bebek Betutu）、中华料理保障熟悉口味、贝尼达岛海岛自助餐，四种截然不同的餐食风格，覆盖6天每一顿重要正餐。</div>
+      <div class="hl-tag ht-tiff">🍽 特色餐食</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div id="itinerary">
+  <div class="sec-head up">
+    <div class="sec-eyebrow et">Itinerary · 6日行程</div>
+    <div class="sec-title">巴厘岛 6天5晚深度游</div>
+    <div class="sec-sub">蓝绿色为包含项目 · 橘色边框为自费可选 · 粉色为赠送</div>
+  </div>
+  <div class="itinerary" style="padding-top:8px;">
+    <div class="it-inner">
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">01</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">出发 → 巴厘岛 · 抵达南纬8°</div>
+          <div class="day-route">飞抵巴厘岛恩古拉赖国际机场</div>
+          <div class="day-text">搭乘班机飞抵巴厘岛，专车接机，入住全程五星泳池酒店，享受落地第一晚的悠闲，感受这座神明之岛的热带夜晚。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 飞抵巴厘岛</span>
+            <span class="dtag dtag-inc">✓ 专车接机</span>
+            <span class="dtag dtag-inc">✓ 五星泳池酒店入住</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dng">02</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">乌布文化 · 网红打卡 · SPA</div>
+          <div class="day-route">Ubud · 丛林文化日</div>
+          <div class="day-text">游览<strong>乌布皇宫</strong>，感受巴厘王朝的宫廷艺术与建筑之美；穿越热闹的<strong>乌布传统市场</strong>，与形形色色的手工艺品邂逅；下午前往网红胜地 <strong>Dtukad 俱乐部</strong>，在双层无边际泳池中漂浮，在高空鸟巢中拍下最美照片，秋千项目可按需自费体验（高度10-300米不等）；晚间享受随团赠送的<strong>1小时香薰精油SPA按摩</strong>，完美结束充实的一天。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 乌布皇宫</span>
+            <span class="dtag dtag-inc">✓ 乌布传统市场</span>
+            <span class="dtag dtag-inc">✓ Dtukad俱乐部（泳池·鸟巢·瀑布）</span>
+            <span class="dtag dtag-spa">💆 香薰精油SPA（赠送·1小时）</span>
+            <span class="dtag dtag-meal">🦆 乌布脏鸭特色餐</span>
+            <span class="dtag dtag-opt">可选 高空秋千（现场自费）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">03</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">贝尼达岛出海 · 金巴兰日落BBQ</div>
+          <div class="day-route">Nusa Penida → Jimbaran</div>
+          <div class="day-text">清晨乘快艇出海，前往神秘的贝尼达岛西线。打卡悬崖跳水胜地<strong>精灵坠崖（Devil's Tear）</strong>，观看海浪击崖的壮观景象；探访独特地貌<strong>天仙裂缝（Broken Beach）</strong>；在古老的<strong>天神浴池（Seganing）</strong>感受圣水洗礼，传说在此沐浴可得神明庇护。傍晚回到巴厘岛本岛，在金色夕阳余晖下，享用<strong>金巴兰海滩海鲜BBQ晚餐</strong>，脚踩白沙，眼望印度洋，此刻的浪漫无需多言。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-tiff">⛵ 精灵坠崖</span>
+            <span class="dtag dtag-tiff">⛵ 天仙裂缝</span>
+            <span class="dtag dtag-tiff">⛵ 天神浴池</span>
+            <span class="dtag dtag-sunset">🌅 金巴兰日落BBQ（含于团费）</span>
+            <span class="dtag dtag-opt">可选 贝尼达水上活动（现场咨询）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dns">04</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">全天自由活动 · 随心享受</div>
+          <div class="day-route">Free Day · 酒店 or 海滩</div>
+          <div class="day-text">全天自由安排，无任何行程约束。您可在五星泳池酒店尽情享受无边际泳池与日光浴；也可步行至附近海滩独自漫步；或自行前往水明漾、库塔等购物区购买纪念品。这一天，完全属于您自己。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-free">🌊 全天自由活动</span>
+            <span class="dtag dtag-inc">✓ 五星酒店设施自由享用</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dng">05</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">乌鲁瓦图情人崖 · 努沙杜瓦购物</div>
+          <div class="day-route">Uluwatu → Nusa Dua</div>
+          <div class="day-text">前往巴厘岛最著名的文化地标<strong>乌鲁瓦图神庙（情人崖）</strong>，它矗立于70米断崖之上俯瞰印度洋，被誉为巴厘岛"中国版梁祝"故事发生地，是岛上最具传奇色彩的观景地。下午前往<strong>努沙杜瓦海滩及商业街</strong>自由购物，可在 Bali Collection 商业中心选购巴厘岛特色手工艺品、银器与面料。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-inc">✓ 乌鲁瓦图神庙（情人崖）</span>
+            <span class="dtag dtag-free">🛍 努沙杜瓦商业街（自由购物）</span>
+            <span class="dtag dtag-meal">🍽 中华料理</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row up">
+        <div class="day-num-col"><div class="day-num dnt">06</div><div class="day-lbl">Day</div></div>
+        <div class="day-body">
+          <div class="day-head">巴厘岛 → 返程 · 圆满归途</div>
+          <div class="day-route">恩古拉赖国际机场 · 返程</div>
+          <div class="day-text">享用最后一顿巴厘岛早餐，收拾行李，专车送往机场，办理退税手续后搭乘班机返程。带着蒂芙尼蓝的海、金巴兰的日落和精油按摩的余香，依依不舍地告别这座神明之岛。</div>
+          <div class="day-tags">
+            <span class="dtag dtag-fly">✈ 返程</span>
+            <span class="dtag dtag-note">📋 证件须知：护照有效期6个月以上，含3页空白页</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── MUST-PAY ── -->
+<div class="mustpay">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow es">Mandatory Fees · 必付费用</div>
+    <div class="sec-title">团费外必付说明</div>
+    <div class="sec-sub">以下费用须在出发前结清，合计约¥1,370元/人起</div>
+  </div>
+  <div class="mp-inner">
+    <div class="mp-grid">
+      <div class="mp-box up">
+        <div class="mp-head">导游服务费 + 税费</div>
+        <ul>
+          <li>导游服务费及税费：<strong>¥1,000元/人</strong></li>
+          <li>出团前须付清，随团费一并结算</li>
+          <li>含全程中文导游及境内服务费用</li>
+        </ul>
+      </div>
+      <div class="mp-box up">
+        <div class="mp-head">巴厘岛签证费</div>
+        <ul>
+          <li>巴厘岛落地签证费：<strong>¥300元/人</strong></li>
+          <li>含签证代办手续费</li>
+          <li>出发前须提供护照首页扫描件</li>
+        </ul>
+      </div>
+      <div class="mp-box up">
+        <div class="mp-head">印尼入境旅游税</div>
+        <ul>
+          <li>巴厘岛入境旅游税：<strong>¥70元/人</strong></li>
+          <li>印尼政府对入境巴厘岛旅游者统一征收</li>
+          <li>三项合计：约¥1,370元/人</li>
+        </ul>
+      </div>
+    </div>
+    <div class="costs-cols up" id="booking">
+      <div class="cost-box">
+        <div class="cost-head ch-t">团费包含</div>
+        <table class="cost-table">
+          <tr><td>住宿</td><td>全程巴厘岛五星泳池酒店（网评四钻）</td></tr>
+          <tr><td>餐食</td><td>金巴兰BBQ·乌布脏鸭餐·中华料理·海岛自助</td></tr>
+          <tr><td>景点</td><td>行程内所有景点门票</td></tr>
+          <tr><td>快艇</td><td>贝尼达岛出海快艇往返</td></tr>
+          <tr><td>SPA</td><td>1小时香薰精油SPA按摩（随团赠送）</td></tr>
+          <tr><td>俱乐部</td><td>Dtukad泳池·鸟巢·瀑布打卡（含入场）</td></tr>
+          <tr><td>接送</td><td>全程专车及专业中文导游服务</td></tr>
+        </table>
+      </div>
+      <div class="cost-box">
+        <div class="cost-head ch-s">团费不含</div>
+        <table class="cost-table">
+          <tr><td>导服+税费</td><td>¥1,000/人（必付）</td></tr>
+          <tr><td>签证</td><td>¥300/人（必付）</td></tr>
+          <tr><td>入境税</td><td>¥70/人（必付）</td></tr>
+          <tr><td>网红秋千</td><td>Dtukad园内秋千（现场自费）</td></tr>
+          <tr><td>水上活动</td><td>贝尼达摩托艇·香蕉船等（现场咨询）</td></tr>
+          <tr><td>礼仪小费</td><td>SPA师·司机·行李小费等</td></tr>
+          <tr><td>保险</td><td>建议另行购买个人境外意外险</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── OPTIONAL TABLE ── -->
+<div class="optional-wrap" id="optional">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow es">Optional · 自费项目</div>
+    <div class="sec-title">自愿参加项目清单</div>
+    <div class="sec-sub">本着自愿原则参加，绝无强迫；礼仪性小费为参考，不强制</div>
+  </div>
+  <div class="op-inner">
+    <div class="op-table-wrap up">
+      <table class="op-table">
+        <thead>
+          <tr>
+            <th>类别</th>
+            <th>项目名称</th>
+            <th>内容说明</th>
+            <th>支付方式 / 参考价</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cat-cell">网红体验</td>
+            <td><strong>Ins 网红大秋千</strong></td>
+            <td class="note-cell">Dtukad 园内高度10–300米不等的秋千体验，刺激程度可自选</td>
+            <td class="price-cell">现场自理</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">海岛娱乐</td>
+            <td><strong>贝尼达岛水上活动</strong></td>
+            <td class="note-cell">摩托艇、水上降落伞、香蕉船、海底漫步等，由当地船家提供</td>
+            <td class="price-cell">现场咨询船家</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">礼仪小费</td>
+            <td><strong>SPA 按摩小费</strong></td>
+            <td class="note-cell">对按摩师服务的认可，属礼仪性随心支付</td>
+            <td class="price-cell">约 Rp 10,000</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">礼仪小费</td>
+            <td><strong>入境海关小费</strong></td>
+            <td class="note-cell">入境时海关工作人员可能索要，属当地惯例</td>
+            <td class="price-cell">约 ¥10/人</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">礼仪小费</td>
+            <td><strong>床头 / 行李小费</strong></td>
+            <td class="note-cell">酒店客房服务及行李搬运礼仪性支出</td>
+            <td class="price-cell">约 Rp 10,000/间晚</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">礼仪小费</td>
+            <td><strong>司机小费</strong></td>
+            <td class="note-cell">感谢全程司机的服务，通常在最后一天支付</td>
+            <td class="price-cell">约 Rp 50,000</td>
+          </tr>
+          <tr>
+            <td class="cat-cell">违规费</td>
+            <td><strong>擅自离团违约金</strong></td>
+            <td class="note-cell">行程中擅自脱团须支付违约金，且所有风险由本人承担</td>
+            <td class="price-cell" style="color:#b03a2e;">¥800/人/天</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="op-note up">* 所有自费项目均遵循<strong>完全自愿</strong>原则，礼仪性小费属个人意愿支付，绝无任何强制要求。</div>
+  </div>
+</div>
+
+<!-- ── SHOPPING POLICY ── -->
+<div class="shop-policy" id="shopping">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow et">Shopping Policy · 购物政策</div>
+    <div class="sec-title">消费政策透明公示</div>
+    <div class="sec-sub">透明出品，让每一分消费都自主自愿</div>
+  </div>
+  <div class="policy-inner">
+    <div class="policy-card up">
+      <div class="policy-col">
+        <div class="policy-col-head ph-g">✓ 消费保障</div>
+        <ul class="inc-list">
+          <li>巴厘岛当地合法购物商店（合同约定）</li>
+          <li>所有消费属完全自愿，绝无强制消费行为</li>
+          <li>努沙杜瓦海滩及 Bali Collection 均为自由购物</li>
+          <li>机场 DFS 免税店消费为游客个人商业行为</li>
+          <li>传统市场及手工艺品区均为自主消费场所</li>
+        </ul>
+      </div>
+      <div class="policy-col">
+        <div class="policy-col-head ph-t">○ 导游推介特产（非购物店）</div>
+        <ul class="exc-list">
+          <li>导游可能在车上推介当地特产，属正常文化介绍</li>
+          <li>游客凭完全个人意愿决定是否购买</li>
+          <li>推介产品以当地知名特色产品为主</li>
+        </ul>
+        <div style="margin-top:14px;font-size:0.72rem;color:var(--muted);margin-bottom:8px;letter-spacing:0.1em;text-transform:uppercase;">🛍 巴厘岛特色产品参考</div>
+        <div class="product-tags">
+          <span class="ptag">☕ 猫屎咖啡（麝香咖啡）</span>
+          <span class="ptag">🪺 燕窝</span>
+          <span class="ptag">🦪 深海珍珠</span>
+          <span class="ptag">🛏 乳胶制品</span>
+          <span class="ptag">🌸 精油香薰</span>
+          <span class="ptag">🧵 巴厘岛蜡染布</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSULTANT ── -->
+<div class="consult" id="consult">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow et">Consultant · 专属顾问</div>
+    <div class="sec-title">联系专属旅行顾问</div>
+    <div class="sec-sub">有任何疑问或希望了解最新团期，请直接联系我们的专属顾问</div>
+  </div>
+  <div class="consult-inner">
+    <div class="consult-card up">
+      <div class="consult-avatar">🌺</div>
+      <div class="consult-info">
+        <h3>高盼 · 巴厘岛及东南亚专属顾问</h3>
+        <p>专注巴厘岛及东南亚精品线路，丰富出团经验，为您量身定制最适合的海岛度假方案</p>
+        <div class="consult-contact">
+          <a href="tel:15907190570" class="contact-btn cb-tiff">📞 15907190570</a>
+          <a href="#" class="contact-btn cb-sunset">💬 微信咨询</a>
+          <a href="#" class="contact-btn cb-ghost">📄 签证材料清单</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICES ── -->
+<div class="notices" id="notices">
+  <div class="sec-head up" style="padding-left:0;padding-right:0;">
+    <div class="sec-eyebrow et">Notices · 重要须知</div>
+    <div class="sec-title">出行前必读条款</div>
+    <div class="sec-sub">请仔细阅读以下条款，保障顺畅愉快的巴厘岛之旅</div>
+  </div>
+  <div class="notices-inner up">
+    <div class="notices-head">重要注意事项 · Important Notices</div>
+    <div class="notices-body">
+      <div class="notice-sec">
+        <h4>🛂 证件与签证</h4>
+        <ul>
+          <li>护照有效期须距返程日 <strong>6个月以上</strong></li>
+          <li>护照内须保留至少 <strong>3页空白页</strong></li>
+          <li>出发前须提供护照首页扫描件给旅行社</li>
+          <li>签证费¥300已列入必付费用</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>👴 年龄与健康限制</h4>
+        <ul>
+          <li>孕妇：恕无法接待</li>
+          <li><strong>70岁以上</strong>：须提供健康证明</li>
+          <li><strong>75岁以上</strong>：不建议出行，海岛出海活动无法接待</li>
+          <li>如有特殊健康状况，请提前告知顾问</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>💵 现金与消费</h4>
+        <ul>
+          <li>入境印尼携带人民币现金不可超过 <strong>¥20,000元</strong></li>
+          <li>建议随身携带约 <strong>¥3,000元人民币</strong> 现金备查或当地换汇</li>
+          <li>当地货币为印尼盾（IDR），1元人民币≈约2,200盾</li>
+        </ul>
+      </div>
+      <div class="notice-sec">
+        <h4>🚗 交通与生活习惯</h4>
+        <ul>
+          <li>印尼车辆<strong>靠左行驶</strong>，严禁随意横穿马路</li>
+          <li>酒店<strong>不提供牙膏、牙刷、拖鞋</strong>，请自备</li>
+          <li>巴厘岛为印度教圣地，参观神庙需系腰布、着装庄重</li>
+          <li>本行程作为《团队出境旅游合同》不可分割的一部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTE STRIP ── -->
+<div class="note-strip">
+  <div class="note-strip-inner">
+    <span>团费外必付杂费合计约¥1,370/人（导服¥1,000+签证¥300+入境税¥70）</span>
+    <span>全程五星泳池酒店，网评四钻标准</span>
+    <span>1小时香薰精油SPA随团赠送</span>
+    <span>75岁以上老人不建议参加海岛出海活动</span>
+    <span>入境携带人民币现金不超过¥20,000</span>
+    <span>本行程作为《团队出境旅游合同》不可分割的一部分</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">逍遥国际旅行社</div>
+  <div class="f-sub">栖梦投资旗下产业 · Tour Collection 2025</div>
+  <p>行程内容依据旅行社官方资料整理，价格仅供参考，以最终出团合同为准。<br>
+  购物安排、自费项目及特殊补差价请出发前与我社顾问充分沟通确认。</p>
+  <p style="margin-top:12px;color:#3a3528;font-size:0.72rem;">© 2025 逍遥国际旅行社 · 版权所有</p>
+
+  <div class="dest-links">
+    <div class="dest-links-title">探索更多目的地 · 栖梦旅行产品</div>
+    <div class="dest-links-grid">
+      <a href="japan.html">🇯🇵 日本</a>
+      <a href="dubai.html">🇦🇪 迪拜</a>
+      <a href="thailand.html">🇹🇭 泰国</a>
+      <a href="korea.html">🇰🇷 韩国</a>
+      <a href="malaysia.html">🇲🇾 马来西亚</a>
+      <a href="europe.html">🇪🇺 欧洲</a>
+      <a href="egypt.html">🇪🇬 埃及</a>
+      <a href="usa-west.html">🌵 美西</a>
+      <a href="usa.html">🗽 美国</a>
+      <a href="turkey.html">🇹🇷 土耳其</a>
+      <a href="bali.html" class="current">🌴 巴厘岛 · 本页</a>
+      <a href="vietnam.html">🇻🇳 越南</a>
+      <a href="russia.html">🇷🇺 俄罗斯</a>
+      <a href="morocco.html">🇲🇦 摩洛哥</a>
+      <a href="nepal.html">🇳🇵 尼泊尔</a>
+      <a href="antarctica.html">🧊 南极</a>
+      <a href="australia.html">🦘 澳洲</a>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="coming-label">即将上线 · Coming Soon</div>
+      <div class="coming-row">
+        <a href="#" title="敬请期待">🇬🇧 英国<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇬🇪 格鲁吉亚<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇳🇿 新西兰<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇨🇦 加拿大<span class="ctag">即将上选</span></a>
+        <a href="#" title="敬请期待">🇮🇳 印度<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🌿 清迈<span class="ctag">即将上线</span></a>
+        <a href="#" title="敬请期待">🇧🇷 巴西<span class="ctag">即将上线</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const secs = ['itinerary','optional','shopping','notices'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
